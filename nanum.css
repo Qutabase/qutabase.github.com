@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+@font-face {
+	font-family: 'NanumSquareR';
+	src: url(fonts/NanumSquareR.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'NanumSquareB';
+	src: url(fonts/NanumSquareB.ttf) format('truetype');
+}

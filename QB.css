@@ -1,0 +1,181 @@
+@charset "utf-8";
+/* CSS Document */
+/*@media (max-width:375px){body{font-size:10px;}}
+@media (min-width:376px) and (max-width:414px){body{font-size:11px;}}
+@media (min-width:415px) and (max-width:454px){body{font-size:12px;}}
+@media (min-width:455px) and (max-width:494px){body{font-size:13px;}}
+@media (min-width:495px) and (max-width:534px){body{font-size:14px;}}
+@media (min-width:535px) and (max-width:574px){body{font-size:15px;}}
+@media (min-width:575px) and (max-width:614px){body{font-size:16px;}}
+@media (min-width:615px) and (max-width:654px){body{font-size:17px;}}
+@media (min-width:655px) and (max-width:694px){body{font-size:18px;}}
+@media (min-width:695px) and (max-width:734px){body{font-size:19px;}}
+@media (min-width:735px) and (max-width:774px){body{font-size:20px;}}
+@media (min-width:784px) {#kodex_cont{margin-right: 50px;}}
+@media (min-width:775px) and (max-width:814px){body{font-size:21px;}}
+@media (min-width:815px) and (max-width:854px){body{font-size:22px;}}
+@media (min-width:855px) and (max-width:894px){body{font-size:23px;}}
+@media (min-width:895px){body{font-size:24px;}}*/
+body {	text-align: center;
+	font-family: "NanumSquareB", "맑은 고딕";
+	background-image: url(bgW.png);
+	margin: 0px;
+	font-size: 24px;
+}
+
+#menu {
+	position: absolute;
+	top: 0px; left: 0px;
+	width: 40px; height: 100%;
+	background: #ffd400;
+}
+
+#logo {
+	max-width: 550px;
+	margin-left: 40px;
+}
+
+#Kodex_form {
+
+	/*background: linear-gradient(rgba(255, 255, 255, 0.8), #273869);*/
+
+}
+
+#Kodex_cont {
+	margin: 10px 0px;
+	margin-left: 50px;
+	width: calc(100% - 60px);
+	margin-right: 10px;
+	text-align: center;
+}
+
+#Kodex {
+
+	width: 100%;
+	max-width: 813px;	height: 696px;
+	text-align: center;
+	line-height: 1.5;
+	margin: 0px auto;
+	background: #E3E4EE;
+	border-collapse: collapse;
+	border-spacing: 0px;
+	border: 1px solid #dddddd;
+	color: #0A1533;
+	top: 228px;
+
+}
+
+#td_rarity {
+
+	font-size: 32px;
+	color: white;
+
+}
+
+#td_name {
+	
+	font-size: 32px;
+	color: white;
+
+}
+
+#td_skill {
+    
+	font-size: 40px;
+	color: white;
+	
+}
+
+#kodex_srch {
+    
+	font-family: "NanumSquareB", "맑은 고딕";
+	width: calc(100% - 64px);
+	max-width: 700px;
+	text-align: left;
+	margin-left: 40px;
+	font-size: 21px;
+
+	
+}
+
+#kodex_exmpl {
+
+	position: absolute;
+	top: 100%;
+	left: 0px;
+	z-index: 1000;
+	display: block;
+	float: left;
+	min-width: 160px;
+	max-height: 260px;
+	overflow-y:	auto;
+	font-size: 18px;
+	padding: 5px;
+	margin: 2px 0 0;
+	color: #373a3c;
+	text-align: left;
+	list-style: none;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid rgba(0,0,0,0.15);
+	border-radius: .2rem;
+
+}
+
+li {
+	padding: 3px;
+	cursor: pointer;
+	background: white;
+}
+
+li:hover {
+	background: #e3e4ee;
+}
+
+
+th {
+
+	font-size: 23px;
+	border: 1px solid #dddddd;
+	padding: 5px 10px;
+	font-weight: normal;
+
+}
+
+td {
+
+	border: 1px solid #dddddd;
+	padding: 5px 10px;
+
+}
+
+span {
+	overflow-x: scroll;
+}
+
+.kodex_img {
+
+	width: 100%; height: auto;
+	max-width: 250px; max-height: 350px;
+	min-width: 117px;
+
+}
+.kodex_ind {
+
+	background: #5A688A;
+	color:	white;
+
+}
+
+.kodex_bind {
+
+	background: #00B4FF;
+	color: white;
+
+}
+
+.kodex_imgRank {
+
+	background: #FFEB3B;
+
+}
