@@ -70,9 +70,9 @@ function search(srch) {
 			temp = srch.substring(1);
 			dex = eval("Jdex['" + temp + "']");
 		}
-		document.getElementById('kodex_img_0').setAttribute('src', encodeURI('Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+dex.id+'an.jpg'));
-		document.getElementById('kodex_img_1').setAttribute('src', encodeURI('Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+dex.id+'bn.jpg'));
-		document.getElementById('kodex_img_2').setAttribute('src', encodeURI('Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+dex.id+'cn.jpg'));
+		document.getElementById('kodex_img_0').setAttribute('src', encodeURI('https://sn-kinos.github.io/Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+dex.id+'an.jpg'));
+		document.getElementById('kodex_img_1').setAttribute('src', encodeURI('https://sn-kinos.github.io/Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+dex.id+'bn.jpg'));
+		document.getElementById('kodex_img_2').setAttribute('src', encodeURI('https://sn-kinos.github.io/Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+dex.id+'cn.jpg'));
 		dex = eval("Jdex['" + srch + "']");
 		kinput('rarity');
 		kinput('name');
