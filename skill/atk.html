@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>QUTABASE - ATK</title>
+	<style type="text/css">
+		#menu {
+			position: absolute;
+			top: 0px; left: -360px;
+			width: 400px; height: 100%;
+			background: #ffd400;
+			padding: 0px;
+			transition: left 0.3s;
+		}
+
+		#menu:hover{
+			left: 0px;
+		}
+
+		#menu_list {
+			padding: 5px;
+		}
+
+	</style>
+</head>
+<body>
+	<nav id="menu">
+		<ul id="menu_list"><img src="logo.svg">
+			<li id="menu_skill" onclick="menu_skill_click()">
+				스킬
+				<ul id="list_skill" style="display: none;">
+					<li>공격</li>
+					<li>방어</li>
+					<li>회복</li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+</body>
+</html>
