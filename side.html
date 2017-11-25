@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>QUTABASE - Side Menu</title>
+	<style type="text/css">
+		#menu_list {
+			padding: 5px;
+		}
+		/*#kodex_exmpl*/ li {
+			list-style: none;
+			padding: 3px;
+			cursor: pointer;
+			background: white;
+		}
+
+		/*#kodex_exmpl*/ li:hover {
+			background: #e3e4ee;
+		}
+	</style>
+</head>
+<body>
+	<ul id="menu_list"><a href=""><img src="logo.svg"></a>
+		<li id="menu_skill" onclick="menu_skill_click()">
+			스킬
+			<ul id="list_skill" style="display: none;">
+				<a href="skill/atk.html"><li>공격</li></a>
+				<a href="skill/hp.html"><li>방어</li></a>
+				<a href="skill/spr.html"><li>회복</li></a>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>
