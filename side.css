@@ -1,0 +1,29 @@
+#menu {
+	position: absolute;
+	top: 0px; left: -360px;
+	width: 400px; height: 100%;
+	background: #ffd400;
+	padding: 0px;
+	transition: left 0.3s;
+}
+
+#menu:hover{
+	left: 0px;
+}
+
+#menu_list {
+	padding: 5px;
+	background: #FFFA7A;
+}
+
+#menu_list li{
+	list-style: none;
+	cursor: pointer;
+	background: #FFFF93;
+}
+
+#list_skill li{
+	list-style: none;
+	cursor: pointer;
+	background: #FFFF93;
+}
