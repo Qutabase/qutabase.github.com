@@ -16,11 +16,50 @@
 			left: 0px;
 		}
 
+		#menu_list {
+			padding: 5px;
+			background: #FFFA7A;
+		}
+
+		#menu_list li{
+			list-style: none;
+			cursor: pointer;
+			background: #FFFF93;
+		}
+
+		#list_skill li{
+			list-style: none;
+			cursor: pointer;
+			background: #FFFF93;
+		}
+
 	</style>
+	<script type="text/javascript">
+skill_flag = 0
+function menu_skill_click(argument) {
+	if (!skill_flag) {
+		document.getElementById('list_skill').setAttribute('style', 'display: block;');
+		skill_flag = 1
+	}
+	else{
+		document.getElementById('list_skill').setAttribute('style', 'display: none;');
+		skill_flag = 0
+	}
+}
+	</script>
 </head>
 <body>
 	<nav id="menu">
-		<iframe src="https://qutabase.github.io/side.html" style="border: none;"></iframe>
+		<ul id="menu_list"><a href=""><img src="logo.svg"></a>
+			<li id="menu_skill" onclick="menu_skill_click()">
+				스킬
+				<ul id="list_skill" style="display: none;">
+					<a href="https://qutabase.github.io/skill/atk.html"><li>공격</li></a>
+					<a href="https://qutabase.github.io/skill/hp.html"><li>방어</li></a>
+					<a href="https://qutabase.github.io/skill/spr.html"><li>회복</li></a>
+				</ul>
+			</li>
+		</ul>
 	</nav>
 </body>
 </html>
