@@ -33,12 +33,26 @@
 
 		}
 
+::-webkit-scrollbar {width: 8px; height: 8px; border: 3px solid #fff; }
+::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:increment {display: block; height: 10px; background: #efefef}
+::-webkit-scrollbar-track {background: #efefef; -webkit-border-radius: 10px; border-radius:10px; -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.2)}
+::-webkit-scrollbar-thumb {height: 50px; width: 50px; background: rgba(0,0,0,.2); -webkit-border-radius: 8px; border-radius: 8px; -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.1)}
+
 		#menu {
 			position: absolute;
-			top: 0px; left: 0px;
-			width: 40px; height: 100%;
+			top: 0px; left: -360px;
+			width: 400px; height: 100%;
 			background: #ffd400;
 			padding: 0px;
+			transition: left 0.3s;
+		}
+
+		#menu:hover{
+			left: 0px;
+		}
+
+		#menu_list {
+			padding: 5px;
 		}
 
 		#kodex_form{
@@ -86,13 +100,14 @@
 
 		}
 
-		li {
+		/*#kodex_exmpl*/ li {
+			list-style: none;
 			padding: 3px;
 			cursor: pointer;
 			background: white;
 		}
 
-		li:hover {
+		/*#kodex_exmpl*/ li:hover {
 			background: #e3e4ee;
 		}
 
@@ -242,12 +257,22 @@
 			#kodex_header{display: none;}
 			#kodex_header_m{display: inline-block;}
 		}
+
 	</style>
 </head>
 <body>	
-	<div id="menu">
-		
-	</div>
+	<nav id="menu">
+		<ul id="menu_list"><img src="logo.svg">
+			<li id="menu_skill" onclick="menu_skill_click()">
+				스킬
+				<ul id="list_skill" style="display: none;">
+					<li>공격</li>
+					<li>방어</li>
+					<li>회복</li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
 	<header id="kodex_form"><br>
 		<a href=""><img id="logo" src="logoW.svg"></a><br>
 		<input type="text" id="kodex_srch" onkeyup="check()" placeholder="마도서 이름을 입력하세요!"><br>
