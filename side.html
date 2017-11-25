@@ -3,6 +3,17 @@
 <head>
 	<title>QUTABASE - Side Menu</title>
 	<style type="text/css">
+		@charset "utf-8";
+
+		@font-face {
+			font-family: 'NanumSquareR';
+			src: url(fonts/NanumSquareR.ttf) format('truetype');
+		}
+
+		@font-face {
+			font-family: 'NanumSquareB';
+			src: url(fonts/NanumSquareB.ttf) format('truetype');
+		}	
 		#menu_list {
 			padding: 5px;
 		}
@@ -32,15 +43,6 @@ function menu_skill_click(argument) {
 	</script>
 </head>
 <body>
-	<ul id="menu_list"><a href=""><img src="logo.svg"></a>
-		<li id="menu_skill" onclick="menu_skill_click()">
-			스킬
-			<ul id="list_skill" style="display: none;">
-				<a href="skill/atk.html"><li>공격</li></a>
-				<a href="skill/hp.html"><li>방어</li></a>
-				<a href="skill/spr.html"><li>회복</li></a>
-			</ul>
-		</li>
-	</ul>
+
 </body>
 </html>

@@ -32,6 +32,9 @@
 			background: #e3e4ee;
 
 		}
+		a {
+			color: black;
+		}
 
 ::-webkit-scrollbar {width: 8px; height: 8px; border: 3px solid #fff; }
 ::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:increment {display: block; height: 10px; background: #efefef}
@@ -53,6 +56,10 @@
 
 		#menu_list {
 			padding: 5px;
+		}
+
+		#menu_list li{
+			background: #FFFF93;
 		}
 
 		#kodex_form{
@@ -100,14 +107,14 @@
 
 		}
 
-		/*#kodex_exmpl*/ li {
+		#kodex_exmpl li {
 			list-style: none;
 			padding: 3px;
 			cursor: pointer;
 			background: white;
 		}
 
-		/*#kodex_exmpl*/ li:hover {
+		#kodex_exmpl li:hover {
 			background: #e3e4ee;
 		}
 
@@ -262,7 +269,16 @@
 </head>
 <body>	
 	<nav id="menu">
-		<iframe src="sub.html" style="border: none;"></iframe>
+		<ul id="menu_list"><a href=""><img src="logo.svg"></a>
+			<li id="menu_skill" onclick="menu_skill_click()">
+				스킬
+				<ul id="list_skill" style="display: none;">
+					<a href="https://qutabase.github.io/skill/atk.html"><li>공격</li></a>
+					<a href="https://qutabase.github.io/skill/hp.html"><li>방어</li></a>
+					<a href="https://qutabase.github.io/skill/spr.html"><li>회복</li></a>
+				</ul>
+			</li>
+		</ul>
 	</nav>
 	<header id="kodex_form"><br>
 		<a href=""><img id="logo" src="logoW.svg"></a><br>
