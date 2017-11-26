@@ -3,6 +3,7 @@
 <head>
 	<title>QUTABASE - ATK</title>
 	<script type="text/javascript" src="../QB_reactive.js"></script>
+	<script type="text/javascript" src="atk.js"></script>
 	<link rel="stylesheet" type="text/css" href="../side.css">
 	<link rel="stylesheet" type="text/css" href="../nanum.css">
 	<link rel="stylesheet" type="text/css" href="../univ.css">
@@ -10,15 +11,27 @@
 	div {
 		padding: 10px 0px; margin: 0px;
 	}
+	#kodex_list {
+		display: inline-block;
+		overflow-y: auto;
+		max-height: 520px;
+	}
 	#html_role {
 		width: 100%; max-width: 812px;
 		background: red; color: white;
 	}
 	#skill_checker {
-		width: 100%;
+		width: 100%; padding: 10px 0px;
+		line-height: 30px;
 		display: inline-block;
 		background: #FFEB3B;
 		text-align: center;
+	}
+	#submit {
+		width: 100px; height: 50px;
+	}
+	#index {
+		width: 804px;
 	}
 	.kodex {
 		width: 100%;
@@ -27,7 +40,7 @@
 		font-size: 20px;
 	}
 	.kodex_rarity {
-		width: 8%;
+		width: 7%;
 	}
 	.kodex_name {
 		width: 26%;
@@ -42,7 +55,7 @@
 		width: 7%;
 	}
 	.kodex_faction {
-		width: 9%;
+		width: 10%;
 	}
 	.kodex_illustrator {
 		width: 25%;
@@ -85,31 +98,35 @@ function menu_skill_click(argument) {
 		<div id="html_role">
 			공격 마도서
 		</div>
-			<form id="skill_checker">
-				<input type="checkbox" id="Extortion">갈취
-				<input type="checkbox" id="Smite">강타
-				<input type="checkbox" id="Rage">격노
-				<input type="checkbox" id="Frenzy">격분
-				<input type="checkbox" id="Passion">격정
-				<input type="checkbox" id="EnNyance">고냥
-				<input type="checkbox" id="Enhance">고양
-				<input type="checkbox" id="Dynamite">다이너마이트<br>
-				<input type="checkbox" id="Blind">맹폭
-				<input type="checkbox" id="Immune">면역
-				<input type="checkbox" id="Enrage">분노
-				<input type="checkbox" id="Smash">분쇄
-				<input type="checkbox" id="Swipe">속공
-				<input type="checkbox" id="CounterATK">역공
-				<input type="checkbox" id="Regress">역행
-				<input type="checkbox" id="Gunship">죽음의 천사<br>
-				<input type="checkbox" id="Wrath">진노
-				<input type="checkbox" id="Cancel">차단
-				<input type="checkbox" id="Lucifer">타락한 여명
-				<input type="checkbox" id="Bombard">폭격
-				<input type="checkbox" id="Baltar">폭쇄천력: <font face="맑은 고딕">破</font>
-				<input type="checkbox" id="Lucky">행운
-				<input type="checkbox" id="Drain">흡혈
-			</form>
+		<div id="skill_checker">
+			<input type="checkbox" id="AE36"><label for="AE36">AE36 붕괴</label>
+			<input type="checkbox" id="HelloWorld"><label for="HelloWorld">Hello, world!</label>
+			<input type="checkbox" id="KANGTA"><label for="KANGTA">KANG - TA!</label>
+			<input type="checkbox" id="Extortion"><label for="Extortion">갈취</label>
+			<input type="checkbox" id="Smite"><label for="Smite">강타</label>
+			<input type="checkbox" id="Rage"><label for="Rage">격노</label>
+			<input type="checkbox" id="Frenzy"><label for="Frenzy">격분</label><br>
+			<input type="checkbox" id="Passion"><label for="Passion">격정</label>
+			<input type="checkbox" id="EnNyance"><label for="EnNyance">고냥</label>
+			<input type="checkbox" id="Enhance"><label for="Enhance">고양</label>
+			<input type="checkbox" id="Dynamite"><label for="Dynamite">다이너마이트</label>
+			<input type="checkbox" id="Blind"><label for="Blind">맹폭</label>
+			<input type="checkbox" id="Immune"><label for="Immune">면역</label>
+			<input type="checkbox" id="Enrage"><label for="Enrage">분노</label>
+			<input type="checkbox" id="Smash"><label for="Smash">분쇄</label>
+			<input type="checkbox" id="Swipe"><label for="Swipe">속공</label><br>
+			<input type="checkbox" id="CounterATK"><label for="CounterATK">역공</label>
+			<input type="checkbox" id="Regress"><label for="Regress">역행</label>
+			<input type="checkbox" id="Gunship"><label for="Gunship">죽음의 천사</label>
+			<input type="checkbox" id="Wrath"><label for="Wrath">진노</label>
+			<input type="checkbox" id="Cancel"><label for="Cancel">차단</label>
+			<input type="checkbox" id="Lucifer"><label for="Lucifer">타락한 여명</label><br>
+			<input type="checkbox" id="Bombard"><label for="Bombard">폭격</label>
+			<input type="checkbox" id="Baltar"><label for="Baltar">폭쇄천력: <font face="맑은 고딕">破</font></label>
+			<input type="checkbox" id="Lucky"><label for="Lucky">행운</label>
+			<input type="checkbox" id="Drain"><label for="Drain">흡혈</label><br>
+			<input type="button" id="submit" value="반영" onclick="maker()">
+		</div>
 		<div class="kodex" id="index">
 			<div class="kodex_rarity">
 				등급
@@ -133,12 +150,13 @@ function menu_skill_click(argument) {
 				일러스트
 			</div>
 		</div>
-		<div class="kodex" id="17005">
+		<section id="kodex_list"><!-- 
+		<div class="kodex" id="index">
 			<div class="kodex_rarity">
 				SSR
 			</div>
 			<div class="kodex_name">
-				무인도의 메피스토텔레스
+				무인도의 메피스토펠레스
 			</div>
 			<div class="kodex_skill">
 				발뭉: 불사신의 검
@@ -155,7 +173,19 @@ function menu_skill_click(argument) {
 			<div class="kodex_illustrator">
 				아이작 헤인 3세&DUTO
 			</div>
-		</div>
+		</div> -->
+			<script type="text/javascript">
+			for (var i = 0; i < key_list.length; i++) {
+				dex = eval("Jdex['" + key_list[i] + "']");
+				var id_list = document.getElementById("kodex_list");
+				var element = document.createElement("div");
+				element.setAttribute("class", "kodex");
+				element.setAttribute("id", dex.id);
+				element.innerHTML = '<div class="kodex_rarity">'+dex.rarity+'</div><div class="kodex_name">'+dex.name+'</div><div class="kodex_skill">'+dex.skill+'</div><div class="kodex_ATK_0">'+dex.ATK[0]+'</div><div class="kodex_HP_0">'+dex.HP[0]+'</div><div class="kodex_faction">'+dex.faction+'</div><div class="kodex_illustrator">'+dex.illustrator+'</div>';
+				id_list.appendChild(element);
+			}
+			</script>
+		</section>
 	</article>
 </body>
 </html>
