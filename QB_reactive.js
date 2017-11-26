@@ -19,12 +19,6 @@ function getJson(url) {
 
 Jdex = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/qurare.json"))
 
-if (location.href.indexOf('?')) {
-	var tempp = location.href.split('?');
-	tempp = eval(tempp[1].split('='));
-	search(decodeURI(tempp[1]));
-}
-
 skill_flag = 0
 function menu_skill_click(argument) {
 	if (!skill_flag) {
@@ -156,4 +150,10 @@ function showExmpl(argument) {
 	}
 
 
+}
+
+if (location.href.indexOf('?')) {
+	var tempp = location.href.split('?');
+	tempp = eval(tempp[1].split('='));
+	search(decodeURI(tempp[1]));
 }
