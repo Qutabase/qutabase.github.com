@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>QUTABASE - HP</title>
+	<!-- <script type="text/javascript" src="../QB_reactive.js"></script> -->
+	<script type="text/javascript" src="hp.js"></script>
+	<link rel="stylesheet" type="text/css" href="../side.css">
+	<link rel="stylesheet" type="text/css" href="../nanum.css">
+	<link rel="stylesheet" type="text/css" href="../univ.css">
+	<style type="text/css">
+	div {
+		padding: 10px 0px; margin: 0px;
+	}
+	#kodex_list {
+		width: 804px;
+		overflow-y: auto;
+		max-height: 520px;
+	}
+	#html_role {
+		width: 100%; max-width: 812px;
+		background: blue; color: white;
+	}
+	#skill_checker {
+		width: 100%; padding: 10px 0px;
+		line-height: 30px;
+		display: inline-block;
+		background: #FFEB3B;
+		text-align: left;
+	}
+	#confirm {
+		width: 100%;
+		padding: 0px; margin: 0px;
+		text-align: right;
+	}
+	#submit {
+		width: 50px; height: 30px;
+		margin-right: 10px;
+	}
+	#index {
+		width: 804px;
+	}
+	.selecter {
+		background: transparent;
+		margin: 0px 5px;
+		display: inline-block;
+	}
+	.kodex {
+		width: 100%;
+		margin: 5px 0px;
+		padding: 0px;
+		font-size: 20px;
+	}
+	.kodex_rarity {
+		width: 7%;
+	}
+	.kodex_name {
+		width: 26%;
+	}
+	.kodex_skill {
+		width: 18%;
+	}
+	.kodex_ATK_0 {
+		width: 7%;
+	}
+	.kodex_HP_0 {
+		width: 7%;
+	}
+	.kodex_faction {
+		width: 10%;
+	}
+	.kodex_illustrator {
+		width: 25%;
+	}
+	</style>
+	<script type="text/javascript">
+skill_flag = 0
+function menu_skill_click(argument) {
+	if (!skill_flag) {
+		document.getElementById('list_skill').setAttribute('style', 'display: block;');
+		skill_flag = 1
+	}
+	else{
+		document.getElementById('list_skill').setAttribute('style', 'display: none;');
+		skill_flag = 0
+	}
+}
+	</script>
+</head>
+<body>
+	<nav id="menu">
+		<ul id="menu_list"><a href="../index.html"><img src="../logo.svg"></a>
+			<li id="menu_skill" onclick="menu_skill_click()">
+				스킬
+				<ul id="list_skill" style="display: none;">
+					<a href="atk.html"><li>공격</li></a>
+					<a href="hp.html"><li>방어</li></a>
+					<a href="spr.html"><li>회복</li></a>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	<header id="kodex_form"><br>
+		<a href=""><img id="logo" src="../logoW.svg"></a><br>
+		<input type="text" id="kodex_srch" onkeyup="check(1)" placeholder="마도서 이름을 입력하세요!"><br>
+		<ul id="kodex_exmpl" style="display: none;">
+		</ul>
+	</header>
+	<article>
+		<div id="html_role">
+			방어 마도서
+		</div>
+		<div id="skill_checker">
+			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter" id="confirm"><input type="button" id="submit" value="반영" onclick="maker()"></div>
+		</div>
+		<div class="kodex" id="index">
+			<div class="kodex_rarity">
+				등급
+			</div>
+			<div class="kodex_name">
+				마도서명
+			</div>
+			<div class="kodex_skill">
+				스킬
+			</div>
+			<div class="kodex_ATK_0">
+				공격력
+			</div>
+			<div class="kodex_HP_0">
+				체력
+			</div>
+			<div class="kodex_faction">
+				장르
+			</div>
+			<div class="kodex_illustrator">
+				일러스트
+			</div>
+		</div>
+		<section id="kodex_list"><!-- 
+		<div class="kodex" id="index">
+			<div class="kodex_rarity">
+				SSR
+			</div>
+			<div class="kodex_name">
+				무인도의 메피스토펠레스
+			</div>
+			<div class="kodex_skill">
+				발뭉: 불사신의 검
+			</div>
+			<div class="kodex_ATK_0">
+				0000
+			</div>
+			<div class="kodex_HP_0">
+				0000
+			</div>
+			<div class="kodex_faction">
+				오리엔탈
+			</div>
+			<div class="kodex_illustrator">
+				아이작 헤인 3세&DUTO
+			</div>
+		</div> -->
+			<script type="text/javascript">
+			for (var i = 0; i < key_list.length; i++) {
+				dex = eval("Jdex['" + key_list[i] + "']");
+				var id_list = document.getElementById("kodex_list");
+				var element = document.createElement("div");
+				element.setAttribute("class", "kodex");
+				element.setAttribute("id", dex.id);
+				element.innerHTML = '<a href="../index.html?kodexName='+dex.name+'"><div class="kodex_rarity">'+dex.rarity+'</div><div class="kodex_name">'+dex.name+'</div><div class="kodex_skill">'+dex.skill+'</div><div class="kodex_ATK_0">'+dex.ATK[0]+'</div><div class="kodex_HP_0">'+dex.HP[0]+'</div><div class="kodex_faction">'+dex.faction+'</div><div class="kodex_illustrator">'+dex.illustrator+'</div></a>';
+				id_list.appendChild(element);
+			}
+			</script>
+		</section>
+	</article>
+</body>
+</html>
