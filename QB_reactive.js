@@ -55,14 +55,12 @@ function check(argument) {
 		return;
 
 	}
-	else if (kodex_srch.value != '' && srch_len != inp.value.length) {
+	else if (kodex_srch.value != '') {
 		showExmpl(kodex_srch.value);
 	}
 	else if (kodex_srch.value == '' && window.event.keyCode == 8) {
 		document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;');		
 	}
-	srch_len = inp.value.length;
-	console.log(srch_len)
 
 }
 
