@@ -1,0 +1,59 @@
+function getJson(url) {
+	var httpReq = new XMLHttpRequest();
+	httpReq.open("GET", url, false);
+	httpReq.send(null);
+	return httpReq.responseText;
+}
+Jdex = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/qurare.json"))
+key_list = Object.keys(Jdex);
+for (var i = 0; i < key_list.length; i++) {
+	if (Jdex[key_list[i]].role != "방어") {
+		delete Jdex[key_list[i]];
+	}
+}
+key_list = Object.keys(Jdex);
+
+function maker(argument) {
+
+	all_flag = true;
+	Sidestep = document.getElementById('Sidestep').checked;
+	Crack = document.getElementById('Crack').checked;
+	Endurance = document.getElementById('Endurance').checked;
+	Melee = document.getElementById('Melee').checked;
+	Solidarity = document.getElementById('Solidarity').checked;
+	Provoke = document.getElementById('Provoke').checked;
+	Charge = document.getElementById('Charge').checked;
+	CounterHP = document.getElementById('CounterHP').checked;
+	Balmung = document.getElementById('Balmung').checked;
+	Protection = document.getElementById('Protection').checked;
+	Indomitable = document.getElementById('Indomitable').checked;
+	Valette = document.getElementById('Valette').checked;
+	Resurrect = document.getElementById('Resurrect').checked;
+	Guard = document.getElementById('Gurad').checked;
+	Suppress = document.getElementById('Suppress').checked;
+	Retaliate = document.getElementById('Retaliate').checked;
+	WA2000 = document.getElementById('WA2000').checked;
+	Support = document.getElementById('Support').checked;
+	Fortitude = document.getElementById('Fortitude').checked;
+	Regenerate = document.getElementById('Regenerate').checked;
+	Fortify = document.getElementById('Fortify').checked;
+	Evade = document.getElementById('Evade').checked;
+	for (var i = 0; i < key_list.length; i++) {
+		var dex = eval("Jdex['" + key_list[i] + "']");
+		if (eval(eval("dex.enskill"))) {
+			document.getElementById(dex.id).setAttribute("style", "display: inline-block");
+			all_flag = false;
+		}
+		else {
+			document.getElementById(dex.id).setAttribute("style", "display: none;");
+		}
+	}
+	if (all_flag) {
+		for (var i = 0; i < key_list.length; i++) {
+			var dex = eval("Jdex['" + key_list[i] + "']");
+			document.getElementById(dex.id).setAttribute("style", "display: inline-block");
+
+		}
+	}
+
+}

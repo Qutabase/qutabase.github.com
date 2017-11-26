@@ -7,70 +7,11 @@
 	<link rel="stylesheet" type="text/css" href="../side.css">
 	<link rel="stylesheet" type="text/css" href="../nanum.css">
 	<link rel="stylesheet" type="text/css" href="../univ.css">
+	<link rel="stylesheet" type="text/css" href="skill.css">
 	<style type="text/css">
-	div {
-		padding: 10px 0px; margin: 0px;
-	}
-	#kodex_list {
-		width: 804px;
-		overflow-y: auto;
-		max-height: 520px;
-	}
-	#html_role {
-		width: 100%; max-width: 812px;
-		background: blue; color: white;
-	}
-	#skill_checker {
-		width: 100%; padding: 10px 0px;
-		line-height: 30px;
-		display: inline-block;
-		background: #FFEB3B;
-		text-align: left;
-	}
-	#confirm {
-		width: 100%;
-		padding: 0px; margin: 0px;
-		text-align: right;
-	}
-	#submit {
-		width: 50px; height: 30px;
-		margin-right: 10px;
-	}
-	#index {
-		width: 804px;
-	}
-	.selecter {
-		background: transparent;
-		margin: 0px 5px;
-		display: inline-block;
-	}
-	.kodex {
-		width: 100%;
-		margin: 5px 0px;
-		padding: 0px;
-		font-size: 20px;
-	}
-	.kodex_rarity {
-		width: 7%;
-	}
-	.kodex_name {
-		width: 26%;
-	}
-	.kodex_skill {
-		width: 18%;
-	}
-	.kodex_ATK_0 {
-		width: 7%;
-	}
-	.kodex_HP_0 {
-		width: 7%;
-	}
-	.kodex_faction {
-		width: 10%;
-	}
-	.kodex_illustrator {
-		width: 25%;
-	}
+		#html_role {
+			background: blue;
+		}
 	</style>
 	<script type="text/javascript">
 skill_flag = 0
@@ -110,32 +51,28 @@ function menu_skill_click(argument) {
 			방어 마도서
 		</div>
 		<div id="skill_checker">
-			<div class="selecter"><input type="checkbox" id=""><label for="">
-			<div class="selecter"><input type="checkbox" id=""><label for="">
-			<div class="selecter"><input type="checkbox" id=""><label for="">
-			<div class="selecter"><input type="checkbox" id=""><label for="">
-			<div class="selecter"><input type="checkbox" id=""><label for="">
-			<div class="selecter"><input type="checkbox" id=""><label for="">
-			<div class="selecter"><input type="checkbox" id=""><label for="">
-			<div class="selecter"><input type="checkbox" id=""><label for="">
-			<div class="selecter"><input type="checkbox" id=""><label for="">
-			<div class="selecter"><input type="checkbox" id=""><label for="">
-			<div class="selecter"><input type="checkbox" id=""><label for="">
-			<div class="selecter"><input type="checkbox" id=""><label for="">
-			<div class="selecter"><input type="checkbox" id=""><label for="">
-			<div class="selecter"><input type="checkbox" id=""><label for="">
-			<div class="selecter"><input type="checkbox" id=""><label for="">
-			<div class="selecter"><input type="checkbox" id=""><label for="">
-			<div class="selecter"><input type="checkbox" id=""><label for="">
-			<div class="selecter"><input type="checkbox" id=""><label for="">
-			<div class="selecter"><input type="checkbox" id=""><label for="">
-			<div class="selecter"><input type="checkbox" id=""><label for="">
-			<div class="selecter"><input type="checkbox" id=""><label for="">
-			<div class="selecter"><input type="checkbox" id=""><label for="">
-			<div class="selecter"><input type="checkbox" id=""><label for="">
-			<div class="selecter"><input type="checkbox" id=""><label for="">
-			<div class="selecter"><input type="checkbox" id=""><label for="">
-			<div class="selecter"><input type="checkbox" id=""><label for="">
+			<div class="selecter"><input type="checkbox" id="Sidestep"><label for="Sidestep">간파</label></div>
+			<div class="selecter"><input type="checkbox" id="Crack"><label for="Crack">골절</label></div>
+			<div class="selecter"><input type="checkbox" id="Endurance"><label for="Endurance">근성</label></div>
+			<div class="selecter"><input type="checkbox" id="Melee"><label for="Melee">난투</label></div>
+			<div class="selecter"><input type="checkbox" id="Solidarity"><label for="Solidarity">단결</label></div>
+			<div class="selecter"><input type="checkbox" id="Provoke"><label for="Provoke">도발</label></div>
+			<div class="selecter"><input type="checkbox" id="Charge"><label for="Charge">돌진</label></div>
+			<div class="selecter"><input type="checkbox" id="CounterHP"><label for="CounterHP">반격</label></div>
+			<div class="selecter"><input type="checkbox" id="Balmung"><label for="Balmung">발뭉: 불사신의 검</label></div>
+			<div class="selecter"><input type="checkbox" id="Protection"><label for="Protection">방어</label></div>
+			<div class="selecter"><input type="checkbox" id="Indomitable"><label for="Indomitable">불굴</label></div>
+			<div class="selecter"><input type="checkbox" id="Valette"><label for="Valette">선봉의 약탈</label></div>
+			<div class="selecter"><input type="checkbox" id="Resurrect"><label for="Resurrect">소생</label></div>
+			<div class="selecter"><input type="checkbox" id="Gurad"><label for="Gurad">수호</label></div>
+			<div class="selecter"><input type="checkbox" id="Suppress"><label for="Suppress">억압</label></div>
+			<div class="selecter"><input type="checkbox" id="Retaliate"><label for="Retaliate">역습</label></div>
+			<div class="selecter"><input type="checkbox" id="WA2000"><label for="WA2000">와장창</label></div>
+			<div class="selecter"><input type="checkbox" id="Support"><label for="Support">응원</label></div>
+			<div class="selecter"><input type="checkbox" id="Fortitude"><label for="Fortitude">인내</label></div>
+			<div class="selecter"><input type="checkbox" id="Regenerate"><label for="Regenerate">재생</label></div>
+			<div class="selecter"><input type="checkbox" id="Fortify"><label for="Fortify">철벽</label></div>
+			<div class="selecter"><input type="checkbox" id="Evade"><label for="Evade">회피</label></div>
 			<div class="selecter" id="confirm"><input type="button" id="submit" value="반영" onclick="maker()"></div>
 		</div>
 		<div class="kodex" id="index">

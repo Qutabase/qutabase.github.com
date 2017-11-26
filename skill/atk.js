@@ -12,8 +12,10 @@ for (var i = 0; i < key_list.length; i++) {
 	}
 }
 key_list = Object.keys(Jdex);
+
 function maker(argument) {
 
+	all_flag = true;
 	AE36 = document.getElementById('AE36').checked;
 	HelloWorld = document.getElementById('HelloWorld').checked;
 	KANGTA = document.getElementById('KANGTA').checked;
@@ -44,9 +46,17 @@ function maker(argument) {
 		var dex = eval("Jdex['" + key_list[i] + "']");
 		if (eval(eval("dex.enskill"))) {
 			document.getElementById(dex.id).setAttribute("style", "display: inline-block");
+			all_flag = false;
 		}
 		else {
 			document.getElementById(dex.id).setAttribute("style", "display: none;");
+		}
+	}
+	if (all_flag) {
+		for (var i = 0; i < key_list.length; i++) {
+			var dex = eval("Jdex['" + key_list[i] + "']");
+			document.getElementById(dex.id).setAttribute("style", "display: inline-block");
+
 		}
 	}
 
