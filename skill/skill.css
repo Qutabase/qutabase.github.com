@@ -4,7 +4,7 @@ div {
 #kodex_list {
 	width: 812px;
 	overflow-y: auto;
-	max-height: 440px;
+	max-height: 540px;
 }
 #html_role {
 	width: 100%; max-width: 812px;
@@ -27,6 +27,9 @@ div {
 	display: inline-block;
 	font-size: 22px;
 }
+.selecter:hover {
+	background: 
+}
 .kodex {
 	width: 100%;
 	margin: 5px 0px;
@@ -34,13 +37,13 @@ div {
 	font-size: 20px;
 }
 .kodex_rarity {
-	width: 7%;
+	width: 6%;
 }
 .kodex_name {
 	width: 26%;
 }
 .kodex_skill {
-	width: 18%;
+	width: 19%;
 }
 .kodex_ATK_0 {
 	width: 7%;
