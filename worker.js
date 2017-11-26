@@ -19,5 +19,5 @@ function exmpl(argument) {
 
 }
 onmessage = function(){
-	alert(onmessage);
+	postMessage(exmpl())
 }
