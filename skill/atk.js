@@ -1,3 +1,9 @@
+function getJson(url) {
+	var httpReq = new XMLHttpRequest();
+	httpReq.open("GET", url, false);
+	httpReq.send(null);
+	return httpReq.responseText;
+}
 Jdex = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/qurare.json"))
 key_list = Object.keys(Jdex);
 for (var i = 0; i < key_list.length; i++) {
@@ -11,6 +17,7 @@ function maker(argument) {
 	AE36 = document.getElementById('AE36').checked;
 	HelloWorld = document.getElementById('HelloWorld').checked;
 	KANGTA = document.getElementById('KANGTA').checked;
+	Extortion = document.getElementById('Extortion').checked;
 	Smite = document.getElementById('Smite').checked;
 	Rage = document.getElementById('Rage').checked;
 	Frenzy = document.getElementById('Frenzy').checked;
@@ -35,7 +42,6 @@ function maker(argument) {
 	Drain = document.getElementById('Drain').checked;
 	for (var i = 0; i < key_list.length; i++) {
 		var dex = eval("Jdex['" + key_list[i] + "']");
-		alert(eval(eval("dex.enskill")));
 		if (eval(eval("dex.enskill"))) {
 			document.getElementById(dex.id).setAttribute("style", "display: inline-block");
 		}
