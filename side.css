@@ -7,7 +7,7 @@ a {
 	position: absolute;
 	top: 0px; left: -360px;
 	width: 400px; height: 100%;
-	background: #ffd400;
+	background: #FFEB3B;
 	padding: 0px;
 	transition: left 0.3s;
 }
@@ -24,7 +24,7 @@ a {
 #menu_list li{
 	list-style: none;
 	cursor: pointer;
-	background: #FFFF93;
+	background: #FFD400;
 }
 
 #list_skill li{
