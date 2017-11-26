@@ -18,4 +18,6 @@ function exmpl(argument) {
 	return ex_list;
 
 }
-postMessage(exmpl());
+onmessage = function(){
+	alert(onmessage);
+}

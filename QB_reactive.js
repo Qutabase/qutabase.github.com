@@ -140,7 +140,7 @@ function showExmpl(argument) {
 	}
 
 	var w = new Worker("worker.js")
-	alert(w.onmessage)
+	w.postMessage(kodex_srch.value)
 	ul = document.getElementById('kodex_exmpl')
 	ul.setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: block;')
 	ul.innerHTML = ''
