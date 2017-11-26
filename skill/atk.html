@@ -2,11 +2,51 @@
 <html>
 <head>
 	<title>QUTABASE - ATK</title>
-	<link rel="stylesheet" type="text/css" href="https://qutabase.github.io/side.css">
-	<link rel="stylesheet" type="text/css" href="https://qutabase.github.io/nanum.css">
+	<script type="text/javascript" src="../QB_reactive.js"></script>
+	<link rel="stylesheet" type="text/css" href="../side.css">
+	<link rel="stylesheet" type="text/css" href="../nanum.css">
+	<link rel="stylesheet" type="text/css" href="../univ.css">
 	<style type="text/css">
-
-
+	div {
+		padding: 10px 0px; margin: 0px;
+	}
+	#html_role {
+		width: 100%; max-width: 812px;
+		background: red; color: white;
+	}
+	#skill_checker {
+		width: 100%;
+		display: inline-block;
+		background: #FFEB3B;
+		text-align: center;
+	}
+	.kodex {
+		width: 100%;
+		margin: 5px 0px;
+		padding: 0px;
+		font-size: 20px;
+	}
+	.kodex_rarity {
+		width: 8%;
+	}
+	.kodex_name {
+		width: 26%;
+	}
+	.kodex_skill {
+		width: 18%;
+	}
+	.kodex_ATK_0 {
+		width: 7%;
+	}
+	.kodex_HP_0 {
+		width: 7%;
+	}
+	.kodex_faction {
+		width: 9%;
+	}
+	.kodex_illustrator {
+		width: 25%;
+	}
 	</style>
 	<script type="text/javascript">
 skill_flag = 0
@@ -35,5 +75,87 @@ function menu_skill_click(argument) {
 			</li>
 		</ul>
 	</nav>
+	<header id="kodex_form"><br>
+		<a href=""><img id="logo" src="../logoW.svg"></a><br>
+		<input type="text" id="kodex_srch" onkeyup="check(1)" placeholder="마도서 이름을 입력하세요!"><br>
+		<ul id="kodex_exmpl" style="display: none;">
+		</ul>
+	</header>
+	<article>
+		<div id="html_role">
+			공격 마도서
+		</div>
+			<form id="skill_checker">
+				<input type="checkbox" id="Extortion">갈취
+				<input type="checkbox" id="Smite">강타
+				<input type="checkbox" id="Rage">격노
+				<input type="checkbox" id="Frenzy">격분
+				<input type="checkbox" id="Passion">격정
+				<input type="checkbox" id="EnNyance">고냥
+				<input type="checkbox" id="Enhance">고양
+				<input type="checkbox" id="Dynamite">다이너마이트<br>
+				<input type="checkbox" id="Blind">맹폭
+				<input type="checkbox" id="Immune">면역
+				<input type="checkbox" id="Enrage">분노
+				<input type="checkbox" id="Smash">분쇄
+				<input type="checkbox" id="Swipe">속공
+				<input type="checkbox" id="CounterATK">역공
+				<input type="checkbox" id="Regress">역행
+				<input type="checkbox" id="Gunship">죽음의 천사<br>
+				<input type="checkbox" id="Wrath">진노
+				<input type="checkbox" id="Cancel">차단
+				<input type="checkbox" id="Lucifer">타락한 여명
+				<input type="checkbox" id="Bombard">폭격
+				<input type="checkbox" id="Baltar">폭쇄천력: <font face="맑은 고딕">破</font>
+				<input type="checkbox" id="Lucky">행운
+				<input type="checkbox" id="Drain">흡혈
+			</form>
+		<div class="kodex" id="index">
+			<div class="kodex_rarity">
+				등급
+			</div>
+			<div class="kodex_name">
+				마도서명
+			</div>
+			<div class="kodex_skill">
+				스킬
+			</div>
+			<div class="kodex_ATK_0">
+				공격력
+			</div>
+			<div class="kodex_HP_0">
+				체력
+			</div>
+			<div class="kodex_faction">
+				장르
+			</div>
+			<div class="kodex_illustrator">
+				일러스트
+			</div>
+		</div>
+		<div class="kodex" id="17005">
+			<div class="kodex_rarity">
+				SSR
+			</div>
+			<div class="kodex_name">
+				무인도의 메피스토텔레스
+			</div>
+			<div class="kodex_skill">
+				발뭉: 불사신의 검
+			</div>
+			<div class="kodex_ATK_0">
+				0000
+			</div>
+			<div class="kodex_HP_0">
+				0000
+			</div>
+			<div class="kodex_faction">
+				오리엔탈
+			</div>
+			<div class="kodex_illustrator">
+				아이작 헤인 3세&DUTO
+			</div>
+		</div>
+	</article>
 </body>
 </html>

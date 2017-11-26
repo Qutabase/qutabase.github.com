@@ -5,9 +5,10 @@ a {
 }
 #menu {
 	position: absolute;
-	top: 0px; left: -360px;
-	width: 400px; height: 100%;
+	top: 0px; left: -280px;
+	width: 320px; height: 100%;
 	background: #FFEB3B;
+	text-align: center;
 	padding: 0px;
 	transition: left 0.3s;
 }
@@ -24,11 +25,13 @@ a {
 #menu_list li{
 	list-style: none;
 	cursor: pointer;
+	padding: 5px;
 	background: #FFE31E;
 }
 
 #list_skill li{
 	list-style: none;
 	cursor: pointer;
+	padding: 5px;
 	background: #FFFF93;
 }
