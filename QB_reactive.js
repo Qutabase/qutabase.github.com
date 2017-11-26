@@ -116,6 +116,13 @@ function search(srch) {
 		}
 
 	}
+	try {
+		document.getElementById('kodex_srch').value = '';
+		document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;')
+	}
+	catch (exception){
+		;
+	}
 
 }
 
@@ -139,11 +146,11 @@ function showExmpl(argument) {
 		ul.setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: block;');
 		ul.innerHTML = '';
 		var i = 1;
-		for (i = 1; i < ex_list[0]; i++) {
+		for (i = 1; i <= ex_list[0]; i++) {
 
 			if (ex_list[i] != undefined) {
 				dex = eval("Jdex['" + ex_list[i] + "']");
-				ul.innerHTML = ul.innerHTML + "<li onclick='search(ex_list["+i+"])'>"+dex.rarity +"	"+ ex_list[i]+"</li>"
+				ul.innerHTML = ul.innerHTML + "<a href='https://qutabase.github.io/index.html?kodexName="+ex_list[i]+"'><li>"+dex.rarity +"	"+ ex_list[i]+"</li></a>"
 			}
 
 		}
