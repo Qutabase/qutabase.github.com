@@ -1,12 +1,21 @@
+function getJson(url) {
+	var httpReq = new XMLHttpRequest();
+	httpReq.open("GET", url, false);
+	httpReq.send(null);
+	return httpReq.responseText;
+}
+
+Jdex = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/qurare.json"))
+
 function exmpl(argument) {
 
 	ex_list = []
 	var j = 0
-	key_list = Object.keys(event.data)
+	key_list = Object.keys(Jdex)
 	for (var i = 0; i < key_list.length /*&& j < 10*/; i++) {
 		
-		dex = eval("event.data['" + key_list[i] + "']");
-		if(dex.name.indexOf(document.getElementById('kodex_srch').value) != -1){
+		dex = eval("Jdex['" + key_list[i] + "']");
+		if(dex.name.indexOf(argument) != -1){
 
 			ex_list.push(dex.name);
 			j+=1;
@@ -18,6 +27,7 @@ function exmpl(argument) {
 	return ex_list;
 
 }
-onmessage = function(){
-	postMessage(exmpl())
+onmessage = function(event){
+	var temp = event.data;
+	postMessage(exmpl(temp))
 }

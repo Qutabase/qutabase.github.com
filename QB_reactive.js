@@ -132,28 +132,38 @@ function showExmpl(argument) {
 	}
 
 	var w = new Worker("worker.js")
-	w.postMessage(Jdex)
-	ul = document.getElementById('kodex_exmpl')
-	ul.setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: block;')
-	ul.innerHTML = ''
-	var i = 0
-	for (i = 0; i < len; i++) {
+	w.postMessage(document.getElementById('kodex_srch').value)
+	w.onmessage = function (event) {
+		ex_list = event.data;
+		ul = document.getElementById('kodex_exmpl');
+		ul.setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: block;');
+		ul.innerHTML = '';
+		var i = 1;
+		for (i = 1; i < ex_list[0]; i++) {
 
-		if (ex_list[i] != undefined) {
-			dex = eval("Jdex['" + ex_list[i] + "']");
-			ul.innerHTML = ul.innerHTML + "<li onclick='search(ex_list["+i+"])'>"+dex.rarity +"	"+ ex_list[i]+"</li>"
+			if (ex_list[i] != undefined) {
+				dex = eval("Jdex['" + ex_list[i] + "']");
+				ul.innerHTML = ul.innerHTML + "<li onclick='search(ex_list["+i+"])'>"+dex.rarity +"	"+ ex_list[i]+"</li>"
+			}
+
 		}
-
+		if (i == 0) {
+			document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;')
+		}
+		w.terminate();
 	}
-	if (i == 0) {
-		document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;')
-	}
-
 
 }
 
-if (location.href.indexOf('?')) {
-	var tempp = location.href.split('?');
-	tempp = eval(tempp[1].split('='));
-	search(decodeURI(tempp[1]));
+function url_parse(argument) {
+	var temp = window.location.search.substring(1);
+	var all_param = temp.split('&');
+	for (var i = 0; all_param.length; i++) {
+		var key = all_param[i].split('=');
+		if (key[0] == argument) {
+			return key[1];
+		}
+	}
 }
+
+search(decodeURI(url_parse("kodexName")));
