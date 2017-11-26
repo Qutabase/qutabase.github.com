@@ -9,3 +9,7 @@
 	font-family: 'NanumSquareB';
 	src: url(fonts/NanumSquareB.ttf) format('truetype');
 }
+
+body {
+	font-family: "NanumSquareB", "나눔스퀘어", "맑은 고딕";	
+}
