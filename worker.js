@@ -18,4 +18,4 @@ function exmpl(argument) {
 	return ex_list;
 
 }
-exmpl();
+postMessage(exmpl());
