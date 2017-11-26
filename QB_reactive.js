@@ -75,7 +75,7 @@ function search(srch) {
 		'회복':'spr'
 	}
 	dex = eval("Jdex['" + srch + "']");
-	console.log(dex);
+	
 	if (dex != undefined) {
 
 		if (srch.indexOf('® ') != -1) {
