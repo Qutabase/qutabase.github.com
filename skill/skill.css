@@ -27,33 +27,40 @@ div {
 	display: inline-block;
 	font-size: 22px;
 }
-.selecter:hover {
-	background: 
-}
 .kodex {
 	width: 100%;
 	margin: 5px 0px;
 	padding: 0px;
 	font-size: 20px;
 }
+.kodex:hover {
+	background: #FFFA7A;
+}
 .kodex_rarity {
 	width: 6%;
+	background: transparent;
 }
 .kodex_name {
 	width: 26%;
+	background: transparent;
 }
 .kodex_skill {
 	width: 19%;
+	background: transparent;
 }
 .kodex_ATK_0 {
 	width: 7%;
+	background: transparent;
 }
 .kodex_HP_0 {
 	width: 7%;
+	background: transparent;
 }
 .kodex_faction {
 	width: 10%;
+	background: transparent;
 }
 .kodex_illustrator {
 	width: 25%;
+	background: transparent;
 }
