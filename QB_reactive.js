@@ -42,9 +42,10 @@ function check(argument) {
 	inp = document.getElementById('kodex_srch');
 	if (window.event.keyCode == 13) {
 
-		search(kodex_srch.value);
-		document.getElementById('kodex_srch').value = '';
-		document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;')
+		location.search = "?kodexName="+kodex_srch.value;
+		// search(kodex_srch.value);
+		// document.getElementById('kodex_srch').value = '';
+		// document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;')
 
 		return;
 
@@ -75,7 +76,7 @@ function search(srch) {
 		'회복':'spr'
 	}
 	dex = eval("Jdex['" + srch + "']");
-	
+
 	if (dex != undefined) {
 
 		if (srch.indexOf('® ') != -1) {
