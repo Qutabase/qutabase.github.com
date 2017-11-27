@@ -1,6 +1,14 @@
 div {
 	padding: 10px 0px; margin: 0px;
 }
+article {
+	background: #FFE631;
+}
+#index {
+	background: #273869; color: white;
+	margin-top: 0px;
+	padding: 5px 0px; padding-right: 8px;
+}
 #kodex_list {
 	width: 812px;
 	overflow-y: auto;
@@ -32,9 +40,13 @@ div {
 	margin: 5px 0px;
 	padding: 0px;
 	font-size: 20px;
-}
-.kodex:hover {
 	background: #FFFA7A;
+}
+.kodex:hover{
+	background: #E62E2E;
+}
+.kodex:hover a{
+	color: white; !important
 }
 .kodex_rarity {
 	width: 6%;
