@@ -4,14 +4,14 @@ function getJson(url) {
 	httpReq.send(null);
 	return httpReq.responseText;
 }
-Jdex = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/qurare.json"))
-key_list = Object.keys(Jdex);
+roleDex = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/qurare.json"))
+key_list = Object.keys(roleDex);
 for (var i = 0; i < key_list.length; i++) {
-	if (Jdex[key_list[i]].role != "공격") {
-		delete Jdex[key_list[i]];
+	if (roleDex[key_list[i]].role != "공격") {
+		delete roleDex[key_list[i]];
 	}
 }
-key_list = Object.keys(Jdex);
+key_list = Object.keys(roleDex);
 
 function maker(argument) {
 
@@ -43,7 +43,7 @@ function maker(argument) {
 	Lucky = document.getElementById('Lucky').checked;
 	Drain = document.getElementById('Drain').checked;
 	for (var i = 0; i < key_list.length; i++) {
-		var dex = eval("Jdex['" + key_list[i] + "']");
+		var dex = eval("roleDex['" + key_list[i] + "']");
 		if (eval(eval("dex.enskill"))) {
 			document.getElementById(dex.id).setAttribute("style", "display: inline-block");
 			all_flag = false;
@@ -54,7 +54,7 @@ function maker(argument) {
 	}
 	if (all_flag) {
 		for (var i = 0; i < key_list.length; i++) {
-			var dex = eval("Jdex['" + key_list[i] + "']");
+			var dex = eval("roleDex['" + key_list[i] + "']");
 			document.getElementById(dex.id).setAttribute("style", "display: inline-block");
 
 		}
