@@ -17,6 +17,7 @@ function maker(argument) {
 
 	all_flag = true;
 	Mercury = document.getElementById('Mercury').checked;
+	Wolf = document.getElementById('Wolf').checked;
 	Encourage = document.getElementById('Encourage').checked;
 	Prayer = document.getElementById('Prayer').checked;
 	Hopeginger = document.getElementById('Hopeginger').checked;
