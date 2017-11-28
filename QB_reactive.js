@@ -37,7 +37,7 @@ function menu_skill_click(argument) {
 	}
 }
 
-//eng = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/enskill.json"))
+eng = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/enskill.json"))
 
 function kinput(value) {
 	document.getElementById('kodex_'+value).innerHTML = eval('dex.'+value);
@@ -108,6 +108,7 @@ function search(srch) {
 		document.getElementById('kodex_rarity_m').setAttribute('style', 'color: '+dex.rarefont+'; background: '+dex.rareColor+';');
 		document.getElementById('kodex_name_m').setAttribute('style', 'color: '+dex.rarefont+'; background: '+dex.rareColor+';');
 		document.getElementById('kodex_skill').setAttribute('style', 'background: '+dex.roleColor+';');
+		document.getElementById('kodex_skill').setAttribute('onclick', 'location.href="skill/'+role[dex.role]+'.html?skillName='+dex.skill+'"');
 		kinput('skill');
 		kinput('role');
 		kinput('skilltype');
@@ -179,5 +180,3 @@ function url_parse(argument) {
 		}
 	}
 }
-
-search(decodeURI(url_parse("kodexName")));

@@ -70,6 +70,7 @@
 			line-height: 81px;
 			font-size: 34px;
 			color: white;
+			cursor: pointer;
 		}
 		#kodex_desc {
 			width: calc(67% - 6px); height: 90px;
@@ -186,7 +187,7 @@
 				COST<br><span id="kodex_cost_m">26</span>
 			</div>
 		</div>
-		<div id="kodex_skill" style="background: red;">
+		<div id="kodex_skill" style="background: red;" onclick="location.href='skill/atk.html?skillName=강타'">
 			강타 VI
 		</div>
 		<div id="kodex_desc">
@@ -376,14 +377,16 @@
 <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
 <script>
   // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCyv6-jayxjv7P0vQwaFC2I6azQVbGrWD0",
-    authDomain: "qutabase.firebaseapp.com",
-    databaseURL: "https://qutabase.firebaseio.com",
-    projectId: "qutabase",
-    storageBucket: "qutabase.appspot.com",
-    messagingSenderId: "478971076528"
-  };
-  firebase.initializeApp(config);
+var config = {
+	apiKey: "AIzaSyCyv6-jayxjv7P0vQwaFC2I6azQVbGrWD0",
+	authDomain: "qutabase.firebaseapp.com",
+	databaseURL: "https://qutabase.firebaseio.com",
+	projectId: "qutabase",
+	storageBucket: "qutabase.appspot.com",
+	messagingSenderId: "478971076528"
+};
+firebase.initializeApp(config);
+
+search(decodeURI(url_parse("kodexName")));
 </script>
 </html>

@@ -127,23 +127,28 @@ function menu_skill_click(argument) {
 				아이작 헤인 3세&DUTO
 			</div>
 		</div> -->
-			<script type="text/javascript">
-			for (var i = 0; i < key_list.length; i++) {
-				dex = eval("roleDex['" + key_list[i] + "']");
-				var id_list = document.getElementById("kodex_list");
-				var element = document.createElement("div");
-				var reprint = ''
-				element.setAttribute("class", "kodex");
-				element.setAttribute("id", dex.id);
-				if (key_list[i].indexOf('®') != -1) {
-					reprint = ' style="padding-top: 5px;"'
-				}
-				element.innerHTML = '<a href="../index.html?kodexName='+dex.name+'"><div class="kodex_rarity">'+dex.rarity+'</div><div class="kodex_name"'+reprint+'>'+dex.name+'</div><div class="kodex_skill">'+dex.skill+'</div><div class="kodex_ATK_0">'+dex.ATK[0]+'</div><div class="kodex_HP_0">'+dex.HP[0]+'</div><div class="kodex_faction">'+dex.faction+'</div><div class="kodex_illustrator">'+dex.illustrator+'</div></a>';
-				id_list.appendChild(element);
-			}
-			</script>
 		</section>
 	</article>
 </body>
 <script type="text/javascript" src="../QB_reactive.js"></script>
+<script type="text/javascript">
+for (var i = 0; i < key_list.length; i++) {
+	dex = eval("roleDex['" + key_list[i] + "']");
+	var id_list = document.getElementById("kodex_list");
+	var element = document.createElement("div");
+	var reprint = ''
+	element.setAttribute("class", "kodex");
+	element.setAttribute("id", dex.id);
+	if (key_list[i].indexOf('®') != -1) {
+		reprint = ' style="padding-top: 5px;"'
+	}
+	element.innerHTML = '<a href="../index.html?kodexName='+dex.name+'"><div class="kodex_rarity">'+dex.rarity+'</div><div class="kodex_name"'+reprint+'>'+dex.name+'</div><div class="kodex_skill">'+dex.skill+'</div><div class="kodex_ATK_0">'+dex.ATK[0]+'</div><div class="kodex_HP_0">'+dex.HP[0]+'</div><div class="kodex_faction">'+dex.faction+'</div><div class="kodex_illustrator">'+dex.illustrator+'</div></a>';
+	id_list.appendChild(element);
+}
+skillname = decodeURI(url_parse("skillName"))
+if (skillname != undefined) {
+	document.getElementById(eng.skill[skillname]).setAttribute('checked', '')
+	maker()
+}
+</script>
 </html>
