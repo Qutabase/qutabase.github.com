@@ -10,6 +10,13 @@ if( navigator.userAgent.indexOf('Firefox') >= 0 ) {
 	}
 }
 
+var hour = new Date()
+hour = hour.getHours()
+if (6 <= hour && hour < 18) {
+	document.getElementsByTagName('body').setAttribute('style', 'background: url("bgW.png")')
+	document.getElementsById('logo').setAttribute('src', 'logo.svg')	
+}
+
 function getJson(url) {
 	var httpReq = new XMLHttpRequest();
 	httpReq.open("GET", url, false);
