@@ -11,7 +11,7 @@ article {
 	padding: 5px 0px; padding-right: 8px;
 }
 #kodex_list {
-	width: 812px;
+	width: 100%; max-width: 812px;
 	overflow-y: auto;
 	max-height: 540px;
 }
@@ -27,7 +27,8 @@ article {
 	background: #FFEB3B;
 }
 #index {
-	width: 804px;
+	width: 100%;
+	max-width: 804px;
 }
 .selecter {
 	background: transparent;
