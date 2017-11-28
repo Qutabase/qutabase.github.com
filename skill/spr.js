@@ -49,7 +49,6 @@ function maker(argument) {
 		else {
 			document.getElementById(dex.id).setAttribute("style", "display: none;");
 		}
-		console.log(dex.name)
 	}
 	if (all_flag) {
 		for (var i = 0; i < key_list.length; i++) {

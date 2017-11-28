@@ -52,6 +52,7 @@ input[type="checkbox"] {
 	padding: 0px;
 	font-size: 20px;
 	background: #FFE631;
+	overflow-x: visible;
 }
 .kodex:hover a{
 	color: white; !important
