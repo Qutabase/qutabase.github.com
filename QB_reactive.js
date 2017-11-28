@@ -1,7 +1,5 @@
 if( navigator.userAgent.indexOf('Firefox') >= 0 ) {
-	var eventNames = ["mousedown", "mouseover", "mouseout", 
-	                            "mousemove", "mousedrag", "click", "dblclick",
-	                            "keydown", "keypress", "keyup" ]; 
+	var eventNames = ["mousedown", "mouseover", "mouseout", "mousemove", "mousedrag", "click", "dblclick", "keydown", "keypress", "keyup" ]; 
 		
 	for( var i = 0 ; i < eventNames.length; i++ ) {
 		window.addEventListener( eventNames[i], function(e) {
