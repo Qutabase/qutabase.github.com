@@ -1,8 +1,9 @@
 
 a {
-	color: black;
+	color: #273869;
 	text-decoration: none;
 }
+
 #menu {
 	position: fixed;
 	top: 0px; left: -280px;

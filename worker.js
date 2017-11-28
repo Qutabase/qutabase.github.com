@@ -12,7 +12,7 @@ function exmpl(argument) {
 	ex_list = []
 	var j = 0
 	key_list = Object.keys(Jdex)
-	for (var i = 0; i < key_list.length /*&& j < 10*/; i++) {
+	for (var i = 0; i < key_list.length; i++) {
 		
 		dex = eval("Jdex['" + key_list[i] + "']");
 		if(dex.name.indexOf(argument) != -1){

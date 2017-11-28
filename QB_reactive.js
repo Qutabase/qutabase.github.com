@@ -12,8 +12,9 @@ var hour = new Date()
 hour = hour.getHours()
 if (6 <= hour && hour < 18) {
 	document.getElementsByTagName('body')[0].setAttribute('style', 'background: url("https://qutabase.github.io/bgW.png");')
-	document.getElementById('logo').setAttribute('src', 'https://qutabase.github.io/logo.svg')
 	document.getElementById('kodex_form').setAttribute("style", 'background: none;')
+	document.getElementById('logo').setAttribute('src', 'https://qutabase.github.io/logo.svg')
+	document.getElementsByTagName('footer')[0].setAttribute('style', 'color: #273869;')
 }
 
 function getJson(url) {
@@ -24,6 +25,7 @@ function getJson(url) {
 }
 
 Jdex = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/qurare.json"))
+eng = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/enskill.json"))
 
 skill_flag = 0
 function menu_skill_click(argument) {
@@ -37,12 +39,10 @@ function menu_skill_click(argument) {
 	}
 }
 
-eng = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/enskill.json"))
-
 function kinput(value) {
 	document.getElementById('kodex_'+value).innerHTML = eval('dex.'+value);
 }
-srch_len = 0;
+
 function check(argument) {
 
 	inp = document.getElementById('kodex_srch');
