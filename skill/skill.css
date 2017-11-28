@@ -3,7 +3,7 @@ div {
 	margin: 0px;
 }
 article {
-	background: #FFE631;
+	background: #FFFA7A;
 }
 #index {
 	background: #273869; color: white;
@@ -24,7 +24,7 @@ article {
 	width: 100%; padding: 10px 0px;
 	line-height: 30px;
 	display: inline-block;
-	background: #FFEB3B;
+	background: #FFFA7A;
 }
 #index {
 	width: 100%;
@@ -41,7 +41,7 @@ label {
 	padding: 5px 10px;
 }
 label:hover {
-	background: #FFFF93;
+	background: #FFD400;
 }
 input[type="checkbox"] {
 	display: none;
@@ -51,7 +51,7 @@ input[type="checkbox"] {
 	margin: 5px 0px;
 	padding: 0px;
 	font-size: 20px;
-	background: #FFFA7A;
+	background: #FFE631;
 }
 .kodex:hover a{
 	color: white; !important
