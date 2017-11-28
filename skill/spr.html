@@ -143,5 +143,10 @@ for (var i = 0; i < key_list.length; i++) {
 	element.innerHTML = '<a href="../index.html?kodexName='+dex.name+'"><div class="kodex_rarity">'+dex.rarity+'</div><div class="kodex_name"'+reprint+'>'+dex.name+'</div><div class="kodex_skill">'+dex.skill+'</div><div class="kodex_ATK_0">'+dex.ATK[0]+'</div><div class="kodex_HP_0">'+dex.HP[0]+'</div><div class="kodex_faction">'+dex.faction+'</div><div class="kodex_illustrator">'+dex.illustrator+'</div></a>';
 	id_list.appendChild(element);
 }
+skillname = decodeURI(url_parse("skillName"))
+if (skillname != undefined) {
+	document.getElementById(eng.skill[skillname]).setAttribute('checked', '')
+	maker()
+}
 </script>
 </html>

@@ -48,7 +48,8 @@ function check(argument) {
 	inp = document.getElementById('kodex_srch');
 	if (window.event.keyCode == 13) {
 
-		location.search = "?kodexName="+kodex_srch.value;
+
+		location.href = "https://qutabase.github.io/?kodexName="+kodex_srch.value;
 		// search(kodex_srch.value);
 		// document.getElementById('kodex_srch').value = '';
 		// document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;')
@@ -108,7 +109,7 @@ function search(srch) {
 		document.getElementById('kodex_rarity_m').setAttribute('style', 'color: '+dex.rarefont+'; background: '+dex.rareColor+';');
 		document.getElementById('kodex_name_m').setAttribute('style', 'color: '+dex.rarefont+'; background: '+dex.rareColor+';');
 		document.getElementById('kodex_skill').setAttribute('style', 'background: '+dex.roleColor+';');
-		document.getElementById('kodex_skill').setAttribute('onclick', 'location.href="skill/'+role[dex.role]+'.html?skillName='+dex.skill+'"');
+		document.getElementById('kodex_skill').setAttribute('onclick', 'location.href="skill/'+role[dex.role]+'.html?skillName='+dex.skill.substring(0, 2)+'"');
 		kinput('skill');
 		kinput('role');
 		kinput('skilltype');
