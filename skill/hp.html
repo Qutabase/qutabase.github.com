@@ -2,7 +2,6 @@
 <html>
 <head>
 	<title>QUTABASE - HP</title>
-	<script type="text/javascript" src="../QB_reactive.js"></script>
 	<script type="text/javascript" src="hp.js"></script>
 	<link rel="stylesheet" type="text/css" href="../side.css">
 	<link rel="stylesheet" type="text/css" href="../nanum.css">
@@ -126,7 +125,7 @@ function menu_skill_click(argument) {
 		</div> -->
 			<script type="text/javascript">
 			for (var i = 0; i < key_list.length; i++) {
-				dex = eval("Jdex['" + key_list[i] + "']");
+				dex = eval("roleDex['" + key_list[i] + "']");
 				var id_list = document.getElementById("kodex_list");
 				var element = document.createElement("div");
 				var reprint = ''
@@ -142,4 +141,5 @@ function menu_skill_click(argument) {
 		</section>
 	</article>
 </body>
+<script type="text/javascript" src="../QB_reactive.js"></script>
 </html>
