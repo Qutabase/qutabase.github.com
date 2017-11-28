@@ -27,6 +27,14 @@ function menu_skill_click(argument) {
 		skill_flag = 0
 	}
 }
+function checking(argument) {
+	if (argument.checked == true) {
+		argument.nextSibling.setAttribute('style', 'background: #273869; color: white;')
+	}
+	else {
+		argument.nextSibling.setAttribute('style', '')
+	}
+}
 	</script>
 </head>
 <body>
@@ -53,28 +61,28 @@ function menu_skill_click(argument) {
 			방어 마도서
 		</div>
 		<div id="skill_checker">
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Sidestep"><label for="Sidestep">간파</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Crack"><label for="Crack">골절</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Endurance"><label for="Endurance">근성</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Melee"><label for="Melee">난투</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Solidarity"><label for="Solidarity">단결</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Provoke"><label for="Provoke">도발</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Charge"><label for="Charge">돌진</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="CounterHP"><label for="CounterHP">반격</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Balmung"><label for="Balmung">발뭉: 불사신의 검</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Protection"><label for="Protection">방어</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Indomitable"><label for="Indomitable">불굴</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Valette"><label for="Valette">선봉의 약탈</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Resurrect"><label for="Resurrect">소생</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Gurad"><label for="Gurad">수호</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Suppress"><label for="Suppress">억압</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Retaliate"><label for="Retaliate">역습</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="WA2000"><label for="WA2000">와장창</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Support"><label for="Support">응원</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Fortitude"><label for="Fortitude">인내</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Regenerate"><label for="Regenerate">재생</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Fortify"><label for="Fortify">철벽</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Evade"><label for="Evade">회피</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Sidestep"><label for="Sidestep">간파</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Crack"><label for="Crack">골절</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Endurance"><label for="Endurance">근성</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Melee"><label for="Melee">난투</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Solidarity"><label for="Solidarity">단결</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Provoke"><label for="Provoke">도발</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Charge"><label for="Charge">돌진</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="CounterHP"><label for="CounterHP">반격</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Balmung"><label for="Balmung">발뭉: 불사신의 검</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Protection"><label for="Protection">방어</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Indomitable"><label for="Indomitable">불굴</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Valette"><label for="Valette">선봉의 약탈</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Resurrect"><label for="Resurrect">소생</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Gurad"><label for="Gurad">수호</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Suppress"><label for="Suppress">억압</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Retaliate"><label for="Retaliate">역습</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="WA2000"><label for="WA2000">와장창</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Support"><label for="Support">응원</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Fortitude"><label for="Fortitude">인내</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Regenerate"><label for="Regenerate">재생</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Fortify"><label for="Fortify">철벽</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Evade"><label for="Evade">회피</label></div>
 		</div>
 		<div class="kodex" id="index">
 			<div class="kodex_rarity">
@@ -144,6 +152,7 @@ for (var i = 0; i < key_list.length; i++) {
 skillname = decodeURI(url_parse("skillName"))
 if (skillname != undefined) {
 	document.getElementById(eng.skill[skillname]).setAttribute('checked', '')
+	document.getElementById(eng.skill[skillname]).nextSibling.setAttribute('style', 'background: #273869; color: white;')
 	maker()
 }
 </script>

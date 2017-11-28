@@ -27,6 +27,14 @@ function menu_skill_click(argument) {
 		skill_flag = 0
 	}
 }
+function checking(argument) {
+	if (argument.checked == true) {
+		argument.nextSibling.setAttribute('style', 'background: #273869; color: white;')
+	}
+	else {
+		argument.nextSibling.setAttribute('style', '')
+	}
+}
 	</script>
 </head>
 <body>
@@ -53,32 +61,32 @@ function menu_skill_click(argument) {
 			공격 마도서
 		</div>
 		<div id="skill_checker">
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="AE36"><label for="AE36">AE36 붕괴</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="HelloWorld"><label for="HelloWorld">Hello, world!</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="KANGTA"><label for="KANGTA">KANG - TA!</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Extortion"><label for="Extortion">갈취</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Smite"><label for="Smite">강타</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Rage"><label for="Rage">격노</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Frenzy"><label for="Frenzy">격분</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Passion"><label for="Passion">격정</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="EnNyance"><label for="EnNyance">고냥</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Enhance"><label for="Enhance">고양</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Dynamite"><label for="Dynamite">다이너마이트</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Blind"><label for="Blind">맹폭</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Immune"><label for="Immune">면역</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Enrage"><label for="Enrage">분노</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Smash"><label for="Smash">분쇄</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Swipe"><label for="Swipe">속공</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="CounterATK"><label for="CounterATK">역공</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Regress"><label for="Regress">역행</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Gunship"><label for="Gunship">죽음의 천사</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Wrath"><label for="Wrath">진노</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Cancel"><label for="Cancel">차단</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Lucifer"><label for="Lucifer">타락한 여명</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Bombard"><label for="Bombard">폭격</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Baltar"><label for="Baltar">폭쇄천력: <font face="맑은 고딕">破</font></label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Lucky"><label for="Lucky">행운</label></div>
-			<div class="selecter"><input type="checkbox"  onclick="maker()" id="Drain"><label for="Drain">흡혈</label></div>
+			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="AE36"><label for="AE36">AE36 붕괴</label></div>
+			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="HelloWorld"><label for="HelloWorld">Hello, world!</label></div>
+			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="KANGTA"><label for="KANGTA">KANG - TA!</label></div>
+			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="Extortion"><label for="Extortion">갈취</label></div>
+			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="Smite"><label for="Smite">강타</label></div>
+			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="Rage"><label for="Rage">격노</label></div>
+			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="Frenzy"><label for="Frenzy">격분</label></div>
+			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="Passion"><label for="Passion">격정</label></div>
+			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="EnNyance"><label for="EnNyance">고냥</label></div>
+			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="Enhance"><label for="Enhance">고양</label></div>
+			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="Dynamite"><label for="Dynamite">다이너마이트</label></div>
+			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="Blind"><label for="Blind">맹폭</label></div>
+			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="Immune"><label for="Immune">면역</label></div>
+			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="Enrage"><label for="Enrage">분노</label></div>
+			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="Smash"><label for="Smash">분쇄</label></div>
+			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="Swipe"><label for="Swipe">속공</label></div>
+			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="CounterATK"><label for="CounterATK">역공</label></div>
+			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="Regress"><label for="Regress">역행</label></div>
+			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="Gunship"><label for="Gunship">죽음의 천사</label></div>
+			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="Wrath"><label for="Wrath">진노</label></div>
+			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="Cancel"><label for="Cancel">차단</label></div>
+			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="Lucifer"><label for="Lucifer">타락한 여명</label></div>
+			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="Bombard"><label for="Bombard">폭격</label></div>
+			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="Baltar"><label for="Baltar">폭쇄천력: <font face="맑은 고딕">破</font></label></div>
+			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="Lucky"><label for="Lucky">행운</label></div>
+			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="Drain"><label for="Drain">흡혈</label></div>
 		</div>
 		<div class="kodex" id="index">
 			<div class="kodex_rarity">
@@ -148,6 +156,7 @@ for (var i = 0; i < key_list.length; i++) {
 skillname = decodeURI(url_parse("skillName"))
 if (skillname != undefined) {
 	document.getElementById(eng.skill[skillname]).setAttribute('checked', '')
+	document.getElementById(eng.skill[skillname]).nextSibling.setAttribute('style', 'background: #273869; color: white;')
 	maker()
 }
 </script>
