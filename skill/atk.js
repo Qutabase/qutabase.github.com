@@ -35,6 +35,7 @@ function maker(argument) {
 	CounterATK = document.getElementById('CounterATK').checked;
 	Regress = document.getElementById('Regress').checked;
 	Gunship = document.getElementById('Gunship').checked;
+	Warmth = document.getElementById('Warmth').checked;
 	Wrath = document.getElementById('Wrath').checked;
 	Cancel = document.getElementById('Cancel').checked;
 	Lucifer = document.getElementById('Lucifer').checked;
