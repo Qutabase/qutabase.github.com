@@ -96,11 +96,8 @@ function checking(argument) {
 			<div class="kodex_skill">
 				스킬
 			</div>
-			<div class="kodex_ATK_0">
-				공격력
-			</div>
-			<div class="kodex_HP_0">
-				체력
+			<div class="kodex_SPR_0">
+				정신력
 			</div>
 			<div class="kodex_faction">
 				장르
@@ -151,7 +148,7 @@ for (var i = 0; i < key_list.length; i++) {
 	if (key_list[i].indexOf('®') != -1) {
 		reprint = ' style="padding-top: 5px;"'
 	}
-	element.innerHTML = '<a href="../index.html?kodexName='+dex.name.replace("&","%26")+'"><div class="kodex_rarity">'+dex.rarity+'</div><div class="kodex_name"'+reprint+'>'+dex.name+'</div><div class="kodex_skill">'+dex.skill+'</div><div class="kodex_ATK_0">'+dex.ATK[0]+'</div><div class="kodex_HP_0">'+dex.HP[0]+'</div><div class="kodex_faction">'+dex.faction+'</div><div class="kodex_illustrator">'+dex.illustrator+'</div></a>';
+	element.innerHTML = '<a href="../index.html?kodexName='+dex.name.replace("&","%26")+'"><div class="kodex_rarity">'+dex.rarity+'</div><div class="kodex_name"'+reprint+'>'+dex.name+'</div><div class="kodex_skill">'+dex.skill+'</div><div class="kodex_SPR_0">'+eval("Math.round((dex.HP[0] + dex.ATK[0]) / 2)")+'</div><div class="kodex_faction">'+dex.faction+'</div><div class="kodex_illustrator">'+dex.illustrator+'</div></a>';
 	id_list.appendChild(element);
 }
 skillname = decodeURI(url_parse("skillName"))

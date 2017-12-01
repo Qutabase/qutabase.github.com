@@ -30,6 +30,9 @@ a {
 	background: #FFE31E;
 }
 
+#list_skill {
+	transition: display 0.3s;
+}
 #list_skill li{
 	list-style: none;
 	cursor: pointer;
