@@ -70,7 +70,6 @@ function metaMake(index, content) {
 	
 	var headMeta = document.getElementsByTagName('head')[0];
 	var metaAdd = document.createElement("meta");
-	console.log(index.substring(0, 2))
 	if (index.substring(0, 2) == 'og') {
 		metaAdd.setAttribute('property', index)
 	} else {
