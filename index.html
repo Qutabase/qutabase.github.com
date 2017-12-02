@@ -392,15 +392,19 @@ firebase.initializeApp(config);
 kodexname = decodeURIComponent(url_parse("kodexName"))
 search(kodexname);
 
+headMeta = document.getElementsByTagName('head')[0];
 var metaAdd = document.createElement("meta");
 metaAdd.setAttribute("name", "title");
 metaAdd.setAttribute("content", "QUTABASE - " + kodexname);
+headMeta.appendChild(metaAdd);
 var metaAdd = document.createElement("meta");
 metaAdd.setAttribute("name", "og:title");
 metaAdd.setAttribute("content", "QUTABASE - " + kodexname);
+headMeta.appendChild(metaAdd);
 var metaAdd = document.createElement("meta");
 metaAdd.setAttribute("name", "og:description");
 metaAdd.setAttribute("content", "QUTABASE - " + kodexname);
+headMeta.appendChild(metaAdd);
 
 YT_list[YT_list.length] = id_video;
 document.getElementsByTagName('head')[0].appendChild(element);
