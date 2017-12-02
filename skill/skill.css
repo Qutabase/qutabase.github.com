@@ -1,11 +1,12 @@
 body {
-	min-width: 812px;
+	/*min-width: 812px;*/
 }
 div {
 	padding: 10px 0px;
 	margin: 0px;
 }
 article {
+	/*width: 812px;*/
 	background: #FFFA7A;
 }
 #index {
@@ -14,24 +15,25 @@ article {
 	padding: 5px 0px; padding-right: 8px;
 }
 #kodex_list {
-	width: 100%; max-width: 812px;
-	overflow-y: auto;
+	width: 100%;
+	overflow: auto;
 	max-height: 540px;
 }
 #html_role {
-	width: 100%; max-width: 812px;
+	width: 100%;
 	color: white;
 	font-size: 32px;
 }
 #skill_checker {
-	width: 100%; padding: 10px 0px;
+	width: 100%; height: 170px;
+	overflow-y: auto;
+	padding: 10px 0px;
 	line-height: 30px;
 	display: inline-block;
 	background: #FFFA7A;
 }
 #index {
-	width: 100%;
-	max-width: 804px;
+	/*width: 804px;*/
 }
 .selecter {
 	background: transparent;
