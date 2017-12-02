@@ -25,6 +25,11 @@ article {
 	overflow: hidden;
 }
 
+footer {
+	margin-left: 40px;
+	color: white;
+}
+
 ::-webkit-scrollbar {width: 8px; height: 8px; border: 3px solid #fff; }
 ::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:increment {display: block; height: 10px; background: #FFFF93;}
 ::-webkit-scrollbar-track {background: #FFFF93;}
