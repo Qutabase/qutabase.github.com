@@ -392,19 +392,5 @@ firebase.initializeApp(config);
 kodexname = decodeURIComponent(url_parse("kodexName"))
 search(kodexname);
 
-headMeta = document.getElementsByTagName('head')[0];
-var metaAdd = document.createElement("meta");
-metaAdd.name = "title";
-metaAdd.content = "QUTABASE - " + kodexname;
-headMeta.appendChild(metaAdd);
-var metaAdd = document.createElement("meta");
-metaAdd.name = "og:title";
-metaAdd.content = "QUTABASE - " + kodexname;
-headMeta.appendChild(metaAdd);
-var metaAdd = document.createElement("meta");
-metaAdd.name = "og:description";
-metaAdd.content = kodex_skill.innerText + " - " + kodex_ATK_0.innerText + " / " + kodex_HP_0.innerText;
-headMeta.appendChild(metaAdd);
-
 </script>
 </html>
