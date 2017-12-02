@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta charset="utf-8">
+	<meta name="keywords" content="qurare, qutabase, kodex">
 	<title>QUTABASE</title>
 	<link rel="stylesheet" type="text/css" href="side.css">
 	<link rel="stylesheet" type="text/css" href="nanum.css">
@@ -389,7 +389,21 @@ var config = {
 	messagingSenderId: "478971076528"
 };
 firebase.initializeApp(config);
+kodexname = decodeURIComponent(url_parse("kodexName"))
+search(kodexname);
 
-search(decodeURIComponent(url_parse("kodexName")));
+var metaAdd = document.createElement("meta");
+metaAdd.setAttribute("name", "title");
+metaAdd.setAttribute("content", "QUTABASE - " + kodexname);
+var metaAdd = document.createElement("meta");
+metaAdd.setAttribute("name", "og:title");
+metaAdd.setAttribute("content", "QUTABASE - " + kodexname);
+var metaAdd = document.createElement("meta");
+metaAdd.setAttribute("name", "og:description");
+metaAdd.setAttribute("content", "QUTABASE - " + kodexname);
+
+YT_list[YT_list.length] = id_video;
+document.getElementsByTagName('head')[0].appendChild(element);
+
 </script>
 </html>
