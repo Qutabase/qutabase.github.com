@@ -16,7 +16,7 @@ article {
 }
 #kodex_list {
 	width: 100%;
-	overflow: auto;
+	overflow-x: hidden;
 	max-height: 540px;
 }
 #html_role {
@@ -62,6 +62,11 @@ input[type="checkbox"] {
 }
 .kodex:hover a{
 	color: white; !important
+}
+.kodex_thumb {
+	padding: 0px;
+	width: 55px; height: 43px;
+	background: transparent;
 }
 .kodex_rarity {
 	width: 6%;
