@@ -79,23 +79,23 @@ function metaMake(index, content) {
 	headMeta.appendChild(metaAdd);
 
 }
-
+rarity = {
+	'N':'1',
+	'N+':'2',
+	'R':'3',
+	'R+':'4',
+	'SR':'5',
+	'SR+':'6',
+	'SSR':'7',
+	'QR':'8'
+}
+role = {
+	'공격':'atk',
+	'방어':'hp',
+	'회복':'spr'
+}
 function search(srch) {
-	rarity = {
-		'N':'1',
-		'N+':'2',
-		'R':'3',
-		'R+':'4',
-		'SR':'5',
-		'SR+':'6',
-		'SSR':'7',
-		'QR':'8'
-	}
-	role = {
-		'공격':'atk',
-		'방어':'hp',
-		'회복':'spr'
-	}
+	
 	dex = eval("Jdex['" + srch + "']");
 
 	if (dex != undefined) {
