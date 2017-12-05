@@ -2,12 +2,20 @@
 
 @font-face {
 	font-family: 'NanumSquareR';
-	src: url(https://qutabase.github.io/fonts/NanumSquareR.ttf) format('truetype');
+	src: local(NanumSquareR),
+	url(https://qutabase.github.io/fonts/NanumSquareR.eot);
+	src: url(https://qutabase.github.io/fonts/NanumSquareR.eot?#iefix) format('embedded-opentype'),
+	url(https://qutabase.github.io/fonts/NanumSquareR.woff) format('woff'),
+	url(https://qutabase.github.io/fonts/NanumSquareR.ttf) format('truetype');
 }
 
 @font-face {
 	font-family: 'NanumSquareB';
-	src: url(https://qutabase.github.io/fonts/NanumSquareB.ttf) format('truetype');
+	src: local(NanumSquareB),
+	url(https://qutabase.github.io/fonts/NanumSquareB.eot);
+	src: url(https://qutabase.github.io/fonts/NanumSquareB.eot?#iefix) format('embedded-opentype'),
+	url(https://qutabase.github.io/fonts/NanumSquareB.woff) format('woff'),
+	url(https://qutabase.github.io/fonts/NanumSquareB.ttf) format('truetype');
 }
 
 body {
