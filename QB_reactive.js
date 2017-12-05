@@ -177,7 +177,7 @@ function showExmpl(argument) {
 
 			if (ex_list[i] != undefined) {
 				dex = eval("Jdex['" + ex_list[i] + "']");
-				ul.innerHTML = ul.innerHTML + "<a href='?kodexName="+ex_list[i]+"'><li>"+dex.rarity +"	"+ ex_list[i]+"</li></a>"
+				ul.innerHTML = ul.innerHTML + "<a href='https://qutabase.github.io/?kodexName="+ex_list[i]+"'><li>"+dex.rarity +"	"+ ex_list[i]+"</li></a>"
 			}
 
 		}
