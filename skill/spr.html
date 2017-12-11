@@ -159,10 +159,10 @@ for (var i = 0; i < key_list.length; i++) {
 		temp = key_list[i].substring(1);
 		dex = eval("Jdex['" + temp + "']");
 	}
-	imgLink = 'https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+'small.png'
+	imgLink = 'https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/spr/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+'small.png'
 
 	dex = eval("roleDex['" + key_list[i] + "']");
-	element.innerHTML = '<a href="../index.html?kodexName='+dex.name.replace("&","%26")+'"><div style="padding: 0px; height: 43px;"><img src="'+imgLink+'" width="41px" style="margin:1px;"></div><div class="kodex_rarity">'+dex.rarity+'</div><div class="kodex_name"'+reprint+'>'+dex.name+'</div><div class="kodex_skill">'+dex.skill+'</div><div class="kodex_SPR_0">'+eval("Math.round((dex.HP[0] + dex.ATK[0]) / 2)")+'</div><div class="kodex_faction">'+dex.faction+'</div><div class="kodex_illustrator">'+dex.illustrator+'</div></a>';
+	element.innerHTML = '<a href="../index.html?kodexName='+dex.name.replace("&","%26")+'"><div class="kodex_thumb"><img src="'+imgLink+'" width="41px" style="margin:1px;"></div><div class="kodex_rarity">'+dex.rarity+'</div><div class="kodex_name"'+reprint+'>'+dex.name+'</div><div class="kodex_skill">'+dex.skill+'</div><div class="kodex_SPR_0">'+eval("Math.round((dex.HP[0] + dex.ATK[0]) / 2)")+'</div><div class="kodex_faction">'+dex.faction+'</div><div class="kodex_illustrator">'+dex.illustrator+'</div></a>';
 	id_list.appendChild(element);
 }
 skillname = decodeURI(url_parse("skillName"))
