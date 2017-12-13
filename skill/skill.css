@@ -6,17 +6,22 @@ div {
 	margin: 0px;
 }
 article {
-	/*width: 812px;*/
+	height: 766px;
+	position: relative;
 	background: #FFFA7A;
 }
 #index {
+	position: absolute;
+	top: 0px; left: 0px;
 	background: #273869; color: white;
 	margin-top: 0px;
 	padding: 5px 0px; padding-right: 8px;
 }
 #kodex_list {
+	position: absolute;
+	top: 226px; left: 0px;
 	width: 100%;
-	overflow-x: hidden;
+	overflow-x: scroll;
 	max-height: 540px;
 }
 #html_role {
