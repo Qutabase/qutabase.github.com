@@ -7,7 +7,7 @@ div {
 }
 article {
 	height: 766px;
-	position: relative;
+	/*position: relative;*/
 	background: #FFFA7A;
 }
 #index {
