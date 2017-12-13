@@ -11,15 +11,15 @@ article {
 	background: #FFFA7A;
 }
 #index {
-	position: absolute;
-	top: 0px; left: 0px;
+/*	position: absolute;
+	top: 0px; left: 0px;*/
 	background: #273869; color: white;
 	margin-top: 0px;
 	padding: 5px 0px; padding-right: 8px;
 }
 #kodex_list {
-	position: absolute;
-	top: 226px; left: 0px;
+/*	position: absolute;
+	top: 226px; left: 0px;*/
 	width: 100%;
 	overflow-x: scroll;
 	max-height: 540px;

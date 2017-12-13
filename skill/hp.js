@@ -36,6 +36,7 @@ function maker(argument) {
 	Support = document.getElementById('Support').checked;
 	Fortitude = document.getElementById('Fortitude').checked;
 	Regenerate = document.getElementById('Regenerate').checked;
+	Jingle = document.getElementById('Jingle').checked;
 	Fortify = document.getElementById('Fortify').checked;
 	Evade = document.getElementById('Evade').checked;
 	for (var i = 0; i < key_list.length; i++) {
