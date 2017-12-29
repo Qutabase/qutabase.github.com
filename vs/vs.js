@@ -60,10 +60,8 @@ function vsSearch(srch) {
 			dex = eval("Jdex['" + temp + "']");
 		}
 		document.getElementById('kodex_'+zoneid+'face').setAttribute('src', encodeURI('https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/raw.png'));
+		document.getElementById('kodex_'+zoneid+'link').setAttribute('href', 'https://qutabase.github.io/?kodexName='+dex.name);
 		metaMake("title", "QUTABASE - " + dex.name)
-		metaMake("og:title", "QUTABASE - " + dex.name)
-		metaMake("og:description", dex.skill + " - " + dex.ATK[0] + " / " + dex.HP[0])
-		metaMake("og:image", encodeURI('https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+dex.id+'cn.jpg'))
 		dex = eval("Jdex['" + srch + "']");
 		// kinput('rarity');
 		// kinput('name');
