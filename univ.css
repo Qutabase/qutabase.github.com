@@ -16,7 +16,6 @@ div {
 }
 
 article {
-	margin: 10px auto;
 	margin-left: 40px;
 	width: calc(100% - 50px); height: 100%;
 	max-width: 812px; max-height: 901px;
@@ -38,6 +37,7 @@ footer {
 
 #kodex_form{
 	background: rgba(0, 0, 0, 0.5);
+	padding-bottom: 10px;
 }
 
 #logo {

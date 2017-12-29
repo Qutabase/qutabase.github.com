@@ -6,7 +6,7 @@ div {
 	margin: 0px;
 }
 article {
-	height: 766px;
+	height: calc(100% - 766px);
 	/*position: relative;*/
 	background: #FFFA7A;
 }
@@ -38,7 +38,7 @@ article {
 	background: #FFFA7A;
 }
 #index {
-	/*width: 804px;*/
+	height: inherit;
 }
 .selecter {
 	background: transparent;
@@ -70,7 +70,7 @@ input[type="checkbox"] {
 }
 .kodex_thumb {
 	padding: 0px;
-	width: 55px; height: 43px;
+	width: 55px;
 	background: transparent;
 }
 .kodex_rarity {

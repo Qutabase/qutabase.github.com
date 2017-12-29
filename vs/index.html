@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="qurare, qutabase, kodex">
+	<meta property="og:image" content="logo.png">
+	<title>QUTABASE - VS</title>
+	<link rel="stylesheet" type="text/css" href="../side.css">
+	<link rel="stylesheet" type="text/css" href="../nanum.css">
+	<link rel="stylesheet" type="text/css" href="../univ.css">
+</head>
+<body>
+	<nav id="menu">
+		<ul id="menu_list"><a href="../index.html"><img src="../logo.svg"></a>
+			<li id="menu_skill" onclick="menu_skill_click()">
+				스킬
+				<ul id="list_skill" style="display: none;">
+					<a href="../skill/atk.html"><li>공격</li></a>
+					<a href="../skill/hp.html"><li>방어</li></a>
+					<a href="../skill/spr.html"><li>회복</li></a>
+				</ul>
+			</li>
+			<a href="index.html"><li id="menu_comp">
+				마도서 비교
+			</li></a>
+		</ul>
+	</nav>
+	<header id="kodex_form">
+		<a href="?"><img id="logo" src="../logoW.svg"></a><br>
+		<input type="text" id="kodex_srch" onkeyup="check()" placeholder="마도서 이름을 입력하세요!"><br>
+		<ul id="kodex_exmpl" style="display: none;">
+		</ul>
+	</header>
+	<article>
+		<div>
+			<div><img src="small.png"><div>무인도의 메피스토펠레스</div></div>
+		</div>
+		<div>
+			<div><div>무인도의 메피스토펠레스</div><img src="small.png"></div>
+		</div>
+	</article>
+	<footer>
+			Copyright ⓒ Sn Kinos All Rights Reserved ( except the images )
+	</footer>
+</body>
+<script src="../QB_reactive.js"></script>
+</html>

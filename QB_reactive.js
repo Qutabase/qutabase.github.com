@@ -150,6 +150,7 @@ function search(srch) {
 	catch (exception){
 		;
 	}
+	document.getElementsByTagName('article')[0].setAttribute("style", "display: inline-block;")
 
 }
 
