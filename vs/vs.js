@@ -23,7 +23,7 @@ function vsCheck(argument) {
 
 	}
 	else if (inp.value != '') {
-		showExmpl(inp.value);
+		showVsExmpl(inp.value);
 	}
 	else if (inp.value == '' && window.event.keyCode == 8) {
 		document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;');		
@@ -102,7 +102,7 @@ function vsSearch(srch) {
 
 }
 
-function showExmpl(argument) {
+function showVsExmpl(argument) {
 	rarity = {
 		'N':'1',
 		'N+':'2',
@@ -115,7 +115,7 @@ function showExmpl(argument) {
 	}
 
 	var w = new Worker("worker.js")
-	w.postMessage(document.getElementById('kodex_srch').value)
+	w.postMessage(inp.value)
 	w.onmessage = function (event) {
 		ex_list = event.data;
 		ul = document.getElementById('kodex_exmpl');

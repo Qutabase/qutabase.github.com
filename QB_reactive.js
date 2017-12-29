@@ -167,7 +167,7 @@ function showExmpl(argument) {
 	}
 
 	var w = new Worker("worker.js")
-	w.postMessage(document.getElementById('kodex_srch').value)
+	w.postMessage(inp.value)
 	w.onmessage = function (event) {
 		ex_list = event.data;
 		ul = document.getElementById('kodex_exmpl');
