@@ -119,7 +119,12 @@ function showVsExmpl(argument) {
 	w.onmessage = function (event) {
 		ex_list = event.data;
 		ul = document.getElementById('kodex_vsExmpl');
-		ul.setAttribute('style', 'position: relative; left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: block;');
+		if (zoneid == 'vsT_') {
+			ul.setAttribute('style', 'position: relative; left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: block;');
+		}
+		else {
+			ul.setAttribute('style', 'position: relative; right: '+inp.offsetRight+'px; top: '+eval(inp.offsetTop+30)+'px; display: block;');
+		}
 		ul.innerHTML = '';
 		var i = 1;
 		for (i = 1; i <= ex_list[0]; i++) {
