@@ -23,7 +23,7 @@ function vsCheck(argument) {
 
 	}
 	else if (inp.value != '') {
-		showExmpl(kodex_srch.value);
+		showExmpl(inp.value);
 	}
 	else if (inp.value == '' && window.event.keyCode == 8) {
 		document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;');		
