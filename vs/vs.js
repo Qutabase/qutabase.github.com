@@ -73,7 +73,7 @@ function vsSearch(srch) {
 		document.getElementById('kodex_'+zoneid+'cost_m').innerHTML = dex.cost;
 		document.getElementById('kodex_'+zoneid+'rarity_m').setAttribute('style', 'color: '+dex.rarefont+'; background: '+dex.rareColor+';');
 		document.getElementById('kodex_'+zoneid+'name_m').setAttribute('style', 'color: '+dex.rarefont+'; background: '+dex.rareColor+';');
-		// document.getElementById('kodex_'+zoneid+'name_m').
+		document.getElementById('kodex_'+zoneid+'name_m').setAttribute('onclick', "this.innerHTML='<input type=\"text\" class=\"kodex_vs_inp\" onkeyup=\"vsCheck(this)\" id=\"kodex_vsTName\">';this.onclick=''")
 		document.getElementById('kodex_'+zoneid+'skill').setAttribute('style', 'background: '+dex.roleColor+';');
 		document.getElementById('kodex_'+zoneid+'skill').setAttribute('onclick', 'location.href="skill/'+role[dex.role]+'.html?skillName='+dex.skill.substring(0, 2)+'"');
 		kinput('skill');
