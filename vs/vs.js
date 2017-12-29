@@ -26,7 +26,7 @@ function vsCheck(argument) {
 		showVsExmpl(inp.value);
 	}
 	else if (inp.value == '' && window.event.keyCode == 8) {
-		document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;');		
+		document.getElementById('kodex_exmpl').setAttribute('style', 'display: none;');		
 	}
 
 }
@@ -93,7 +93,7 @@ function vsSearch(srch) {
 	}
 	try {
 		inp.value = '';
-		document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;')
+		document.getElementById('kodex_vsExmpl').setAttribute('style', 'display: none;')
 	}
 	catch (exception){
 		;
