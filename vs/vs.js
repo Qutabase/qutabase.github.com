@@ -119,12 +119,6 @@ function showVsExmpl(argument) {
 	w.onmessage = function (event) {
 		ex_list = event.data;
 		ul = document.getElementById('kodex_vsExmpl');
-		if (zoneid == 'vsT_') {
-			ul.setAttribute('style', 'position: absolute; left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: block;');
-		}
-		else {
-			ul.setAttribute('style', 'position: absolute; left: 272px; top: '+eval(478+(272-ul.offsetHeight))+'px; display: block;');
-		}
 		ul.innerHTML = '';
 		var i = 1;
 		for (i = 1; i <= ex_list[0]; i++) {
@@ -137,6 +131,12 @@ function showVsExmpl(argument) {
 		}
 		if (i == 0) {
 			document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;')
+		}
+		if (zoneid == 'vsT_') {
+			ul.setAttribute('style', 'position: absolute; left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: block;');
+		}
+		else {
+			ul.setAttribute('style', 'position: absolute; left: 272px; top: '+eval(478+(272-ul.offsetHeight))+'px; display: block;');
 		}
 		w.terminate();
 	}
