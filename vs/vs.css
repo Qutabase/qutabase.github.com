@@ -57,6 +57,9 @@ article {
 	color: white;
 	cursor: pointer;
 }
+#kodex_vsT_face:hover {
+	opacity: 0.7;
+}
 
 #kodex_vsB_header_m {
 	width: 400px;
@@ -87,6 +90,10 @@ article {
 	cursor: pointer;
 	position: absolute; bottom: 0px; left: 0px;
 }
+#kodex_vsB_face:hover {
+	opacity: 0.7;
+}
+
 #kodex_skill:hover {
 	opacity: 0.7;
 }
@@ -98,7 +105,7 @@ img {
 
 	position: absolute;
 	top: 100%;
-	left: 0px;
+	left: 0px;	
 	z-index: 1000;
 	display: block;
 	float: left;
