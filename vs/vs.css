@@ -1,4 +1,4 @@
-input {
+.kodex_vs_inp {
 
 	font-family: "NanumSquareB", "맑은 고딕";
 	width: 100%;
@@ -6,4 +6,87 @@ input {
 	text-align: left;
 	font-size: 21px;
 
+}
+.kodex_statchart {
+	width: calc(100% / 9 - 2.01px);
+	padding: 0px;
+	background: #dddddd;
+}
+.kodex_stat {
+	width: calc(100% - 18px);
+	margin: 0px;
+	margin-bottom: 2px;
+	padding: 10px 9px;
+}
+.kodex_head {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0px;
+	margin-right: 2px;
+	height: 59px;
+	line-height: 56px;
+	float: none;
+}
+#kodex_vsT_header_m {
+	width: 400px;
+	padding: 0px;
+}
+#kodex_vsT_rarity_m {
+	width: calc(50% - 20px);
+	color: white;
+	font-size: 32px;
+	/*padding-top: 20px; padding-bottom: 20px;*/
+}
+#kodex_vsT_name_m {
+	width: calc(100% - 20px);
+	color: white;
+	font-size: 32px;
+	margin-bottom: 2px;
+}
+#kodex_vsT_cst_m {
+	width: calc(50% - 20px);
+	/*padding-top: 20px; padding-bottom: 20px;*/
+}
+#kodex_vsT_skill {
+	width: 242px; height: 128px;
+	line-height: 128px;
+	font-size: 33px;
+	color: white;
+	cursor: pointer;
+}
+
+#kodex_vsB_header_m {
+	width: 400px;
+	padding: 0px;
+	position: absolute; bottom: 0px; right: 148px;
+}
+#kodex_vsB_rarity_m {
+	width: calc(50% - 20px);
+	color: white;
+	font-size: 32px;
+	/*padding-top: 20px; padding-bottom: 20px;*/
+}
+#kodex_vsB_name_m {
+	width: calc(100% - 20px);
+	color: white;
+	font-size: 32px;
+	margin-top: 2px;
+}
+#kodex_vsB_cst_m {
+	width: calc(50% - 20px);
+	/*padding-top: 20px; padding-bottom: 20px;*/
+}
+#kodex_vsB_skill {
+	width: 242px; height: 128px;
+	line-height: 128px;
+	font-size: 33px;
+	color: white;
+	cursor: pointer;
+	position: absolute; bottom: 0px; left: 0px;
+}
+#kodex_skill:hover {
+	opacity: 0.7;
+}
+img {
+	display: block;
 }

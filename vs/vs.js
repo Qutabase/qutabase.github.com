@@ -1,0 +1,139 @@
+function getJson(url) {
+	var httpReq = new XMLHttpRequest();
+	httpReq.open("GET", url, false);
+	httpReq.send(null);
+	return httpReq.responseText;
+}
+
+Jdex = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/qurare.json"))
+eng = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/enskill.json"))
+
+function kinput(value) {
+	document.getElementById('kodex_'+zoneid+value).innerHTML = eval('dex.'+value);
+}
+
+function vsCheck(argument) {
+
+	inp = argument;
+	zoneid = inp.parentElement.parentElement.id.substr(6,3)+'_';
+	if (window.event.keyCode == 13) {
+
+		vsSearch(inp.value);
+		return;
+
+	}
+	else if (inp.value != '') {
+		showExmpl(kodex_srch.value);
+	}
+	else if (inp.value == '' && window.event.keyCode == 8) {
+		document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;');		
+	}
+
+}
+rarity = {
+	'N':'1',
+	'N+':'2',
+	'R':'3',
+	'R+':'4',
+	'SR':'5',
+	'SR+':'6',
+	'SSR':'7',
+	'QR':'8'
+}
+role = {
+	'공격':'atk',
+	'방어':'hp',
+	'회복':'spr'
+}
+function vsSearch(srch) {
+	
+	dex = eval("Jdex['" + srch + "']");
+
+	if (dex != undefined) {
+
+		if (srch.indexOf('® ') != -1) {
+			temp = srch.substring(2);
+			dex = eval("Jdex['" + temp + "']");
+		}
+		else if (srch.indexOf('®') != -1) {
+			temp = srch.substring(1);
+			dex = eval("Jdex['" + temp + "']");
+		}
+		document.getElementById('kodex_'+zoneid+'face').setAttribute('src', encodeURI('https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/raw.png'));
+		metaMake("title", "QUTABASE - " + dex.name)
+		metaMake("og:title", "QUTABASE - " + dex.name)
+		metaMake("og:description", dex.skill + " - " + dex.ATK[0] + " / " + dex.HP[0])
+		metaMake("og:image", encodeURI('https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+dex.id+'cn.jpg'))
+		dex = eval("Jdex['" + srch + "']");
+		// kinput('rarity');
+		// kinput('name');
+		// kinput('cost');
+		document.getElementById('kodex_'+zoneid+'rarity_m').innerHTML = dex.rarity;
+		document.getElementById('kodex_'+zoneid+'name_m').innerHTML = dex.name;
+		document.getElementById('kodex_'+zoneid+'cost_m').innerHTML = dex.cost;
+		document.getElementById('kodex_'+zoneid+'rarity_m').setAttribute('style', 'color: '+dex.rarefont+'; background: '+dex.rareColor+';');
+		document.getElementById('kodex_'+zoneid+'name_m').setAttribute('style', 'color: '+dex.rarefont+'; background: '+dex.rareColor+';');
+		// document.getElementById('kodex_'+zoneid+'name_m').
+		document.getElementById('kodex_'+zoneid+'skill').setAttribute('style', 'background: '+dex.roleColor+';');
+		document.getElementById('kodex_'+zoneid+'skill').setAttribute('onclick', 'location.href="skill/'+role[dex.role]+'.html?skillName='+dex.skill.substring(0, 2)+'"');
+		kinput('skill');
+		// kinput('role');
+		// kinput('skilltype');
+		// kinput('faction');
+		// kinput('illustrator');
+		kinput('hp0');
+		kinput('atk0');
+		kinput('spr0');
+		for (var i = 0; i < 7; i++) {
+			document.getElementById('kodex_'+zoneid+'HP_'+i).innerHTML = dex.HP[i];
+			document.getElementById('kodex_'+zoneid+'ATK_'+i).innerHTML = dex.ATK[i];
+			document.getElementById('kodex_'+zoneid+'SPR_'+i).innerHTML = dex.SPR[i];
+		}
+
+	}
+	try {
+		inp.value = '';
+		document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;')
+	}
+	catch (exception){
+		;
+	}
+	document.getElementsByTagName('article')[0].setAttribute("style", "display: inline-block;")
+
+}
+
+function showExmpl(argument) {
+	rarity = {
+		'N':'1',
+		'N+':'2',
+		'R':'3',
+		'R+':'4',
+		'SR':'5',
+		'SR+':'6',
+		'SSR':'7',
+		'QR':'8'
+	}
+
+	var w = new Worker("worker.js")
+	w.postMessage(document.getElementById('kodex_srch').value)
+	w.onmessage = function (event) {
+		ex_list = event.data;
+		ul = document.getElementById('kodex_exmpl');
+		ul.setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: block;');
+		ul.innerHTML = '';
+		var i = 1;
+		for (i = 1; i <= ex_list[0]; i++) {
+
+			if (ex_list[i] != undefined) {
+				dex = eval("Jdex['" + ex_list[i] + "']");
+				ul.innerHTML = ul.innerHTML + "<a href='https://qutabase.github.io/?kodexName="+ex_list[i]+"'><li>"+dex.rarity +"	"+ ex_list[i]+"</li></a>"
+			}
+
+		}
+		if (i == 0) {
+			document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;')
+		}
+		w.terminate();
+	}
+
+}

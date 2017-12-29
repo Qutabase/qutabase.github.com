@@ -33,20 +33,294 @@
 		</ul>
 	</header>
 	<article>
-		<section style="width: 100%; height: 401px;">
+		<section id="kodex_vsT" style="width: 100%; height: 401px; position: relative;">
 			<div>
-				<img src="raw.png">
+				<img id="kodex_vsT_face" src="raw.png">
 			</div>
-			<div>
-				<input type="text" class="kodex_inp" id="kodex_vsT">
+			<div id="kodex_vsT_header_m">
+				<div class="kodex_head" style="background: #E10044;" id="kodex_vsT_name_m">
+				<input type="text" class="kodex_vs_inp" onkeyup="vsCheck(this)" id="kodex_vsTName">
+				</div><div class="kodex_head" style="background: #E10044;" id="kodex_vsT_rarity_m">
+					SSR
+				</div><div class="kodex_head" style="background: #FFEB3B; line-height: normal;" id="kodex_vsT_cst_m">
+					COST<br><span id="kodex_vsT_cost_m">QU</span>
+				</div>
+			</div>
+			<div id="kodex_vsT_skill" style="background: red;" onclick="location.href=''">
+				큐타베이스
+			</div>
+			<div id="kodex_vsTStat" style="position: absolute; bottom: 0px; left: 0px;">
+				<div class="kodex_statchart">
+					<div class="kodex_stat" style="background: #5A688A; color: white;">
+						스탯
+					</div>
+					<div class="kodex_stat" style="background: #5A688A; color: white; text-align: left;">
+						HP
+					</div>
+					<div class="kodex_stat" style="background: #5A688A; color: white; text-align: left;">
+						ATK
+					</div>
+					<div class="kodex_stat" style="background: #5A688A; color: white; text-align: left;">
+						SPR
+					</div>
+				</div>
+				<div class="kodex_statchart">
+					<div class="kodex_stat" style="background: #5A688A; color: white;">
+						Lv.1
+					</div>
+					<div id="kodex_vsT_hp0" class="kodex_stat">
+						516
+					</div>
+					<div id="kodex_vsT_atk0" class="kodex_stat">
+						775
+					</div>
+					<div id="kodex_vsT_spr0" class="kodex_stat">
+						646
+					</div>
+				</div>
+				<div class="kodex_statchart">
+					<div class="kodex_stat" style="background: #5A688A; color: white;">
+						MAX
+					</div>
+					<div id="kodex_vsT_HP_0" class="kodex_stat">
+						3617
+					</div>
+					<div id="kodex_vsT_ATK_0" class="kodex_stat">
+						5430
+					</div>
+					<div id="kodex_vsT_SPR_0" class="kodex_stat">
+						4523
+					</div>
+				</div>
+				<div class="kodex_statchart">
+					<div class="kodex_stat" style="background: #00B4FF; color: white;">
+						1결속
+					</div>
+					<div id="kodex_vsT_HP_1" class="kodex_stat">
+						3943
+					</div>
+					<div id="kodex_vsT_ATK_1" class="kodex_stat">
+						5919
+					</div>
+					<div id="kodex_vsT_SPR_1" class="kodex_stat">
+						4930
+					</div>
+				</div>
+				<div class="kodex_statchart">
+					<div class="kodex_stat" style="background: #00B4FF; color: white;">
+						2결속
+					</div>
+					<div id="kodex_vsT_HP_2" class="kodex_stat">
+						4268
+					</div>
+					<div id="kodex_vsT_ATK_2" class="kodex_stat">
+						6407
+					</div>
+					<div id="kodex_vsT_SPR_2" class="kodex_stat">
+						5337
+					</div>
+				</div>
+				<div class="kodex_statchart">
+					<div class="kodex_stat" style="background: #00B4FF; color: white;">
+						3결속
+					</div>
+					<div id="kodex_vsT_HP_3" class="kodex_stat">
+						4594
+					</div>
+					<div id="kodex_vsT_ATK_3" class="kodex_stat">
+						6896
+					</div>
+					<div id="kodex_vsT_SPR_3" class="kodex_stat">
+						5744
+					</div>
+				</div>
+				<div class="kodex_statchart">
+					<div class="kodex_stat" style="background: #00B4FF; color: white;">
+						4결속
+					</div>
+					<div id="kodex_vsT_HP_4" class="kodex_stat">
+						4919
+					</div>
+					<div id="kodex_vsT_ATK_4" class="kodex_stat">
+						7385
+					</div>
+					<div id="kodex_vsT_SPR_4" class="kodex_stat">
+						6151
+					</div>
+				</div>
+				<div class="kodex_statchart">
+					<div class="kodex_stat" style="background: #00B4FF; color: white;">
+						5결속
+					</div>
+					<div id="kodex_vsT_HP_5" class="kodex_stat">
+						5245
+					</div>
+					<div id="kodex_vsT_ATK_5" class="kodex_stat">
+						7874
+					</div>
+					<div id="kodex_vsT_SPR_5" class="kodex_stat">
+						6558
+					</div>
+				</div>
+				<div class="kodex_statchart">
+					<div class="kodex_stat" style="background: #00B4FF; color: white;">
+						초월
+					</div>
+					<div id="kodex_vsT_HP_6" class="kodex_stat">
+						5570
+					</div>
+					<div id="kodex_vsT_ATK_6" class="kodex_stat">
+						8362
+					</div>
+					<div id="kodex_vsT_SPR_6" class="kodex_stat">
+						6965
+					</div>
+				</div>
 			</div>
 		</section>
 		<section style="width: 100%; height: 401px; position: relative;">
-			<div style="position: absolute; bottom: 0px; right: 0px;">
-				<img src="raw.png">
+			<div id="kodex_vsBStat" style="position: absolute; top: 0px; left: 0px;">
+				<div class="kodex_statchart">
+					<div class="kodex_stat" style="background: #5A688A; color: white;">
+						스탯
+					</div>
+					<div class="kodex_stat" style="background: #5A688A; color: white; text-align: left;">
+						HP
+					</div>
+					<div class="kodex_stat" style="background: #5A688A; color: white; text-align: left;">
+						ATK
+					</div>
+					<div class="kodex_stat" style="background: #5A688A; color: white; text-align: left;">
+						SPR
+					</div>
+				</div>
+				<div class="kodex_statchart">
+					<div class="kodex_stat" style="background: #5A688A; color: white;">
+						Lv.1
+					</div>
+					<div id="kodex_vsB_hp0" class="kodex_stat">
+						516
+					</div>
+					<div id="kodex_vsB_atk0" class="kodex_stat">
+						775
+					</div>
+					<div id="kodex_vsB_spr0" class="kodex_stat">
+						646
+					</div>
+				</div>
+				<div class="kodex_statchart">
+					<div class="kodex_stat" style="background: #5A688A; color: white;">
+						MAX
+					</div>
+					<div id="kodex_vsB_HP_0" class="kodex_stat">
+						3617
+					</div>
+					<div id="kodex_vsB_ATK_0" class="kodex_stat">
+						5430
+					</div>
+					<div id="kodex_vsB_SPR_0" class="kodex_stat">
+						4523
+					</div>
+				</div>
+				<div class="kodex_statchart">
+					<div class="kodex_stat" style="background: #00B4FF; color: white;">
+						1결속
+					</div>
+					<div id="kodex_vsB_HP_1" class="kodex_stat">
+						3943
+					</div>
+					<div id="kodex_vsB_ATK_1" class="kodex_stat">
+						5919
+					</div>
+					<div id="kodex_vsB_SPR_1" class="kodex_stat">
+						4930
+					</div>
+				</div>
+				<div class="kodex_statchart">
+					<div class="kodex_stat" style="background: #00B4FF; color: white;">
+						2결속
+					</div>
+					<div id="kodex_vsB_HP_2" class="kodex_stat">
+						4268
+					</div>
+					<div id="kodex_vsB_ATK_2" class="kodex_stat">
+						6407
+					</div>
+					<div id="kodex_vsB_SPR_2" class="kodex_stat">
+						5337
+					</div>
+				</div>
+				<div class="kodex_statchart">
+					<div class="kodex_stat" style="background: #00B4FF; color: white;">
+						3결속
+					</div>
+					<div id="kodex_vsB_HP_3" class="kodex_stat">
+						4594
+					</div>
+					<div id="kodex_vsB_ATK_3" class="kodex_stat">
+						6896
+					</div>
+					<div id="kodex_vsB_SPR_3" class="kodex_stat">
+						5744
+					</div>
+				</div>
+				<div class="kodex_statchart">
+					<div class="kodex_stat" style="background: #00B4FF; color: white;">
+						4결속
+					</div>
+					<div id="kodex_vsB_HP_4" class="kodex_stat">
+						4919
+					</div>
+					<div id="kodex_vsB_ATK_4" class="kodex_stat">
+						7385
+					</div>
+					<div id="kodex_vsB_SPR_4" class="kodex_stat">
+						6151
+					</div>
+				</div>
+				<div class="kodex_statchart">
+					<div class="kodex_stat" style="background: #00B4FF; color: white;">
+						5결속
+					</div>
+					<div id="kodex_vsB_HP_5" class="kodex_stat">
+						5245
+					</div>
+					<div id="kodex_vsB_ATK_5" class="kodex_stat">
+						7874
+					</div>
+					<div id="kodex_vsB_SPR_5" class="kodex_stat">
+						6558
+					</div>
+				</div>
+				<div class="kodex_statchart">
+					<div class="kodex_stat" style="background: #00B4FF; color: white;">
+						초월
+					</div>
+					<div id="kodex_vsB_HP_6" class="kodex_stat">
+						5570
+					</div>
+					<div id="kodex_vsB_ATK_6" class="kodex_stat">
+						8362
+					</div>
+					<div id="kodex_vsB_SPR_6" class="kodex_stat">
+						6965
+					</div>
+				</div>
 			</div>
-			<div style="position: absolute; bottom: 0px; right: 148px;">
-				<input type="text" class="kodex_inp" id="kodex_vsB">
+			<div id="kodex_vsB_skill" style="background: red;" onclick="location.href=''">
+				큐타베이스
+			</div>
+			<div id="kodex_vsB_header_m">
+				<div class="kodex_head" style="background: #FFEB3B; line-height: normal;" id="kodex_vsB_cst_m">
+					COST<br><span id="kodex_vsB_cost_m">QU</span>
+				</div><div class="kodex_head" style="background: #E10044;" id="kodex_vsB_rarity_m">
+					SSR
+				</div><div class="kodex_head" style="background: #E10044;" id="kodex_vsB_name_m">
+				<input type="text" class="kodex_vs_inp" onkeyup="vsCheck(this)" id="kodex_vsBName">
+				</div>
+			</div>
+			<div style="position: absolute; bottom: 0px; right: 0px;">
+				<img id="kodex_vsB_face" src="raw.png">
 			</div>
 		</section>
 	</article>
@@ -55,4 +329,5 @@
 	</footer>
 </body>
 <script src="../QB_reactive.js"></script>
+<script src="vs.js"></script>
 </html>
