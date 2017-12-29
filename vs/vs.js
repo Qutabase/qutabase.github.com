@@ -120,10 +120,10 @@ function showVsExmpl(argument) {
 		ex_list = event.data;
 		ul = document.getElementById('kodex_vsExmpl');
 		if (zoneid == 'vsT_') {
-			ul.setAttribute('style', 'position: relative; left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: block;');
+			ul.setAttribute('style', 'position: absolute; left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: block;');
 		}
 		else {
-			ul.setAttribute('style', 'position: relative; right: '+inp.offsetRight+'px; top: '+eval(inp.offsetTop+30)+'px; display: block;');
+			ul.setAttribute('style', 'position: absolute; right: '+inp.offsetRight+'px; top: '+eval(inp.offsetTop+30)+'px; display: block;');
 		}
 		ul.innerHTML = '';
 		var i = 1;
