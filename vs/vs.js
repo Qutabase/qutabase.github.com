@@ -125,7 +125,7 @@ function showVsExmpl(argument) {
 
 			if (ex_list[i] != undefined) {
 				dex = eval("Jdex['" + ex_list[i] + "']");
-				ul.innerHTML = ul.innerHTML + "<li onclick='vsSearch(this.innerHTML)'>"+dex.rarity +"	"+ ex_list[i]+"</li>"
+				ul.innerHTML = ul.innerHTML + "<li onclick='vsSearch("+ex_list[i]+")'>"+dex.rarity +"	"+ ex_list[i]+"</li>"
 			}
 
 		}
