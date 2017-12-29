@@ -45,6 +45,7 @@ article {
 	color: white;
 	font-size: 32px;
 	margin-bottom: 2px;
+	cursor: pointer;
 }
 #kodex_vsT_cst_m {
 	width: calc(50% - 20px);
@@ -77,6 +78,7 @@ article {
 	color: white;
 	font-size: 32px;
 	margin-top: 2px;
+	cursor: pointer;
 }
 #kodex_vsB_cst_m {
 	width: calc(50% - 20px);
