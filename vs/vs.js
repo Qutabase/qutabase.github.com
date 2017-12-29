@@ -123,7 +123,7 @@ function showVsExmpl(argument) {
 			ul.setAttribute('style', 'position: absolute; left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: block;');
 		}
 		else {
-			ul.setAttribute('style', 'position: absolute; left: 473px; top: 478px; display: block;');
+			ul.setAttribute('style', 'position: absolute; left: 272px; top: 478px; display: block;');
 		}
 		ul.innerHTML = '';
 		var i = 1;
