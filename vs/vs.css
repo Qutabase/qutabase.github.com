@@ -94,7 +94,10 @@ article {
 	opacity: 0.7;
 }
 
-#kodex_skill:hover {
+#kodex_vsT_skill:hover {
+	opacity: 0.7;
+}
+#kodex_vsB_skill:hover {
 	opacity: 0.7;
 }
 img {
