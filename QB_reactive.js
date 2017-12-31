@@ -12,8 +12,8 @@ if( navigator.userAgent.indexOf('Firefox') >= 0 ) {
 // hour = hour.getHours()
 // if (6 <= hour && hour < 18) {
 //	document.getElementsByTagName('body')[0].setAttribute('style', 'background: url("https://qutabase.github.io/bgW.png");')
-	document.getElementById('kodex_form').setAttribute("style", 'background: none;')
-	document.getElementById('logo').setAttribute('src', 'https://qutabase.github.io/logo.svg')
+	// document.getElementById('kodex_form').setAttribute("style", 'background: none;')
+	// document.getElementById('logo').setAttribute('src', 'https://qutabase.github.io/logo.svg')
 	document.getElementsByTagName('footer')[0].setAttribute('style', 'color: #273869;')
 //}
 
