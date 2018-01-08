@@ -101,7 +101,7 @@ function search(srch) {
 	if (dex != undefined) {
 
 		if (srch.indexOf('®마법소녀 팥쥐') != -1) {
-			break;
+			;
 		}
 		else if (srch.indexOf('® ') != -1) {
 			temp = srch.substring(2);
