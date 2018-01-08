@@ -1,13 +1,10 @@
-article {
+﻿article {
 	width: 812px; height: 802px;
-	background: #FFEB3B;
+	background: #FFFF93;
 }
 
 div {
-	background: #FFFA7A;
-}
-section {
-	height: calc(100% - 75px);
+	background: #FFEB3B;
 }
 
 #rewards_select_list {
@@ -23,8 +20,75 @@ section {
 	margin: 0px 1px;
 }
 
+#rewards_event {
+	height: calc(100% - 75px);	
+}
+
+#rewards_inf {
+	height: calc(100% - 75px);
+	background: #FFE631;
+}
+
 #rewards_inf_list {
-	width: calc(50% - 18px); height: calc(100% - 10px);
+	width: calc(50% - 18px); height: calc(100% - 18px);
+	padding: 4px 5px;
+	margin: 5px 5px;
+	background: #FFFA7A;
+}
+
+#rewards_inf_list_fSelect{
+	height: 30px;
+	margin: 5px;
+	font-family: "NanumSquareB", "나눔스퀘어", "맑은 고딕";
+	font-size: 22px;
+	border: none;
+	background: #FFE631;
+}
+
+#rewards_inf_list_box {
+	background: #FFEB3B;
+	width: calc(100% - 8px);
+	height: calc(100% - 54px);
+	margin: 5px 0px;
+	padding: 4px;
+}
+
+.rewards_inf_list_box_floor {
+	background: #FFFF93;
+	width: calc(100% - 12px); height: calc(10% - 10px);
+	line-height: 56px;
+	font-size: 22px;
+	padding: 5px;
+
+}
+.floor_num {
+	width: calc(22% - 3px);
+	height: calc(100% - 8px);
+	line-height: 46px;
+	background: #FFEC3A;
+	margin: 0px;
+	padding: 4px;
+}
+.floor_img {
+	height: 100%;
+	line-height: 46px;
+	background: #FFEC3A;
+	margin: 0px;
+	padding: 0px;
+}
+.floor_img_src {
+	height: 100%;
+}
+.floor_reward {
+	width: calc(100% - 150px);
+	height: calc(100% - 8px);
+	line-height: 46px;
+	background: #FFEC3A;
+	margin: 0px;
+	padding: 4px;
+}
+#rewards_inf_floor {
+	width: calc(50% - 18px); height: calc(50% - 10px);
 	padding: 4px 5px;
 	margin: 1px 5px;
 }
