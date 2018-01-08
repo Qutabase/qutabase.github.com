@@ -44,31 +44,31 @@
 		<section id="rewards_inf">
 			<div id="rewards_inf_list">
 				층 별 보상 목록 
-				<select id="rewards_inf_list_fSelect">
-					<option>&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;~&nbsp;&nbsp;&nbsp;10</option>
-					<option>&nbsp;&nbsp;11&nbsp;~&nbsp;&nbsp;&nbsp;20</option>
-					<option>&nbsp;&nbsp;21&nbsp;~&nbsp;&nbsp;&nbsp;30</option>
-					<option>&nbsp;&nbsp;31&nbsp;~&nbsp;&nbsp;&nbsp;40</option>
-					<option>&nbsp;&nbsp;41&nbsp;~&nbsp;&nbsp;&nbsp;50</option>
-					<option>&nbsp;&nbsp;51&nbsp;~&nbsp;&nbsp;&nbsp;60</option>
-					<option>&nbsp;&nbsp;61&nbsp;~&nbsp;&nbsp;&nbsp;70</option>
-					<option>&nbsp;&nbsp;71&nbsp;~&nbsp;&nbsp;&nbsp;80</option>
-					<option>&nbsp;&nbsp;81&nbsp;~&nbsp;&nbsp;&nbsp;90</option>
-					<option>&nbsp;&nbsp;91&nbsp;~&nbsp;100</option>
-					<option>101&nbsp;~&nbsp;110</option>
-					<option>111&nbsp;~&nbsp;120</option>
-					<option>121&nbsp;~&nbsp;130</option>
-					<option>131&nbsp;~&nbsp;140</option>
-					<option>141&nbsp;~&nbsp;150</option>
-					<option>151&nbsp;~&nbsp;160</option>
-					<option>161&nbsp;~&nbsp;170</option>
-					<option>171&nbsp;~&nbsp;180</option>
-					<option>181&nbsp;~&nbsp;190</option>
-					<option>191&nbsp;~&nbsp;200</option>
+				<select id="rewards_inf_list_fSelect" onchange="makeList(this.value)">
+					<option value="0">&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;~&nbsp;&nbsp;&nbsp;10</option>
+					<option value="1">&nbsp;&nbsp;11&nbsp;~&nbsp;&nbsp;&nbsp;20</option>
+					<option value="2">&nbsp;&nbsp;21&nbsp;~&nbsp;&nbsp;&nbsp;30</option>
+					<option value="3">&nbsp;&nbsp;31&nbsp;~&nbsp;&nbsp;&nbsp;40</option>
+					<option value="4">&nbsp;&nbsp;41&nbsp;~&nbsp;&nbsp;&nbsp;50</option>
+					<option value="5">&nbsp;&nbsp;51&nbsp;~&nbsp;&nbsp;&nbsp;60</option>
+					<option value="6">&nbsp;&nbsp;61&nbsp;~&nbsp;&nbsp;&nbsp;70</option>
+					<option value="7">&nbsp;&nbsp;71&nbsp;~&nbsp;&nbsp;&nbsp;80</option>
+					<option value="8">&nbsp;&nbsp;81&nbsp;~&nbsp;&nbsp;&nbsp;90</option>
+					<option value="9">&nbsp;&nbsp;91&nbsp;~&nbsp;100</option>
+					<option value="10">101&nbsp;~&nbsp;110</option>
+					<option value="11">111&nbsp;~&nbsp;120</option>
+					<option value="12">121&nbsp;~&nbsp;130</option>
+					<option value="13">131&nbsp;~&nbsp;140</option>
+					<option value="14">141&nbsp;~&nbsp;150</option>
+					<option value="15">151&nbsp;~&nbsp;160</option>
+					<option value="16">161&nbsp;~&nbsp;170</option>
+					<option value="17">171&nbsp;~&nbsp;180</option>
+					<option value="18">181&nbsp;~&nbsp;190</option>
+					<option value="19">191&nbsp;~&nbsp;200</option>
 				</select><br>
 				<div id="rewards_inf_list_box">
 					<div class="rewards_inf_list_box_floor" id="">
-						<div class="floor_num">200 층</div><div class="floor_img"><img class="floor_img_src" src="item/tik_pri.png"></div><div class="floor_reward">응축된 불확정의 상징물</div>
+						<div class="floor_num">200 층</div><div class="floor_img"><img class="floor_img_src" src="item/tik_pri.png"></div><div class="floor_reward">응축된 불확정의 상징물</div><div class="floor_quan">x99</div>
 					</div>
 				</div>
 			</div>
@@ -85,4 +85,5 @@
 	</footer>
 </body>
 <script src="../QB_reactive.js"></script>
+<script src="rewards.js"></script>
 </html>

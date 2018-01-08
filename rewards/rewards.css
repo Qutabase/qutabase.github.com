@@ -55,14 +55,14 @@ div {
 
 .rewards_inf_list_box_floor {
 	background: #FFFF93;
-	width: calc(100% - 12px); height: calc(10% - 10px);
+	width: calc(100% - 12px); height: calc(10% - 12px);
 	line-height: 56px;
-	font-size: 22px;
+	font-size: 20px;
 	padding: 5px;
 
 }
 .floor_num {
-	width: calc(22% - 3px);
+	width: calc(19% - 4px);
 	height: calc(100% - 8px);
 	line-height: 46px;
 	background: #FFEC3A;
@@ -79,13 +79,20 @@ div {
 .floor_img_src {
 	height: 100%;
 }
-.floor_reward {
-	width: calc(100% - 150px);
+.floor_quan {
 	height: calc(100% - 8px);
 	line-height: 46px;
 	background: #FFEC3A;
 	margin: 0px;
 	padding: 4px;
+}
+.floor_reward {
+	width: calc(100% - 173px);
+	height: calc(100% - 8px);
+	line-height: 46px;
+	background: #FFEC3A;
+	margin: 0px;
+	padding: 4px 0px;
 }
 #rewards_inf_floor {
 	width: calc(50% - 18px); height: calc(50% - 10px);
