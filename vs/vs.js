@@ -1,13 +1,3 @@
-function getJson(url) {
-	var httpReq = new XMLHttpRequest();
-	httpReq.open("GET", url, false);
-	httpReq.send(null);
-	return httpReq.responseText;
-}
-
-Jdex = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/qurare.json"))
-eng = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/enskill.json"))
-
 function kinput(value) {
 	document.getElementById('kodex_'+zoneid+value).innerHTML = eval('dex.'+value);
 }

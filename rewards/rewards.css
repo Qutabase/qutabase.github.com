@@ -1,3 +1,30 @@
 article {
 	width: 812px; height: 802px;
+	background: #FFEB3B;
+}
+
+div {
+	background: #FFFA7A;
+}
+section {
+	height: calc(100% - 75px);
+}
+
+#rewards_select_list {
+	padding: 0px;
+	margin: 0px;
+}
+
+#rewards_select_list li{
+	list-style: none;
+	display: inline-block;
+	width: calc(50% - 2px);
+	padding: 24px 0px;
+	margin: 0px 1px;
+}
+
+#rewards_inf_list {
+	width: calc(50% - 18px); height: calc(100% - 10px);
+	padding: 4px 5px;
+	margin: 1px 5px;
 }
