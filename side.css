@@ -33,11 +33,18 @@ a {
 }
 
 #list_skill {
-	transition: display 0.3s;
+	transition: 0.3s;
 }
 #list_skill li{
 	list-style: none;
 	cursor: pointer;
 	padding: 5px;
 	background: #FFFF93;
+}
+
+#menu_rotLogo {
+	height: 40px;
+	position: absolute;
+	left: 185px; bottom: 70px;
+	filter:flipv();transform:rotate(270deg);
 }
