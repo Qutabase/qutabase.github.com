@@ -80,6 +80,7 @@
 }
 
 #floor_goal {
+	width: 67px;
 	height: 30px;
 	margin: 5px;
 	text-align: center;
