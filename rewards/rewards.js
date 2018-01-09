@@ -89,7 +89,7 @@ function eventGoal(argument) {
 	for (var key in itemCheck) {
 		itemCheck[key] = 0;
 	}
-	for (var i = 1000; i <= argument || i <= 3000000; i+=500) {
+	for (var i = 1000; i <= argument && i <= 3000000; i+=500) {
 		try {
 			if (itemCheck[eventP[i].img] == 0) {
 				var elem = document.createElement("div");
