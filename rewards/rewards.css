@@ -16,8 +16,12 @@ div {
 	list-style: none;
 	display: inline-block;
 	width: calc(50% - 2px);
-	padding: 24px 0px;
-	margin: 0px 1px;
+	padding: 24px 1px;
+	margin: 0px;
+}
+#rewards_select_list li:hover{
+	background: #FFD300;
+	opacity: 0.7;
 }
 
 #rewards_event {
@@ -30,9 +34,9 @@ div {
 }
 
 #rewards_inf_list {
-	width: calc(50% - 18px); height: calc(100% - 18px);
+	width: calc(50% - 17.5px); height: calc(100% - 18px);
 	padding: 4px 5px;
-	margin: 5px 5px;
+	margin: 5px; margin-right: 0px;
 	background: #FFFA7A;
 }
 
@@ -55,10 +59,11 @@ div {
 
 .rewards_inf_list_box_floor {
 	background: #FFFF93;
-	width: calc(100% - 12px); height: calc(10% - 12px);
+	width: calc(100% - 10px); height: calc(10% - 10px);
 	line-height: 56px;
 	font-size: 20px;
 	padding: 5px;
+	margin: 0px;
 
 }
 .floor_num {
@@ -87,15 +92,24 @@ div {
 	padding: 4px;
 }
 .floor_reward {
-	width: calc(100% - 173px);
+	width: calc(100% - 173.5px);
 	height: calc(100% - 8px);
 	line-height: 46px;
 	background: #FFEC3A;
 	margin: 0px;
 	padding: 4px 0px;
 }
+
 #rewards_inf_floor {
-	width: calc(50% - 18px); height: calc(50% - 10px);
+	width: calc(50% - 17.5px); height: calc(50% - 15.5px);
 	padding: 4px 5px;
-	margin: 1px 5px;
+	margin: 5px;
+	background: #FFFA7A;
+}
+
+#rewards_inf_result {
+	width: calc(50% - 17.5px); height: calc(50% - 15.5px);
+	padding: 4px 5px;
+	margin: 5px; margin-top: 0px;
+	background: #FFFA7A;
 }
