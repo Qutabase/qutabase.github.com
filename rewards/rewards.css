@@ -1,5 +1,5 @@
 ﻿article {
-	width: 812px; height: 802px;
+	min-width: 812px; height: 802px;
 	background: #FFFF93;
 }
 
@@ -20,7 +20,6 @@ div {
 	margin: 0px;
 }
 #rewards_select_list li:hover{
-	background: #FFD300;
 	opacity: 0.7;
 }
 
@@ -66,7 +65,7 @@ div {
 	margin: 0px;
 
 }
-.floor_num {
+.box_floor_num {
 	width: calc(19% - 4px);
 	height: calc(100% - 8px);
 	line-height: 46px;
@@ -74,24 +73,17 @@ div {
 	margin: 0px;
 	padding: 4px;
 }
-.floor_img {
+.box_floor_img {
 	height: 100%;
 	line-height: 46px;
 	background: #FFEC3A;
 	margin: 0px;
 	padding: 0px;
 }
-.floor_img_src {
+.box_floor_img_src {
 	height: 100%;
 }
-.floor_quan {
-	height: calc(100% - 8px);
-	line-height: 46px;
-	background: #FFEC3A;
-	margin: 0px;
-	padding: 4px;
-}
-.floor_reward {
+.box_floor_reward {
 	width: calc(100% - 173.5px);
 	height: calc(100% - 8px);
 	line-height: 46px;
@@ -99,17 +91,55 @@ div {
 	margin: 0px;
 	padding: 4px 0px;
 }
+.box_floor_quan {
+	width: 35.6px;
+	height: calc(100% - 8px);
+	line-height: 46px;
+	background: #FFEC3A;
+	margin: 0px;
+	padding: 4px;
+}
 
 #rewards_inf_floor {
-	width: calc(50% - 17.5px); height: calc(50% - 15.5px);
+	width: calc(50% - 17.5px); height: calc(8% - 16.5px);
 	padding: 4px 5px;
 	margin: 5px;
 	background: #FFFA7A;
 }
 
+#floor_goal {
+	height: 30px;
+	margin: 5px;
+	font-family: "NanumSquareB", "나눔스퀘어", "맑은 고딕";
+	font-size: 22px;
+	border: none;
+	background: #FFE631;	
+}
+
 #rewards_inf_result {
-	width: calc(50% - 17.5px); height: calc(50% - 15.5px);
+	width: calc(50% - 17.5px); height: calc(92% - 14.5px);
 	padding: 4px 5px;
 	margin: 5px; margin-top: 0px;
 	background: #FFFA7A;
+}
+
+#inf_result_box {
+	line-height: 40px;
+	width: 100%;
+	height: calc(100% - 37px);
+	margin: 0px;
+	padding: 0px;
+	font-size: 21px;
+}
+
+.inf_result_box_img {
+	margin: 14px; margin-right: 0px;
+	padding: 0px;
+}
+.inf_result_box_item {
+	width: 33%;
+	height: calc(100% / 9); 
+	margin: 0px;
+	padding: 0px;
+	line-height: 68px;
 }

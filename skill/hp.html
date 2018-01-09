@@ -135,9 +135,9 @@ function checking(argument) {
 </body>
 <script type="text/javascript" src="../QB_reactive.js"></script>
 <script type="text/javascript">
+var id_list = document.getElementById("kodex_list");
 for (var i = 0; i < key_list.length; i++) {
 	dex = eval("roleDex['" + key_list[i] + "']");
-	var id_list = document.getElementById("kodex_list");
 	var element = document.createElement("div");
 	var reprint = ''
 	element.setAttribute("class", "kodex");

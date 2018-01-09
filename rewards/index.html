@@ -34,14 +34,12 @@
 	</header>
 	<article>
 		<nav id="rewards_select">
-			<ul id="rewards_select_list">
-				<li>무한나선</li><li>이벤트 포인트</li>
-			</ul>
+			<ul id="rewards_select_list"><li onclick="change(this)" style="background: #FFD300;">무한나선</li><li onclick="change(this)">이벤트 포인트</li></ul>
 		</nav>
 		<section id="rewards_inf">
 			<div id="rewards_inf_list">
 				층 별 보상 목록 
-				<select id="rewards_inf_list_fSelect" onchange="makeList(this.value)">
+				<select id="rewards_inf_list_fSelect">
 					<option value="0">&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;~&nbsp;&nbsp;&nbsp;10</option>
 					<option value="1">&nbsp;&nbsp;11&nbsp;~&nbsp;&nbsp;&nbsp;20</option>
 					<option value="2">&nbsp;&nbsp;21&nbsp;~&nbsp;&nbsp;&nbsp;30</option>
@@ -62,17 +60,18 @@
 					<option value="17">171&nbsp;~&nbsp;180</option>
 					<option value="18">181&nbsp;~&nbsp;190</option>
 					<option value="19">191&nbsp;~&nbsp;200</option>
-				</select><br>
-				<div id="rewards_inf_list_box">
-					<div class="rewards_inf_list_box_floor" id="">
-						<div class="floor_num">200 층</div><div class="floor_img"><img class="floor_img_src" src="item/tik_pri.png"></div><div class="floor_reward">응축된 불확정의 상징물</div><div class="floor_quan">x99</div>
-					</div>
-				</div>
-			</div><div id="rewards_inf_floor">
-				d
+				</select><script>
+document.getElementById('rewards_inf_list_fSelect').addEventListener('change', function() {
+	makeList(this.value);
+}, false);</script><br>
+				<div id="rewards_inf_list_box"></div>
+			</div><div id="rewards_inf_floor">목표 층<input type="number" id="floor_goal" min="1" max="200" onkeyup="if(window.event.keyCode == 13){goal(this.value)}">
 			</div>
 			<div id="rewards_inf_result">
-				f
+				받을 수 있는 보상<br>
+				<div id="inf_result_box">
+					<div class="inf_result_box_item"><div class="inf_result_box_img"><img src="item/tik_pri.png" width="40"></div>x99</div><div class="inf_result_box_item"><div class="inf_result_box_img"><img src="item/tik_pri.png" width="40"></div>x99</div><div class="inf_result_box_item"><div class="inf_result_box_img"><img src="item/tik_pri.png" width="40"></div>x99</div>
+				</div>
 			</div>
 		</section>
 		<section id="rewards_event" style="display: none;">
