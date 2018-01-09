@@ -8,7 +8,38 @@
 	<link rel="stylesheet" type="text/css" href="../side.css">
 	<link rel="stylesheet" type="text/css" href="../nanum.css">
 	<link rel="stylesheet" type="text/css" href="../univ.css">
-	<link rel="stylesheet" type="text/css" href="rewards.css">
+	<link rel="stylesheet" type="text/css" href="rewards_inf.css">
+	<link rel="stylesheet" type="text/css" href="rewards_event.css">
+	<style>
+		article {
+			min-width: 812px; height: 802px;
+			background: #FFFF93;
+		}
+
+		div {
+			background: #FFEB3B;
+		}
+
+		#rewards_select_list {
+			padding: 0px;
+			margin: 0px;
+		}
+
+		#rewards_select_list li{
+			list-style: none;
+			display: inline-block;
+			width: calc(50% - 2px);
+			padding: 24px 1px;
+			margin: 0px;
+		}
+		#rewards_select_list li:hover{
+			opacity: 0.7;
+		}
+
+		#rewards_event {
+			height: calc(100% - 75px);	
+		}
+	</style>
 </head>
 <body>
 	<nav id="menu">
@@ -38,7 +69,7 @@
 		</nav>
 		<section id="rewards_inf">
 			<div id="rewards_inf_list">
-				층 별 보상 목록 
+				층 별 보상 목록
 				<select id="rewards_inf_list_fSelect">
 					<option value="0">&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;~&nbsp;&nbsp;&nbsp;10</option>
 					<option value="1">&nbsp;&nbsp;11&nbsp;~&nbsp;&nbsp;&nbsp;20</option>
@@ -65,17 +96,23 @@ document.getElementById('rewards_inf_list_fSelect').addEventListener('change', f
 	makeList(this.value);
 }, false);</script><br>
 				<div id="rewards_inf_list_box"></div>
-			</div><div id="rewards_inf_floor">목표 층<input type="number" id="floor_goal" min="1" max="200" onkeyup="if(window.event.keyCode == 13){goal(this.value)}">
+			</div><div id="rewards_inf_floor">목표 층<input type="number" id="floor_goal" min="1" max="200" onkeyup="if(window.event.keyCode == 13){infGoal(this.value)}">
 			</div>
 			<div id="rewards_inf_result">
 				받을 수 있는 보상<br>
-				<div id="inf_result_box">
-					<div class="inf_result_box_item"><div class="inf_result_box_img"><img src="item/tik_pri.png" width="40"></div>x99</div><div class="inf_result_box_item"><div class="inf_result_box_img"><img src="item/tik_pri.png" width="40"></div>x99</div><div class="inf_result_box_item"><div class="inf_result_box_img"><img src="item/tik_pri.png" width="40"></div>x99</div>
-				</div>
+				<div id="inf_result_box"></div>
 			</div>
 		</section>
 		<section id="rewards_event" style="display: none;">
-			
+			<div id="rewards_event_list">
+				점수 별 보상 목록<br>
+				<div id="rewards_event_list_box"></div>
+			</div><div id="rewards_event_point">목표 점수<input type="number" id="point_goal" min="1" max="3000000" onkeyup="if(window.event.keyCode == 13){eventGoal(this.value)}">
+			</div>
+			<div id="rewards_event_result">
+				받을 수 있는 보상<br>
+				<div id="event_result_box"></div>
+			</div>
 		</section>
 	</article>
 	<footer>

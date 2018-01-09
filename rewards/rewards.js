@@ -1,5 +1,5 @@
-inf = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/rew_inf.json"))
-
+inf = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/rew_inf.json"));
+event = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/rew_event.json"));
 
 function makeList(argument) {
 	listBox = document.getElementById('rewards_inf_list_box');
@@ -52,7 +52,7 @@ itemCheck = {
 	"sym_nor":0,
 	"sym_con":0
 }
-function goal(argument) {
+function infGoal(argument) {
 	var inf_result = document.getElementById('inf_result_box');
 	inf_result.innerHTML = '';
 	for (var key in itemCheck) {
@@ -71,6 +71,29 @@ function goal(argument) {
 			var elem = document.getElementById('inf_'+inf[i].img);
 			itemCheck[inf[i].img] += inf[i].quan;
 			elem.innerHTML = '<div class="inf_result_box_img"><img src="item/'+inf[i].img+'.png" width="40"></div>x'+itemCheck[inf[i].img];
+		}
+	}
+}
+
+function eventGoal(argument) {
+	var event_result = document.getElementById('event_result_box');
+	event_result.innerHTML = '';
+	for (var key in itemCheck) {
+		itemCheck[key] = 0;
+	}
+	for (var i = 1; i <= argument; i++) {
+		if (itemCheck[event[i].img] == 0) {
+			var elem = document.createElement("div");
+			elem.setAttribute('class', 'event_result_box_item');
+			elem.setAttribute('id', 'event_'+event[i].img);
+			itemCheck[event[i].img] = event[i].quan;
+			elem.innerHTML = '<div class="event_result_box_img"><img src="item/'+event[i].img+'.png" width="40"></div>x'+event[i].quan;
+			event_result.appendChild(elem);
+		}
+		else {
+			var elem = document.getElementById('event_'+event[i].img);
+			itemCheck[event[i].img] += event[i].quan;
+			elem.innerHTML = '<div class="event_result_box_img"><img src="item/'+event[i].img+'.png" width="40"></div>x'+itemCheck[event[i].img];
 		}
 	}
 }
