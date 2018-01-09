@@ -55,16 +55,22 @@ itemCheck = {
 function goal(argument) {
 	var inf_result = document.getElementById('inf_result_box');
 	inf_result.innerHTML = '';
+	for (var key in itemCheck) {
+		itemCheck[key] = 0;
+	}
 	for (var i = 1; i <= argument; i++) {
 		if (itemCheck[inf[i].img] == 0) {
 			var elem = document.createElement("div");
 			elem.setAttribute('class', 'inf_result_box_item');
 			elem.setAttribute('id', 'inf_'+inf[i].img);
+			itemCheck[inf[i].img] = inf[i].quan;
 			elem.innerHTML = '<div class="inf_result_box_img"><img src="item/'+inf[i].img+'.png" width="40"></div>x'+inf[i].quan;
-			itemCheck[inf[i].img] = Number(inf[i].img);
 			inf_result.appendChild(elem);
 		}
 		else {
+			var elem = document.getElementById('inf_'+inf[i].img);
+			itemCheck[inf[i].img] += inf[i].quan;
+			elem.innerHTML = '<div class="inf_result_box_img"><img src="item/'+inf[i].img+'.png" width="40"></div>x'+itemCheck[inf[i].img];
 		}
 	}
 }
