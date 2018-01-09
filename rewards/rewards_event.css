@@ -102,7 +102,7 @@
 }
 
 .event_result_box_img {
-	margin: 14px; margin-right: 0px;
+	margin: 8.5px; margin-right: 0px;
 	padding: 0px;
 }
 .event_result_box_item {
@@ -110,5 +110,5 @@
 	height: calc(100% / 8); 
 	margin: 0px;
 	padding: 0px;
-	line-height: 68px;
+	line-height: 77px;
 }

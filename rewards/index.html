@@ -15,7 +15,7 @@
 			min-width: 812px; height: 802px;
 			background: #FFFF93;
 		}
-		
+
 		#rewards_select_list {
 			padding: 0px;
 			margin: 0px;
@@ -93,7 +93,7 @@ document.getElementById('rewards_inf_list_fSelect').addEventListener('change', f
 }, false);</script><br>
 				<div id="rewards_inf_list_box"></div>
 			</div>
-			<div id="rewards_inf_floor">목표 층<input type="number" id="floor_goal" min="1" max="200" onkeyup="if(window.event.keyCode == 13){infGoal(this.value)}">
+			<div id="rewards_inf_floor">목표 층<input type="number" id="floor_goal" min="1" max="200" onchange="infGoal(this.value)">
 			</div>
 			<div id="rewards_inf_result">
 				받을 수 있는 보상<br>
@@ -105,7 +105,7 @@ document.getElementById('rewards_inf_list_fSelect').addEventListener('change', f
 				점수 별 보상 목록<br>
 				<div id="rewards_event_list_box" -ms-overflow-style: none;></div>
 			</div>
-			<div id="rewards_event_point">목표 점수<input type="number" id="point_goal" min="1" max="3000000" onkeyup="if(window.event.keyCode == 13){eventGoal(this.value)}">
+			<div id="rewards_event_point">목표 점수<input type="number" id="point_goal" min="1" max="10000000" onchange="eventGoal(this.value)">
 			</div>
 			<div id="rewards_event_result">
 				받을 수 있는 보상<br>
