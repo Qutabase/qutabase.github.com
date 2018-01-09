@@ -1,4 +1,4 @@
-#rewards_event {
+﻿#rewards_event {
 	height: calc(100% - 75px);
 	background: #FFE631;
 }
@@ -8,7 +8,7 @@
 	padding: 4px 5px;
 	margin: 5px; margin-right: 0px;
 	background: #FFFA7A;
-	line-height: 40.75px;
+	line-height: 41px;
 }
 
 #rewards_event_list_box {
@@ -17,6 +17,11 @@
 	height: calc(100% - 54px);
 	margin: 5px 0px;
 	padding: 4px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+#rewards_event_list_box::-webkit-scrollbar {
+	display: none;
 }
 
 .rewards_event_list_box_point {
@@ -29,7 +34,7 @@
 
 }
 .box_point_num {
-	width: calc(19% - 4px);
+	width: 23%;
 	height: calc(100% - 8px);
 	line-height: 46px;
 	background: #FFEC3A;
@@ -47,7 +52,7 @@
 	height: 100%;
 }
 .box_point_reward {
-	width: calc(100% - 173.5px);
+	width: calc(100% - 212px);
 	height: calc(100% - 8px);
 	line-height: 46px;
 	background: #FFEC3A;
@@ -55,12 +60,12 @@
 	padding: 4px 0px;
 }
 .box_point_quan {
-	width: 35.6px;
+	width: 62.7px;
 	height: calc(100% - 8px);
 	line-height: 46px;
 	background: #FFEC3A;
 	margin: 0px;
-	padding: 4px;
+	padding: 4px 0px;
 }
 
 #rewards_event_point {
@@ -93,7 +98,7 @@
 	height: calc(100% - 37px);
 	margin: 0px;
 	padding: 0px;
-	font-size: 21px;
+	background: #FFEB3B;
 }
 
 .event_result_box_img {
@@ -101,7 +106,7 @@
 	padding: 0px;
 }
 .event_result_box_item {
-	width: 33%;
+	width: 50%;
 	height: calc(100% / 8); 
 	margin: 0px;
 	padding: 0px;

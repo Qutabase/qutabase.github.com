@@ -1,14 +1,21 @@
 inf = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/rew_inf.json"));
-event = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/rew_event.json"));
+eventP = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/rew_event.json"));
 
 function makeList(argument) {
-	listBox = document.getElementById('rewards_inf_list_box');
-	listBox.innerHTML = '';
+	infList = document.getElementById('rewards_inf_list_box');
+	infList.innerHTML = '';
 	for (var i = 1 + argument * 10; i <= argument * 10 + 10; i++) {
-		listBox.innerHTML = listBox.innerHTML + '<div class="rewards_inf_list_box_floor"><div class="box_floor_num">'+i+' 층</div><div class="box_floor_img"><img class="box_floor_img_src" src="item/'+inf[i].img+'.png"></div><div class="box_floor_reward">'+inf[i].reward+'</div><div class="box_floor_quan">x'+inf[i].quan+'</div></div>'
+		infList.innerHTML = infList.innerHTML + '<div class="rewards_inf_list_box_floor"><div class="box_floor_num">'+i+' 층</div><div class="box_floor_img"><img class="box_floor_img_src" src="item/'+inf[i].img+'.png"></div><div class="box_floor_reward">'+inf[i].reward+'</div><div class="box_floor_quan">'+inf[i].quan+'</div></div>'
 	}
+
 }
 makeList(0);
+
+eventList = document.getElementById('rewards_event_list_box');
+eventList.innerHTML = '';
+for (var i in eventP){
+	eventList.innerHTML = eventList.innerHTML + '<div class="rewards_event_list_box_point"><div class="box_point_num">'+i+'</div><div class="box_point_img"><img class="box_point_img_src" src="item/'+eventP[i].img+'.png"></div><div class="box_point_reward">'+eventP[i].reward+'</div><div class="box_point_quan">'+eventP[i].quan+'</div></div>'
+}
 
 function change(argument) {
 	if (argument.innerHTML == "무한나선") {
@@ -81,19 +88,22 @@ function eventGoal(argument) {
 	for (var key in itemCheck) {
 		itemCheck[key] = 0;
 	}
-	for (var i = 1; i <= argument; i++) {
-		if (itemCheck[event[i].img] == 0) {
-			var elem = document.createElement("div");
-			elem.setAttribute('class', 'event_result_box_item');
-			elem.setAttribute('id', 'event_'+event[i].img);
-			itemCheck[event[i].img] = event[i].quan;
-			elem.innerHTML = '<div class="event_result_box_img"><img src="item/'+event[i].img+'.png" width="40"></div>x'+event[i].quan;
-			event_result.appendChild(elem);
+	for (var i = 1000; i <= argument; i+=500) {
+		try {
+			if (itemCheck[eventP[i].img] == 0) {
+				var elem = document.createElement("div");
+				elem.setAttribute('class', 'event_result_box_item');
+				elem.setAttribute('id', 'event_'+eventP[i].img);
+				itemCheck[eventP[i].img] = eventP[i].quan;
+				elem.innerHTML = '<div class="event_result_box_img"><img src="item/'+eventP[i].img+'.png" width="40"></div>x'+eventP[i].quan;
+				event_result.appendChild(elem);
+			}
+			else {
+				var elem = document.getElementById('event_'+eventP[i].img);
+				itemCheck[eventP[i].img] += eventP[i].quan;
+				elem.innerHTML = '<div class="event_result_box_img"><img src="item/'+eventP[i].img+'.png" width="40"></div>x'+itemCheck[eventP[i].img];
+			}
 		}
-		else {
-			var elem = document.getElementById('event_'+event[i].img);
-			itemCheck[event[i].img] += event[i].quan;
-			elem.innerHTML = '<div class="event_result_box_img"><img src="item/'+event[i].img+'.png" width="40"></div>x'+itemCheck[event[i].img];
-		}
+		catch (exception){}
 	}
 }
