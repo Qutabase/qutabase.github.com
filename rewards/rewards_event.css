@@ -75,8 +75,19 @@
 	background: #FFFA7A;
 }
 
+#point_start {
+	width: 67px;
+	height: 30px;
+	margin: 5px;
+	text-align: center;
+	font-family: "NanumSquareB", "나눔스퀘어", "맑은 고딕";
+	font-size: 22px;
+	border: none;
+	background: #FFE631;	
+}
+
 #point_goal {
-	width: 87px;
+	width: 67px;
 	height: 30px;
 	margin: 5px;
 	text-align: center;

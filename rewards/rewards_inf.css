@@ -79,6 +79,17 @@
 	background: #FFFA7A;
 }
 
+#floor_start {
+	width: 67px;
+	height: 30px;
+	margin: 5px;
+	text-align: center;
+	font-family: "NanumSquareB", "나눔스퀘어", "맑은 고딕";
+	font-size: 22px;
+	border: none;
+	background: #FFE631;	
+}
+
 #floor_goal {
 	width: 67px;
 	height: 30px;

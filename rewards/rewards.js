@@ -11,6 +11,8 @@ function makeList(argument) {
 }
 makeList(0);
 
+floor_start.value = 1;
+
 eventList = document.getElementById('rewards_event_list_box');
 eventList.innerHTML = '';
 for (var i in eventP){
@@ -60,20 +62,20 @@ itemCheck = {
 	"sym_con":0
 }
 
-function infGoal(argument) {
+function infGoal() {
 	var inf_result = document.getElementById('inf_result_box');
 	inf_result.innerHTML = '';
 	for (var key in itemCheck) {
 		itemCheck[key] = 0;
 	}
-	for (var i = 1; i <= argument; i++) {
+	for (var i = Number(floor_start.value); i <= Number(floor_goal.value); i++) {
 		if (itemCheck[inf[i].img] == 0) {
-			var elem = document.createElement("div");
+			itemCheck[inf[i].img] = inf[i].quan;
+			var elem = document.createElement('div');
 			elem.setAttribute('class', 'inf_result_box_item');
 			elem.setAttribute('id', 'inf_'+inf[i].img);
-			itemCheck[inf[i].img] = inf[i].quan;
 			elem.innerHTML = '<div class="inf_result_box_img"><img title="'+inf[i].reward+'" alt="\n'+inf[i].reward+' " src="item/'+inf[i].img+'.png" width="60"></div>x'+inf[i].quan;
-			inf_result.appendChild(elem);
+			inf_result.appendChild(elem)
 		}
 		else {
 			var elem = document.getElementById('inf_'+inf[i].img);
@@ -83,13 +85,14 @@ function infGoal(argument) {
 	}
 }
 
-function eventGoal(argument) {
+function eventGoal() {
 	var event_result = document.getElementById('event_result_box');
 	event_result.innerHTML = '';
 	for (var key in itemCheck) {
 		itemCheck[key] = 0;
 	}
-	for (var i = 1000; i <= argument*10000 && i <= 3000000; i+=500) {
+	console.log(point_start.value, point_goal.value)
+	for (var i = Number(point_start.value)*10000; i <= Number(point_goal.value)*10000 && i <= 3000000; i+=500) {
 		try {
 			if (itemCheck[eventP[i].img] == 0) {
 				var elem = document.createElement("div");
