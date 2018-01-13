@@ -111,9 +111,9 @@ function search(srch) {
 			temp = srch.substring(1);
 			dex = eval("Jdex['" + temp + "']");
 		}
-		document.getElementById('kodex_img_0').setAttribute('src', encodeURI('https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+dex.id+'an.jpg'));
-		document.getElementById('kodex_img_1').setAttribute('src', encodeURI('https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+dex.id+'bn.jpg'));
-		document.getElementById('kodex_img_2').setAttribute('src', encodeURI('https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+dex.id+'cn.jpg'));
+		document.getElementById('kodex_img_0').setAttribute('src', 'https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+dex.id+'an.jpg');
+		document.getElementById('kodex_img_1').setAttribute('src', 'https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+dex.id+'bn.jpg');
+		document.getElementById('kodex_img_2').setAttribute('src', 'https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+dex.id+'cn.jpg');
 		metaMake("title", "QUTABASE - " + dex.name)
 		metaMake("og:title", "QUTABASE - " + dex.name)
 		metaMake("og:description", dex.skill + " - " + dex.ATK[0] + " / " + dex.HP[0])
@@ -181,7 +181,7 @@ function showExmpl(argument) {
 
 			if (ex_list[i] != undefined) {
 				dex = eval("Jdex['" + ex_list[i] + "']");
-				ul.innerHTML = ul.innerHTML + "<a href='https://qutabase.github.io/?kodexName="+ex_list[i]+"'><li>"+dex.rarity +"	"+ ex_list[i]+"</li></a>"
+				ul.innerHTML = ul.innerHTML + "<a href='https://qutabase.github.io/?kodexName="+encodeURI(ex_list[i])+"'><li>"+dex.rarity +"	"+ ex_list[i]+"</li></a>"
 			}
 
 		}

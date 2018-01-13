@@ -34,13 +34,14 @@ function checking(argument) {
 			<li id="menu_skill" onclick="menu_skill_click()">
 				스킬
 				<ul id="list_skill" style="display: none;">
-					<a href="atk.html"><li>공격</li></a>
-					<a href="hp.html"><li>방어</li></a>
-					<a href="spr.html"><li>회복</li></a>
+					<a href="../skill/atk.html"><li>공격</li></a>
+					<a href="../skill/hp.html"><li>방어</li></a>
+					<a href="../skill/spr.html"><li>회복</li></a>
 				</ul>
 			</li>
 			<a href="../vs/index.html"><li>마도서 비교</li></a>
 			<a href="../rewards/index.html"><li>이포 &amp; 무나 보상</li></a>
+			<a href="../simul/index.html"><li>덱 시뮬레이터</li></a>
 		</ul>
 		<img id="menu_rotLogo" alt="QUTABASE Side Bar" src="../logo.svg">
 	</nav>
@@ -156,7 +157,7 @@ for (var i = 0; i < key_list.length; i++) {
 	imgLink = 'https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+'small.png'
 
 	dex = eval("roleDex['" + key_list[i] + "']");
-	element.innerHTML = '<a href="../index.html?kodexName='+dex.name.replace("&","%26")+'"><div class="kodex_thumb"><img src="'+imgLink+'" width="41px" style="margin:1px;"></div><div class="kodex_rarity">'+dex.rarity+'</div><div class="kodex_name"'+reprint+'>'+dex.name+'</div><div class="kodex_skill">'+dex.skill+'</div><div class="kodex_SPR_0">'+eval("Math.round((dex.HP[0] + dex.ATK[0]) / 2)")+'</div><div class="kodex_faction">'+dex.faction+'</div><div class="kodex_illustrator">'+dex.illustrator+'</div></a>';
+	element.innerHTML = '<a href="../index.html?kodexName='+encodeURI(dex.name.replace("&","%26"))+'"><div class="kodex_thumb"><img src="'+imgLink+'" width="41px" style="margin:1px;"></div><div class="kodex_rarity">'+dex.rarity+'</div><div class="kodex_name"'+reprint+'>'+dex.name+'</div><div class="kodex_skill">'+dex.skill+'</div><div class="kodex_SPR_0">'+eval("Math.round((dex.HP[0] + dex.ATK[0]) / 2)")+'</div><div class="kodex_faction">'+dex.faction+'</div><div class="kodex_illustrator">'+dex.illustrator+'</div></a>';
 	id_list.appendChild(element);
 }
 skillname = decodeURI(url_parse("skillName"))
