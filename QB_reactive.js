@@ -49,7 +49,7 @@ function check(argument) {
 	if (window.event.keyCode == 13) {
 
 
-		location.href = "https://qutabase.github.io/?kodexName="+kodex_srch.value;
+		location.href = "https://qutabase.github.io/?kodexName="+encodeURI(kodex_srch.value);
 		// search(kodex_srch.value);
 		// document.getElementById('kodex_srch').value = '';
 		// document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;')
