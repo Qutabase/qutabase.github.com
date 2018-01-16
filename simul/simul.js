@@ -122,25 +122,19 @@ function showSimExmpl(argument) {
 	w.postMessage(inp.value)
 	w.onmessage = function (event) {
 		ex_list = event.data;
-		ul = document.getElementById('kodex_vsExmpl');
+		ul = document.getElementById('kodex_simExmpl');
 		ul.innerHTML = '';
 		var i = 1;
 		for (i = 1; i <= ex_list[0]; i++) {
 
 			if (ex_list[i] != undefined) {
 				dex = eval("Jdex['" + ex_list[i] + "']");
-				ul.innerHTML = ul.innerHTML + "<li onclick='vsSearch(\""+ex_list[i]+"\")'>"+dex.rarity +"	"+ ex_list[i]+"</li>"
+				ul.innerHTML = ul.innerHTML + "<li onclick='simSearch(\""+ex_list[i]+"\")'>"+dex.rarity +"	"+ ex_list[i]+"</li>"
 			}
 
 		}
-		if (i == 0) {
+		if (i == 1) {
 			document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;')
-		}
-		if (zoneid == 'vsT_') {
-			ul.setAttribute('style', 'position: absolute; left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: block;');
-		}
-		else {
-			ul.setAttribute('style', 'position: absolute; left: 272px; top: '+eval(478+(272-ul.offsetHeight))+'px; display: block;');
 		}
 		w.terminate();
 	}

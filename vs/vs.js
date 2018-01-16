@@ -16,7 +16,7 @@ function vsCheck(argument) {
 		showVsExmpl(inp.value);
 	}
 	else if (inp.value == '' && window.event.keyCode == 8) {
-		document.getElementById('kodex_exmpl').setAttribute('style', 'display: none;');		
+		document.getElementById('kodex_vsExmpl').setAttribute('style', 'display: none;');		
 	}
 
 }
