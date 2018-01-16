@@ -133,8 +133,8 @@ function showSimExmpl(argument) {
 			}
 
 		}
-		if (i == 1) {
-			document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;')
+		if (i == 0) {
+			document.getElementById('kodex_simExmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;')
 		}
 		w.terminate();
 	}
