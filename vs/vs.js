@@ -117,7 +117,7 @@ function showVsExmpl(argument) {
 			}
 
 		}
-		if (i == 0) {
+		if (i == 1) {
 			document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;')
 		}
 		if (zoneid == 'vsT_') {
