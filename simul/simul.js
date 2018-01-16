@@ -37,7 +37,7 @@ function simCheck(argument) {
 		showSimExmpl(inp.value);
 	}
 	else if (argument.id == zoneid+'name_inp' && inp.value == '' && window.event.keyCode == 8) {
-		document.getElementById('kodex_exmpl').setAttribute('style', 'display: none;');		
+		document.getElementById('kodex_simExmpl').setAttribute('style', 'display: none;');		
 	}
 
 }
@@ -123,7 +123,7 @@ function showSimExmpl(argument) {
 	w.onmessage = function (event) {
 		ex_list = event.data;
 		ul = document.getElementById('kodex_simExmpl');
-		ul.setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: block;');
+		ul.setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+40)+'px; display: block;');
 		ul.innerHTML = '';
 		var i = 1;
 		for (i = 1; i <= ex_list[0]; i++) {
@@ -135,7 +135,7 @@ function showSimExmpl(argument) {
 
 		}
 		if (i == 0) {
-			document.getElementById('kodex_simExmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;')
+			document.getElementById('kodex_simExmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+40)+'px; display: none;')
 		}
 		w.terminate();
 	}
