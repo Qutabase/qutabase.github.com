@@ -11,7 +11,6 @@ div {
 	float: left;
 	padding: 4px 9px;
 	margin: 1px;
-	/*background: #e3e4ee;*/
 }
 img {
 	display: block;
@@ -19,7 +18,7 @@ img {
 
 article {
 	margin-left: 40px;
-	width: calc(100% - 50px); height: 100%;
+	width: calc(100% - 50px);
 	max-width: 812px; max-height: 901px;
 	display: inline-block;
 	background: #dddddd;
