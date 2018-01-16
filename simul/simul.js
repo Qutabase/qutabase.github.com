@@ -96,12 +96,12 @@ function simSearch(srch) {
 		document.getElementById(zoneid+'skill').setAttribute('onmouseover', "this.innerHTML = "+Math.floor(eval('J'+role[dex.role]+'[dex.skill].static') * Math.floor( document.getElementById(zoneid+role[dex.role]).innerHTML * 1.3) ) );
 		document.getElementById(zoneid+'skill').setAttribute('onmouseout', "this.innerHTML = '"+dex.skill+"'");
 	}
-	try {
+	// try {
 		document.getElementById('kodex_simExmpl').setAttribute('style', 'display: none;')
-	}
-	catch (exception){
-		;
-	}
+	// }
+	// catch (exception){
+		// ;
+	// }
 	document.getElementsByTagName('article')[0].setAttribute("style", "display: inline-block;")
 
 }
