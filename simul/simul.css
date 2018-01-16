@@ -13,6 +13,42 @@ div {
 	margin: 0px 2px;
 	padding: 0px;
 }
+
+#kodex_simExmpl {
+
+	position: absolute;
+	top: 100%;
+	left: 0px;	
+	z-index: 1000;
+	display: block;
+	float: left;
+	min-width: 160px;
+	max-height: 260px;
+	overflow-y:	auto;
+	font-size: 18px;
+	padding: 5px;
+	margin: 2px 0 0;
+	color: #373a3c;
+	text-align: left;
+	list-style: none;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid rgba(0,0,0,0.15);
+	border-radius: .2rem;
+
+}
+
+#kodex_simExmpl li {
+	list-style: none;
+	padding: 3px;
+	cursor: pointer;
+	background: white;
+}
+
+#kodex_simExmpl li:hover {
+	background: #e3e4ee;
+}
+
 #simul_index {
 	width: 100%;
 }
