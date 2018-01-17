@@ -1,9 +1,9 @@
 function kinput(value) {
 	document.getElementById(zoneid+value).innerHTML = eval('dex.'+value);
 }
-// Jhp = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/skill_hp.json"))
+Jhp = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/skill_hp.json"))
 Jatk = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/skill_atk.json"))
-// Jspr = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/skill_spr.json"))
+Jspr = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/skill_spr.json"))
 
 kodex_slot = {
 	'ac1':'',
