@@ -3,19 +3,19 @@
 @font-face {
 	font-family: 'NanumSquareR';
 	src: local(나눔스퀘어), local(NanumSquareR),
-	url(https://qutabase.github.io/fonts/NanumSquareR.eot);
-	src: url(https://qutabase.github.io/fonts/NanumSquareR.eot?#iefix) format('embedded-opentype'),
-	url(https://qutabase.github.io/fonts/NanumSquareR.woff) format('woff'),
-	url(https://qutabase.github.io/fonts/NanumSquareR.ttf) format('truetype');
+	url(https://qu.kinos.co.kr/fonts/NanumSquareR.eot);
+	src: url(https://qu.kinos.co.kr/fonts/NanumSquareR.eot?#iefix) format('embedded-opentype'),
+	url(https://qu.kinos.co.kr/fonts/NanumSquareR.woff) format('woff'),
+	url(https://qu.kinos.co.kr/fonts/NanumSquareR.ttf) format('truetype');
 }
 
 @font-face {
 	font-family: 'NanumSquareB';
 	src: local(나눔스퀘어 Bold), local(NanumSquareB),
-	url(https://qutabase.github.io/fonts/NanumSquareB.eot);
-	src: url(https://qutabase.github.io/fonts/NanumSquareB.eot?#iefix) format('embedded-opentype'),
-	url(https://qutabase.github.io/fonts/NanumSquareB.woff) format('woff'),
-	url(https://qutabase.github.io/fonts/NanumSquareB.ttf) format('truetype');
+	url(https://qu.kinos.co.kr/fonts/NanumSquareB.eot);
+	src: url(https://qu.kinos.co.kr/fonts/NanumSquareB.eot?#iefix) format('embedded-opentype'),
+	url(https://qu.kinos.co.kr/fonts/NanumSquareB.woff) format('woff'),
+	url(https://qu.kinos.co.kr/fonts/NanumSquareB.ttf) format('truetype');
 }
 
 body {
