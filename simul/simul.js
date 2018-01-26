@@ -119,7 +119,7 @@ function showSimExmpl(argument) {
 		'QR':'8'
 	}
 
-	var w = new Worker("https://qutabase.github.io/worker.js")
+	var w = new Worker("https://qu.kinos.co.kr/worker.js")
 	w.postMessage(inp.value)
 	w.onmessage = function (event) {
 		ex_list = event.data;
