@@ -48,12 +48,7 @@ function check(argument) {
 	inp = document.getElementById('kodex_srch');
 	if (window.event.keyCode == 13) {
 
-
-		location.href = "https://qutabase.github.io/?kodexName="+encodeURI(kodex_srch.value);
-		// search(kodex_srch.value);
-		// document.getElementById('kodex_srch').value = '';
-		// document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;')
-
+		location.href = "https://qutabase.github.io/?kodexName=" + encodeURIComponent(kodex_srch.value);
 		return;
 
 	}
@@ -61,7 +56,9 @@ function check(argument) {
 		showExmpl(kodex_srch.value);
 	}
 	else if (kodex_srch.value == '' && window.event.keyCode == 8) {
-		document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;');		
+		document.getElementById('kodex_exmpl').setAttribute('style'
+				,	'left: ' + inp.offsetLeft + 'px; top: ' + eval(inp.offsetTop + 30) + 'px; display: none;'
+		);		
 	}
 
 }
@@ -111,26 +108,56 @@ function search(srch) {
 			temp = srch.substring(1);
 			dex = eval("Jdex['" + temp + "']");
 		}
-		document.getElementById('kodex_img_0').setAttribute('src', 'https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+dex.id+'an.jpg');
-		document.getElementById('kodex_img_1').setAttribute('src', 'https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+dex.id+'bn.jpg');
-		document.getElementById('kodex_img_2').setAttribute('src', 'https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+dex.id+'cn.jpg');
+		document.getElementById('kodex_img_0').setAttribute('src'
+			,	'https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'
+				+	role[dex.role]		+	'/'
+				+	dex.enskill			+	'/'
+				+	rarity[dex.rarity]	+	'/'
+				+	dex.id				+	'/'
+				+	dex.id				+	'an.jpg'
+		);
+		document.getElementById('kodex_img_1').setAttribute('src'
+			,	'https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'
+				+	role[dex.role]		+	'/'
+				+	dex.enskill			+	'/'
+				+	rarity[dex.rarity]	+	'/'
+				+	dex.id				+	'/'
+				+	dex.id				+	'bn.jpg'
+		);
+		document.getElementById('kodex_img_2').setAttribute('src'
+			,	'https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'
+				+	role[dex.role]		+	'/'
+				+	dex.enskill			+	'/'
+				+	rarity[dex.rarity]	+	'/'
+				+	dex.id				+	'/'
+				+	dex.id				+	'cn.jpg'
+		);
 		metaMake("title", "QUTABASE - " + dex.name)
 		metaMake("og:title", "QUTABASE - " + dex.name)
 		metaMake("og:description", dex.skill + " - " + dex.ATK[0] + " / " + dex.HP[0])
-		metaMake("og:image", encodeURI('https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+dex.id+'cn.jpg'))
+		metaMake("og:image"
+			,	encodeURI(
+					'https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'
+					+	role[dex.role]		+	'/'
+					+	dex.enskill			+	'/'
+					+	rarity[dex.rarity]	+	'/'
+					+	dex.id				+	'/'
+					+	dex.id				+	'cn.jpg'
+				)
+		);
 		dex = eval("Jdex['" + srch + "']");
 		kinput('rarity');
 		kinput('name');
 		kinput('cost');
-		document.getElementById('kodex_rarity_m').innerHTML = dex.rarity;
-		document.getElementById('kodex_name_m').innerHTML = dex.name;
-		document.getElementById('kodex_cost_m').innerHTML = dex.cost;
-		document.getElementById('kodex_rarity').setAttribute('style', 'color: '+dex.rarefont+'; background: '+dex.rareColor+';');
-		document.getElementById('kodex_name').setAttribute('style', 'color: '+dex.rarefont+'; background: '+dex.rareColor+';');
-		document.getElementById('kodex_rarity_m').setAttribute('style', 'color: '+dex.rarefont+'; background: '+dex.rareColor+';');
-		document.getElementById('kodex_name_m').setAttribute('style', 'color: '+dex.rarefont+'; background: '+dex.rareColor+';');
-		document.getElementById('kodex_skill').setAttribute('style', 'background: '+dex.roleColor+';');
-		document.getElementById('kodex_skill').setAttribute('onclick', 'location.href="skill/'+role[dex.role]+'.html?skillName='+dex.skill.substring(0, 2)+'"');
+		document.getElementById('kodex_rarity_m').innerHTML	=	dex.rarity;
+		document.getElementById('kodex_name_m').innerHTML	=	dex.name;
+		document.getElementById('kodex_cost_m').innerHTML	=	dex.cost;
+		document.getElementById('kodex_rarity').setAttribute(	'style'		,	'color: ' + dex.rarefont + '; background: ' + dex.rareColor + ';');
+		document.getElementById('kodex_name').setAttribute(		'style'		,	'color: ' + dex.rarefont + '; background: ' + dex.rareColor + ';');
+		document.getElementById('kodex_rarity_m').setAttribute(	'style'		,	'color: ' + dex.rarefont + '; background: ' + dex.rareColor + ';');
+		document.getElementById('kodex_name_m').setAttribute(	'style'		,	'color: ' + dex.rarefont + '; background: ' + dex.rareColor + ';');
+		document.getElementById('kodex_skill').setAttribute(	'style'		,	'background: ' + dex.roleColor + ';');
+		document.getElementById('kodex_skill').setAttribute	(	'onclick'	,	'location.href="skill/' + role[dex.role] + '.html?skillName=' + dex.skill.substring(0, 2) + '"');
 		kinput('skill');
 		kinput('role');
 		kinput('skilltype');
@@ -140,15 +167,17 @@ function search(srch) {
 		kinput('atk0');
 		kinput('spr0');
 		for (var i = 0; i < 7; i++) {
-			document.getElementById('kodex_HP_'+i).innerHTML = dex.HP[i];
-			document.getElementById('kodex_ATK_'+i).innerHTML = dex.ATK[i];
-			document.getElementById('kodex_SPR_'+i).innerHTML = dex.SPR[i];
+			document.getElementById('kodex_HP_'+i).innerHTML	=	dex.HP[i];
+			document.getElementById('kodex_ATK_'+i).innerHTML	=	dex.ATK[i];
+			document.getElementById('kodex_SPR_'+i).innerHTML	=	dex.SPR[i];
 		}
 
 	}
 	try {
-		document.getElementById('kodex_srch').value = '';
-		document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;')
+		document.getElementById('kodex_srch').value	=	'';
+		document.getElementById('kodex_exmpl').setAttribute('style'
+				,	'left: ' + inp.offsetLeft + 'px; top: ' + eval(inp.offsetTop + 30) + 'px; display: none;'
+		);
 	}
 	catch (exception){
 		;
@@ -172,23 +201,33 @@ function showExmpl(argument) {
 	var w = new Worker("https://qutabase.github.io/worker.js")
 	w.postMessage(inp.value)
 	w.onmessage = function (event) {
+
 		ex_list = event.data;
 		ul = document.getElementById('kodex_exmpl');
-		ul.setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: block;');
+		ul.setAttribute('style'
+				,	'left: ' + inp.offsetLeft + 'px; top: ' + eval(inp.offsetTop + 30) + 'px; display: block;'
+		);
 		ul.innerHTML = '';
+		
 		var i = 1;
 		for (i = 1; i <= ex_list[0]; i++) {
 
 			if (ex_list[i] != undefined) {
 				dex = eval("Jdex['" + ex_list[i] + "']");
-				ul.innerHTML = ul.innerHTML + "<a href='https://qutabase.github.io/?kodexName="+encodeURI(ex_list[i])+"'><li>"+dex.rarity +"	"+ ex_list[i]+"</li></a>"
+				ul.innerHTML = ul.innerHTML + "<a href='https://qutabase.github.io/?kodexName=" + encodeURIComponent(ex_list[i]) + "'><li>" + dex.rarity + "	" + ex_list[i] + "</li></a>"
 			}
 
+		
 		}
+
 		if (i == 1) {
-			document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;')
+			document.getElementById('kodex_exmpl').setAttribute('style'
+					, 'left: ' + inp.offsetLeft + 'px; top: ' + eval(inp.offsetTop + 30) + 'px; display: none;'
+			)
 		}
+
 		w.terminate();
+
 	}
 
 }
