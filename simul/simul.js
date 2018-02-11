@@ -54,32 +54,38 @@ function simCheck(argument) {
 }
 
 rarity = {
-	'N':'1',
-	'N+':'2',
-	'R':'3',
-	'R+':'4',
-	'SR':'5',
-	'SR+':'6',
-	'SSR':'7',
-	'QR':'8'
+	'N':'1'
+,	'N+':'2'
+,	'R':'3'
+,	'R+':'4'
+,	'SR':'5'
+,	'SR+':'6'
+,	'SSR':'7'
+,	'QR':'8'
 }
 
 role = {
-	'공격':'atk',
-	'방어':'hp',
-	'회복':'spr'
+	'공격':'atk'
+,	'방어':'hp'
+,	'회복':'spr'
 }
 
 bind = {
-	'bind':'0.5 0.5 0.6 0.6 0.7 0.8 0.9 0.8',
-	'N':0.05,
-	'N+':0.05,
-	'R':0.06,
-	'R+':0.06,
-	'SR':0.07,
-	'SR+':0.08,
-	'SSR':0.09,
-	'QR':0.08
+	'bind':'0.5 0.5 0.6 0.6 0.7 0.8 0.9 0.8'
+,	'N':0.05
+,	'N+':0.05
+,	'R':0.06
+,	'R+':0.06
+,	'SR':0.07
+,	'SR+':0.08
+,	'SSR':0.09
+,	'QR':0.0
+}
+
+desc = {
+	'공격':'공격력 30%'
+,	'방어':'체력 30%'
+,	'회복':'정신력 50%'
 }
 
 /*
@@ -105,12 +111,9 @@ TO: */
 		}
 		
 		if (zoneid == 'ac1_') {
-			desc = {
-				'공격':'공격력 30%'
-			,	'방어':'체력 30%'
-			,	'회복':'정신력 50%'
-			}
-			document.getElementById('simul_index_role').innerHTML		= "덱 역할<br>"	+	dex.role;
+			document.getElementById('simul_index_role').innerHTML		= "덱 역할<br><span style='font-size: 24px;'>"
+																		+ dex.role
+																		+ "</span>";
 			document.getElementById('simul_index_roleImg').setAttribute('src', role[dex.role] + '.png');
 			document.getElementById('simul_index_roleDesc').innerHTML	= "덱 전체 "	+	desc[dex.role]	+ " 증가<br>"
 																		+	dex.role	+	" 계열 스킬 강화"
@@ -174,18 +177,63 @@ TO: */
 
 		effect	=	Jskill[dex.skill].effect.split('/');
 		document.getElementById(zoneid + 'effect').innerHTML = '';
-		var count = ''
+		var count = 1;
 		for (eff in effect){
+			
 			var temp = Jeffect[effect[eff]]
+			sd		=	(document.getElementById('simul_index_role').innerHTML.substr(39, 2) == dex.role) ? ['S','D'] : ['s','d'] ;
+
 			document.getElementById(zoneid + 'effect').setAttribute('style'
 					,	'background: '	+	dex.roleColor + '; color: white;'
 			);
 
-			st = 
-			document.getElementById(zoneid + 'effect').innerHTML +=
-					temp.disp	+	': '	+	temp.expression;
+			var val	=	Number(
+								eval(
+									zoneid + role[dex.role] + '.innerHTML'
+								)
+							);
+			var st		=	parseFloat(
+								Jskill[dex.skill][sd[0] + 'tatic'	+ count]
+							)	* 100;
+			var dy		=	(Jskill[dex.skill][sd[1] + 'ynamic'	+ count] == 'lea')
+							? 
+							parseFloat(
+								Math.floor(
+									val
+									*	(
+											1
+											+ desc[dex.role].substr(	desc[dex.role].length - 3, 2 )
+											/ 100
+										)
+								)
+								*	Jskill[dex.skill]['dynamic' + count]
+							)
+							:
+							parseFloat(
+								Jskill[dex.skill][sd[1] + 'ynamic'	+ count]
+							) *	val
+							;
+
+			val *= 0.01;
+			if 		(temp.val == 'deck') {
+				Number(
+					eval(
+						zoneid + role[dex.role] + '.innerHTML'
+					)
+				);
+			}
+			document.getElementById(zoneid + 'effect').innerHTML
+					+=	temp.disp
+					+	': '
+					+	(
+							Math.floor(
+								eval(temp.exp1)	*	100
+							)	/	100
+						)
+					+ ' ';
 
 			count += 1;
+
 		}
 
 		var sum_atk	 = 0;
@@ -193,7 +241,6 @@ TO: */
 		var sum_spr	 = 0;
 
 		for (key in kodex_slot) {
-			console.log(key)
 			sum_atk	+=	Number(	eval(	key +	'_atk.innerHTML'	)	);
 			sum_hp	+=	Number(	eval(	key +	'_hp.innerHTML'		)	);
 			sum_spr	+=	Number(	eval(	key +	'_spr.innerHTML'	)	);
@@ -235,7 +282,10 @@ function showSimExmpl(argument) {
 
 			if (ex_list[i] != undefined) {
 				dex = eval("Jdex['" + ex_list[i] + "']");
-				ul.innerHTML = ul.innerHTML + "<li onclick='simSearch(\"" + ex_list[i] + "\")'>" + dex.rarity + "	" + ex_list[i] + "</li>"
+				ul.innerHTML =	ul.innerHTML
+								+ "<li onclick='simSearch(\"" + ex_list[i] + "\")'>"
+									+ dex.rarity + "	" + ex_list[i]
+								+ "</li>";
 			}
 
 		}

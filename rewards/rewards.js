@@ -125,28 +125,31 @@ function eventGoal() {
 	}
 
 	for (var i = Number(point_start.value) * 10000; i <= Number(point_goal.value) * 10000 && i <= 3000000; i += 500) {
-		if (itemCheck[eventP[i].img] == 0) {
-			var elem		=	document.createElement("div");
-			elem.setAttribute(	'class'	, 'event_result_box_item');
-			elem.setAttribute(	'id'	, 'event_' + eventP[i].img);
-			itemCheck[eventP[i].img] = eventP[i].quan;
-			elem.innerHTML	=	'<div class="event_result_box_img"><img title="'
-								+	eventP[i].reward	+	'" alt="\n'
-								+	eventP[i].reward	+	' " src="item/'
-								+	eventP[i].img		+	'.png" width="60"></div>x'
-								+	eventP[i].quan
-								;
-			event_result.appendChild(elem);
+		try {
+			if (itemCheck[eventP[i].img] == 0) {
+				var elem		=	document.createElement("div");
+				elem.setAttribute(	'class'	, 'event_result_box_item');
+				elem.setAttribute(	'id'	, 'event_' + eventP[i].img);
+				itemCheck[eventP[i].img] = eventP[i].quan;
+				elem.innerHTML	=	'<div class="event_result_box_img"><img title="'
+									+	eventP[i].reward	+	'" alt="\n'
+									+	eventP[i].reward	+	' " src="item/'
+									+	eventP[i].img		+	'.png" width="60"></div>x'
+									+	eventP[i].quan
+									;
+				event_result.appendChild(elem);
+			}
+			else {
+				itemCheck[eventP[i].img] += eventP[i].quan;
+				var elem		=	document.getElementById('event_'+eventP[i].img);
+				elem.innerHTML	=	'<div class="event_result_box_img"><img title="'
+									+	eventP[i].reward	+	'" alt="\n'
+									+	eventP[i].reward	+	' " src="item/'
+									+	eventP[i].img		+	'.png" width="60"></div>x'
+									+	itemCheck[eventP[i].img]
+									;
+			}
 		}
-		else {
-			itemCheck[eventP[i].img] += eventP[i].quan;
-			var elem		=	document.getElementById('event_'+eventP[i].img);
-			elem.innerHTML	=	'<div class="event_result_box_img"><img title="'
-								+	eventP[i].reward	+	'" alt="\n'
-								+	eventP[i].reward	+	' " src="item/'
-								+	eventP[i].img		+	'.png" width="60"></div>x'
-								+	itemCheck[eventP[i].img]
-								;
-		}
+		catch (exception) {}
 	}
 }
