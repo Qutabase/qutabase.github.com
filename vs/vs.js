@@ -2,10 +2,17 @@ function kinput(value) {
 	document.getElementById('kodex_' + zoneid + value).innerHTML = eval('dex.' + value);
 }
 
+Jskill	=	JSON.parse(
+				getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/skill.json")
+			);
+Jeffect	=	JSON.parse(
+				getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/effect.json")
+			);
+
 function vsCheck(argument) {
 
 	inp = argument;
-	zoneid = inp.parentElement.parentElement.id.substr(6,3) + '_';
+	zoneid = inp.parentElement.parentElement.id.substr(6,2) + '_';
 	if (window.event.keyCode == 13) {
 
 		vsSearch(inp.value);
@@ -67,8 +74,12 @@ function vsSearch(srch) {
 		document.getElementById('kodex_' + zoneid + 'rarity_m').innerHTML	=	dex.rarity;
 		document.getElementById('kodex_' + zoneid + 'name_m').innerHTML		=	dex.name;
 		document.getElementById('kodex_' + zoneid + 'cost_m').innerHTML		=	dex.cost;
-		document.getElementById('kodex_' + zoneid + 'rarity_m').setAttribute('style'	, 'color: ' + dex.rarefont + '; background: ' + dex.rareColor + ';');
-		document.getElementById('kodex_' + zoneid + 'name_m').setAttribute('style'		, 'color: ' + dex.rarefont + '; background: ' + dex.rareColor + ';');
+		document.getElementById('kodex_' + zoneid + 'rarity_m').setAttribute('style'
+				, 'color: ' + dex.rarefont + '; background: ' + dex.rareColor + ';'
+		);
+		document.getElementById('kodex_' + zoneid + 'name_m').setAttribute('style'
+				, 'color: ' + dex.rarefont + '; background: ' + dex.rareColor + ';'
+		);
 		document.getElementById('kodex_' + zoneid + 'name_m').setAttribute('onclick'
 			, "this.innerHTML='<input type=\"text\" class=\"kodex_vs_inp\" onkeyup=\"vsCheck(this)\" id=\"kodex_vsTName\">';this.onclick=''"
 		);

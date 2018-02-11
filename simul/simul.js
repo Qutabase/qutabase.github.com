@@ -9,10 +9,10 @@ function kinput(value) {
 
 Jskill	=	JSON.parse(
 				getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/skill.json")
-			)
+			);
 Jeffect	=	JSON.parse(
 				getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/effect.json")
-			)
+			);
 
 kodex_slot = {
 	'ac1':''
@@ -26,7 +26,7 @@ kodex_slot = {
 ,	'pa3':''
 ,	'pa4':''
 ,	'pa5':''
-}
+};
 
 function simCheck(argument) {
 

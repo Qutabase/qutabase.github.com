@@ -12,13 +12,14 @@ article {
 .kodex_statchart {
 	width: calc(100% / 9 - 2.01px);
 	padding: 0px;
-	background: #dddddd;
+	/*background: #dddddd;*/
 }
 .kodex_stat {
 	width: calc(100% - 18px);
 	margin: 0px;
 	margin-bottom: 2px;
 	padding: 10px 9px;
+	background: #e3e4ee;
 }
 .kodex_head {
 	display: inline-block;
@@ -29,35 +30,35 @@ article {
 	line-height: 56px;
 	float: none;
 }
-#kodex_vsT_header_m {
-	width: 400px;
+#kodex_vs_header_m {
+	width: 350px;
 	padding: 0px;
 }
-#kodex_vsT_rarity_m {
+#kodex_vs_rarity_m {
 	width: calc(50% - 20px);
 	color: white;
 	font-size: 32px;
 	/*padding-top: 20px; padding-bottom: 20px;*/
 }
-#kodex_vsT_name_m {
+#kodex_vs_name_m {
 	width: calc(100% - 20px);
 	color: white;
 	font-size: 32px;
 	margin-bottom: 2px;
 	cursor: pointer;
 }
-#kodex_vsT_cst_m {
+#kodex_vs_cst_m {
 	width: calc(50% - 20px);
 	/*padding-top: 20px; padding-bottom: 20px;*/
 }
-#kodex_vsT_skill {
-	width: 242px; height: 128px;
+#kodex_vs_skill {
+	width: 292px; height: 128px;
 	line-height: 128px;
 	font-size: 33px;
 	color: white;
 	cursor: pointer;
 }
-#kodex_vsT_face:hover {
+#kodex_vs_face:hover {
 	opacity: 0.7;
 }
 
@@ -95,13 +96,13 @@ article {
 	opacity: 0.7;
 }
 
-#kodex_vsT_skill:hover {
+#kodex_vs_skill:hover {
 	opacity: 0.7;
 }
 #kodex_vsB_skill:hover {
 	opacity: 0.7;
 }
-#kodex_vsT_name_m:hover {
+#kodex_vs_name_m:hover {
 	opacity: 0.7;
 }
 #kodex_vsB_name_m:hover {
