@@ -79,7 +79,7 @@ bind = {
 ,	'SR':0.07
 ,	'SR+':0.08
 ,	'SSR':0.09
-,	'QR':0.0
+,	'QR':0.08
 }
 
 desc = {
@@ -94,7 +94,6 @@ desc = {
 * 1.	2018-01-26. SN KINOS. 
 */
 function simSearch(srch) {
-	
 /* 2018-01-26. STARFLIT	CHANGED FROM:	dex = eval("Jdex['" + srch + "']");
 TO: */
 	dex = eval("Jdex['" + srch + "']");
@@ -111,12 +110,23 @@ TO: */
 		}
 		
 		if (zoneid == 'ac1_') {
-			document.getElementById('simul_index_role').innerHTML		= "덱 역할<br><span style='font-size: 24px;'>"
-																		+ dex.role
-																		+ "</span>";
+			console.log('ac1 on')
+			document.getElementById('simul_index_role').innerHTML		= dex.role;
 			document.getElementById('simul_index_roleImg').setAttribute('src', role[dex.role] + '.png');
 			document.getElementById('simul_index_roleDesc').innerHTML	= "덱 전체 "	+	desc[dex.role]	+ " 증가<br>"
-																		+	dex.role	+	" 계열 스킬 강화"
+																		+	dex.role	+	" 계열 스킬 강화";
+//	2018-02-12. SN KINOS ADDED SIMULATOR RENEWALLER
+			for (x in kodex_slot) {
+				if (kodex_slot[x] != '' && x != 'ac1') {
+					zoneid	=	x + '_';
+					simSearch(kodex_slot[x]);
+				}
+			}
+
+			zoneid	=	'ac1_';
+			dex = eval("Jdex['" + srch + "']");
+//	2018-02-12. SN KINOS END.
+
 		}
 
 		document.getElementById(zoneid + 'img').setAttribute('src'
@@ -161,7 +171,7 @@ TO: */
 																	Math.floor(
 																			dex.hp0
 																		+	dex.hpLv * (eval (zoneid + 'lv.value') - 1)
-																	)	*	( 1 + eval(zoneid+'bind.value') * bind[dex.rarity] )
+																	)	*	( 1 + eval(zoneid + 'bind.value') * bind[dex.rarity] )
 																);
 		document.getElementById(zoneid + 'atk').innerHTML	=	Math.round(
 																	Math.floor(
@@ -175,62 +185,118 @@ TO: */
 																	) / 2
 																);
 
+
+
 		effect	=	Jskill[dex.skill].effect.split('/');
 		document.getElementById(zoneid + 'effect').innerHTML = '';
 		var count = 1;
+		var	sd	=	(document.getElementById('simul_index_role').innerHTML == dex.role) ? ['S','D'] : ['s','d'];
+
+		var	st1	=	parseFloat(
+						Jskill[dex.skill][sd[0] + 'tatic1']
+					);
+		var	st2	=	parseFloat(
+						Jskill[dex.skill][sd[0] + 'tatic2']
+					);
+		var	st3	=	parseFloat(
+						Jskill[dex.skill][sd[0] + 'tatic3']
+					);
+		var	dy1	=	parseFloat(
+						Jskill[dex.skill][sd[1] + 'ynamic1']
+					);
+		var	dy2	=	parseFloat(
+						Jskill[dex.skill][sd[1] + 'ynamic2']
+					);
+		var	dy3	=	parseFloat(
+						Jskill[dex.skill][sd[1] + 'ynamic3']
+					);
+		var	pd	=	(sd == ['S', 'D'])
+					?
+					Jskill[dex.skill].probability
+					:
+					Jskill[dex.skill].duration
+					;
+
 		for (eff in effect){
 			
 			var temp = Jeffect[effect[eff]]
-			sd		=	(document.getElementById('simul_index_role').innerHTML.substr(39, 2) == dex.role) ? ['S','D'] : ['s','d'] ;
 
 			document.getElementById(zoneid + 'effect').setAttribute('style'
 					,	'background: '	+	dex.roleColor + '; color: white;'
 			);
-
-			var val	=	Number(
-								eval(
-									zoneid + role[dex.role] + '.innerHTML'
-								)
-							);
-			var st		=	parseFloat(
-								Jskill[dex.skill][sd[0] + 'tatic'	+ count]
-							)	* 100;
-			var dy		=	(Jskill[dex.skill][sd[1] + 'ynamic'	+ count] == 'lea')
-							? 
-							parseFloat(
-								Math.floor(
-									val
-									*	(
-											1
-											+ desc[dex.role].substr(	desc[dex.role].length - 3, 2 )
-											/ 100
-										)
-								)
-								*	Jskill[dex.skill]['dynamic' + count]
+			var	val	=	Number(
+							eval(
+								zoneid + role[dex.role] + '.innerHTML'
 							)
-							:
-							parseFloat(
-								Jskill[dex.skill][sd[1] + 'ynamic'	+ count]
-							) *	val
-							;
-
-			val *= 0.01;
-			if 		(temp.val == 'deck') {
-				Number(
-					eval(
-						zoneid + role[dex.role] + '.innerHTML'
-					)
-				);
-			}
-			document.getElementById(zoneid + 'effect').innerHTML
-					+=	temp.disp
-					+	': '
-					+	(
+						);
+			var	st	=	parseFloat(
+							Jskill[dex.skill][sd[0] + 'tatic'	+	count]
+						);
+			var	dy	=	(Jskill[dex.skill][sd[1] + 'ynamic'	+	count] == 'lea')
+						? 
+						parseFloat(
 							Math.floor(
-								eval(temp.exp1)	*	100
-							)	/	100
+								val
+								*	(
+										1	+ desc[dex.role].substr(	desc[dex.role].length - 3, 2 )
+										/ 100
+									)
+							)
+							*	Jskill[dex.skill]['dynamic' + count]
 						)
-					+ ' ';
+						:
+						parseFloat(
+							Jskill[dex.skill][sd[1] + 'ynamic'	+ count]
+						) *	val
+						;
+
+			(document.getElementById('simul_index_role').innerHTML == dex.role)
+			?
+			val = Math.floor(
+						val
+						*	(
+								1	+	desc[dex.role].substr(	desc[dex.role].length - 3, 2 )
+								/	100
+							)
+					)
+			:
+			''
+			;
+			if ((effect[eff] in {'atk':'', 'ntk':'', 'stk':'', 'inn':'', 'hp':'', 'spr':'', 'hea':'', 'tik':'', 'shi':'', 'Atk':'', 'Hp':'', 'Inn':'', 'Spr':'', 'gol':'', 'sur':'', 'bun':''})) {
+				val *= 0.01;
+				st *= 100;
+			}
+
+			if (temp.value == 'deck') {
+				val	=	Number(
+							eval(
+								zoneid + role[dex.role] + '.innerHTML'
+							)
+						);
+			}
+			else if (temp.value == 'prev') {
+				val	=	Number(
+							prev.substring(0, prev.length - 1)
+						);
+			}
+			document.getElementById(zoneid + 'effect').innerHTML	+=	temp.disp	+	': ';
+
+			exps	=	temp.exp1.split(',');
+			for (var x in exps) {
+				prev	=	(effect[eff] in {'atk':'', 'ntk':'', 'stk':'', 'inn':'', 'hp':'', 'spr':'', 'hea':'', 'tik':'', 'shi':'', 'Atk':'', 'Hp':'', 'Inn':'', 'Spr':'', 'gol':'', 'sur':'', 'bun':''})
+							?
+							Math.floor(
+								eval(exps[x])	*	100
+							)	/	100
+							+ ';'
+							:
+							Math.floor(
+								eval(exps[x])
+							)
+							+ ';'
+							;
+				document.getElementById(zoneid + 'effect').innerHTML	+=	prev;
+			}
 
 			count += 1;
 
