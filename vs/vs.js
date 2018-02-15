@@ -51,7 +51,10 @@ function vsSearch(srch) {
 
 	if (dex != undefined) {
 
-		if (srch.indexOf('® ') != -1) {
+		if (srch.indexOf('®마법소녀 팥쥐') != -1) {
+			;
+		}
+		else if (srch.indexOf('® ') != -1) {
 			temp = srch.substring(2);
 			dex = eval("Jdex['" + temp + "']");
 		}
@@ -59,7 +62,7 @@ function vsSearch(srch) {
 			temp = srch.substring(1);
 			dex = eval("Jdex['" + temp + "']");
 		}
-		document.getElementById('kodex_'+zoneid+'face').setAttribute('src'
+		document.getElementById('info_face').setAttribute('src'
 				,	encodeURI(
 						'https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'
 						+	role[dex.role]		+	'/'
@@ -68,23 +71,23 @@ function vsSearch(srch) {
 						+	dex.id				+	'/raw.png'
 					)
 		);
-		document.getElementById('kodex_'+zoneid+'link').setAttribute('href', 'https://qutabase.github.io/?kodexName=' + encodeURI(dex.name));
-		metaMake("title", "QUTABASE - " + dex.name)
 		dex = eval("Jdex['" + srch + "']");
-		document.getElementById('kodex_' + zoneid + 'rarity_m').innerHTML	=	dex.rarity;
-		document.getElementById('kodex_' + zoneid + 'name_m').innerHTML		=	dex.name;
-		document.getElementById('kodex_' + zoneid + 'cost_m').innerHTML		=	dex.cost;
-		document.getElementById('kodex_' + zoneid + 'rarity_m').setAttribute('style'
+		document.getElementById('info_link').setAttribute('href', 'https://qutabase.github.io/?kodexName=' + encodeURI(dex.name));
+		metaMake("title", "QUTABASE - " + dex.name)
+		kinput('rarity');
+		kinput('name');
+		kinput('cost');
+		document.getElementById('info_rarity').setAttribute('style'
 				, 'color: ' + dex.rarefont + '; background: ' + dex.rareColor + ';'
 		);
-		document.getElementById('kodex_' + zoneid + 'name_m').setAttribute('style'
+		document.getElementById('info_name').setAttribute('style'
 				, 'color: ' + dex.rarefont + '; background: ' + dex.rareColor + ';'
 		);
-		document.getElementById('kodex_' + zoneid + 'name_m').setAttribute('onclick'
+		document.getElementById('info_name').setAttribute('onclick'
 			, "this.innerHTML='<input type=\"text\" class=\"kodex_vs_inp\" onkeyup=\"vsCheck(this)\" id=\"kodex_vsTName\">';this.onclick=''"
 		);
-		document.getElementById('kodex_' + zoneid + 'skill').setAttribute('style', 'background: ' + dex.roleColor + ';');
-		document.getElementById('kodex_' + zoneid + 'skill').setAttribute('onclick'
+		document.getElementById('info_skill').setAttribute('style', 'background: ' + dex.roleColor + ';');
+		document.getElementById('info_skill').setAttribute('onclick'
 			, 'location.href="../skill/' + role[dex.role] + '.html?skillName=' + dex.skill.substring(0, 2) + '"'
 		);
 		kinput('skill');

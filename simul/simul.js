@@ -88,6 +88,25 @@ desc = {
 ,	'회복':'정신력 50%'
 }
 
+perc = {
+	'atk':''
+,	'ntk':''
+,	'stk':''
+,	'inn':''
+,	'hp':''
+,	'spr':''
+,	'hea':''
+,	'tik':''
+,	'shi':''
+,	'Atk':''
+,	'Hp':''
+,	'Inn':''
+,	'Spr':''
+,	'gol':''
+,	'sur':''
+,	'bun':''
+}
+
 /*
 * KODEX SEARCHING ON KODEX SIMULATOR: 2018-01-26. SN KINOS
 * UPDATE:
@@ -141,7 +160,9 @@ TO: */
 
 		dex	=	eval("Jdex['" + srch + "']");
 		kinput('name');
-		document.getElementById(zoneid + 'name').setAttribute('style',	'color: '	+	dex.rarefont	+	'; background: '	+	dex.rareColor	+	';');
+		document.getElementById(zoneid + 'name').setAttribute('style',
+				'color: '	+	dex.rarefont	+	'; background: '	+	dex.rareColor	+	';'
+		);
 		document.getElementById(zoneid + 'name').setAttribute(
 				'onclick'
 			,	"this.innerHTML='<input type=\"text\" class=\"kodex_sim_inp\" onkeyup=\"simCheck(this)\" id=\""
@@ -210,12 +231,16 @@ TO: */
 		var	dy3	=	parseFloat(
 						Jskill[dex.skill][sd[1] + 'ynamic3']
 					);
+		
 		var	pd	=	(sd == ['S', 'D'])
 					?
 					Jskill[dex.skill].probability
 					:
 					Jskill[dex.skill].duration
 					;
+		var	dur	=	parseFloat(
+						Jskill[dex.skill].duration
+					);
 
 		for (eff in effect){
 			
@@ -262,7 +287,7 @@ TO: */
 			:
 			''
 			;
-			if ((effect[eff] in {'atk':'', 'ntk':'', 'stk':'', 'inn':'', 'hp':'', 'spr':'', 'hea':'', 'tik':'', 'shi':'', 'Atk':'', 'Hp':'', 'Inn':'', 'Spr':'', 'gol':'', 'sur':'', 'bun':''})) {
+			if ((effect[eff] in perc)) {
 				val *= 0.01;
 				st *= 100;
 			}
@@ -281,9 +306,10 @@ TO: */
 			}
 			document.getElementById(zoneid + 'effect').innerHTML	+=	temp.disp	+	': ';
 
+			console.log(val, st, dy)
 			exps	=	temp.exp1.split(',');
 			for (var x in exps) {
-				prev	=	(effect[eff] in {'atk':'', 'ntk':'', 'stk':'', 'inn':'', 'hp':'', 'spr':'', 'hea':'', 'tik':'', 'shi':'', 'Atk':'', 'Hp':'', 'Inn':'', 'Spr':'', 'gol':'', 'sur':'', 'bun':''})
+				prev	=	(effect[eff] in perc)
 							?
 							Math.floor(
 								eval(exps[x])	*	100

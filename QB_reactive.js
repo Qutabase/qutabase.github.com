@@ -132,6 +132,7 @@ function search(srch) {
 				+	dex.id				+	'/'
 				+	dex.id				+	'cn.jpg'
 		);
+		dex = eval("Jdex['" + srch + "']");
 		metaMake("title", "QUTABASE - " + dex.name)
 		metaMake("og:title", "QUTABASE - " + dex.name)
 		metaMake("og:description", dex.skill + " - " + dex.ATK[0] + " / " + dex.HP[0])
@@ -145,7 +146,6 @@ function search(srch) {
 					+	dex.id				+	'cn.jpg'
 				)
 		);
-		dex = eval("Jdex['" + srch + "']");
 		kinput('rarity');
 		kinput('name');
 		kinput('cost');
