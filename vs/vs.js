@@ -1,5 +1,5 @@
 function kinput(value) {
-	document.getElementById('kodex_' + zoneid + value).innerHTML = eval('dex.' + value);
+	document.getElementById('info_' + value).innerHTML = eval('dex.' + value);
 }
 
 Jskill	=	JSON.parse(
@@ -12,7 +12,6 @@ Jeffect	=	JSON.parse(
 function vsCheck(argument) {
 
 	inp = argument;
-	zoneid = inp.parentElement.parentElement.id.substr(6,2) + '_';
 	if (window.event.keyCode == 13) {
 
 		vsSearch(inp.value);
@@ -78,27 +77,21 @@ function vsSearch(srch) {
 		kinput('name');
 		kinput('cost');
 		document.getElementById('info_rarity').setAttribute('style'
-				, 'color: ' + dex.rarefont + '; background: ' + dex.rareColor + ';'
+				, 'color: ' + dex.rarefont	+ '; background: ' + dex.rareColor + ';'
 		);
 		document.getElementById('info_name').setAttribute('style'
-				, 'color: ' + dex.rarefont + '; background: ' + dex.rareColor + ';'
+				, 'color: ' + dex.rarefont	+ '; background: ' + dex.rareColor + ';'
 		);
 		document.getElementById('info_name').setAttribute('onclick'
-			, "this.innerHTML='<input type=\"text\" class=\"kodex_vs_inp\" onkeyup=\"vsCheck(this)\" id=\"kodex_vsTName\">';this.onclick=''"
+			, "this.innerHTML='<input type=\"text\" onkeyup=\"vsCheck(this)\" id=\"info_input\">';this.onclick=''"
 		);
 		document.getElementById('info_skill').setAttribute('style', 'background: ' + dex.roleColor + ';');
 		document.getElementById('info_skill').setAttribute('onclick'
 			, 'location.href="../skill/' + role[dex.role] + '.html?skillName=' + dex.skill.substring(0, 2) + '"'
 		);
 		kinput('skill');
-		kinput('hp0');
-		kinput('atk0');
-		kinput('spr0');
-		for (var i = 0; i < 7; i++) {
-			document.getElementById('kodex_' + zoneid + 'HP_' + i).innerHTML	= dex.HP[i];
-			document.getElementById('kodex_' + zoneid + 'ATK_' + i).innerHTML	= dex.ATK[i];
-			document.getElementById('kodex_' + zoneid + 'SPR_'+i).innerHTML		= dex.SPR[i];
-		}
+
+
 
 	}
 	try {

@@ -1,0 +1,23 @@
+.list_kodex {
+	width: calc(100% - 10px);
+	height: 45px;
+	margin: 5px;
+	margin-bottom: 0px;
+	background: #FFFF93;
+	font-size: 20px;
+	line-height: 41px;
+}
+.list_kodex div {
+	margin: 2px 4px;
+}
+
+#list_main {
+	width: 100%;	height: calc(100% - 78px);
+	margin-top: 24px;
+	background: #FFEB3B;
+	overflow-y: auto;
+}
+#kodex_vs_list {
+	background: #FFD400;
+}
+

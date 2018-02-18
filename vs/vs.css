@@ -1,12 +1,14 @@
 article {
-	background: #FFFA7A;
+	background: #FFFF93;
 	position: relative;
 }
 div {
 	margin: 0px;
 	padding: 0px;
 }
-
-#kodex_vs_info {
+section {
+	width: 50%;
 	height: 803px;
+	float: left;
+	display: block;
 }

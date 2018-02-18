@@ -20,10 +20,18 @@
 	<script type="text/javascript">
 function checking(argument) {
 	if (argument.checked == true) {
-		argument.nextSibling.setAttribute('style', 'background: #273869; color: white;')
+		if (argument.id == 'Baltar') {
+			argument.nextSibling.setAttribute('style', 'background: #273869; color: white; padding-top: 5px;');
+			return;
+		}
+		argument.nextSibling.setAttribute('style', 'background: #273869; color: white;');
 	}
 	else {
-		argument.nextSibling.setAttribute('style', '')
+		if (argument.id == 'Baltar') {
+			argument.nextSibling.setAttribute('style', 'padding-top: 5px;');
+			return;
+		}
+		argument.nextSibling.setAttribute('style', '');
 	}
 }
 	</script>
@@ -83,6 +91,7 @@ function checking(argument) {
 			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="Baltar"><label for="Baltar">폭쇄천력: <font face="맑은 고딕" style="font-weight: bold;">破</font></label></div>
 			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="Lucky"><label for="Lucky">행운</label></div>
 			<div class="selecter"><input type="checkbox" onclick="checking(this);maker()" id="Drain"><label for="Drain">흡혈</label></div>
+			<script>document.getElementById('Baltar').parentElement.style.paddingTop = "7px";</script>
 		</div>
 		<div class="kodex" id="index">
 			<div class="kodex_thumb">
@@ -138,7 +147,7 @@ function checking(argument) {
 		</section>
 	</article>
 	<footer>
-			Copyright ⓒ Sn Kinos All Rights Reserved ( except the images )
+		ⓒ 2017 - 2018 Sn Kinos All Rights Reserved ( except the images )
 	</footer>
 </body>
 <script type="text/javascript" src="../QB_reactive.js"></script>

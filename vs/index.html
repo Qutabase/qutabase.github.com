@@ -11,6 +11,8 @@
 	<link rel="stylesheet" type="text/css" href="../nanum.css">
 	<link rel="stylesheet" type="text/css" href="../univ.css">
 	<link rel="stylesheet" type="text/css" href="vs.css">
+	<link rel="stylesheet" type="text/css" href="vs_info.css">
+	<link rel="stylesheet" type="text/css" href="vs_list.css">
 </head>
 <body>
 	<nav id="menu">
@@ -37,27 +39,249 @@
 	</header>
 	<article>
 		<section id="kodex_vs_info">
-			<div>
-				<img src="raw.png" id="info_img">
+			<div style="text-align: center; width: 100%; padding: 19px 0px; display: block; background: #FFEB3B;">
+				비교할 마도서
 			</div>
-			<div id="info_rarity">
-				SR+
+			<div style="margin: 5px; width: calc(100% - 10px);">
+				<div id="info_imgBox">
+					<a href="?" id="info_link"><img src="raw.png" id="info_face"></a>
+				</div>
+				<div id="info_rarity">
+					SR+
+				</div>
+				<div id="info_skill">
+					매직 셔플: 드로우!
+				</div>
+				<div id="info_name">
+					<input type="text" id="info_input" onkeyup="vsCheck(this)">
+				</div>
+				<div id="info_cost">
+					99
+				</div>
 			</div>
-			<div id="info_name">
-				무인도의 메피스토펠레스
-			</div>
-			<div id="info_cost">
-				99
-			</div>
-			<div id="info_skill">
-				매직 셔플: 드로우!
+		</section>
+		<section id="kodex_vs_list">
+			<br>
+			같은 스킬의 마도서 목록
+			<br>
+			<div id="list_main">
+				<div class="list_kodex">
+					<div>
+						<a href="?"><img src="small.png" class="list_img"></a>
+					</div>
+					<div class="list_rarity">
+						SR+
+					</div>
+					<div class="list_name">
+						무인도의 메피스토펠레스
+					</div>
+					<div class="list_value">
+						99.55%
+					</div>
+				</div>
+				<div class="list_kodex">
+					<div>
+						<a href="?"><img src="small.png" class="list_img"></a>
+					</div>
+					<div class="list_rarity">
+						SR+
+					</div>
+					<div class="list_name">
+						무인도의 메피스토펠레스
+					</div>
+					<div class="list_value">
+						99.55%
+					</div>
+				</div>
+				<div class="list_kodex">
+					<div>
+						<a href="?"><img src="small.png" class="list_img"></a>
+					</div>
+					<div class="list_rarity">
+						SR+
+					</div>
+					<div class="list_name">
+						무인도의 메피스토펠레스
+					</div>
+					<div class="list_value">
+						99.55%
+					</div>
+				</div>
+				<div class="list_kodex">
+					<div>
+						<a href="?"><img src="small.png" class="list_img"></a>
+					</div>
+					<div class="list_rarity">
+						SR+
+					</div>
+					<div class="list_name">
+						무인도의 메피스토펠레스
+					</div>
+					<div class="list_value">
+						99.55%
+					</div>
+				</div>
+				<div class="list_kodex">
+					<div>
+						<a href="?"><img src="small.png" class="list_img"></a>
+					</div>
+					<div class="list_rarity">
+						SR+
+					</div>
+					<div class="list_name">
+						무인도의 메피스토펠레스
+					</div>
+					<div class="list_value">
+						99.55%
+					</div>
+				</div>
+				<div class="list_kodex">
+					<div>
+						<a href="?"><img src="small.png" class="list_img"></a>
+					</div>
+					<div class="list_rarity">
+						SR+
+					</div>
+					<div class="list_name">
+						무인도의 메피스토펠레스
+					</div>
+					<div class="list_value">
+						99.55%
+					</div>
+				</div>
+				<div class="list_kodex">
+					<div>
+						<a href="?"><img src="small.png" class="list_img"></a>
+					</div>
+					<div class="list_rarity">
+						SR+
+					</div>
+					<div class="list_name">
+						무인도의 메피스토펠레스
+					</div>
+					<div class="list_value">
+						99.55%
+					</div>
+				</div>
+				<div class="list_kodex">
+					<div>
+						<a href="?"><img src="small.png" class="list_img"></a>
+					</div>
+					<div class="list_rarity">
+						SR+
+					</div>
+					<div class="list_name">
+						무인도의 메피스토펠레스
+					</div>
+					<div class="list_value">
+						99.55%
+					</div>
+				</div>
+				<div class="list_kodex">
+					<div>
+						<a href="?"><img src="small.png" class="list_img"></a>
+					</div>
+					<div class="list_rarity">
+						SR+
+					</div>
+					<div class="list_name">
+						무인도의 메피스토펠레스
+					</div>
+					<div class="list_value">
+						99.55%
+					</div>
+				</div>
+				<div class="list_kodex">
+					<div>
+						<a href="?"><img src="small.png" class="list_img"></a>
+					</div>
+					<div class="list_rarity">
+						SR+
+					</div>
+					<div class="list_name">
+						무인도의 메피스토펠레스
+					</div>
+					<div class="list_value">
+						99.55%
+					</div>
+				</div>
+				<div class="list_kodex">
+					<div>
+						<a href="?"><img src="small.png" class="list_img"></a>
+					</div>
+					<div class="list_rarity">
+						SR+
+					</div>
+					<div class="list_name">
+						무인도의 메피스토펠레스
+					</div>
+					<div class="list_value">
+						99.55%
+					</div>
+				</div>
+				<div class="list_kodex">
+					<div>
+						<a href="?"><img src="small.png" class="list_img"></a>
+					</div>
+					<div class="list_rarity">
+						SR+
+					</div>
+					<div class="list_name">
+						무인도의 메피스토펠레스
+					</div>
+					<div class="list_value">
+						99.55%
+					</div>
+				</div>
+				<div class="list_kodex">
+					<div>
+						<a href="?"><img src="small.png" class="list_img"></a>
+					</div>
+					<div class="list_rarity">
+						SR+
+					</div>
+					<div class="list_name">
+						무인도의 메피스토펠레스
+					</div>
+					<div class="list_value">
+						99.55%
+					</div>
+				</div>
+				<div class="list_kodex">
+					<div>
+						<a href="?"><img src="small.png" class="list_img"></a>
+					</div>
+					<div class="list_rarity">
+						SR+
+					</div>
+					<div class="list_name">
+						무인도의 메피스토펠레스
+					</div>
+					<div class="list_value">
+						99.55%
+					</div>
+				</div>
+				<div class="list_kodex">
+					<div>
+						<a href="?"><img src="small.png" class="list_img"></a>
+					</div>
+					<div class="list_rarity">
+						SR+
+					</div>
+					<div class="list_name">
+						무인도의 메피스토펠레스
+					</div>
+					<div class="list_value">
+						99.55%
+					</div>
+				</div>
 			</div>
 		</section>
 		<ul id="kodex_vsExmpl" style="display: none;">
 		</ul>
 	</article>
 	<footer>
-			Copyright ⓒ Sn Kinos All Rights Reserved ( except the images )
+		ⓒ 2017 - 2018 Sn Kinos All Rights Reserved ( except the images )
 	</footer>
 </body>
 <script src="../QB_reactive.js"></script>
