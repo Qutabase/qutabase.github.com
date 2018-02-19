@@ -314,7 +314,7 @@ TO: */
 							Math.floor(
 								eval(exps[x])	*	100
 							)	/	100
-							+ ';'
+							+ '%;'
 							:
 							Math.floor(
 								eval(exps[x])

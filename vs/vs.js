@@ -91,6 +91,31 @@ function vsSearch(srch) {
 		);
 		kinput('skill');
 
+		var w = new Worker("worker.js");
+		w.postMessage(dex.skill.substr(0,2));
+		w.onmessage = function (event) {
+
+			var ex_list	=	event.data;
+			var ul			=	document.getElementById('list_main')
+			ul.innerHTML	=	'';
+
+			for (var i = 0; i < ex_list.length; i++) {
+				var dex = eval("Jdex['" + ex_list[i] + "']");
+				ul.innerHTML =	ul.innerHTML
+								+	'<div class="list_kodex"><div><a href="?"><img src="https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'
+								+	role[dex.role]		+	'/'
+								+	dex.enskill			+	'/'
+								+	rarity[dex.rarity]	+	'/'
+								+	dex.id				+	'/small.png" class="list_img"></a></div><div class="list_rarity">'
+								+	dex.rarity			+	'</div><div class="list_name">'
+								+	dex.name			+	'</div><div class="list_value">'
+								+	value				+	'</div></div>'
+								;
+				
+			}
+
+		}
+
 
 
 	}

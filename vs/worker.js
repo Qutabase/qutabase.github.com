@@ -15,7 +15,8 @@ function exmpl(argument) {
 	for (var i = 0; i < key_list.length; i++) {
 		
 		var dex = eval("Jdex['" + key_list[i] + "']");
-		if(dex.name.indexOf(argument) != -1){
+
+		if(dex.skill.substr(0,2) == argument){
 
 			ex_list.push(dex.name);
 			j+=1;
