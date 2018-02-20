@@ -149,7 +149,11 @@ function showVsExmpl(argument) {
 	w.onmessage = function (event) {
 		ex_list = event.data;
 		ul = document.getElementById('kodex_vsExmpl');
-		ul.setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: block;');
+		ul.setAttribute('style'
+				,	'left: ' + inp.offsetLeft
+					+	'px; top: ' + eval(inp.offsetTop + 40)
+					+	'px; display: block;'
+		);
 		ul.innerHTML = '';
 		var i = 1;
 		for (i = 1; i <= ex_list[0]; i++) {
@@ -162,14 +166,20 @@ function showVsExmpl(argument) {
 		}
 		if (i == 1) {
 			document.getElementById('kodex_exmpl').setAttribute('style'
-				, 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;'
+				,	'left: ' + inp.offsetLeft
+					+	'px; top: ' + eval(inp.offsetTop + 40)
+					+	'px; display: none;'
 			);
 		}
 		if (zoneid == 'vsT_') {
-			ul.setAttribute('style', 'position: absolute; left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: block;');
+			ul.setAttribute('style'
+					,	'left: ' + inp.offsetLeft
+						+	'px; top: ' + eval(inp.offsetTop + 40)
+						+	'px; display: block;'
+			);
 		}
 		else {
-			ul.setAttribute('style', 'position: absolute; left: 272px; top: '+eval(478+(272-ul.offsetHeight))+'px; display: block;');
+			ul.setAttribute('style', 'left: 272px; top: ' + eval(478 + (272 - ul.offsetHeight)) + 'px; display: block;');
 		}
 		w.terminate();
 	}
