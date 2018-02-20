@@ -171,16 +171,6 @@ function showVsExmpl(argument) {
 					+	'px; display: none;'
 			);
 		}
-		if (zoneid == 'vsT_') {
-			ul.setAttribute('style'
-					,	'left: ' + inp.offsetLeft
-						+	'px; top: ' + eval(inp.offsetTop + 40)
-						+	'px; display: block;'
-			);
-		}
-		else {
-			ul.setAttribute('style', 'left: 272px; top: ' + eval(478 + (272 - ul.offsetHeight)) + 'px; display: block;');
-		}
 		w.terminate();
 	}
 
