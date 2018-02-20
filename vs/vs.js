@@ -165,7 +165,7 @@ function showVsExmpl(argument) {
 
 		}
 		if (i == 1) {
-			document.getElementById('kodex_exmpl').setAttribute('style'
+			document.getElementById('kodex_vsExmpl').setAttribute('style'
 				,	'left: ' + inp.offsetLeft
 					+	'px; top: ' + eval(inp.offsetTop + 40)
 					+	'px; display: none;'
