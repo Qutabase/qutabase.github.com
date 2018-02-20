@@ -48,3 +48,16 @@
 #info_cost {
 	width: 10%; height: 40px;
 }
+
+.info_statchart {
+	height: 196px; /*width is in html*/
+	padding: 0px;
+	background: #dddddd;
+	line-height: 27px;
+}
+.info_stat {
+	width: calc(100% - 18px); height: 27px;
+	margin-bottom: 2px;
+	padding: 10px 9px;
+	background: #E3E4EE;
+}

@@ -64,7 +64,7 @@ function skill(argument, sd) {
 		// );
 		var	val	=	Number(
 						eval(
-							zoneid + role[dex.role] + '.innerHTML'
+							'info_' + role[dex.role].toUpperCase(); + '_0.innerHTML'
 						)
 					);
 		var	st	=	parseFloat(
