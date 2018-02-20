@@ -28,20 +28,20 @@ function vsCheck(argument) {
 }
 
 rarity = {
-	'N':'1',
-	'N+':'2',
-	'R':'3',
-	'R+':'4',
-	'SR':'5',
-	'SR+':'6',
-	'SSR':'7',
-	'QR':'8'
+	'N':'1'
+,	'N+':'2'
+,	'R':'3'
+,	'R+':'4'
+,	'SR':'5'
+,	'SR+':'6'
+,	'SSR':'7'
+,	'QR':'8'
 }
 
 role = {
-	'공격':'atk',
-	'방어':'hp',
-	'회복':'spr'
+	'공격':'atk'
+,	'방어':'hp'
+,	'회복':'spr'
 }
 
 function vsSearch(srch) {
@@ -98,10 +98,12 @@ function vsSearch(srch) {
 			var ex_list	=	event.data;
 			var ul			=	document.getElementById('list_main')
 			ul.innerHTML	=	'';
+			console.log(ex_list)
 
-			for (var i = 0; i < ex_list.length; i++) {
-				var dex = eval("Jdex['" + ex_list[i] + "']");
-				ul.innerHTML =	ul.innerHTML
+			for (var i = 1; i < ex_list[0]; i++) {
+				var	dex			=	eval("Jdex['" + ex_list[i] + "']");
+				// var	value		=	skill(dex.skill, ['S', 'D']);
+				ul.innerHTML	=	ul.innerHTML
 								+	'<div class="list_kodex"><div><a href="?"><img src="https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'
 								+	role[dex.role]		+	'/'
 								+	dex.enskill			+	'/'
@@ -111,7 +113,7 @@ function vsSearch(srch) {
 								+	dex.name			+	'</div><div class="list_value">'
 								+	value				+	'</div></div>'
 								;
-				
+
 			}
 
 		}

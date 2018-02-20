@@ -96,6 +96,7 @@ perc = {
 ,	'hp':''
 ,	'spr':''
 ,	'hea':''
+,	'sur':''
 ,	'tik':''
 ,	'shi':''
 ,	'Atk':''
@@ -107,12 +108,22 @@ perc = {
 ,	'bun':''
 }
 
+function renewal() {
+	for (x in kodex_slot) {
+		if (kodex_slot[x] != '' && x != 'ac1') {
+			zoneid	=	x + '_';
+			simSearch(kodex_slot[x]);
+		}
+	}
+}
+
 /*
 * KODEX SEARCHING ON KODEX SIMULATOR: 2018-01-26. SN KINOS
 * UPDATE:
 * 1.	2018-01-26. SN KINOS. 
 */
 function simSearch(srch) {
+	console.log(zoneid)
 /* 2018-01-26. STARFLIT	CHANGED FROM:	dex = eval("Jdex['" + srch + "']");
 TO: */
 	dex = eval("Jdex['" + srch + "']");
@@ -135,13 +146,7 @@ TO: */
 			document.getElementById('simul_index_roleDesc').innerHTML	= "덱 전체 "	+	desc[dex.role]	+ " 증가<br>"
 																		+	dex.role	+	" 계열 스킬 강화";
 //	2018-02-12. SN KINOS ADDED SIMULATOR RENEWALLER
-			for (x in kodex_slot) {
-				if (kodex_slot[x] != '' && x != 'ac1') {
-					zoneid	=	x + '_';
-					simSearch(kodex_slot[x]);
-				}
-			}
-
+			renewal();
 			zoneid	=	'ac1_';
 			dex = eval("Jdex['" + srch + "']");
 //	2018-02-12. SN KINOS END.
@@ -288,7 +293,7 @@ TO: */
 			''
 			;
 			if ((effect[eff] in perc)) {
-				val *= 0.01;
+				val	*= 0.01;
 				st *= 100;
 			}
 
@@ -298,11 +303,19 @@ TO: */
 								zoneid + role[dex.role] + '.innerHTML'
 							)
 						);
+				dy	*=	0.01;
 			}
 			else if (temp.value == 'prev') {
-				val	=	Number(
-							prev.substring(0, prev.length - 1)
-						);
+				if (prev.indexOf('%') == -1) {
+					val	=	Number(
+								prev.substring(0, prev.length - 2)
+							);
+				}
+				else {
+					val	=	Number(
+								prev.substring(0, prev.length - 3)
+							);
+				}
 			}
 			document.getElementById(zoneid + 'effect').innerHTML	+=	temp.disp	+	': ';
 
@@ -314,12 +327,12 @@ TO: */
 							Math.floor(
 								eval(exps[x])	*	100
 							)	/	100
-							+ '%;'
+							+ '%; '
 							:
 							Math.floor(
 								eval(exps[x])
 							)
-							+ ';'
+							+ '; '
 							;
 				document.getElementById(zoneid + 'effect').innerHTML	+=	prev;
 			}

@@ -6,6 +6,7 @@ perc = {
 ,	'hp':''
 ,	'spr':''
 ,	'hea':''
+,	'sur':''
 ,	'tik':''
 ,	'shi':''
 ,	'Atk':''
@@ -105,18 +106,21 @@ function skill(argument, sd) {
 		}
 
 		if (temp.value == 'deck') {
-			val	=	Number(
-						eval(
-							zoneid + role[dex.role] + '.innerHTML'
-						)
-					);
+			val	=	50000;
 		}
 		else if (temp.value == 'prev') {
-			val	=	Number(
-						prev.substring(0, prev.length - 1)
-					);
+			if (prev.indexOf('%') == -1) {
+				val	=	Number(
+							prev.substring(0, prev.length - 2)
+						);
+			}
+			else {
+				val	=	Number(
+							prev.substring(0, prev.length - 3)
+						);
+			}
 		}
-		document.getElementById(zoneid + 'effect').innerHTML	+=	temp.disp	+	': ';
+		res['data']	+=	temp.disp	+	': ';
 
 		console.log(val, st, dy)
 		exps	=	temp.exp1.split(',');
@@ -126,12 +130,12 @@ function skill(argument, sd) {
 						Math.floor(
 							eval(exps[x])	*	100
 						)	/	100
-						+ '%;'
+						+ '%; '
 						:
 						Math.floor(
 							eval(exps[x])
 						)
-						+ ';'
+						+ '; '
 						;
 			document.getElementById(zoneid + 'effect').innerHTML	+=	prev;
 		}
@@ -139,4 +143,5 @@ function skill(argument, sd) {
 		count += 1;
 
 	}
+	return res;
 }

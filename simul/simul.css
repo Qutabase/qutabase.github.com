@@ -1,10 +1,10 @@
 article {
-	width: calc(100% - 50px);
-	max-width: 1440px;
+	width: 1440px;
+	max-width: none;
 	/*background: white;*/
 }
 section {
-	width: 50%; height: 246px;
+	width: 720px; height: 246px;
 	display: inline-block;
 	/*background: #e3e4ee;*/
 	float: left;
@@ -115,10 +115,10 @@ div {
 	overflow: hidden;
 }
 .kodex_lv {
-	width: 6%;
+	width: 6.5%;
 }
 .kodex_bind {
-	width: 6%;
+	width: 6.5%;
 }
 .kodex_atk {
 	width: 8%;
@@ -136,6 +136,18 @@ div {
 	color: white;
 }
 .kodex_skill {
-	width: 20.9%;
+	width: 21.9%;
 	color: white;
+}
+
+
+@media (max-width: 1000px){
+	article {
+		width: 720px;
+		max-height: none;
+	}
+	section {
+		width: 720px;
+	}
+	.simul_ind {width: 100%;}
 }
