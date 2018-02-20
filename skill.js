@@ -137,7 +137,7 @@ function skill(argument, sd) {
 						)
 						+ '; '
 						;
-			document.getElementById(zoneid + 'effect').innerHTML	+=	prev;
+			document.getElementById('info_effect').innerHTML	+=	prev;
 		}
 
 		count += 1;
