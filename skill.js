@@ -20,7 +20,8 @@ perc = {
 
 function skill(argument, sd, dex) {
 	var	res		=	{};
-	res['data'] = '';
+	res['data']	= '';
+	res['data'][dex.name]	= '';
 	var	effect	=	Jskill[argument].effect.split('/');
 	// document.getElementById(zoneid + 'effect').innerHTML = '';
 	var	count = 1;
@@ -57,7 +58,7 @@ function skill(argument, sd, dex) {
 
 	for (eff in effect){
 		
-		var temp = Jeffect[effect[eff]];
+		var	temp	=	Jeffect[effect[eff]];
 
 		// document.getElementById(zoneid + 'effect').setAttribute('style'
 		// 		,	'background: '	+	dex.roleColor + '; color: white;'
@@ -135,7 +136,7 @@ function skill(argument, sd, dex) {
 						)
 						+ '; '
 						;
-			document.getElementById('info_effect').innerHTML	+=	prev;
+			res['data'][dex.name]	+=	prev;
 		}
 
 		count += 1;
