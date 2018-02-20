@@ -97,7 +97,6 @@ function vsSearch(srch) {
 			var ex_list	=	event.data;
 			var ul			=	document.getElementById('list_main')
 			ul.innerHTML	=	'';
-			console.log(ex_list)
 
 			for (var i = 1; i < ex_list[0]; i++) {
 				var	dex			=	eval("Jdex['" + ex_list[i] + "']");

@@ -18,7 +18,7 @@ perc = {
 ,	'bun':''
 };
 
-function skill(argument, sd) {
+function skill(argument, sd, dex) {
 	var	res		=	{};
 	res['data'] = '';
 	var	effect	=	Jskill[argument].effect.split('/');
@@ -63,9 +63,7 @@ function skill(argument, sd) {
 		// 		,	'background: '	+	dex.roleColor + '; color: white;'
 		// );
 		var	val	=	Number(
-						eval(
-							'info_' + role[dex.role].toUpperCase() + '_0.innerHTML'
-						)
+						dex[role[dex.role].toUpperCase()][0]
 					);
 		var	st	=	parseFloat(
 						Jskill[dex.skill][sd[0] + 'tatic'	+	count]
