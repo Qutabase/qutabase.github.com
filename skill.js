@@ -57,7 +57,7 @@ function skill(argument, sd) {
 
 	for (eff in effect){
 		
-		var temp = Jeffect[effect[eff]]
+		var temp = Jeffect[effect[eff]];
 
 		// document.getElementById(zoneid + 'effect').setAttribute('style'
 		// 		,	'background: '	+	dex.roleColor + '; color: white;'
