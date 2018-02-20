@@ -16,7 +16,7 @@ perc = {
 ,	'gol':''
 ,	'sur':''
 ,	'bun':''
-}
+};
 
 function skill(argument, sd) {
 	var	res		=	{};
