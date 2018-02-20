@@ -35,3 +35,15 @@ section {
 	border-radius: .2rem;
 
 }
+
+#kodex_vsExmpl li {
+	list-style: none;
+	padding: 3px;
+	cursor: pointer;
+	background: white;
+}
+
+#kodex_vsExmpl li:hover {
+	background: #e3e4ee;
+}
+
