@@ -75,7 +75,6 @@ function vsSearch(srch) {
 		metaMake("title", "QUTABASE - " + dex.name)
 		kinput('rarity');
 		kinput('name');
-		kinput('cost');
 		document.getElementById('info_rarity').setAttribute('style'
 				, 'color: ' + dex.rarefont	+ '; background: ' + dex.rareColor + ';'
 		);
