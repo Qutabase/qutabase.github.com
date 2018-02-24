@@ -200,7 +200,7 @@ function vsSearch(srch) {
 											:
 											winLose.value.toFixed(2)
 											;
-						winLose.color	=	(lsEffect.val[j] > effect.val[j])
+						winLose.color	=	(winLose.value > 0)
 											?
 											winLose.color	=	'green'
 											:
