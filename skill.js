@@ -138,12 +138,11 @@ function skill(argument, sd, dex) {
 						Math.floor(
 							eval(exps[x])	*	100
 						)	/	100
-						+ '%; '
+						+ '%'
 						:
 						Math.floor(
 							eval(exps[x])
 						)
-						+ '; '
 						;
 			res['data']['val'].push(prev);
 		}
