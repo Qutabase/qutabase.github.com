@@ -320,7 +320,7 @@ TO: */
 			:
 			''
 			;
-			if ((effect[eff] in perc)) {
+			if (effect[eff] in perc) {
 				val	*= 0.01;
 				st *= 100;
 			}
