@@ -178,6 +178,7 @@ function vsSearch(srch) {
 				var	dex			=	eval("Jdex['" + ex_list[i] + "']");
 				var	lsEffect	=	skill(dex, sd, 0, 0).data;
 				var	winLose		=	[];
+				winLose.value	=	'';
 				for (var j = 1; j < effect.val.length; j++) {
 					var	lsEfPerc	=	lsEffect.val[j].indexOf('%');
 					var	effecPerc	=	effect.val[j].indexOf('%');
@@ -199,14 +200,14 @@ function vsSearch(srch) {
 				}
 				ul.innerHTML	=	ul.innerHTML
 								+	'<div class="list_kodex"><div><img src="https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'
-								+	role[dex.role]		+	'/'
-								+	dex.enskill			+	'/'
-								+	rarity[dex.rarity]	+	'/'
-								+	dex.id				+	'/small.png" class="list_img"></div><div class="list_rarity">'
-								+	dex.rarity			+	'</div><div class="list_name">'
-								+	dex.name			+	'</div><div class="list_value" style="color: '
-								+	winLose.color		+	';">'
-								+	winLose.value		+	'</div></div>'
+								+	role[dex.role]				+	'/'
+								+	dex.enskill					+	'/'
+								+	rarity[dex.rarity]			+	'/'
+								+	dex.id						+	'/small.png" class="list_img"></div><div class="list_rarity">'
+								+	dex.rarity					+	'</div><div class="list_name">'
+								+	dex.name					+	'</div><div class="list_value" style="color: '
+								+	winLose.color				+	';">'
+								+	winLose.value.toFixed(2)	+	'</div></div>'
 								;
 
 			}
