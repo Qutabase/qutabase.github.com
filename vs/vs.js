@@ -67,6 +67,13 @@ role = {
 ,	'회복':'spr'
 };
 
+
+function listClick(argument) {
+	zoneid	=	'vsB_';
+	vsB_lv.value	=	dex.lv;
+	vsB_bind.value	=	0;
+	vsSearch(argument);
+}
 function vsSearch(srch) {
 
 	kodex_slot[zoneid]	=	srch;
@@ -208,7 +215,7 @@ function vsSearch(srch) {
 											;
 					}
 					ul.innerHTML	=	ul.innerHTML
-									+	'<div class="list_kodex" onclick="zoneid = \'vsB_\'; vsSearch(\''
+									+	'<div class="list_kodex" onclick="zoneid = \'vsB_\'; listClick(\''
 									+	dex.name			+	'\');"><div><img src="https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'
 									+	role[dex.role]		+	'/'
 									+	dex.enskill			+	'/'
