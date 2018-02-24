@@ -103,13 +103,13 @@ function vsSearch(srch) {
 				var	value		=	skill(dex.skill, ['S', 'D'], dex);
 				ul.innerHTML	=	ul.innerHTML
 								+	'<div class="list_kodex"><div><a href="?"><img src="https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'
-								+	role[dex.role]		+	'/'
-								+	dex.enskill			+	'/'
-								+	rarity[dex.rarity]	+	'/'
-								+	dex.id				+	'/small.png" class="list_img"></a></div><div class="list_rarity">'
-								+	dex.rarity			+	'</div><div class="list_name">'
-								+	dex.name			+	'</div><div class="list_value">'
-								+	value.data.val		+	'</div></div>'
+								+	role[dex.role]				+	'/'
+								+	dex.enskill					+	'/'
+								+	rarity[dex.rarity]			+	'/'
+								+	dex.id						+	'/small.png" class="list_img"></a></div><div class="list_rarity">'
+								+	dex.rarity					+	'</div><div class="list_name">'
+								+	dex.name					+	'</div><div class="list_value">'
+								+	value.data.val.slice(1);	+	'</div></div>'
 								;
 
 			}
