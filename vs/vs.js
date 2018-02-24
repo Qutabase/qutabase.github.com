@@ -70,7 +70,7 @@ role = {
 
 function listClick(argument) {
 	zoneid	=	'vsB_';
-	vsB_lv.value	=	dex.lv;
+	vsB_lv.value	=	Jdex[argument].lv;
 	vsB_bind.value	=	0;
 	vsSearch(argument);
 }
