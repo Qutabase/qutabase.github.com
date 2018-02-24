@@ -194,7 +194,7 @@ function vsSearch(srch) {
 						winLose.value	=	lsEffect.val[j] - effect.val[j];
 						winLose.value	=	(winLose.value == winLose.value.toFixed(2))
 											?
-											''
+											winLose.value
 											:
 											winLose.value.toFixed(2)
 											;
