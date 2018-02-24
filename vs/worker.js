@@ -22,7 +22,7 @@ function exmpl(argument) {
 			j+=1;
 
 		}
-	cosnole.log('asd')
+
 	}
 	ex_list.unshift(j);
 	return ex_list;

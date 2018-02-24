@@ -209,10 +209,9 @@ function vsSearch(srch) {
 
 			}
 
-			w.terminate();
 
 		}
-
+		w.terminate();
 
 
 	}
