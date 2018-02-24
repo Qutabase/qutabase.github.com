@@ -156,70 +156,68 @@ function vsSearch(srch) {
 																	) / 2
 																);
 
-		if (zoneid == 'vsB_') {
-			continue;
-		}
+		if (zoneid == 'vsT_') {
+			var	sd				=	['S','D'];
+			sd.id 				=	'lea';
+			var	effect			=	skill(dex, sd, val_lv, val_bind).data;
+			var	ef				=	document.getElementById(zoneid + 'effect');
+			ef.parentElement.style.background	=	dex.roleColor;
+			ef.innerHTML		=	'';
+			for (var i = 1; i < effect.val.length; i++) {
+				ef.innerHTML	+=	effect.desc[i]	+	''	+	effect.val[i]	+	'<br>';
+			}
 
-		var	sd				=	['S','D'];
-		sd.id 				=	'lea';
-		var	effect			=	skill(dex, sd, val_lv, val_bind).data;
-		var	ef				=	document.getElementById(zoneid + 'effect');
-		ef.parentElement.style.background	=	dex.roleColor;
-		ef.innerHTML		=	'';
-		for (var i = 1; i < effect.val.length; i++) {
-			ef.innerHTML	+=	effect.desc[i]	+	''	+	effect.val[i]	+	'<br>';
-		}
+			var w = new Worker("worker.js");
+			w.postMessage(dex.skill.substr(0,2));
+			w.onmessage = function (event) {
 
-		var w = new Worker("worker.js");
-		w.postMessage(dex.skill.substr(0,2));
-		w.onmessage = function (event) {
+				var ex_list	=	event.data;
+				var ul			=	document.getElementById('list_main');
+				ul.innerHTML	=	'';
 
-			var ex_list	=	event.data;
-			var ul			=	document.getElementById('list_main');
-			ul.innerHTML	=	'';
+				for (var i = 1; i < ex_list[0]; i++) {
+					var	dex			=	eval("Jdex['" + ex_list[i] + "']");
+					var	lsEffect	=	skill(dex, sd, 0, 0).data;
+					var	winLose		=	[];
+					winLose.value	=	'';
+					for (var j = 1; j < effect.val.length; j++) {
+						var	lsEfPerc	=	lsEffect.val[j].indexOf('%');
+						var	effecPerc	=	effect.val[j].indexOf('%');
+						if (lsEfPerc + 1) {
+							lsEffect.val[j]	=	lsEffect.val[j].substr(0, lsEfPerc);
+						}
+						if (effecPerc + 1) {
+							effect.val[j]	=	effect.val[j].substr(0, effecPerc);
+						}
+						console.log(lsEffect.val[j], effect.val[j])
+						if (lsEffect.val[j] > effect.val[j]) {
+							winLose.value	=	effect.val[j] - lsEffect.val[j];
+							winLose.color	=	'green';
+						}
+						else {
+							winLose.value	=	lsEffect.val[j] - effect.val[j];
+							winLose.color	=	'red';
+						}
+					}
+					ul.innerHTML	=	ul.innerHTML
+									+	'<div class="list_kodex"><div><img src="https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'
+									+	role[dex.role]				+	'/'
+									+	dex.enskill					+	'/'
+									+	rarity[dex.rarity]			+	'/'
+									+	dex.id						+	'/small.png" class="list_img"></div><div class="list_rarity">'
+									+	dex.rarity					+	'</div><div class="list_name">'
+									+	dex.name					+	'</div><div class="list_value" style="color: '
+									+	winLose.color				+	';">'
+									+	winLose.value.toFixed(2)	+	'</div></div>'
+									;
 
-			for (var i = 1; i < ex_list[0]; i++) {
-				var	dex			=	eval("Jdex['" + ex_list[i] + "']");
-				var	lsEffect	=	skill(dex, sd, 0, 0).data;
-				var	winLose		=	[];
-				winLose.value	=	'';
-				for (var j = 1; j < effect.val.length; j++) {
-					var	lsEfPerc	=	lsEffect.val[j].indexOf('%');
-					var	effecPerc	=	effect.val[j].indexOf('%');
-					if (lsEfPerc + 1) {
-						lsEffect.val[j]	=	lsEffect.val[j].substr(0, lsEfPerc);
-					}
-					if (effecPerc + 1) {
-						effect.val[j]	=	effect.val[j].substr(0, effecPerc);
-					}
-					console.log(lsEffect.val[j], effect.val[j])
-					if (lsEffect.val[j] > effect.val[j]) {
-						winLose.value	=	effect.val[j] - lsEffect.val[j];
-						winLose.color	=	'green';
-					}
-					else {
-						winLose.value	=	lsEffect.val[j] - effect.val[j];
-						winLose.color	=	'red';
-					}
 				}
-				ul.innerHTML	=	ul.innerHTML
-								+	'<div class="list_kodex"><div><img src="https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'
-								+	role[dex.role]				+	'/'
-								+	dex.enskill					+	'/'
-								+	rarity[dex.rarity]			+	'/'
-								+	dex.id						+	'/small.png" class="list_img"></div><div class="list_rarity">'
-								+	dex.rarity					+	'</div><div class="list_name">'
-								+	dex.name					+	'</div><div class="list_value" style="color: '
-								+	winLose.color				+	';">'
-								+	winLose.value.toFixed(2)	+	'</div></div>'
-								;
+				w.terminate();
+
 
 			}
-			w.terminate();
-
 
 		}
-
 
 	}
 	document.getElementById('kodex_vsExmpl').setAttribute('style', 'display: none;');
