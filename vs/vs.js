@@ -182,12 +182,12 @@ function vsSearch(srch) {
 					var	lsEfPerc	=	lsEffect.val[j].indexOf('%');
 					var	effecPerc	=	effect.val[j].indexOf('%');
 					if (lsEfPerc + 1) {
-
 						lsEffect.val[j]	=	lsEffect.val[j].substr(0, lsEfPerc);
-						effect.val[j]	=	effect.val[j].substr(0, effecPerc);
-
 					}
-					console.log(lsEfPerc, effecPerc, lsEffect.val[j], effect.val[j])
+					if (effecPerc) {
+						effect.val[j]	=	effect.val[j].substr(0, effecPerc);
+					}
+					
 					if (lsEffect.val[j] > effect.val[j]) {
 						winLose.value	=	effect.val[j] - lsEffect.val[j];
 						winLose.color	=	'green';
