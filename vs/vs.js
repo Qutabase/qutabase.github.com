@@ -47,13 +47,25 @@ rarity = {
 ,	'SR+':'6'
 ,	'SSR':'7'
 ,	'QR':'8'
-}
+};
+
+bind = {
+	'bind':'0.5 0.5 0.6 0.6 0.7 0.8 0.9 0.8'
+,	'N':0.05
+,	'N+':0.05
+,	'R':0.06
+,	'R+':0.06
+,	'SR':0.07
+,	'SR+':0.08
+,	'SSR':0.09
+,	'QR':0.08
+};
 
 role = {
 	'공격':'atk'
 ,	'방어':'hp'
 ,	'회복':'spr'
-}
+};
 
 function vsSearch(srch) {
 
@@ -107,23 +119,29 @@ function vsSearch(srch) {
 		);
 		kinput('skill');
 
-		var	bind	=	document.getElementById(zoneid + 'bind').value;
-		document.getElementById(zoneid + 'HP').innerHTML	=	dex.HP[bind];
-		document.getElementById(zoneid + 'ATK').innerHTML	=	dex.ATK[bind];
-		document.getElementById(zoneid + 'SPR').innerHTML	=	dex.SPR[bind];
-
 		if (bind > 6) {
-			document.getElementById(zoneid + 'HP').innerHTML	=	dex.HP[6];
-			document.getElementById(zoneid + 'ATK').innerHTML	=	dex.ATK[6];
-			document.getElementById(zoneid + 'SPR').innerHTML	=	dex.SPR[6];
 			bind	=	6;
 		}
 		else if (dex.HP[bind] == undefined) {
-			document.getElementById(zoneid + 'HP').innerHTML	=	dex.HP[0];
-			document.getElementById(zoneid + 'ATK').innerHTML	=	dex.ATK[0];
-			document.getElementById(zoneid + 'SPR').innerHTML	=	dex.SPR[0];
 			bind	=	0;
 		}
+		document.getElementById(zoneid + 'hp').innerHTML =	Math.round( 
+																	Math.floor( 
+																			dex.hp0 
+																		+	dex.hpLv * (eval (zoneid + 'lv.value') - 1) 
+																	)	*	( 1 + eval(zoneid + 'bind.value') * bind[dex.rarity] ) 
+																);
+		document.getElementById(zoneid + 'atk').innerHTML	=	Math.round( 
+																	Math.floor( 
+																			dex.atk0 
+																		+	dex.atkLv * (eval(zoneid + 'lv.value') - 1)  
+																	)	*	( 1 + eval(zoneid + 'bind.value') * bind[dex.rarity] ) 
+																);
+		document.getElementById(zoneid + 'spr').innerHTML	=	Math.floor( 
+																	( Number(eval(zoneid + 'hp.innerHTML')) 
+																	+ Number(eval(zoneid + 'atk.innerHTML')) 
+																	) / 2 
+																);
 
 		var	sd				=	['S','D'];
 		sd.id 				=	'lea';

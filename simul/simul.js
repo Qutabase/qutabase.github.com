@@ -200,18 +200,18 @@ TO: */
 																			dex.hp0 
 																		+	dex.hpLv * (eval (zoneid + 'lv.value') - 1) 
 																	)	*	( 1 + eval(zoneid + 'bind.value') * bind[dex.rarity] ) 
-																); 
+																);
 		document.getElementById(zoneid + 'atk').innerHTML	=	Math.round( 
 																	Math.floor( 
 																			dex.atk0 
 																		+	dex.atkLv * (eval(zoneid + 'lv.value') - 1)  
 																	)	*	( 1 + eval(zoneid + 'bind.value') * bind[dex.rarity] ) 
-																); 
+																);
 		document.getElementById(zoneid + 'spr').innerHTML	=	Math.floor( 
 																	( Number(eval(zoneid + 'hp.innerHTML')) 
 																	+ Number(eval(zoneid + 'atk.innerHTML')) 
 																	) / 2 
-																); 
+																);
 
 		var sum_atk	=	0;
 		var sum_hp		=	0;
