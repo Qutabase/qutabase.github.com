@@ -118,7 +118,8 @@ function vsSearch(srch) {
 								;
 
 			}
-		w.terminate();
+			
+			w.terminate();
 
 		}
 
@@ -127,7 +128,7 @@ function vsSearch(srch) {
 	}
 	try {
 		inp.value = '';
-		document.getElementById('kodex_vsExmpl').setAttribute('style', 'display: none;')
+		document.getElementById('kodex_vsExmpl').setAttribute('style', 'display: none;');
 	}
 	catch (exception){
 		;
