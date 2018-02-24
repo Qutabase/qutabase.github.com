@@ -120,9 +120,9 @@ function renewal(argument) {
 * 1.	2018-01-26. SN KINOS. 
 */
 function simSearch(srch) {
-	console.log(zoneid)
-/* 2018-01-26. STARFLIT	CHANGED FROM:	dex = eval("Jdex['" + srch + "']");
+/* 2018-02-25. SN KINOS	CHANGED FROM:	dex = eval("Jdex['" + srch + "']");
 TO: */
+	kodex_slot[zoneid]	=	srch;
 	dex = eval("Jdex['" + srch + "']");
 // 2018-01-26. STARFLIT.	END.
 	if (dex != undefined) {
