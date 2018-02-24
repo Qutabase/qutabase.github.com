@@ -175,10 +175,12 @@ function vsSearch(srch) {
 			ul.innerHTML	=	'';
 
 			for (var i = 1; i < ex_list[0]; i++) {
+				console.log('111')
 				var	dex			=	eval("Jdex['" + ex_list[i] + "']");
 				var	lsEffect	=	skill(dex, sd, 0, 0).data;
 				var	winLose		=	[];
 				for (var i = 1; i < effect.val.length; i++) {
+					console.log('222')
 					var	percInd	=	lsEffect.val[i].indexOf('%');
 					if (percInd + 1) {
 
