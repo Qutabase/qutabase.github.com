@@ -192,6 +192,12 @@ function vsSearch(srch) {
 						}
 						console.log(lsEffect.val[j], effect.val[j])
 						winLose.value	=	lsEffect.val[j] - effect.val[j];
+						winLose.value	=	(winLose.value == winLose.value.toFixed(2))
+											?
+											''
+											:
+											winLose.value.toFixed(2)
+											;
 						winLose.color	=	(lsEffect.val[j] > effect.val[j])
 											?
 											winLose.color	=	'green'
@@ -201,14 +207,14 @@ function vsSearch(srch) {
 					}
 					ul.innerHTML	=	ul.innerHTML
 									+	'<div class="list_kodex"><div><img src="https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'
-									+	role[dex.role]				+	'/'
-									+	dex.enskill					+	'/'
-									+	rarity[dex.rarity]			+	'/'
-									+	dex.id						+	'/small.png" class="list_img"></div><div class="list_rarity">'
-									+	dex.rarity					+	'</div><div class="list_name">'
-									+	dex.name					+	'</div><div class="list_value" style="color: '
-									+	winLose.color				+	';">'
-									+	winLose.value.toFixed(2)	+	'</div></div>'
+									+	role[dex.role]		+	'/'
+									+	dex.enskill			+	'/'
+									+	rarity[dex.rarity]	+	'/'
+									+	dex.id				+	'/small.png" class="list_img"></div><div class="list_rarity">'
+									+	dex.rarity			+	'</div><div class="list_name">'
+									+	dex.name			+	'</div><div class="list_value" style="color: '
+									+	winLose.color		+	';">'
+									+	winLose.value		+	'</div></div>'
 									;
 
 				}
