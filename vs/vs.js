@@ -156,17 +156,17 @@ function vsSearch(srch) {
 																	) / 2
 																);
 
-		if (zoneid == 'vsT_') {
-			var	sd				=	['S','D'];
-			sd.id 				=	'lea';
-			var	effect			=	skill(dex, sd, val_lv, val_bind).data;
-			var	ef				=	document.getElementById(zoneid + 'effect');
-			ef.parentElement.style.background	=	dex.roleColor;
-			ef.innerHTML		=	'';
-			for (var i = 1; i < effect.val.length; i++) {
-				ef.innerHTML	+=	effect.desc[i]	+	''	+	effect.val[i]	+	'<br>';
-			}
+		var	sd				=	['S','D'];
+		sd.id 				=	'lea';
+		var	effect			=	skill(dex, sd, val_lv, val_bind).data;
+		var	ef				=	document.getElementById(zoneid + 'effect');
+		ef.parentElement.style.background	=	dex.roleColor;
+		ef.innerHTML		=	'';
+		for (var i = 1; i < effect.val.length; i++) {
+			ef.innerHTML	+=	effect.desc[i]	+	''	+	effect.val[i]	+	'<br>';
+		}
 
+		if (zoneid == 'vsT_') {
 			var w = new Worker("worker.js");
 			w.postMessage(dex.skill.substr(0,2));
 			w.onmessage = function (event) {
