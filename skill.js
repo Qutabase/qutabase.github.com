@@ -121,7 +121,7 @@ function skill(argument, sd, dex) {
 		}
 		res['data']	+=	temp.disp	+	': ';
 
-		console.log(val, st, dy)
+		// console.log(val, st, dy)
 		exps	=	temp.exp1.split(',');
 		for (var x in exps) {
 			prev	=	(effect[eff] in perc)

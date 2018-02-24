@@ -95,12 +95,13 @@ function vsSearch(srch) {
 		w.onmessage = function (event) {
 
 			var ex_list	=	event.data;
-			var ul			=	document.getElementById('list_main')
+			var ul			=	document.getElementById('list_main');
 			ul.innerHTML	=	'';
 
 			for (var i = 1; i < ex_list[0]; i++) {
 				var	dex			=	eval("Jdex['" + ex_list[i] + "']");
 				var	value		=	skill(dex.skill, ['S', 'D'], dex);
+				console.log(value)
 				ul.innerHTML	=	ul.innerHTML
 								+	'<div class="list_kodex"><div><a href="?"><img src="https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'
 								+	role[dex.role]		+	'/'
