@@ -108,6 +108,7 @@ div {
 }
 .kodex_img {
 	width: 41px; height: 41px;
+	cursor: pointer;
 }
 .kodex_name {
 	width: calc(31% - 4px);

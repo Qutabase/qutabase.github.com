@@ -161,7 +161,10 @@ TO: */
 						+	dex.id				+	'/small.png'
 				)
 		);
-		document.getElementById(zoneid + 'link').setAttribute('href', 'https://qutabase.github.io/?kodexName=' + dex.name);
+		document.getElementById(zoneid + 'img').setAttribute('onclick'
+				, 'location.href = "https://qutabase.github.io/?kodexName='
+					+	dex.name	+	'"'
+		);
 
 		dex	=	eval("Jdex['" + srch + "']");
 		kinput('name');
@@ -189,28 +192,19 @@ TO: */
 		);
 		document.getElementById(zoneid + 'skill').setAttribute('onclick'
 				,	'location.href = "https://qutabase.github.io/skill/'
-					+ role[dex.role] + '.html?skillName='
-					+ dex.skill.substr(0,2) + '"'
+					+	role[dex.role] + '.html?skillName='
+					+	dex.skill.substr(0,2) + '"'
 		);
 		kinput('skill');
-		document.getElementById(zoneid + 'hp').innerHTML =	Math.round(
-																	Math.floor(
-																			dex.hp0
-																		+	dex.hpLv * (eval (zoneid + 'lv.value') - 1)
-																	)	*	( 1 + eval(zoneid + 'bind.value') * bind[dex.rarity] )
-																);
-		document.getElementById(zoneid + 'atk').innerHTML	=	Math.round(
-																	Math.floor(
-																			dex.atk0
-																		+	dex.atkLv * (eval(zoneid + 'lv.value') - 1) 
-																	)	*	( 1 + eval(zoneid + 'bind.value') * bind[dex.rarity] )
-																);
-		document.getElementById(zoneid + 'spr').innerHTML	=	Math.floor(
-																	( Number(eval(zoneid + 'hp.innerHTML'))
-																	+ Number(eval(zoneid + 'atk.innerHTML'))
-																	) / 2
-																);
+		document.getElementById(zoneid + 'hp').innerHTML =	dex.HP[		eval(	zoneid	+	'bind.value'	)	];
+		document.getElementById(zoneid + 'atk').innerHTML	=	dex.ATK[	eval(	zoneid	+	'bind.value'	)	];
+		document.getElementById(zoneid + 'spr').innerHTML	=	dex.SPR[	eval(	zoneid	+	'bind.value'	)	];
 
+		if (dex.HP[eval(zoneid + 'bind.value')] == undefined) {
+			document.getElementById(zoneid + 'hp').innerHTML =	dex.HP[0];
+			document.getElementById(zoneid + 'atk').innerHTML	=	dex.ATK[0];
+			document.getElementById(zoneid + 'spr').innerHTML	=	dex.SPR[0];
+		}
 
 
 		effect	=	Jskill[dex.skill].effect.split('/');

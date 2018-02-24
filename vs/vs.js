@@ -99,6 +99,12 @@ function vsSearch(srch) {
 		document.getElementById('info_ATK').innerHTML	=	dex.ATK[bind];
 		document.getElementById('info_SPR').innerHTML	=	dex.SPR[bind];
 
+		if (dex.HP[bind] == undefined) {
+			document.getElementById('info_HP').innerHTML	=	dex.HP[0];
+			document.getElementById('info_ATK').innerHTML	=	dex.ATK[0];
+			document.getElementById('info_SPR').innerHTML	=	dex.SPR[0];
+		}
+
 		var w = new Worker("worker.js");
 		w.postMessage(dex.skill.substr(0,2));
 		w.onmessage = function (event) {
