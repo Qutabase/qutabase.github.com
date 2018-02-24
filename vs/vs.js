@@ -179,10 +179,10 @@ function vsSearch(srch) {
 				var	lsEffect	=	skill(dex, sd, 0, 0).data;
 				var	winLose		=	[];
 				for (var i = 1; i < effect.val.length; i++) {
-					var	percInd	=	IsEffect.val[i].indexOf('%');
+					var	percInd	=	lsEffect.val[i].indexOf('%');
 					if (percInd + 1) {
 
-						IsEffect.val[i].substr(0, percInd);
+						lsEffect.val[i].substr(0, percInd);
 						effect.val[i].substr(0, effect.val[i].length - 1);
 
 					}
