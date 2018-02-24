@@ -110,7 +110,7 @@ function vsSearch(srch) {
 								+	dex.id				+	'/small.png" class="list_img"></a></div><div class="list_rarity">'
 								+	dex.rarity			+	'</div><div class="list_name">'
 								+	dex.name			+	'</div><div class="list_value">'
-								+	value.data[dex.name]+	'</div></div>'
+								+	value.data.desc		+	'</div></div>'
 								;
 
 			}

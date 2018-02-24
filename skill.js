@@ -20,8 +20,8 @@ perc = {
 
 function skill(argument, sd, dex) {
 	var	res		=	{};
-	res['data']	= {};
-	res['data'][dex.name]	= '';
+	res['data']	=	{};
+	res['data']['name']	= dex.name;
 	var	effect	=	Jskill[argument].effect.split('/');
 	// document.getElementById(zoneid + 'effect').innerHTML = '';
 	var	count = 1;
@@ -119,7 +119,7 @@ function skill(argument, sd, dex) {
 						);
 			}
 		}
-		res['data'][dex.name]	+=	temp.disp	+	': ';
+		res['data']['desc'][count]	+=	temp.disp	+	': ';
 
 		// console.log(val, st, dy)
 		exps	=	temp.exp1.split(',');
@@ -136,7 +136,7 @@ function skill(argument, sd, dex) {
 						)
 						+ '; '
 						;
-			res['data'][dex.name]	+=	prev;
+			res['data']['val'][count]	+=	prev;
 		}
 
 		count += 1;
