@@ -164,7 +164,6 @@ function vsSearch(srch) {
 		ef.parentElement.style.background	=	dex.roleColor;
 		ef.innerHTML		=	'';
 		var	effecPerc		=	0;
-		var	perc			=	'';
 		for (var i = 1; i < effect.val.length; i++) {
 			ef.innerHTML	+=	effect.desc[i]	+	effect.val[i]	+	'<br>';
 			effecPerc	=	effect.val[i].toString().indexOf('%');
@@ -187,6 +186,7 @@ function vsSearch(srch) {
 					var	lsEffect	=	skill(dex, sd, 0, 0).data;
 					var	winLose		=	[];
 					winLose.value	=	'';
+					var	perc		=	'';
 					for (var j = 1; j < effect.val.length; j++) {
 						var	lsEfPerc	=	lsEffect.val[j].toString().indexOf('%');
 						if (lsEfPerc + 1) {
