@@ -90,6 +90,11 @@ function vsSearch(srch) {
 		);
 		kinput('skill');
 
+		var	bind	=	document.getElementById('info_bind').value;
+		kinput('HP_' + bind);
+		kinput('ATK_' + bind);
+		kinput('SPR_' + bind);
+
 		var w = new Worker("worker.js");
 		w.postMessage(dex.skill.substr(0,2));
 		w.onmessage = function (event) {
