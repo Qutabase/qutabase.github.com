@@ -208,7 +208,7 @@ function vsSearch(srch) {
 											;
 					}
 					ul.innerHTML	=	ul.innerHTML
-									+	'<div class="list_kodex" onclick="zoneid = "vsB_"; vsSearch("'
+									+	'<div class="list_kodex" id="vsB_is_dest" onclick="vsSearch("'
 									+	dex.name			+	'");"><div><img src="https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'
 									+	role[dex.role]		+	'/'
 									+	dex.enskill			+	'/'
