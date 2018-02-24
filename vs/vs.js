@@ -191,7 +191,7 @@ function vsSearch(srch) {
 							effect.val[j]	=	effect.val[j].substr(0, effecPerc);
 						}
 						console.log(lsEffect.val[j], effect.val[j])
-						winLose.value	=	effect.val[j] - lsEffect.val[j];
+						winLose.value	=	lsEffect.val[j] - effect.val[j];
 						winLose.color	=	(lsEffect.val[j] > effect.val[j])
 											?
 											winLose.color	=	'green'
