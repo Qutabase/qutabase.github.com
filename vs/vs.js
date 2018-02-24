@@ -94,6 +94,16 @@ function vsSearch(srch) {
 		);
 		kinput('skill');
 
+		var	sd				=	['S','D'];
+		sd.id 				=	'lea';
+		var	effect			=	skill(dex, sd).data;
+		var	ef				=	document.getElementById('info_effect');
+		ef.parentElement.style.background	=	dex.roleColor;
+		ef.innerHTML		=	'';
+		for (var i = 1; i < effect.val.length; i++) {
+			ef.innerHTML	+=	effect.desc[i]	+	''	+	effect.val[i]	+	'<br>';
+		}
+
 		var	bind	=	document.getElementById('info_bind').value;
 		document.getElementById('info_HP').innerHTML	=	dex.HP[bind];
 		document.getElementById('info_ATK').innerHTML	=	dex.ATK[bind];
@@ -115,9 +125,7 @@ function vsSearch(srch) {
 
 			for (var i = 1; i < ex_list[0]; i++) {
 				var	dex			=	eval("Jdex['" + ex_list[i] + "']");
-				var	sd			=	['S','D'];
-				sd.id 			=	'lea';
-				var	value		=	skill(dex.skill, sd, dex);
+				var	value		=	skill(dex, sd);
 				ul.innerHTML	=	ul.innerHTML
 								+	'<div class="list_kodex"><div><a href="?"><img src="https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'
 								+	role[dex.role]				+	'/'

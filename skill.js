@@ -25,13 +25,13 @@ perc = {
 ,	'bun':''
 };
 
-function skill(argument, sd, dex) {
+function skill(dex, sd) {
 	var	res		=	{};
+	res['name']	=	dex.name;
 	res['data']	=	{};
 	res['data']['desc']	=	['description'];
 	res['data']['val']	=	['value'];
-	res['data']['name']	=	dex.name;
-	var	effect	=	Jskill[argument].effect.split('/');
+	var	effect	=	Jskill[dex.skill].effect.split('/');
 	// document.getElementById(zoneid + 'effect').innerHTML = '';
 	var	count = 1;
 	// var	sd	=	(document.getElementById('simul_index_role').innerHTML == dex.role) ? ['S','D'] : ['s','d'];
@@ -67,7 +67,7 @@ function skill(argument, sd, dex) {
 
 	for (eff in effect){
 		
-		var	temp	=	Jeffect[effect[eff]];
+		var	temp=	Jeffect[effect[eff]];
 
 		// document.getElementById(zoneid + 'effect').setAttribute('style'
 		// 		,	'background: '	+	dex.roleColor + '; color: white;'
@@ -96,6 +96,10 @@ function skill(argument, sd, dex) {
 					) *	val
 					;
 
+		if (temp.value == 'deck') {
+			val	=	4878;
+			dy	*=	0.01;
+		}
 		(sd.id)
 		?
 		val = Math.floor(
@@ -113,9 +117,6 @@ function skill(argument, sd, dex) {
 			st *= 100;
 		}
 
-		if (temp.value == 'deck') {
-			val	=	50000;
-		}
 		else if (temp.value == 'prev') {
 			if (prev.indexOf('%') == -1) {
 				val	=	Number(
@@ -130,7 +131,7 @@ function skill(argument, sd, dex) {
 		}
 		res['data']['desc'].push(temp.disp	+	': ');
 
-		// console.log(val, st, dy)
+		console.log(val, st, dy)
 		exps	=	temp.exp1.split(',');
 		for (var x in exps) {
 			prev	=	(effect[eff] in perc)

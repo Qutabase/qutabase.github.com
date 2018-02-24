@@ -108,9 +108,9 @@ perc = {
 ,	'bun':''
 };
 
-function renewal() {
+function renewal(argument) {
 	for (x in kodex_slot) {
-		if (kodex_slot[x] != '' && x != 'ac1') {
+		if (kodex_slot[x] != '' && x != argument) {
 			zoneid	=	x + '_';
 			simSearch(kodex_slot[x]);
 		}
@@ -146,7 +146,7 @@ TO: */
 			document.getElementById('simul_index_roleDesc').innerHTML	= "덱 전체 "	+	desc[dex.role]	+ " 증가<br>"
 																		+	dex.role	+	" 계열 스킬 강화";
 //	2018-02-12. SN KINOS ADDED SIMULATOR RENEWALLER
-			renewal();
+			renewal('ac1');
 			zoneid	=	'ac1_';
 			dex = eval("Jdex['" + srch + "']");
 //	2018-02-12. SN KINOS END.
@@ -206,6 +206,19 @@ TO: */
 			document.getElementById(zoneid + 'spr').innerHTML	=	dex.SPR[0];
 		}
 
+		var sum_atk	=	0;
+		var sum_hp		=	0;
+		var sum_spr	=	0;
+
+		for (key in kodex_slot) {
+			sum_atk	+=	Number(	eval(	key +	'_atk.innerHTML'	)	);
+			sum_hp	+=	Number(	eval(	key +	'_hp.innerHTML'		)	);
+			sum_spr	+=	Number(	eval(	key +	'_spr.innerHTML'	)	);
+		}
+		document.getElementById('deck_atk').innerHTML	=	sum_atk;
+		document.getElementById('deck_hp').innerHTML	=	sum_hp;
+		document.getElementById('deck_spr').innerHTML	=	sum_spr;
+
 
 		effect	=	Jskill[dex.skill].effect.split('/');
 		document.getElementById(zoneid + 'effect').innerHTML = '';
@@ -249,7 +262,7 @@ TO: */
 
 		for (eff in effect){
 			
-			var temp = Jeffect[effect[eff]];
+			var	temp= Jeffect[effect[eff]];
 
 			document.getElementById(zoneid + 'effect').setAttribute('style'
 					,	'background: '	+	dex.roleColor + '; color: white;'
@@ -280,6 +293,14 @@ TO: */
 						) *	val
 						;
 
+			if (temp.value == 'deck') {
+				val	=	Number(
+							eval(
+								'deck_'	+	role[dex.role]	+	'.innerHTML'
+							)
+						);
+				dy	*=	0.01;
+			}
 			(sd.id)
 			?
 			val = Math.floor(
@@ -297,14 +318,6 @@ TO: */
 				st *= 100;
 			}
 
-			if (temp.value == 'deck') {
-				val	=	Number(
-							eval(
-								zoneid + role[dex.role] + '.innerHTML'
-							)
-						);
-				dy	*=	0.01;
-			}
 			else if (temp.value == 'prev') {
 				if (prev.indexOf('%') == -1) {
 					val	=	Number(
@@ -340,19 +353,6 @@ TO: */
 			count += 1;
 
 		}
-
-		var sum_atk	 = 0;
-		var sum_hp		 = 0;
-		var sum_spr	 = 0;
-
-		for (key in kodex_slot) {
-			sum_atk	+=	Number(	eval(	key +	'_atk.innerHTML'	)	);
-			sum_hp	+=	Number(	eval(	key +	'_hp.innerHTML'		)	);
-			sum_spr	+=	Number(	eval(	key +	'_spr.innerHTML'	)	);
-		}
-		document.getElementById('deck_atk').innerHTML	=	sum_atk;
-		document.getElementById('deck_hp').innerHTML	=	sum_hp;
-		document.getElementById('deck_spr').innerHTML	=	sum_spr;
 
 	}
 
