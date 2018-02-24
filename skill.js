@@ -20,7 +20,7 @@ perc = {
 
 function skill(argument, sd, dex) {
 	var	res		=	{};
-	res['data']	= '';
+	res['data']	= {};
 	res['data'][dex.name]	= '';
 	var	effect	=	Jskill[argument].effect.split('/');
 	// document.getElementById(zoneid + 'effect').innerHTML = '';
