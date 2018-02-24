@@ -15,17 +15,17 @@ Jeffect	=	JSON.parse(
 			);
 
 kodex_slot = {
-	'ac1':''
-,	'ac2':''
-,	'ac3':''
-,	'ac4':''
-,	'ac5':''
+	'ac1_':''
+,	'ac2_':''
+,	'ac3_':''
+,	'ac4_':''
+,	'ac5_':''
 
-,	'pa1':''
-,	'pa2':''
-,	'pa3':''
-,	'pa4':''
-,	'pa5':''
+,	'pa1_':''
+,	'pa2_':''
+,	'pa3_':''
+,	'pa4_':''
+,	'pa5_':''
 };
 
 function simCheck(argument) {
@@ -33,21 +33,21 @@ function simCheck(argument) {
 	inp		=	argument;
 	zoneid	=	inp.id.substr(0,4);
 
-	if (window.event.keyCode == 13 && argument.id == zoneid + 'name_inp') {
+	if (window.event.keyCode == 13 && inp.id == zoneid + 'name_inp') {
 
-		kodex_slot[zoneid.substr(0,3)] = eval(zoneid + 'name_inp.value')
-		simSearch(kodex_slot[zoneid.substr(0,3)]);
+		kodex_slot[zoneid]	=	eval(zoneid	+	'name_inp.value');
+		simSearch(kodex_slot[zoneid]);
 		return;
 
 	}
-	else if (argument.id == zoneid + 'lv' || argument.id == zoneid + 'bind') {
-		simSearch(kodex_slot[zoneid.substr(0,3)]);
+	else if (inp.id == zoneid + 'lv' || inp.id == zoneid + 'bind') {
+		simSearch(kodex_slot[zoneid]);
 		return;
 	}
-	else if (argument.id == zoneid + 'name_inp' && inp.value != '') {
+	else if (inp.id == zoneid + 'name_inp' && inp.value != '') {
 		showSimExmpl(inp.value);
 	}
-	else if (argument.id == zoneid + 'name_inp' && inp.value == '' && window.event.keyCode == 8) {
+	else if (inp.id == zoneid + 'name_inp' && inp.value == '' && window.event.keyCode == 8) {
 		document.getElementById('kodex_simExmpl').setAttribute('style', 'display: none;');		
 	}
 
@@ -111,7 +111,6 @@ perc = {
 function renewal(argument) {
 	for (x in kodex_slot) {
 		if (kodex_slot[x] != '' && x != argument) {
-			zoneid	=	x + '_';
 			simSearch(kodex_slot[x]);
 		}
 	}
@@ -146,7 +145,7 @@ TO: */
 			document.getElementById('simul_index_roleDesc').innerHTML	= "덱 전체 "	+	desc[dex.role]	+ " 증가<br>"
 																		+	dex.role	+	" 계열 스킬 강화";
 //	2018-02-12. SN KINOS ADDED SIMULATOR RENEWALLER
-			renewal('ac1');
+			renewal('ac1_');
 			zoneid	=	'ac1_';
 			dex = eval("Jdex['" + srch + "']");
 //	2018-02-12. SN KINOS END.
@@ -196,24 +195,32 @@ TO: */
 					+	dex.skill.substr(0,2) + '"'
 		);
 		kinput('skill');
-		document.getElementById(zoneid + 'hp').innerHTML =	dex.HP[		eval(	zoneid	+	'bind.value'	)	];
-		document.getElementById(zoneid + 'atk').innerHTML	=	dex.ATK[	eval(	zoneid	+	'bind.value'	)	];
-		document.getElementById(zoneid + 'spr').innerHTML	=	dex.SPR[	eval(	zoneid	+	'bind.value'	)	];
-
-		if (dex.HP[eval(zoneid + 'bind.value')] == undefined) {
-			document.getElementById(zoneid + 'hp').innerHTML =	dex.HP[0];
-			document.getElementById(zoneid + 'atk').innerHTML	=	dex.ATK[0];
-			document.getElementById(zoneid + 'spr').innerHTML	=	dex.SPR[0];
-		}
+		document.getElementById(zoneid + 'hp').innerHTML =	Math.round( 
+																	Math.floor( 
+																			dex.hp0 
+																		+	dex.hpLv * (eval (zoneid + 'lv.value') - 1) 
+																	)	*	( 1 + eval(zoneid + 'bind.value') * bind[dex.rarity] ) 
+																); 
+		document.getElementById(zoneid + 'atk').innerHTML	=	Math.round( 
+																	Math.floor( 
+																			dex.atk0 
+																		+	dex.atkLv * (eval(zoneid + 'lv.value') - 1)  
+																	)	*	( 1 + eval(zoneid + 'bind.value') * bind[dex.rarity] ) 
+																); 
+		document.getElementById(zoneid + 'spr').innerHTML	=	Math.floor( 
+																	( Number(eval(zoneid + 'hp.innerHTML')) 
+																	+ Number(eval(zoneid + 'atk.innerHTML')) 
+																	) / 2 
+																); 
 
 		var sum_atk	=	0;
 		var sum_hp		=	0;
 		var sum_spr	=	0;
 
 		for (key in kodex_slot) {
-			sum_atk	+=	Number(	eval(	key +	'_atk.innerHTML'	)	);
-			sum_hp	+=	Number(	eval(	key +	'_hp.innerHTML'		)	);
-			sum_spr	+=	Number(	eval(	key +	'_spr.innerHTML'	)	);
+			sum_atk	+=	Number(	eval(	key +	'atk.innerHTML'	)	);
+			sum_hp	+=	Number(	eval(	key +	'hp.innerHTML'	)	);
+			sum_spr	+=	Number(	eval(	key +	'spr.innerHTML'	)	);
 		}
 		document.getElementById('deck_atk').innerHTML	=	sum_atk;
 		document.getElementById('deck_hp').innerHTML	=	sum_hp;

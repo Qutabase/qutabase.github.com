@@ -42,25 +42,23 @@
 			<div style="text-align: center; width: 100%; padding: 19px 0px; display: block; background: #FFEB3B;">
 				비교할 마도서
 			</div>
-			<div style="margin: 5px; width: calc(100% - 10px);">
-				<div id="info_imgBox">
-					<a href="?" id="info_link"><img src="raw.png" id="info_face"></a>
+			<div id="info_vsT" style="margin: 5px; width: calc(100% - 10px); margin-top: 0;">
+				<div class="info_imgBox">
+					<img src="raw.png" id="vsT_face">
 				</div>
-				<div id="info_rarity">
+				<div id="vsT_rarity" class="info_rarity">
 					SR+
 				</div>
-				<div id="info_skill">
+				<div id="vsT_skill" class="info_skill">
 					큐타베이스
 				</div>
-				<div id="info_name">
-					<input type="text" id="info_input" onkeyup="vsCheck(this)">
+				<div id="vsT_name" class="info_name">
+					<input type="text" id="vsT_input" class="info_input" onkeyup="vsCheck(this)">
 				</div>
-				<div id="info_effectBox">
-					<div id="info_effect">
-						
-					</div>
+				<div class="info_effectBox">
+					<div id="vsT_effect" class="info_effect"></div>
 				</div>
-				<div style="overflow-x: auto; width: 100%;">
+				<div>
 					<div class="info_statchart" style="width: 128px;">
 						<div class="info_stat" style="background: #5A688A; color: white;">
 							스탯
@@ -77,25 +75,72 @@
 					</div>
 					<div class="info_statchart" style="width: calc(100% - 133px); margin-left: 5px;">
 						<div class="info_stat" style="background: #5A688A; color: white;">
-							<input id="info_bind" onchange="vsCheck(this);">결속
+							<input id="vsT_bind" class="info_bind" onchange="vsCheck(this);">결속
 						</div>
-						<div id="info_HP" class="info_stat">
-							3617
+						<div id="vsT_HP" class="info_stat">
+							0000
 						</div>
-						<div id="info_ATK" class="info_stat">
-							5430
+						<div id="vsT_ATK" class="info_stat">
+							0000
 						</div>
-						<div id="info_SPR" class="info_stat">
-							4523
+						<div id="vsT_SPR" class="info_stat">
+							0000
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="info_vsB" style="margin: 5px; width: calc(100% - 10px); margin-top: 0;">
+				<div class="info_imgBox">
+					<img src="raw.png" id="vsB_face">
+				</div>
+				<div id="vsB_rarity" class="info_rarity">
+					SR+
+				</div>
+				<div id="vsB_skill" class="info_skill">
+					큐타베이스
+				</div>
+				<div id="vsB_name" class="info_name">
+					<input type="text" id="vsB_input" class="info_input" onkeyup="vsCheck(this)">
+				</div>
+				<div class="info_effectBox">
+					<div id="vsB_effect" class="info_effect"></div>
+				</div>
+				<div>
+					<div class="info_statchart" style="width: 128px;">
+						<div class="info_stat" style="background: #5A688A; color: white;">
+							스탯
+						</div>
+						<div class="info_stat" style="background: #5A688A; color: white; text-align: left;">
+							HP
+						</div>
+						<div class="info_stat" style="background: #5A688A; color: white; text-align: left;">
+							ATK
+						</div>
+						<div class="info_stat" style="background: #5A688A; color: white; text-align: left;">
+							SPR
+						</div>
+					</div>
+					<div class="info_statchart" style="width: calc(100% - 133px); margin-left: 5px;">
+						<div class="info_stat" style="background: #5A688A; color: white;">
+							<input id="vsB_bind" class="info_bind" onchange="vsCheck(this);">결속
+						</div>
+						<div id="vsB_HP" class="info_stat">
+							0000
+						</div>
+						<div id="vsB_ATK" class="info_stat">
+							0000
+						</div>
+						<div id="vsB_SPR" class="info_stat">
+							0000
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 		<section id="kodex_vs_list">
-			<br>
-			같은 스킬의 마도서 목록
-			<br>
+			<div style="text-align: center; width: 100%; padding: 19px 0px; display: block; background: #FFD400;">
+				위 마도서와 같은 스킬의 마도서 목록
+			</div>
 			<div id="list_main">
 				<div class="list_kodex">
 					<div>

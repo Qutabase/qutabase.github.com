@@ -25,7 +25,7 @@ perc = {
 ,	'bun':''
 };
 
-function skill(dex, sd) {
+function skill(dex, sd, bind) {
 	var	res		=	{};
 	res['name']	=	dex.name;
 	res['data']	=	{};
@@ -73,7 +73,7 @@ function skill(dex, sd) {
 		// 		,	'background: '	+	dex.roleColor + '; color: white;'
 		// );
 		var	val	=	Number(
-						dex[role[dex.role].toUpperCase()][0]
+						dex[role[dex.role].toUpperCase()][bind]
 					);
 		var	st	=	parseFloat(
 						Jskill[dex.skill][sd[0] + 'tatic'	+	count]
@@ -131,7 +131,7 @@ function skill(dex, sd) {
 		}
 		res['data']['desc'].push(temp.disp	+	': ');
 
-		console.log(val, st, dy)
+		// console.log(val, st, dy)
 		exps	=	temp.exp1.split(',');
 		for (var x in exps) {
 			prev	=	(effect[eff] in perc)
