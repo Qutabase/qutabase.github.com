@@ -156,7 +156,7 @@ function vsSearch(srch) {
 																	) / 2
 																);
 
-		if (zoneid == 'vsT_') {
+		if (zoneid == 'vsB_') {
 			continue;
 		}
 
