@@ -21,7 +21,9 @@ perc = {
 function skill(argument, sd, dex) {
 	var	res		=	{};
 	res['data']	=	{};
-	res['data']['name']	= dex.name;
+	res['data']['desc']	=	[];
+	res['data']['val']	=	[];
+	res['data']['name']	=	dex.name;
 	var	effect	=	Jskill[argument].effect.split('/');
 	// document.getElementById(zoneid + 'effect').innerHTML = '';
 	var	count = 1;
