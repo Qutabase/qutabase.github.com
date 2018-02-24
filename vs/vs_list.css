@@ -10,6 +10,12 @@
 .list_kodex div {
 	margin: 2px 4px;
 }
+.list_rarity {
+	width: 38px;
+}
+.list_name {
+	width: 206px;
+}
 
 #list_main {
 	width: 100%;	height: calc(100% - 78px);
