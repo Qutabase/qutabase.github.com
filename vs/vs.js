@@ -137,7 +137,7 @@ function vsSearch(srch) {
 		else if (dex.HP[val_bind] == undefined) {
 			val_bind	=	0;
 		}
-		console.log(val_lv, val_bind)
+
 		document.getElementById(zoneid + 'HP').innerHTML =	Math.round(
 																	Math.floor(
 																			dex.hp0
@@ -176,16 +176,35 @@ function vsSearch(srch) {
 
 			for (var i = 1; i < ex_list[0]; i++) {
 				var	dex			=	eval("Jdex['" + ex_list[i] + "']");
-				var	value		=	skill(dex, sd, 0, 0).data;
+				var	lsEffect	=	skill(dex, sd, 0, 0).data;
+				var	winLose		=	[];
+				for (var i = 1; i < effect.val.length; i++) {
+					var	percInd	=	IsEffect.val[i].indexOf('%');
+					if (percInd + 1) {
+
+						IsEffect.val[i].substr(0, percInd);
+						effect.val[i].substr(0, effect.val[i].length - 1);
+
+					}
+					if (lsEffect.val[i] > effect.val[i]) {
+						winLose.value	=	effect.val[i] - lsEffect.val[i];
+						winLose.color	=	'green';
+					}
+					else {
+						winLose.value	=	lsEffect.val[i] - effect.val[i];
+						winLose.color	=	'red';
+					}
+				}
 				ul.innerHTML	=	ul.innerHTML
-								+	'<div class="list_kodex"><div><a href="?"><img src="https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'
+								+	'<div class="list_kodex"><div><img src="https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'
 								+	role[dex.role]		+	'/'
 								+	dex.enskill			+	'/'
 								+	rarity[dex.rarity]	+	'/'
-								+	dex.id				+	'/small.png" class="list_img"></a></div><div class="list_rarity">'
+								+	dex.id				+	'/small.png" class="list_img"></div><div class="list_rarity">'
 								+	dex.rarity			+	'</div><div class="list_name">'
-								+	dex.name			+	'</div><div class="list_value">'
-								+	value.val.slice(1);	+	'</div></div>'
+								+	dex.name			+	'</div><div class="list_value" style="color: '
+								+	winLose.color		+	';">'
+								+	winLose	value		+	'</div></div>'
 								;
 
 			}

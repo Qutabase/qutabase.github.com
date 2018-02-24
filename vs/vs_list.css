@@ -22,7 +22,9 @@
 .list_name {
 	width: 185px;
 }
-
+.list_value {
+	color: white;
+}
 #list_main {
 	width: 100%;	height: calc(100% - 73px);
 	background: #FFEB3B;
