@@ -164,8 +164,9 @@ function vsSearch(srch) {
 		ef.parentElement.style.background	=	dex.roleColor;
 		ef.innerHTML		=	'';
 		var	effecPerc		=	0;
+		var	perc			=	'';
 		for (var i = 1; i < effect.val.length; i++) {
-			ef.innerHTML	+=	effect.desc[i]	+	''	+	effect.val[i]	+	'<br>';
+			ef.innerHTML	+=	effect.desc[i]	+	effect.val[i]	+	'<br>';
 			effecPerc	=	effect.val[i].toString().indexOf('%');
 			if (effecPerc + 1) {
 				effect.val[i]	=	effect.val[i].substr(0, effecPerc);
@@ -190,6 +191,7 @@ function vsSearch(srch) {
 						var	lsEfPerc	=	lsEffect.val[j].toString().indexOf('%');
 						if (lsEfPerc + 1) {
 							lsEffect.val[j]	=	lsEffect.val[j].substr(0, lsEfPerc);
+							perc			=	'%';
 						}
 						winLose.value	=	lsEffect.val[j] - effect.val[j];
 						winLose.value	=	(winLose.value == winLose.value.toFixed(2))
@@ -214,7 +216,8 @@ function vsSearch(srch) {
 									+	dex.rarity			+	'</div><div class="list_name">'
 									+	dex.name			+	'</div><div class="list_value" style="color: '
 									+	winLose.color		+	';">'
-									+	winLose.value		+	'</div></div>'
+									+	winLose.value		+	perc
+									+	'</div></div>'
 									;
 
 				}
