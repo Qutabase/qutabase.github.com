@@ -204,7 +204,7 @@ function vsSearch(srch) {
 								+	dex.rarity			+	'</div><div class="list_name">'
 								+	dex.name			+	'</div><div class="list_value" style="color: '
 								+	winLose.color		+	';">'
-								+	winLose	value		+	'</div></div>'
+								+	winLose.value		+	'</div></div>'
 								;
 
 			}
