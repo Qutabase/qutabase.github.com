@@ -119,7 +119,7 @@ function skill(argument, sd, dex) {
 						);
 			}
 		}
-		res['data']	+=	temp.disp	+	': ';
+		res['data'][dex.name]	+=	temp.disp	+	': ';
 
 		// console.log(val, st, dy)
 		exps	=	temp.exp1.split(',');
