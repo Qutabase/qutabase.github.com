@@ -121,7 +121,7 @@ function skill(argument, sd, dex) {
 						);
 			}
 		}
-		res['data']['desc'][count]	=	temp.disp	+	': ';
+		res['data']['desc'][count].push(temp.disp	+	': ');
 
 		// console.log(val, st, dy)
 		exps	=	temp.exp1.split(',');
@@ -138,7 +138,7 @@ function skill(argument, sd, dex) {
 						)
 						+ '; '
 						;
-			res['data']['val'][count]	=	prev;
+			res['data']['val'][count].push(prev);
 		}
 
 		count += 1;
