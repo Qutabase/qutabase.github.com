@@ -162,13 +162,13 @@ function vsSearch(srch) {
 		var	ef				=	document.getElementById(zoneid + 'effect');
 		ef.parentElement.style.background	=	dex.roleColor;
 		ef.innerHTML		=	'';
+		var	effecPerc		=	0;
 		for (var i = 1; i < effect.val.length; i++) {
 			ef.innerHTML	+=	effect.desc[i]	+	''	+	effect.val[i]	+	'<br>';
-		}
-		
-		var	effecPerc	=	effect.val[j].toString().indexOf('%');
-		if (effecPerc + 1) {
-			effect.val[j]	=	effect.val[j].substr(0, effecPerc);
+			effecPerc	=	effect.val[i].toString().indexOf('%');
+			if (effecPerc + 1) {
+				effect.val[i]	=	effect.val[i].substr(0, effecPerc);
+			}
 		}
 
 		if (zoneid == 'vsT_') {
