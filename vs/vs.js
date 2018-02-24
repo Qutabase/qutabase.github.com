@@ -179,21 +179,21 @@ function vsSearch(srch) {
 				var	dex			=	eval("Jdex['" + ex_list[i] + "']");
 				var	lsEffect	=	skill(dex, sd, 0, 0).data;
 				var	winLose		=	[];
-				for (var i = 1; i < effect.val.length; i++) {
+				for (var j = 1; j < effect.val.length; j++) {
 					console.log('222')
-					var	percInd	=	lsEffect.val[i].indexOf('%');
+					var	percjnd	=	lsEffect.val[j].indexOf('%');
 					if (percInd + 1) {
 
-						lsEffect.val[i].substr(0, percInd);
-						effect.val[i].substr(0, effect.val[i].length - 1);
+						lsEffect.val[j].substr(0, percInd);
+						effect.val[j].substr(0, effect.val[j].length - 1);
 
 					}
-					if (lsEffect.val[i] > effect.val[i]) {
-						winLose.value	=	effect.val[i] - lsEffect.val[i];
+					if (lsEffect.val[j] > effect.val[j]) {
+						winLose.value	=	effect.val[j] - lsEffect.val[j];
 						winLose.color	=	'green';
 					}
 					else {
-						winLose.value	=	lsEffect.val[i] - effect.val[i];
+						winLose.value	=	lsEffect.val[j] - effect.val[j];
 						winLose.color	=	'red';
 					}
 				}
