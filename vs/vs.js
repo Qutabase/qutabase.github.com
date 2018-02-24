@@ -22,7 +22,7 @@ function vsCheck(argument) {
 		showVsExmpl(inp.value);
 	}
 	else if (inp.value == '' && window.event.keyCode == 8) {
-		document.getElementById('kodex_vsExmpl').setAttribute('style', 'display: none;');		
+		document.getElementById('kodex_vsExmpl').setAttribute('style', 'display: none;');
 	}
 
 }
@@ -45,7 +45,7 @@ role = {
 }
 
 function vsSearch(srch) {
-	
+
 	dex = eval("Jdex['" + srch + "']");
 
 	if (dex != undefined) {
@@ -91,9 +91,9 @@ function vsSearch(srch) {
 		kinput('skill');
 
 		var	bind	=	document.getElementById('info_bind').value;
-		kinput('HP_' + bind);
-		kinput('ATK_' + bind);
-		kinput('SPR_' + bind);
+		document.getElementById('info_HP').innerHTML	=	dex.HP[bind];
+		document.getElementById('info_ATK').innerHTML	=	dex.ATK[bind];
+		document.getElementById('info_SPR').innerHTML	=	dex.SPR[bind];
 
 		var w = new Worker("worker.js");
 		w.postMessage(dex.skill.substr(0,2));
