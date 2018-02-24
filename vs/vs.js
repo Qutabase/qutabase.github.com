@@ -14,6 +14,10 @@ function vsCheck(argument) {
 	inp = argument;
 	if (window.event.keyCode == 13) {
 
+		if (inp.id == 'info_bind') {
+			vsSearch(document.getElementById('info_name'));
+			return;
+		}
 		vsSearch(inp.value);
 		return;
 
@@ -118,7 +122,7 @@ function vsSearch(srch) {
 								;
 
 			}
-			
+
 			w.terminate();
 
 		}
