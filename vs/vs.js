@@ -25,7 +25,7 @@ function vsCheck(argument) {
 		return;
 
 	}
-	else if (inp.id == zoneid + 'bind') {
+	else if (inp.id == zoneid + 'lv' || inp.id == zoneid + 'bind') {
 		vsSearch(kodex_slot[zoneid]);
 		return;
 	}
@@ -49,7 +49,7 @@ rarity = {
 ,	'QR':'8'
 };
 
-bind = {
+bindex = {
 	'bind':'0.5 0.5 0.6 0.6 0.7 0.8 0.9 0.8'
 ,	'N':0.05
 ,	'N+':0.05
@@ -119,33 +119,46 @@ function vsSearch(srch) {
 		);
 		kinput('skill');
 
-		if (bind > 6) {
-			bind	=	6;
+		var	val_lv	=	eval(zoneid + 'lv.value');
+		if (val_lv > 130) {
+			val_lv	=	130;
 		}
-		else if (dex.HP[bind] == undefined) {
-			bind	=	0;
+		else if (val_lv > 0) {
+			;
 		}
-		document.getElementById(zoneid + 'hp').innerHTML =	Math.round( 
-																	Math.floor( 
-																			dex.hp0 
-																		+	dex.hpLv * (eval (zoneid + 'lv.value') - 1) 
-																	)	*	( 1 + eval(zoneid + 'bind.value') * bind[dex.rarity] ) 
+		else {
+			val_lv	=	1;
+		}
+
+		var	val_bind	=	eval(zoneid + 'bind.value');
+		if (val_bind > 6) {
+			val_bind	=	6;
+		}
+		else if (dex.HP[val_bind] == undefined) {
+			val_bind	=	0;
+		}
+		console.log(val_lv, val_bind)
+		document.getElementById(zoneid + 'HP').innerHTML =	Math.round(
+																	Math.floor(
+																			dex.hp0
+																		+	dex.hpLv	*	(val_lv - 1)
+																	)	*	( 1 + val_bind * bindex[dex.rarity] )
 																);
-		document.getElementById(zoneid + 'atk').innerHTML	=	Math.round( 
-																	Math.floor( 
+		document.getElementById(zoneid + 'ATK').innerHTML	=	Math.round(
+																	Math.floor(
 																			dex.atk0 
-																		+	dex.atkLv * (eval(zoneid + 'lv.value') - 1)  
-																	)	*	( 1 + eval(zoneid + 'bind.value') * bind[dex.rarity] ) 
+																		+	dex.atkLv	*	(val_lv - 1)
+																	)	*	( 1 + val_bind * bindex[dex.rarity] )
 																);
-		document.getElementById(zoneid + 'spr').innerHTML	=	Math.floor( 
-																	( Number(eval(zoneid + 'hp.innerHTML')) 
-																	+ Number(eval(zoneid + 'atk.innerHTML')) 
-																	) / 2 
+		document.getElementById(zoneid + 'SPR').innerHTML	=	Math.floor(
+																	( Number(eval(zoneid + 'HP.innerHTML'))
+																	+ Number(eval(zoneid + 'ATK.innerHTML'))
+																	) / 2
 																);
 
 		var	sd				=	['S','D'];
 		sd.id 				=	'lea';
-		var	effect			=	skill(dex, sd, bind).data;
+		var	effect			=	skill(dex, sd, val_lv, val_bind).data;
 		var	ef				=	document.getElementById(zoneid + 'effect');
 		ef.parentElement.style.background	=	dex.roleColor;
 		ef.innerHTML		=	'';
@@ -163,7 +176,7 @@ function vsSearch(srch) {
 
 			for (var i = 1; i < ex_list[0]; i++) {
 				var	dex			=	eval("Jdex['" + ex_list[i] + "']");
-				var	value		=	skill(dex, sd, 0).data;
+				var	value		=	skill(dex, sd, 0, 0).data;
 				ul.innerHTML	=	ul.innerHTML
 								+	'<div class="list_kodex"><div><a href="?"><img src="https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'
 								+	role[dex.role]		+	'/'

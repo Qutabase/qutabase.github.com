@@ -71,6 +71,15 @@
   vertical-align: middle;
 }
 
+.info_lv {
+	font-family: "NanumSquareB", "맑은 고딕";
+	width: 50px; height: 27px;
+	text-align: center;
+	font-size: 24px;
+	border: none;
+	padding: 0px;
+}
+
 .info_bind {
 	font-family: "NanumSquareB", "맑은 고딕";
 	width: 30px; height: 27px;

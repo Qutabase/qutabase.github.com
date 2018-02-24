@@ -24,7 +24,7 @@
 }
 
 #list_main {
-	width: 100%;	height: calc(100% - 78px);
+	width: 100%;	height: calc(100% - 73px);
 	background: #FFEB3B;
 	overflow-y: auto;
 }

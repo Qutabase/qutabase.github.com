@@ -25,7 +25,19 @@ perc = {
 ,	'bun':''
 };
 
-function skill(dex, sd, bind) {
+bindex = {
+	'bind':'0.5 0.5 0.6 0.6 0.7 0.8 0.9 0.8'
+,	'N':0.05
+,	'N+':0.05
+,	'R':0.06
+,	'R+':0.06
+,	'SR':0.07
+,	'SR+':0.08
+,	'SSR':0.09
+,	'QR':0.08
+};
+
+function skill(dex, sd, lv, bind) {
 	var	res		=	{};
 	res['name']	=	dex.name;
 	res['data']	=	{};
@@ -67,14 +79,32 @@ function skill(dex, sd, bind) {
 
 	for (eff in effect){
 		
-		var	temp=	Jeffect[effect[eff]];
+		var	temp	=	Jeffect[effect[eff]];
 
 		// document.getElementById(zoneid + 'effect').setAttribute('style'
 		// 		,	'background: '	+	dex.roleColor + '; color: white;'
 		// );
-		var	val	=	Number(
-						dex[role[dex.role].toUpperCase()][bind]
-					);
+		if (lv) {
+			var	val	=	(dex.role == '회복')
+						?
+						Math.floor(
+							( Number(eval(zoneid + 'HP.innerHTML'))
+							+ Number(eval(zoneid + 'ATK.innerHTML'))
+							) / 2
+						)
+						:
+						Math.round(
+							Math.floor(
+									eval('dex.'	+	role[dex.role]	+	'0')
+								+	eval('dex.'	+	role[dex.role]	+	'Lv')	*	(lv - 1)
+							)	*	( 1 + bind * bindex[dex.rarity] )
+						);
+		}
+		else {
+			var	val	=	Number(
+							dex[role[dex.role].toUpperCase()][bind]
+						);
+		}
 		var	st	=	parseFloat(
 						Jskill[dex.skill][sd[0] + 'tatic'	+	count]
 					);
