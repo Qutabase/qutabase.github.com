@@ -186,6 +186,7 @@ function vsSearch(srch) {
 						effect.val[j].substr(0, effect.val[j].length - 1);
 
 					}
+					console.log(percInd, lsEffect.val[j], effect.val[j])
 					if (lsEffect.val[j] > effect.val[j]) {
 						winLose.value	=	effect.val[j] - lsEffect.val[j];
 						winLose.color	=	'green';
