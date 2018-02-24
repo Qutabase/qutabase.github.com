@@ -156,6 +156,10 @@ function vsSearch(srch) {
 																	) / 2
 																);
 
+		if (zoneid == 'vsT_') {
+			continue;
+		}
+
 		var	sd				=	['S','D'];
 		sd.id 				=	'lea';
 		var	effect			=	skill(dex, sd, val_lv, val_bind).data;
