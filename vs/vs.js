@@ -215,13 +215,7 @@ function vsSearch(srch) {
 
 
 	}
-	try {
-		inp.value = '';
-		document.getElementById('kodex_vsExmpl').setAttribute('style', 'display: none;');
-	}
-	catch (exception){
-		;
-	}
+	document.getElementById('kodex_vsExmpl').setAttribute('style', 'display: none;');
 	document.getElementsByTagName('article')[0].setAttribute("style", "display: inline-block;")
 
 }
