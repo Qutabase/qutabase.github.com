@@ -21,8 +21,8 @@ perc = {
 function skill(argument, sd, dex) {
 	var	res		=	{};
 	res['data']	=	{};
-	res['data']['desc']	=	[];
-	res['data']['val']	=	[];
+	res['data']['desc']	=	['description'];
+	res['data']['val']	=	['value'];
 	res['data']['name']	=	dex.name;
 	var	effect	=	Jskill[argument].effect.split('/');
 	// document.getElementById(zoneid + 'effect').innerHTML = '';
@@ -121,7 +121,7 @@ function skill(argument, sd, dex) {
 						);
 			}
 		}
-		res['data']['desc'][count].push(temp.disp	+	': ');
+		res['data']['desc'].push(temp.disp	+	': ');
 
 		// console.log(val, st, dy)
 		exps	=	temp.exp1.split(',');
@@ -138,7 +138,7 @@ function skill(argument, sd, dex) {
 						)
 						+ '; '
 						;
-			res['data']['val'][count].push(prev);
+			res['data']['val'].push(prev);
 		}
 
 		count += 1;
