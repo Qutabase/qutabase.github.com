@@ -181,6 +181,7 @@ function vsSearch(srch) {
 					var	winLose		=	[];
 					winLose.value	=	'';
 					for (var j = 1; j < effect.val.length; j++) {
+						console.log(lsEffect.val[j], effect.val[j])
 						var	lsEfPerc	=	lsEffect.val[j].indexOf('%');
 						var	effecPerc	=	effect.val[j].indexOf('%');
 						if (lsEfPerc + 1) {
