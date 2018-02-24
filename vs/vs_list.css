@@ -14,15 +14,16 @@
 }
 .list_kodex div {
 	margin: 2px 4px;
-	text-align: left;
+	/*text-align: left;*/
 }
 .list_rarity {
-	width: 34px;
+	width: 39px;
 }
 .list_name {
-	width: 185px;
+	width: 195px;
 }
 .list_value {
+	width: 81px;
 	color: white;
 }
 #list_main {
