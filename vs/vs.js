@@ -69,6 +69,7 @@ role = {
 
 function vsSearch(srch) {
 
+	kodex_slot[zoneid]	=	srch;
 	dex = eval("Jdex['" + srch + "']");
 
 	if (dex != undefined) {
