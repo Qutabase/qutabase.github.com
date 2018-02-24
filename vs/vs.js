@@ -191,14 +191,13 @@ function vsSearch(srch) {
 							effect.val[j]	=	effect.val[j].substr(0, effecPerc);
 						}
 						console.log(lsEffect.val[j], effect.val[j])
-						if (lsEffect.val[j] > effect.val[j]) {
-							winLose.value	=	effect.val[j] - lsEffect.val[j];
-							winLose.color	=	'green';
-						}
-						else {
-							winLose.value	=	lsEffect.val[j] - effect.val[j];
-							winLose.color	=	'red';
-						}
+						winLose.value	=	effect.val[j] - lsEffect.val[j];
+						winLose.color	=	(lsEffect.val[j] > effect.val[j])
+											?
+											winLose.color	=	'green'
+											:
+											winLose.color	=	'red'
+											;
 					}
 					ul.innerHTML	=	ul.innerHTML
 									+	'<div class="list_kodex"><div><img src="https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'
