@@ -184,10 +184,10 @@ function vsSearch(srch) {
 					if (lsEfPerc + 1) {
 						lsEffect.val[j]	=	lsEffect.val[j].substr(0, lsEfPerc);
 					}
-					if (effecPerc) {
+					if (effecPerc + 1) {
 						effect.val[j]	=	effect.val[j].substr(0, effecPerc);
 					}
-					
+
 					if (lsEffect.val[j] > effect.val[j]) {
 						winLose.value	=	effect.val[j] - lsEffect.val[j];
 						winLose.color	=	'green';
