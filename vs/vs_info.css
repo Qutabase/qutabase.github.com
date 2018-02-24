@@ -46,6 +46,11 @@
 	padding: 0px;
 }
 
+#info_effect {
+	font-size: 20px;
+	line-height: initial;
+}
+
 #info_bind {
 	font-family: "NanumSquareB", "맑은 고딕";
 	width: 30px; height: 27px;

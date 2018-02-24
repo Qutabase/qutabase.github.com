@@ -209,9 +209,15 @@ TO: */
 
 		effect	=	Jskill[dex.skill].effect.split('/');
 		document.getElementById(zoneid + 'effect').innerHTML = '';
-		var count = 1;
-		var	sd	=	(document.getElementById('simul_index_role').innerHTML == dex.role) ? ['S','D'] : ['s','d'];
-
+		var	count	=	1;
+		var	sd		=	[];
+		if (document.getElementById('simul_index_role').innerHTML == dex.role) {
+			sd 	=	['S','D'];
+			sd.id	=	'lea';
+		}
+		else {
+			sd		=	['s','d'];
+		}
 		var	st1	=	parseFloat(
 						Jskill[dex.skill][sd[0] + 'tatic1']
 					);
@@ -231,11 +237,11 @@ TO: */
 						Jskill[dex.skill][sd[1] + 'ynamic3']
 					);
 		
-		var	pd	=	(sd == ['S', 'D'])
+		var	pd	=	(sd.id)
 					?
-					Jskill[dex.skill].probability
-					:
 					Jskill[dex.skill].duration
+					:
+					Jskill[dex.skill].probability
 					;
 		var	dur	=	parseFloat(
 						Jskill[dex.skill].duration
@@ -274,7 +280,7 @@ TO: */
 						) *	val
 						;
 
-			(document.getElementById('simul_index_role').innerHTML == dex.role)
+			(sd.id)
 			?
 			val = Math.floor(
 						val

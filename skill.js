@@ -55,11 +55,11 @@ function skill(argument, sd, dex) {
 					Jskill[dex.skill][sd[1] + 'ynamic3']
 				);
 	
-	var	pd	=	(sd == ['S', 'D'])
+	var	pd	=	(sd.id)
 				?
-				Jskill[dex.skill].probability
-				:
 				Jskill[dex.skill].duration
+				:
+				Jskill[dex.skill].probability
 				;
 	var	dur	=	parseFloat(
 					Jskill[dex.skill].duration
@@ -96,7 +96,7 @@ function skill(argument, sd, dex) {
 					) *	val
 					;
 
-		(sd == ['S', 'D'])
+		(sd.id)
 		?
 		val = Math.floor(
 					val
