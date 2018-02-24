@@ -183,7 +183,7 @@ function vsSearch(srch) {
 					if (percInd + 1) {
 
 						lsEffect.val[j]	=	lsEffect.val[j].substr(0, percInd);
-						effect.val[j]	=	effect.val[j].substr(0, effect.val[j].length - 1);
+						effect.val[j]	=	effect.val[j].substr(0, percInd);
 
 					}
 					console.log(percInd, lsEffect.val[j], effect.val[j])
