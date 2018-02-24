@@ -165,6 +165,11 @@ function vsSearch(srch) {
 		for (var i = 1; i < effect.val.length; i++) {
 			ef.innerHTML	+=	effect.desc[i]	+	''	+	effect.val[i]	+	'<br>';
 		}
+		
+		var	effecPerc	=	effect.val[j].toString().indexOf('%');
+		if (effecPerc + 1) {
+			effect.val[j]	=	effect.val[j].substr(0, effecPerc);
+		}
 
 		if (zoneid == 'vsT_') {
 			var w = new Worker("worker.js");
@@ -175,10 +180,6 @@ function vsSearch(srch) {
 				var ul			=	document.getElementById('list_main');
 				ul.innerHTML	=	'';
 
-				var	effecPerc	=	effect.val[j].toString().indexOf('%');
-				if (effecPerc + 1) {
-					effect.val[j]	=	effect.val[j].substr(0, effecPerc);
-				}
 				for (var i = 1; i < ex_list[0]; i++) {
 					var	dex			=	eval("Jdex['" + ex_list[i] + "']");
 					var	lsEffect	=	skill(dex, sd, 0, 0).data;
