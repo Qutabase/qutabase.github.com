@@ -122,7 +122,6 @@ function skill(dex, sd, lv, bind) {
 						Jskill[dex.skill][sd[1] + 'ynamic'	+ count]
 					) *	val
 					;
-
 		if (temp.value == 'deck') {
 			val	+=	50000;
 			dy	*=	0.01;
