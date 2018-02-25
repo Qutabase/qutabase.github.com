@@ -214,7 +214,7 @@ function vsSearch(srch) {
 											;
 						winLose.color	=	(winLose.value > 0)
 											?
-											winLose.color	=	'green'
+											winLose.color	=	'#20AD20'
 											:
 											winLose.color	=	'red'
 											;
