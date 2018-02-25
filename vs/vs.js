@@ -76,18 +76,18 @@ function listClick(argument) {
 
 function vsSearch(srch) {
 
-	kodex_slot[zoneid]	=	srch;
-
 	if (srch in Jskill) {
 		for (var x in Jdex) {
 			if (Jdex[x].skill.substr(0,2) == srch.substr(0,2)) {
-				dex	=	eval("Jdex['" + x + "']");
+				kodex_slot[zoneid]	=	Jdex[x].name;
+				dex	=	eval("Jdex['" + kodex_slot[zoneid] + "']");
 				break;
 			}
 		}
 	}
 	else {
-		dex	=	eval("Jdex['" + srch + "']");
+		kodex_slot[zoneid]	=	srch;
+		dex	=	eval("Jdex['" + kodex_slot[zoneid] + "']");
 	}
 
 	if (dex != undefined) {
@@ -112,7 +112,7 @@ function vsSearch(srch) {
 						+	dex.id				+	'/raw.png'
 					)
 		);
-		dex = eval("Jdex['" + srch + "']");
+		dex = eval("Jdex['" + kodex_slot[zoneid] + "']");
 
 		document.getElementById(zoneid + 'face').setAttribute('onclick'
 				,	'location.href = "https://qutabase.github.io/?kodexName='
