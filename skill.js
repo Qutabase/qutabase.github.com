@@ -127,6 +127,18 @@ function skill(dex, sd, lv, bind) {
 			val	=	4878;
 			dy	*=	0.01;
 		}
+		else if (temp.value == 'prev') {
+			if (prev.indexOf('%') == -1) {
+				val	=	Number(
+							prev.substring(0, prev.length - 2)
+						);
+			}
+			else {
+				val	=	Number(
+							prev.substring(0, prev.length - 3)
+						);
+			}
+		}
 		(sd.id)
 		?
 		val = Math.floor(
@@ -142,19 +154,6 @@ function skill(dex, sd, lv, bind) {
 		if ((effect[eff] in perc)) {
 			val *= 0.01;
 			st *= 100;
-		}
-
-		else if (temp.value == 'prev') {
-			if (prev.indexOf('%') == -1) {
-				val	=	Number(
-							prev.substring(0, prev.length - 2)
-						);
-			}
-			else {
-				val	=	Number(
-							prev.substring(0, prev.length - 3)
-						);
-			}
 		}
 		res['data']['desc'].push(temp.disp	+	': ');
 

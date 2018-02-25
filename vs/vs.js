@@ -188,7 +188,7 @@ function vsSearch(srch) {
 				var ul			=	document.getElementById('list_main');
 				ul.innerHTML	=	'';
 
-				for (var i = 1; i < ex_list[0]; i++) {
+				for (var i = 1; i <= ex_list[0]; i++) {
 					var	dex			=	eval("Jdex['" + ex_list[i] + "']");
 					var	lsEffect	=	skill(dex, sd, 0, 0).data;
 					var	winLose		=	[];
