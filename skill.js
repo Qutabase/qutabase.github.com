@@ -124,7 +124,7 @@ function skill(dex, sd, lv, bind) {
 					;
 
 		if (temp.value == 'deck') {
-			val	=	4878;
+			val	+=	50000;
 			dy	*=	0.01;
 		}
 		(sd.id)
