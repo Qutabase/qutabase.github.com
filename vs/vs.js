@@ -67,17 +67,27 @@ role = {
 ,	'회복':'spr'
 };
 
-
 function listClick(argument) {
 	zoneid	=	'vsB_';
 	vsB_lv.value	=	Jdex[argument].lv;
 	vsB_bind.value	=	0;
 	vsSearch(argument);
 }
+
 function vsSearch(srch) {
 
 	kodex_slot[zoneid]	=	srch;
-	dex = eval("Jdex['" + srch + "']");
+	
+	if (srch in Jskill) {
+		for (var x in Jdex) {
+			if (x.skill == srch) {
+				dex	=	eval("Jdex['" + x + "']");
+			}
+		}
+	}
+	else {
+		dex	=	eval("Jdex['" + srch + "']");
+	}
 
 	if (dex != undefined) {
 
@@ -192,7 +202,7 @@ function vsSearch(srch) {
 				var ex_list	=	event.data;
 				var ul			=	document.getElementById('list_main');
 				ul.innerHTML	=	'';
-				
+
 				for (var i = 1; i <= ex_list[0]; i++) {
 					var	dex			=	eval("Jdex['" + ex_list[i] + "']");
 					var	lsEffect	=	skill(dex, sd, 0, 0).data;
