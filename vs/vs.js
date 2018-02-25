@@ -217,12 +217,12 @@ function vsSearch(srch) {
 					if (srch.indexOf('®마법소녀 팥쥐') != -1) {
 						;
 					}
-					else if (key_list[i].indexOf('® ') != -1) {
-						temp = key_list[i].substring(2);
+					else if (ex_list[i].indexOf('® ') != -1) {
+						temp = ex_list[i].substring(2);
 						dex = eval("Jdex['" + temp + "']");
 					}
-					else if (key_list[i].indexOf('®') != -1) {
-						temp = key_list[i].substring(1);
+					else if (ex_list[i].indexOf('®') != -1) {
+						temp = ex_list[i].substring(1);
 						dex = eval("Jdex['" + temp + "']");
 					}
 					imgLink			=	'https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'
