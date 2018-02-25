@@ -178,9 +178,9 @@ function vsSearch(srch) {
 								:
 								effect.val[i]	+	' '
 								;
-			effecPerc	=	effect.val[i].toString().indexOf('%');
+			effecPerc		=	effect.val[i].toString().indexOf('%');
 			if (effecPerc + 1) {
-				effect.val[i]	=	effect.val[i].substr(0, effecPerc);
+				effect.val[i]	=	effect.val[i].toString().substr(0, effecPerc);
 			}
 		}
 
