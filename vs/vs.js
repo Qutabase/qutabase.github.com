@@ -202,7 +202,7 @@ function vsSearch(srch) {
 						var	lsEfPerc	=	lsEffect.val[j].toString().indexOf('%');
 						var	perc		=	'';
 						if (lsEfPerc + 1) {
-							lsEffect.val[j]	=	lsEffect.val[j].substr(0, lsEfPerc);
+							lsEffect.val[j]	=	lsEffect.val[j].toString().substr(0, lsEfPerc);
 							perc			=	'%';
 						}
 						winLose.value	=	lsEffect.val[j] - effect.val[j];
