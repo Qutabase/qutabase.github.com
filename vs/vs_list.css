@@ -11,6 +11,10 @@
 	background: #FFFF93;
 	font-size: 18px;
 	line-height: 41px;
+	cursor: pointer;
+}
+.list_kodex:hover {
+	opacity: 0.7;
 }
 .list_kodex div {
 	margin: 2px 4px;
