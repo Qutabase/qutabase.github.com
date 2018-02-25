@@ -110,6 +110,7 @@ perc = {
 function renewal(argument) {
 	for (x in kodex_slot) {
 		if (kodex_slot[x] != '' && x != argument) {
+			zoneid = x;
 			simSearch(kodex_slot[x]);
 		}
 	}

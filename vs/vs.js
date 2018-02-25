@@ -172,7 +172,12 @@ function vsSearch(srch) {
 		ef.innerHTML		=	'';
 		var	effecPerc		=	0;
 		for (var i = 1; i < effect.val.length; i++) {
-			ef.innerHTML	+=	effect.desc[i]	+	effect.val[i]	+	'<br>';
+			ef.innerHTML	+=	(effect.desc[i])
+								?
+								effect.desc[i]	+	effect.val[i]	+	'<br>'
+								:
+								effect.val[i]	+	' '
+								;
 			effecPerc	=	effect.val[i].toString().indexOf('%');
 			if (effecPerc + 1) {
 				effect.val[i]	=	effect.val[i].substr(0, effecPerc);
@@ -214,6 +219,7 @@ function vsSearch(srch) {
 											winLose.color	=	'red'
 											;
 					}
+
 					if (srch.indexOf('®마법소녀 팥쥐') != -1) {
 						;
 					}

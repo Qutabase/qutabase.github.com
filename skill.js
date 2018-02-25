@@ -147,25 +147,27 @@ function skill(dex, sd, lv, bind) {
 		}
 		res['data']['desc'].push(temp.disp	+	': ');
 
-		// console.log(val, st, dy)
+		console.log(val, st, dy, st1, st2, st3, dy1, dy2, dy3)
 		exps	=	temp.exp1.split(',');
+		res['data']['val'][count]	=	[];
 		for (var x in exps) {
-			prev	=	(effect[eff] in perc)
-						?
-						Math.floor(
-							eval(exps[x])	*	100
-						)	/	100
-						+ '%'
-						:
-						Math.floor(
-							eval(exps[x])
-						)
-						;
-			res['data']['val'].push(prev);
+			prev					=	(effect[eff] in perc)
+										?
+										Math.floor(
+											eval(exps[x])	*	100
+										)	/	100
+										+ '%'
+										:
+										Math.floor(
+											eval(exps[x])
+										)
+										;
+			res['data']['val'][count].push(prev);
 		}
 
 		count += 1;
 
 	}
+	console.log(res)
 	return res;
 }
