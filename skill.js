@@ -148,7 +148,6 @@ function skill(dex, sd, lv, bind) {
 		}
 		res['data']['desc'].push(temp.disp	+	': ');
 
-		console.log(val, st, dy, st1, st2, st3, dy1, dy2, dy3)
 		exps	=	temp.exp1.split(',');
 		res['data']['val'][count]	=	[];
 		for (var x in exps) {
@@ -169,6 +168,5 @@ function skill(dex, sd, lv, bind) {
 		count += 1;
 
 	}
-	console.log(res)
 	return res;
 }
