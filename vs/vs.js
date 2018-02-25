@@ -80,7 +80,7 @@ function vsSearch(srch) {
 
 	if (srch in Jskill) {
 		for (var x in Jdex) {
-			if (x.skill.substr(0,2) == srch.substr(0,2)) {
+			if (Jdex[x].skill.substr(0,2) == srch.substr(0,2)) {
 				dex	=	eval("Jdex['" + x + "']");
 				break;
 			}
