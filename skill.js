@@ -20,6 +20,7 @@ perc = {
 ,	'sin':''
 ,	'gol':''
 ,	'bun':''
+,	'fr':''
 };
 
 bindex = {

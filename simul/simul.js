@@ -105,6 +105,7 @@ perc = {
 ,	'sin':''
 ,	'gol':''
 ,	'bun':''
+,	'fr':''
 };
 
 function renewal(argument) {
