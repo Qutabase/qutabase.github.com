@@ -77,10 +77,10 @@ function listClick(argument) {
 function vsSearch(srch) {
 
 	kodex_slot[zoneid]	=	srch;
-	
+
 	if (srch in Jskill) {
 		for (var x in Jdex) {
-			if (x.skill == srch) {
+			if (x.skill.substr(0,2) == srch.substr(0,2)) {
 				dex	=	eval("Jdex['" + x + "']");
 			}
 		}
