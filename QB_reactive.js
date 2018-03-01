@@ -96,7 +96,9 @@ function search(srch) {
 	if (srch.substr(0,2) in eng.skill) {
 		for (var x in Jdex) {
 			if (Jdex[x].skill.substr(0,2) == srch.substr(0,2)) {
-				dex	=	eval("Jdex['" + Jdex[x].name + "']");
+				location.href	=	'https://qutabase.github.io/skill/'
+									+	role[Jdex[x].role]	+	'.html?skillName='
+									+	Jdex[x].skill.substr(0,2);
 				break;
 			}
 		}
