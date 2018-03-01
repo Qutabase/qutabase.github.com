@@ -146,8 +146,9 @@ function vsSearch(srch) {
 			;
 		}
 		else {
-			val_lv	=	1;
+			val_lv	=	dex.lv;
 		}
+		eval(zoneid + 'lv.value	=	val_lv');
 
 		var	val_bind	=	eval(zoneid + 'bind.value');
 		if (val_bind > 6) {
@@ -156,6 +157,7 @@ function vsSearch(srch) {
 		else if (dex.HP[val_bind] == undefined) {
 			val_bind	=	0;
 		}
+		eval(zoneid + 'bind.value	=	val_bind');
 
 		document.getElementById(zoneid + 'HP').innerHTML =	Math.round(
 																	Math.floor(
