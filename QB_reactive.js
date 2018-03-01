@@ -99,7 +99,7 @@ function search(srch) {
 				location.href	=	'https://qutabase.github.io/skill/'
 									+	role[Jdex[x].role]	+	'.html?skillName='
 									+	Jdex[x].skill.substr(0,2);
-				break;
+				return;
 			}
 		}
 	}
