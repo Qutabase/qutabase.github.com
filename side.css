@@ -1,4 +1,4 @@
-
+﻿
 a {
 	color: #273869;
 	text-decoration: none;
@@ -30,6 +30,10 @@ a {
 	padding: 5px;
 	background: #FFE31E;
 	margin-top: 5px;
+}
+
+#menu_list li:hover{
+	opacity: 0.7;
 }
 
 #list_skill {
