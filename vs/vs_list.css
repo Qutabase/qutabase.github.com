@@ -1,5 +1,4 @@
-﻿
-#kodex_vs_list {
+﻿#kodex_vs_list {
 	background: #FFD400;
 	line-height: 35px;
 }
@@ -31,7 +30,8 @@
 	color: white;
 }
 #list_main {
-	width: 100%;	height: calc(100% - 73px);
+	width: calc(100% + 16px);
+	height: 100%;
 	background: #FFEB3B;
-	overflow-y: auto;
+	overflow-y: scroll;
 }
