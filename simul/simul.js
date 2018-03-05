@@ -196,17 +196,39 @@ TO: */
 					+	dex.skill.substr(0,2) + '"'
 		);
 		kinput('skill');
-		document.getElementById(zoneid + 'hp').innerHTML =	Math.round( 
-																	Math.floor( 
-																			dex.hp0 
-																		+	dex.hpLv * (eval (zoneid + 'lv.value') - 1) 
-																	)	*	( 1 + eval(zoneid + 'bind.value') * bind[dex.rarity] ) 
+
+		var	val_lv	=	eval(zoneid + 'lv.value');
+		if (val_lv > 130) {
+			val_lv	=	130;
+		}
+		else if (val_lv > 0) {
+			;
+		}
+		else {
+			val_lv	=	dex.lv;
+		}
+		eval(zoneid + 'lv.value	=	val_lv');
+
+		var	val_bind	=	eval(zoneid + 'bind.value');
+		if (val_bind > 6) {
+			val_bind	=	6;
+		}
+		else if (dex.HP[val_bind] == undefined) {
+			val_bind	=	0;
+		}
+		eval(zoneid + 'bind.value	=	val_bind');
+
+		document.getElementById(zoneid + 'hp').innerHTML =	Math.round(
+																	Math.floor(
+																			dex.hp0
+																		+	dex.hpLv	*	(val_lv - 1)
+																	)	*	( 1 + val_bind * bind[dex.rarity] )
 																);
-		document.getElementById(zoneid + 'atk').innerHTML	=	Math.round( 
-																	Math.floor( 
+		document.getElementById(zoneid + 'atk').innerHTML	=	Math.round(
+																	Math.floor(
 																			dex.atk0 
-																		+	dex.atkLv * (eval(zoneid + 'lv.value') - 1)  
-																	)	*	( 1 + eval(zoneid + 'bind.value') * bind[dex.rarity] ) 
+																		+	dex.atkLv	*	(val_lv - 1)
+																	)	*	( 1 + val_bind * bind[dex.rarity] )
 																);
 		document.getElementById(zoneid + 'spr').innerHTML	=	Math.floor( 
 																	( Number(eval(zoneid + 'hp.innerHTML')) 
@@ -227,10 +249,6 @@ TO: */
 		document.getElementById('deck_hp').innerHTML	=	sum_hp;
 		document.getElementById('deck_spr').innerHTML	=	sum_spr;
 
-
-		effect	=	Jskill[dex.skill].effect.split('/');
-		document.getElementById(zoneid + 'effect').innerHTML = '';
-		var	count	=	1;
 		var	sd		=	[];
 		if (document.getElementById('simul_index_role').innerHTML == dex.role) {
 			sd 	=	['S','D'];
@@ -239,127 +257,22 @@ TO: */
 		else {
 			sd		=	['s','d'];
 		}
-		var	st1	=	parseFloat(
-						Jskill[dex.skill][sd[0] + 'tatic1']
-					);
-		var	st2	=	parseFloat(
-						Jskill[dex.skill][sd[0] + 'tatic2']
-					);
-		var	st3	=	parseFloat(
-						Jskill[dex.skill][sd[0] + 'tatic3']
-					);
-		var	dy1	=	parseFloat(
-						Jskill[dex.skill][sd[1] + 'ynamic1']
-					);
-		var	dy2	=	parseFloat(
-						Jskill[dex.skill][sd[1] + 'ynamic2']
-					);
-		var	dy3	=	parseFloat(
-						Jskill[dex.skill][sd[1] + 'ynamic3']
-					);
-		
-		var	pd	=	(sd.id)
-					?
-					Jskill[dex.skill].duration
-					:
-					Jskill[dex.skill].probability
-					;
-		var	dur	=	parseFloat(
-						Jskill[dex.skill].duration
-					);
-
-		for (eff in effect){
-			
-			var	temp= Jeffect[effect[eff]];
-
-			document.getElementById(zoneid + 'effect').setAttribute('style'
-					,	'background: '	+	dex.roleColor + '; color: white;'
-			);
-			var	val	=	Number(
-							eval(
-								zoneid + role[dex.role] + '.innerHTML'
-							)
-						);
-			var	st	=	parseFloat(
-							Jskill[dex.skill][sd[0] + 'tatic'	+	count]
-						);
-			var	dy	=	(Jskill[dex.skill][sd[1] + 'ynamic'	+	count] == 'lea')
-						? 
-						parseFloat(
-							Math.floor(
-								val
-								*	(
-										1	+ desc[dex.role].substr(	desc[dex.role].length - 3, 2 )
-										/ 100
-									)
-							)
-							*	Jskill[dex.skill]['dynamic' + count]
-						)
-						:
-						parseFloat(
-							Jskill[dex.skill][sd[1] + 'ynamic'	+ count]
-						) *	val
-						;
-
-			if (temp.value == 'deck') {
-				val	=	Number(
-							eval(
-								'deck_'	+	role[dex.role]	+	'.innerHTML'
-							)
-						);
-				dy	*=	0.01;
+		var	effect			=	skill(dex, sd, val_lv, val_bind).data;
+		var	ef				=	document.getElementById(zoneid + 'effect');
+		ef.style.background	=	dex.roleColor;
+		ef.innerHTML		=	'';
+		var	effecPerc		=	0;
+		for (var i = 1; i < effect.val.length; i++) {
+			ef.innerHTML	+=	(effect.desc[i])
+								?
+								effect.desc[i]	+	effect.val[i]	+	'; '
+								:
+								effect.val[i]	+	' '
+								;
+			effecPerc		=	effect.val[i].toString().indexOf('%');
+			if (effecPerc + 1) {
+				effect.val[i]	=	effect.val[i].toString().substr(0, effecPerc);
 			}
-			(sd.id)
-			?
-			val = Math.floor(
-						val
-						*	(
-								1	+	desc[dex.role].substr(	desc[dex.role].length - 3, 2 )
-								/	100
-							)
-					)
-			:
-			''
-			;
-			if (effect[eff] in perc) {
-				val	*= 0.01;
-				st *= 100;
-			}
-
-			else if (temp.value == 'prev') {
-				if (prev.indexOf('%') == -1) {
-					val	=	Number(
-								prev.substring(0, prev.length - 2)
-							);
-				}
-				else {
-					val	=	Number(
-								prev.substring(0, prev.length - 3)
-							);
-				}
-			}
-			document.getElementById(zoneid + 'effect').innerHTML	+=	temp.disp	+	': ';
-
-			console.log(val, st, dy)
-			exps	=	temp.exp1.split(',');
-			for (var x in exps) {
-				prev	=	(effect[eff] in perc)
-							?
-							Math.floor(
-								eval(exps[x])	*	100
-							)	/	100
-							+ '%; '
-							:
-							Math.floor(
-								eval(exps[x])
-							)
-							+ '; '
-							;
-				document.getElementById(zoneid + 'effect').innerHTML	+=	prev;
-			}
-
-			count += 1;
-
 		}
 
 	}

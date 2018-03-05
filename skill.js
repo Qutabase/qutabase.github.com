@@ -87,8 +87,8 @@ function skill(dex, sd, lv, bind) {
 			var	val	=	(dex.role == '회복')
 						?
 						Math.floor(
-							( Number(eval(zoneid + 'HP.innerHTML'))
-							+ Number(eval(zoneid + 'ATK.innerHTML'))
+							( Number(eval(zoneid + 'hp.innerHTML'))
+							+ Number(eval(zoneid + 'atk.innerHTML'))
 							) / 2
 						)
 						:

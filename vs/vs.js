@@ -49,7 +49,7 @@ rarity = {
 ,	'QR':'8'
 };
 
-bindex = {
+bind = {
 	'bind':'0.5 0.5 0.6 0.6 0.7 0.8 0.9 0.8'
 ,	'N':0.05
 ,	'N+':0.05
@@ -159,21 +159,21 @@ function vsSearch(srch) {
 		}
 		eval(zoneid + 'bind.value	=	val_bind');
 
-		document.getElementById(zoneid + 'HP').innerHTML =	Math.round(
+		document.getElementById(zoneid + 'hp').innerHTML =	Math.round(
 																	Math.floor(
 																			dex.hp0
 																		+	dex.hpLv	*	(val_lv - 1)
-																	)	*	( 1 + val_bind * bindex[dex.rarity] )
+																	)	*	( 1 + val_bind * bind[dex.rarity] )
 																);
-		document.getElementById(zoneid + 'ATK').innerHTML	=	Math.round(
+		document.getElementById(zoneid + 'atk').innerHTML	=	Math.round(
 																	Math.floor(
 																			dex.atk0 
 																		+	dex.atkLv	*	(val_lv - 1)
-																	)	*	( 1 + val_bind * bindex[dex.rarity] )
+																	)	*	( 1 + val_bind * bind[dex.rarity] )
 																);
-		document.getElementById(zoneid + 'SPR').innerHTML	=	Math.floor(
-																	( Number(eval(zoneid + 'HP.innerHTML'))
-																	+ Number(eval(zoneid + 'ATK.innerHTML'))
+		document.getElementById(zoneid + 'spr').innerHTML	=	Math.floor(
+																	( Number(eval(zoneid + 'hp.innerHTML'))
+																	+ Number(eval(zoneid + 'atk.innerHTML'))
 																	) / 2
 																);
 
