@@ -77,22 +77,22 @@ function listClick(argument) {
 function vsSearch(srch) {
 
 	if (srch.indexOf('아르콘') != -1) {
-		;
+		kodex_slot[zoneid]	=	srch;
 	}
 	else if (srch.substr(0,2) in eng.skill) {
 		for (var x in Jdex) {
 			if (Jdex[x].skill.substr(0,2) == srch.substr(0,2)) {
 				kodex_slot[zoneid]	=	Jdex[x].name;
-				dex	=	eval("Jdex['" + kodex_slot[zoneid] + "']");
 				break;
 			}
 		}
 	}
 	else {
 		kodex_slot[zoneid]	=	srch;
-		dex	=	eval("Jdex['" + kodex_slot[zoneid] + "']");
 	}
 
+	dex	=	eval("Jdex['" + kodex_slot[zoneid] + "']");
+	
 	if (dex != undefined) {
 
 		if (srch.indexOf('®마법소녀 팥쥐') != -1) {
