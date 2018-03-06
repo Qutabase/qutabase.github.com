@@ -30,8 +30,6 @@
 	color: white;
 }
 #list_main {
-	width: calc(100% + 16px);
 	height: 100%;
 	background: #FFEB3B;
-	overflow-y: scroll;
 }

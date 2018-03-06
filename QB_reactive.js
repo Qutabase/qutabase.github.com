@@ -1,6 +1,6 @@
 if( navigator.userAgent.indexOf('Firefox') >= 0 ) {
 	var eventNames = ["mousedown", "mouseover", "mouseout", "mousemove", "mousedrag", "click", "dblclick", "keydown", "keypress", "keyup" ]; 
-		
+	
 	for( var i = 0 ; i < eventNames.length; i++ ) {
 		window.addEventListener( eventNames[i], function(e) {
 			window.event = e;
@@ -40,7 +40,7 @@ function menu_skill_click(argument) {
 }
 
 function kinput(value) {
-	document.getElementById('kodex_'+value).innerHTML = eval('dex.'+value);
+	document.getElementById('kodex_' + value).innerHTML = eval('dex.' + value);
 }
 
 function check(argument) {
@@ -93,7 +93,10 @@ role = {
 }
 function search(srch) {
 
-	if (srch.substr(0,2) in eng.skill) {
+	if (srch.indexOf('아르콘') != -1) {
+		;
+	}
+	else if (srch.substr(0,2) in eng.skill) {
 		for (var x in Jdex) {
 			if (Jdex[x].skill.substr(0,2) == srch.substr(0,2)) {
 				location.href	=	'https://qutabase.github.io/skill/'

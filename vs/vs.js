@@ -76,7 +76,10 @@ function listClick(argument) {
 
 function vsSearch(srch) {
 
-	if (srch.substr(0,2) in eng.skill) {
+	if (srch.indexOf('아르콘') != -1) {
+		;
+	}
+	else if (srch.substr(0,2) in eng.skill) {
 		for (var x in Jdex) {
 			if (Jdex[x].skill.substr(0,2) == srch.substr(0,2)) {
 				kodex_slot[zoneid]	=	Jdex[x].name;

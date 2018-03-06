@@ -30,6 +30,17 @@ footer {
 	color: white;
 }
 
+.hideScrIn {
+	width: calc(100% + 16px) !important;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.hideScrOut {
+	width: 100%;
+	overflow: hidden;
+}
+
 #kodex_form{
 	background: rgba(0, 0, 0, 0.5);
 	padding-bottom: 10px;

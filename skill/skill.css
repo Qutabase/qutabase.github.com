@@ -28,7 +28,6 @@ img {
 /*	position: absolute;
 	top: 226px; left: 0px;*/
 	width: 100%;
-	overflow-x: scroll;
 	max-height: 540px;
 }
 #html_role {

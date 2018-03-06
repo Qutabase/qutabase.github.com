@@ -310,7 +310,7 @@ function showSimExmpl(argument) {
 				dex = eval("Jdex['" + ex_list[i] + "']");
 				ul.innerHTML =	ul.innerHTML
 								+ "<li onclick='simSearch(\"" + ex_list[i] + "\")'>"
-									+ dex.rarity + "	" + ex_list[i]
+								+ dex.rarity + "	" + ex_list[i]
 								+ "</li>";
 			}
 
