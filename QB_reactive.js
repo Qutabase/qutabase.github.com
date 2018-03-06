@@ -93,7 +93,6 @@ role = {
 }
 function search(srch) {
 
-	console.log(srch)
 	if (srch.indexOf('아르콘') != -1) {
 		dex = eval("Jdex['" + srch + "']");
 	}
