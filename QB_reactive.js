@@ -94,7 +94,7 @@ role = {
 function search(srch) {
 
 	if (srch.indexOf('아르콘') != -1) {
-		dex = eval("Jdex['" + srch + "']");
+		;
 	}
 	else if (srch.substr(0,2) in eng.skill) {
 		for (var x in Jdex) {
@@ -107,9 +107,10 @@ function search(srch) {
 		}
 	}
 	else {
-		dex = eval("Jdex['" + srch + "']");
+		;
 	}
 	
+	dex = eval("Jdex['" + srch + "']");
 
 	if (dex != undefined) {
 
