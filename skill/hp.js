@@ -23,6 +23,7 @@ function maker(argument) {
 	Solidarity = document.getElementById('Solidarity').checked;
 	Provoke = document.getElementById('Provoke').checked;
 	Charge = document.getElementById('Charge').checked;
+	Dimsum = document.getElementById('Dimsum').checked;
 	CounterHP = document.getElementById('CounterHP').checked;
 	Balmung = document.getElementById('Balmung').checked;
 	Protection = document.getElementById('Protection').checked;
