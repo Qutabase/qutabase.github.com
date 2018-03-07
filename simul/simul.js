@@ -123,11 +123,27 @@ function renewal(argument) {
 * 1.	2018-01-26. SN KINOS. 
 */
 function simSearch(srch) {
-/* 2018-02-25. SN KINOS	CHANGED FROM:	dex = eval("Jdex['" + srch + "']");
-TO: */
+/* 2018-02-25. SN KINOS	CHANGED FROM:
 	kodex_slot[zoneid]	=	srch;
 	dex = eval("Jdex['" + srch + "']");
-// 2018-01-26. STARFLIT.	END.
+*/
+	if (srch.indexOf('아르콘') != -1) {
+		kodex_slot[zoneid]	=	srch;
+	}
+	else if (srch.substr(0,2) in eng.skill) {
+		for (var x in Jdex) {
+			if (Jdex[x].skill.substr(0,2) == srch.substr(0,2)) {
+				kodex_slot[zoneid]	=	Jdex[x].name;
+				break;
+			}
+		}
+	}
+	else {
+		kodex_slot[zoneid]	=	srch;
+	}
+
+	dex	=	eval("Jdex['" + kodex_slot[zoneid] + "']");
+// 2018-02-25. SN KINOS.	END.
 	if (dex != undefined) {
 
 		if (srch.indexOf('® ') != -1) {	//2018-01-26. STARFLIT: srch.indexOf('(R) ')
@@ -140,7 +156,6 @@ TO: */
 		}
 		
 		if (zoneid == 'ac1_') {
-			console.log('ac1 on')
 			document.getElementById('simul_index_role').innerHTML		= dex.role;
 			document.getElementById('simul_index_roleImg').setAttribute('src', role[dex.role] + '.png');
 			document.getElementById('simul_index_roleDesc').innerHTML	= "덱 전체 "	+	desc[dex.role]	+ " 증가<br>"
@@ -148,7 +163,7 @@ TO: */
 //	2018-02-12. SN KINOS ADDED SIMULATOR RENEWALLER
 			renewal('ac1_');
 			zoneid	=	'ac1_';
-			dex = eval("Jdex['" + srch + "']");
+			dex = eval("Jdex['" + kodex_slot[zoneid] + "']");
 //	2018-02-12. SN KINOS END.
 
 		}
@@ -166,7 +181,7 @@ TO: */
 					+	dex.name	+	'"'
 		);
 
-		dex	=	eval("Jdex['" + srch + "']");
+		dex = eval("Jdex['" + kodex_slot[zoneid] + "']");
 		kinput('name');
 		document.getElementById(zoneid + 'name').setAttribute('style',
 				'color: '	+	dex.rarefont	+	'; background: '	+	dex.rareColor	+	';'

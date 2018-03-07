@@ -66,8 +66,12 @@ div {
 	color: #273869;
 }
 
-#simul_index {
-	width: 100%;
+#simul_index_LT {
+	width: 50%;
+	position: relative;
+}
+#simul_index_RB {
+	width: 50%;
 	position: relative;
 }
 #simul_index_deck {
@@ -77,14 +81,15 @@ div {
 	background: #dddddd;
 }
 #simul_index_ind {
+	width: 100%;
 	position: absolute;
 	bottom: 0px;
-	left: 0px;
+	left: -720px;
 }
 .simul_ind {
 	width: 50%;
 	margin: 2px 0px;
-	padding: 0px; padding-right: 50%;
+	padding: 0px; padding-right: 100%;
 	font-size: 20px;
 	line-height: 41px;
 	background: #273869;
@@ -145,11 +150,15 @@ div {
 
 @media (max-width: 1000px){
 	article {
-		width: 720px;
+		width: calc(100% - 40px);
 		max-height: none;
 	}
 	section {
-		width: 720px;
+		width: 100% !important;
 	}
-	.simul_ind {width: 100%;}
+	#simul_index_ind {
+		width: 100%;
+		padding-right: 0;
+		left: 0;
+	}
 }
