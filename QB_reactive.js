@@ -93,7 +93,7 @@ role = {
 }
 function search(srch) {
 
-	if (srch.indexOf('아르콘') != -1) {
+	if (srch.substr(0,3) == ('아르콘') || srch.substr(0,3) == '고양이') {
 		;
 	}
 	else if (srch.substr(0,2) in eng.skill) {

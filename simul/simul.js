@@ -127,7 +127,7 @@ function simSearch(srch) {
 	kodex_slot[zoneid]	=	srch;
 	dex = eval("Jdex['" + srch + "']");
 */
-	if (srch.indexOf('아르콘') != -1) {
+	if (srch.substr(0,3) == ('아르콘') || srch.substr(0,3) == '고양이') {
 		kodex_slot[zoneid]	=	srch;
 	}
 	else if (srch.substr(0,2) in eng.skill) {
