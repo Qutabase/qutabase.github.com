@@ -33,17 +33,21 @@ a {
 }
 
 #menu_list li:hover{
-	opacity: 0.7;
+	background: #CCF3FF;
+	color: black;
 }
 
 #list_skill {
 	transition: 0.3s;
+	padding: 0;
 }
+
 #list_skill li{
 	list-style: none;
 	cursor: pointer;
 	padding: 5px;
-	background: #FFFF93;
+	background: #273869;
+	color: white;
 }
 
 #menu_rotLogo {
