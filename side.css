@@ -50,6 +50,10 @@ a {
 	color: white;
 }
 
+#list_skill li:hover {
+	color: #273869;
+}
+
 #menu_rotLogo {
 	height: 40px;
 	position: absolute;
