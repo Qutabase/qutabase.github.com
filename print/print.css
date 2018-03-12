@@ -1,0 +1,17 @@
+article {
+	height: 803px;
+}
+
+#print_index {
+	height: 20%;
+	background: #FFFA7A;
+}
+
+#print_imgBox {
+	margin: 29.75px 0;
+}
+
+#print_list {
+	height: 80%;
+	background: #FFE31E;
+}

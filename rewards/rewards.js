@@ -100,7 +100,7 @@ function infGoal() {
 								+	inf[i].img		+	'.png" width="60"></div>x'
 								+	inf[i].quan
 								;
-			inf_result.appendChild(elem)
+			inf_result.appendChild(elem);
 		}
 		else {
 			itemCheck[inf[i].img] += inf[i].quan;

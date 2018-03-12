@@ -1,3 +1,13 @@
+/*	skill.js - QUTABASE SKILL VALUE CALCULATOR
+*	CREATED BY SN KINOS
+*
+*/
+Jskill	=	JSON.parse(
+				getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/skill.json")
+			);
+Jeffect	=	JSON.parse(
+				getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/effect.json")
+			);
 
 desc = {
 	'공격':'공격력 30%'
@@ -5,7 +15,7 @@ desc = {
 ,	'회복':'정신력 50%'
 };
 
-perc = {
+perc = {	//	SKILL IN THIS DICT, IT SHOWS SKILL VALUE WITH NN.NN%
 	'atk':''
 ,	'ntk':''
 ,	'stk':''

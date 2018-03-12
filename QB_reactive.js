@@ -8,13 +8,13 @@ if( navigator.userAgent.indexOf('Firefox') >= 0 ) {
 	}
 }
 
-var hour = new Date()
-hour = hour.getHours()
+var hour = new Date();
+hour = hour.getHours();
 if (6 <= hour && hour < 18) {
-	document.getElementsByTagName('body')[0].setAttribute('style', 'background: url("https://qutabase.github.io/bgW.png");')
-	document.getElementById('kodex_form').setAttribute("style", 'background: none;')
-	document.getElementById('logo').setAttribute('src', 'https://qutabase.github.io/logo.svg')
-	document.getElementsByTagName('footer')[0].setAttribute('style', 'color: #273869;')
+	document.getElementsByTagName('body')[0].setAttribute('style', 'background: url("https://qutabase.github.io/bgW.png");');
+	document.getElementById('kodex_form').setAttribute("style", 'background: none;');
+	document.getElementById('logo').setAttribute('src', 'https://qutabase.github.io/logo.svg');
+	document.getElementsByTagName('footer')[0].setAttribute('style', 'color: #273869;');
 }
 
 function getJson(url) {
@@ -77,20 +77,20 @@ function metaMake(index, content) {
 
 }
 rarity = {
-	'N':'1',
-	'N+':'2',
-	'R':'3',
-	'R+':'4',
-	'SR':'5',
-	'SR+':'6',
-	'SSR':'7',
-	'QR':'8'
-}
+	'N':'1'
+,	'N+':'2'
+,	'R':'3'
+,	'R+':'4'
+,	'SR':'5'
+,	'SR+':'6'
+,	'SSR':'7'
+,	'QR':'8'
+};
 role = {
-	'공격':'atk',
-	'방어':'hp',
-	'회복':'spr'
-}
+	'공격':'atk'
+,	'방어':'hp'
+,	'회복':'spr'
+};
 function search(srch) {
 
 	if (srch.substr(0,3) == ('아르콘') || srch.substr(0,3) == '고양이') {
@@ -101,7 +101,8 @@ function search(srch) {
 			if (Jdex[x].skill.substr(0,2) == srch.substr(0,2)) {
 				location.href	=	'https://qutabase.github.io/skill/'
 									+	role[Jdex[x].role]	+	'.html?skillName='
-									+	Jdex[x].skill.substr(0,2);
+									+	encodeURIComponent(Jdex[x].skill.substr(0,2))
+									;
 				return;
 			}
 		}
@@ -174,7 +175,11 @@ function search(srch) {
 		document.getElementById('kodex_rarity_m').setAttribute(	'style'		,	'color: ' + dex.rarefont + '; background: ' + dex.rareColor + ';');
 		document.getElementById('kodex_name_m').setAttribute(	'style'		,	'color: ' + dex.rarefont + '; background: ' + dex.rareColor + ';');
 		document.getElementById('kodex_skill').setAttribute(	'style'		,	'background: ' + dex.roleColor + ';');
-		document.getElementById('kodex_skill').setAttribute	(	'onclick'	,	'location.href="skill/' + role[dex.role] + '.html?skillName=' + dex.skill.substring(0, 2) + '"');
+		document.getElementById('kodex_skill').setAttribute	(	'onclick'
+				,	'location.href="skill/'	+	role[dex.role]
+					+	'.html?skillName='	+	encodeURIComponent(dex.skill.substring(0, 2))
+					+	'"'
+		);
 		kinput('skill');
 		kinput('role');
 		kinput('skilltype');
@@ -231,7 +236,12 @@ function showExmpl(argument) {
 
 			if (ex_list[i] != undefined) {
 				dex = eval("Jdex['" + ex_list[i] + "']");
-				ul.innerHTML = ul.innerHTML + "<a href='https://qutabase.github.io/?kodexName=" + encodeURIComponent(ex_list[i]) + "'><li>" + dex.rarity + "	" + ex_list[i] + "</li></a>"
+				ul.innerHTML	=	ul.innerHTML
+									+ "<a href='https://qutabase.github.io/?kodexName="
+									+	encodeURIComponent(ex_list[i])	+	"'><li>"
+									+	dex.rarity	+	"	"
+									+	ex_list[i]	+	"</li></a>"
+									;
 			}
 
 		

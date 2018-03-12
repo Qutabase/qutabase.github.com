@@ -7,13 +7,6 @@ function kinput(value) {
 	document.getElementById(zoneid + value).innerHTML = eval('dex.' + value);
 }
 
-Jskill	=	JSON.parse(
-				getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/skill.json")
-			);
-Jeffect	=	JSON.parse(
-				getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/effect.json")
-			);
-
 kodex_slot = {
 	'ac1_':''
 ,	'ac2_':''
@@ -37,6 +30,7 @@ function simCheck(argument) {
 
 		kodex_slot[zoneid]	=	eval(zoneid	+	'name_inp.value');
 		simSearch(kodex_slot[zoneid]);
+		eval(zoneid	+	'_lv.focus();');
 		return;
 
 	}
@@ -64,12 +58,6 @@ rarity = {
 ,	'QR':'8'
 };
 
-role = {
-	'공격':'atk'
-,	'방어':'hp'
-,	'회복':'spr'
-};
-
 bind = {
 	'bind':'0.5 0.5 0.6 0.6 0.7 0.8 0.9 0.8'
 ,	'N':0.05
@@ -82,32 +70,6 @@ bind = {
 ,	'QR':0.08
 };
 
-desc = {
-	'공격':'공격력 30%'
-,	'방어':'체력 30%'
-,	'회복':'정신력 50%'
-};
-
-perc = {
-	'atk':''
-,	'ntk':''
-,	'stk':''
-,	'inn':''
-,	'hp':''
-,	'spr':''
-,	'hea':''
-,	'sur':''
-,	'shi':''
-,	'Atk':''
-,	'Hp':''
-,	'Inn':''
-,	'Spr':''
-,	'sin':''
-,	'gol':''
-,	'bun':''
-,	'fr':''
-};
-
 function renewal(argument) {
 	for (x in kodex_slot) {
 		if (kodex_slot[x] != '' && x != argument) {
@@ -118,9 +80,13 @@ function renewal(argument) {
 }
 
 /*
-* KODEX SEARCHING ON KODEX SIMULATOR: 2018-01-26. SN KINOS
+* simsearch(srch) - KODEX SEARCHING ON KODEX SIMULATOR: 2018-01-26. SN KINOS
 * UPDATE:
-* 1.	2018-01-26. SN KINOS. 
+* 1.	2018-01-26. SN KINOS.
+* 2.		-01-28. SN KINOS.
+* 2.		-02-12. SN KINOS.
+* 2.		-02-25. SN KINOS.
+* 2.		-03-12. SN KINOS.
 */
 function simSearch(srch) {
 /* 2018-02-25. SN KINOS	CHANGED FROM:
@@ -178,7 +144,8 @@ function simSearch(srch) {
 		);
 		document.getElementById(zoneid + 'img').setAttribute('onclick'
 				, 'location.href = "https://qutabase.github.io/?kodexName='
-					+	dex.name	+	'"'
+					+	encodeURIComponent(dex.name)
+					+	'"'
 		);
 
 		dex = eval("Jdex['" + kodex_slot[zoneid] + "']");
@@ -206,9 +173,10 @@ function simSearch(srch) {
 					+	'; cursor: pointer;'
 		);
 		document.getElementById(zoneid + 'skill').setAttribute('onclick'
-				,	'location.href = "https://qutabase.github.io/skill/'
+				,	'location.href = "../skill/'
 					+	role[dex.role] + '.html?skillName='
-					+	dex.skill.substr(0,2) + '"'
+					+	encodeURIComponent(dex.skill.substr(0,2))
+					+	'"'
 		);
 		kinput('skill');
 

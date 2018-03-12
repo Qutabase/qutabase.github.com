@@ -19,7 +19,7 @@ img {
 article {
 	margin-left: 40px;
 	width: calc(100% - 50px);
-	max-width: 812px; max-height: 901px;
+	max-width: 812px; max-height: 803px;
 	display: inline-block;
 	background: #dddddd;
 	overflow: hidden;

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112275806-1"></script>
+	<script src="https://qutabase.github.io/gAn.js"></script>
+	<meta charset="utf-8">
+	<meta name="keywords" content="qurare, qutabase, kodex">
+	<meta property="og:image" content="../logo.png">
+	<title>QUTABASE - Print</title>
+	<link rel="stylesheet" type="text/css" href="../side.css">
+	<link rel="stylesheet" type="text/css" href="../nanum.css">
+	<link rel="stylesheet" type="text/css" href="../univ.css">
+	<link rel="stylesheet" type="text/css" href="print.css">
+</head>
+<body>
+	<nav id="menu">
+		<ul id="menu_list"><a href="../index.html"><img src="../logo.svg"></a>
+			<a href="https://qtb.kinos.co.kr/"><li>QUTABASE 현황</li></a>
+			<li id="menu_skill" onclick="menu_skill_click()">
+				스킬
+				<ul id="list_skill" style="display: none;">
+					<a href="../skill/atk.html"><li>공격</li></a>
+					<a href="../skill/hp.html"><li>방어</li></a>
+					<a href="../skill/spr.html"><li>회복</li></a>
+				</ul>
+			</li>
+			<a href="../vs/index.html"><li>마도서 비교</li></a>
+			<a href="../rewards/index.html"><li>이포 &amp; 무나 보상</li></a>
+			<a href="../simul/index.html"><li>덱 시뮬레이터</li></a>
+		<img id="menu_rotLogo" alt="QUTABASE Side Bar" src="../logo.svg">
+		</ul>
+	</nav>
+	<header id="kodex_form">
+		<a href="../"><img id="logo" src="../logoW.svg"></a><br>
+		<input type="text" id="kodex_srch" onkeyup="check()" placeholder="마도서 이름을 입력하세요!"><br>
+		<ul id="kodex_exmpl" style="display: none;">
+		</ul>
+	</header>
+	<article>
+		<section id="print_index">
+			<div id="print_imgBox"><img src="print.png" onclick="print()"></div><br>
+			큐라레 연차 시뮬레이터<br>
+			지금 지르면 뜬다!<br>
+			<br>
+			사용한 마력석 수: <span id="print_cash">72</span>
+		</section>
+		<section id="print_list">
+			<br>지금 질러서 뜬 마도서들<br>
+		</section>
+	</article>
+	<footer>
+		ⓒ 2017 - 2018 Sn Kinos All Rights Reserved ( except the images )
+	</footer>
+</body>
+<script src="../QB_reactive.js"></script>
+<script src="print.js"></script>
+</html>

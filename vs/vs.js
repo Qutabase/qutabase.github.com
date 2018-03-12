@@ -2,13 +2,6 @@ function kinput(value) {
 	document.getElementById(zoneid + value).innerHTML = eval('dex.' + value);
 }
 
-Jskill	=	JSON.parse(
-				getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/skill.json")
-			);
-Jeffect	=	JSON.parse(
-				getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/effect.json")
-			);
-
 kodex_slot	=	{
 	'vsT_':''
 ,	'vsB_':''
@@ -59,12 +52,6 @@ bind = {
 ,	'SR+':0.08
 ,	'SSR':0.09
 ,	'QR':0.08
-};
-
-role = {
-	'공격':'atk'
-,	'방어':'hp'
-,	'회복':'spr'
 };
 
 function listClick(argument) {
@@ -119,7 +106,7 @@ function vsSearch(srch) {
 
 		document.getElementById(zoneid + 'face').setAttribute('onclick'
 				,	'location.href = "https://qutabase.github.io/?kodexName='
-					+	encodeURI(dex.name)
+					+	encodeURIComponent(dex.name)
 					+	'"'
 		);
 		kinput('rarity');
@@ -131,13 +118,16 @@ function vsSearch(srch) {
 				, 'color: ' + dex.rarefont	+ '; background: ' + dex.rareColor + ';'
 		);
 		document.getElementById(zoneid + 'name').setAttribute('onclick'
-			, "this.innerHTML='<input type=\"text\" onkeyup=\"vsCheck(this)\" id=\""
-				+	zoneid
-				+	"input\" class=\"info_input\">';this.onclick=''"
+				, "this.innerHTML='<input type=\"text\" onkeyup=\"vsCheck(this)\" id=\""
+					+	zoneid
+					+	"input\" class=\"info_input\">';this.onclick=''"
 		);
 		document.getElementById(zoneid + 'skill').setAttribute('style', 'background: ' + dex.roleColor + ';');
 		document.getElementById(zoneid + 'skill').setAttribute('onclick'
-			, 'location.href="../skill/' + role[dex.role] + '.html?skillName=' + dex.skill.substring(0, 2) + '"'
+				, 'location.href="../skill/'
+					+	role[dex.role]	+	'.html?skillName='
+					+	encodeURIComponent(dex.skill.substring(0, 2))
+					+	'"'
 		);
 		kinput('skill');
 
