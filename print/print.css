@@ -4,7 +4,7 @@ article {
 
 #print_index {
 	height: 20%;
-	background: #FFFA7A;
+	background: #FFE31E;
 }
 
 #print_imgBox {
@@ -12,6 +12,14 @@ article {
 }
 
 #print_list {
-	height: 80%;
-	background: #FFE31E;
+	height: 100%;
+	background: #FFFA7A;
+}
+
+.res_img {
+	width: 95.171px;
+}
+.res_kodex:hover {
+	opacity: 0.7;
+	cursor: pointer;
 }

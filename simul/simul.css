@@ -116,6 +116,10 @@ div {
 	width: 41px; height: 41px;
 	cursor: pointer;
 }
+.kodex_img:hover {
+	opacity: 0.7;
+	cursor: pointer;
+}
 .kodex_name {
 	width: calc(31% - 4px);
 	/*background: #FFE746;*/
@@ -145,6 +149,10 @@ div {
 .kodex_skill {
 	width: 21.9%;
 	color: white;
+}
+.kodex_skill:hover {
+	opacity: 0.7;
+	cursor: pointer;
 }
 
 
