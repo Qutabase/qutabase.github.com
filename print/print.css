@@ -19,6 +19,9 @@ article {
 .res_img {
 	width: 95.171px;
 }
+.res_kodex {
+	width: 113.171px;
+}
 .res_kodex:hover {
 	opacity: 0.7;
 	cursor: pointer;
