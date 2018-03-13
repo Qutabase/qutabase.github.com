@@ -21,6 +21,9 @@ eng.season.SSR[0]		+=	2;	//	EPISODE 2
 eng.season['SR+'][0]	+=	2;
 //*/
 
+/*
+	result()	-	RESULT PRINTER
+*/
 function result(range) {
 	var	pri_id		=	range[0]
 						+	Math.floor(
@@ -28,7 +31,7 @@ function result(range) {
 								*	(
 										range[1]	-	range[0]
 										+	1
-									)
+								)
 							);
 
 	var	key_list	=	Object.keys(Jdex);
@@ -71,7 +74,7 @@ function result(range) {
 	if (printCheck[pri_id]) {
 		printCheck[pri_id]	+=	1;
 		var	elem			=	document.getElementById('res_' + pri_id);
-		elem.innerHTML		=	'<div><img class="res_img" src="'
+		elem.innerHTML		=	'<div class="res_box"><img class="res_img" src="'
 								+	imgLink		+	'"></div><br>x'
 								+	printCheck[pri_id]
 								;
@@ -87,7 +90,7 @@ function result(range) {
 					+	kodexLink
 					+	'";'
 		);
-		elem.innerHTML		=	'<div><img class="res_img" src="'
+		elem.innerHTML		=	'<div class="res_box"><img class="res_img" src="'
 								+	imgLink		+	'"></div><br>x'
 								+	printCheck[pri_id]
 								;
