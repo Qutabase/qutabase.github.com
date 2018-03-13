@@ -41,9 +41,21 @@ function result(range) {
 	var	bgColor		=	'';
 	if (pri_id > 2) {
 		for (var j = 0; j < key_list.length; j++) {
-			if (Jdex[key_list[j]].id == pri_id) {
+			var	srch	=	key_list[j];
+			if (Jdex[srch].id == pri_id) {
 
-				dex			=	Jdex[key_list[j]];
+				dex			=	Jdex[srch];
+				if (srch.indexOf('®마법소녀 팥쥐') != -1) {
+					;
+				}
+				else if (srch.indexOf('® ') != -1) {
+					temp = srch.substring(2);
+					dex = eval("Jdex['" + temp + "']");
+				}
+				else if (srch.indexOf('®') != -1) {
+					temp = srch.substring(1);
+					dex = eval("Jdex['" + temp + "']");
+				}
 				imgLink		=	'https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'
 								+	role[dex.role]		+	'/'
 								+	dex.enskill			+	'/'
@@ -70,6 +82,12 @@ function result(range) {
 					;
 
 	}
+
+	if (imgLink == "../raw.png") {
+		print1();
+		return;
+	}
+	
 
 	if (printCheck[pri_id]) {
 		printCheck[pri_id]	+=	1;
