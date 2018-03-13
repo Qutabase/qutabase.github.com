@@ -74,7 +74,7 @@ function result(range) {
 	if (printCheck[pri_id]) {
 		printCheck[pri_id]	+=	1;
 		var	elem			=	document.getElementById('res_' + pri_id);
-		elem.innerHTML		=	'<div class="res_box"><img class="res_img" src="'
+		elem.innerHTML		=	'<div><img class="res_img" src="'
 								+	imgLink		+	'"></div><br>x'
 								+	printCheck[pri_id]
 								;
@@ -90,7 +90,7 @@ function result(range) {
 					+	kodexLink
 					+	'";'
 		);
-		elem.innerHTML		=	'<div class="res_box"><img class="res_img" src="'
+		elem.innerHTML		=	'<div><img class="res_img" src="'
 								+	imgLink		+	'"></div><br>x'
 								+	printCheck[pri_id]
 								;
