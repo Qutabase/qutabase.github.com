@@ -19,6 +19,7 @@ function maker(argument) {
 	AE36 = document.getElementById('AE36').checked;
 	HelloWorld = document.getElementById('HelloWorld').checked;
 	KANGTA = document.getElementById('KANGTA').checked;
+	Excitement = document.getElementById('Excitement').checked;
 	Extortion = document.getElementById('Extortion').checked;
 	Smite = document.getElementById('Smite').checked;
 	Rage = document.getElementById('Rage').checked;
@@ -27,7 +28,7 @@ function maker(argument) {
 	EnNyance = document.getElementById('EnNyance').checked;
 	Enhance = document.getElementById('Enhance').checked;
 	Dynamite = document.getElementById('Dynamite').checked;
-	Blind = document.getElementById('Blind').checked;
+	Strafe = document.getElementById('Strafe').checked;
 	Immune = document.getElementById('Immune').checked;
 	Enrage = document.getElementById('Enrage').checked;
 	Smash = document.getElementById('Smash').checked;
@@ -35,7 +36,6 @@ function maker(argument) {
 	CounterATK = document.getElementById('CounterATK').checked;
 	Regress = document.getElementById('Regress').checked;
 	Gunship = document.getElementById('Gunship').checked;
-	Warmth = document.getElementById('Warmth').checked;
 	Wrath = document.getElementById('Wrath').checked;
 	Cancel = document.getElementById('Cancel').checked;
 	Lucifer = document.getElementById('Lucifer').checked;

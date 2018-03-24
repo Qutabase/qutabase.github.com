@@ -28,13 +28,14 @@ a {
 	list-style: none;
 	cursor: pointer;
 	padding: 5px;
-	background: #FFE31E;
+	background: #273869;
+	color: #CCF3FF;
 	margin-top: 5px;
 }
 
 #menu_list li:hover{
-	background: #CCF3FF;
-	color: black;
+	/*background: #273869;*/
+	color: #FFFA7A;
 }
 
 #list_skill {
@@ -46,12 +47,13 @@ a {
 	list-style: none;
 	cursor: pointer;
 	padding: 5px;
-	background: #273869;
-	color: white;
+	background: #CCF3FF;
+	color: #273869;
 }
 
 #list_skill li:hover {
-	color: #273869;
+	background: #273869;
+	color: #FFFA7A;
 }
 
 #menu_rotLogo {

@@ -20,7 +20,7 @@ function maker(argument) {
 	Wolf = document.getElementById('Wolf').checked;
 	Encourage = document.getElementById('Encourage').checked;
 	Prayer = document.getElementById('Prayer').checked;
-	Hopeginger = document.getElementById('Hopeginger').checked;
+	Hofzinser = document.getElementById('Hofzinser').checked;
 	Lilim = document.getElementById('Lilim').checked;
 	Shield = document.getElementById('Shield').checked;
 	Recycle = document.getElementById('Recycle').checked;
@@ -31,7 +31,7 @@ function maker(argument) {
 	Fairy = document.getElementById('Fairy').checked;
 	Friendship = document.getElementById('Friendship').checked;
 	Purify = document.getElementById('Purify').checked;
-	Fixing = document.getElementById('Fixing').checked;
+	Manipulate = document.getElementById('Manipulate').checked;
 	Punish = document.getElementById('Punish').checked;
 	Repent = document.getElementById('Repent').checked;
 	Cure = document.getElementById('Cure').checked;
