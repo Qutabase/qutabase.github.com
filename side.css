@@ -38,6 +38,11 @@ a {
 	color: #FFFA7A;
 }
 
+#menu_list li:active{
+	background: #FFFA7A;
+	color: #273869;
+}
+
 #list_skill {
 	transition: 0.3s;
 	padding: 0;
