@@ -63,7 +63,12 @@ function listClick(argument) {
 
 function vsSearch(srch) {
 
-	if (srch.substr(0,3) == ('아르콘') || srch.substr(0,3) == '고양이') {
+	if (
+			srch.substr(0,3)	== '아르콘'
+		||	srch.substr(0,3)	== '고양이'
+		||	srch				== '죽음의 신부'
+		|| srch.substr(0,3)	== '타락의'
+		) {
 		kodex_slot[zoneid]	=	srch;
 	}
 	else if (srch.substr(0,2) in eng.skill) {
