@@ -98,7 +98,7 @@ function simSearch(srch) {
 		||	srch.substr(0,3)	== '고양이'
 		||	srch				== '죽음의 신부'
 		|| srch.substr(0,3)	== '타락의'
-		) {
+		 ) {
 		kodex_slot[zoneid]	=	srch;
 	}
 	else if (srch.substr(0,2) in eng.skill) {
