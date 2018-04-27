@@ -93,12 +93,7 @@ role = {
 };
 function search(srch) {
 
-	if (
-			srch.substr(0,3)	== '아르콘'
-		||	srch.substr(0,3)	== '고양이'
-		||	srch				== '죽음의 신부'
-		|| srch.substr(0,3)	== '타락의'
-		) {
+	if (srch in Object.keys(Jdex)) {
 		;
 	}
 	else if (srch.substr(0,2) in eng.skill) {

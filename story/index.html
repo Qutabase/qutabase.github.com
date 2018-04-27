@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112275806-1"></script>
+	<script src="https://qutabase.github.io/gAn.js"></script>
+	<meta charset="utf-8">
+	<meta name="keywords" content="qurare, qutabase, kodex">
+	<meta property="og:image" content="../logo.png">
+
+	<title>QUTABASE - Print</title>
+	<link rel="stylesheet" type="text/css" href="../side.css">
+	<link rel="stylesheet" type="text/css" href="../nanum.css">
+	<link rel="stylesheet" type="text/css" href="../univ.css">
+	<link rel="stylesheet" type="text/css" href="story.css">
+</head>
+<body>
+	<nav id="menu">
+		<ul id="menu_list"><a href="../index.html"><img src="../logo.svg"></a>
+			<a href="https://qtb.kinos.co.kr/"><li>QUTABASE 현황</li></a>
+			<li id="menu_skill" onclick="menu_skill_click()">
+				스킬
+				<ul id="list_skill" style="display: none;">
+					<a href="../skill/atk.html"><li>공격</li></a>
+					<a href="../skill/hp.html"><li>방어</li></a>
+					<a href="../skill/spr.html"><li>회복</li></a>
+				</ul>
+			</li>
+			<a href="../vs/index.html"><li>마도서 비교</li></a>
+			<a href="../rewards/index.html"><li>무나 &amp; 이포 보상</li></a>
+			<a href="../simul/index.html"><li>덱 시뮬레이터</li></a>
+			<a href="../print/index.html"><li>연차 시뮬레이터</li></a>
+		<img id="menu_rotLogo" alt="QUTABASE Side Bar" src="../logo.svg">
+		</ul>
+	</nav>
+	<header id="kodex_form">
+		<a href="../"><img id="logo" src="../logoW.svg"></a><br>
+		<input type="text" id="kodex_srch" onkeyup="check()" placeholder="마도서 이름을 입력하세요!"><br>
+		<ul id="kodex_exmpl" style="display: none;">
+		</ul>
+	</header>
+	<article>
+		<div id="story_L">
+			<img id="story_L_img" src="17053.png" width="125%">
+		</div>
+		<div id="story_M">
+			<img id="story_M_img" src="17053.png" width="125%">
+		</div>
+		<div id="story_R">
+			<img id="story_R_img" src="9023.png" width="125%">
+		</div>
+		<div id="story_dialog">
+			<div id="dialog_name">닥터 쉬나벨</div>
+			<div id="dialog_context">서기장은 그대가 말한 대로 움직이고 있다.</div>
+		</div>
+	</article>
+	<footer>
+		ⓒ 2017 - 2018 Sn Kinos All Rights Reserved ( except the images )
+	</footer>
+</body>
+<script src="../QB_reactive.js"></script>
+<script src="story.js"></script>
+</html>

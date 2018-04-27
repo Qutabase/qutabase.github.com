@@ -11,13 +11,13 @@ printCheck = {
 var	list	=	document.getElementById('print_list');
 var	res		=	document.getElementById('print_result');
 
-eng.season.SR[1]	-=	3;	//	EXCEPTING MONSTER KODEX
+//eng.season.SR[1]	-=	3;	//	EXCEPTING MONSTER KODEX
 
-/*	//	ADD / ON HEAD OF THIS LINE
-eng.season.SSR[1]		-=	2;	//	EPISODE 1
+//*	//	ADD / ON HEAD OF THIS LINE
+eng.season.SSR[1]		-=	1;	//	EPISODE 1	//	18-04-26 UPDATE
 eng.season['SR+'][1]	-= 2;
 /*/
-eng.season.SSR[0]		+=	2;	//	EPISODE 2
+eng.season.SSR[0]		+=	1;	//	EPISODE 2	//	18-04-26 UPDATE
 eng.season['SR+'][0]	+=	2;
 //*/
 
@@ -119,11 +119,11 @@ function result(range) {
 /*
 	print1()	-	PREMIUM PRINT
 		SEASON	|	NOT		|	SUM
-	SSR	1.0%	|	1.5%	|	2.5%
-	SR+	1.5%	|	1.5%	|	3.0%
-	SR	5.0%	|	10.0%	|	15.0%
+	SSR	1.0%	|	2.5%	|	3.5%
+	SR+	2.5%	|	2.5%	|	5.0%
+	SR	2.5%	|	12.5%	|	15.0%
 	R+	10.0%	|	30.0%	|	40.0%
-	R			39.5%		|	39.5%
+	R			36.5%		|	36.5%
 */
 
 function print1(argument) {
@@ -138,36 +138,36 @@ function print1(argument) {
 		range[1]	=	eng.season.SSR[1];
 		range[0]	=	eng.season.SSR[0];
 	}
-	else if (rand < 25) {
+	else if (rand < 35) {
 		//	Non-SEASON SSR
 		range[1]	=	eng.season.SSR[0];
 		range[0]	=	17001;
 	}
-	else if (rand < 40) {
+	else if (rand < 50) {
 		//	SEASON SR+
 		range[1]	=	eng.season['SR+'][1];
 		range[0]	=	eng.season['SR+'][0];
 	}
-	else if (rand < 55){
+	else if (rand < 75){
 		//	Non-SEASON SR+
 		range[1]	=	eng.season['SR+'][0];
 		range[0]	=	6001;
 	}
-	else if(rand < 105) {
+	else if(rand < 100) {
 		//	SEASON SR
 		range[1]	=	eng.season.SR[1];
 		range[0]	=	eng.season.SR[0];
 	}
-	else if(rand < 205) {
+	else if(rand < 225) {
 		//	Non-SEASON SR
 		range[0]	=	2
 	}
-	else if	(rand < 305) {
+	else if	(rand < 325) {
 		//	SEASON R+
 		range[1]	=	eng.season['R+'][1];
 		range[0]	=	eng.season['R+'][0];
 	}
-	else if	(rand < 605) {
+	else if	(rand < 625) {
 		//	Non-SEASON R+
 		range[0]	=	1;
 	}
@@ -183,8 +183,8 @@ function print1(argument) {
 /*
 	printB()	-	11 BONUS
 		SEASON	|	NOT		|	SUM
-	SSR	3.4%	|	1.6%	|	5.0%
-	SR+	40.0%	|	55.0%	|	95.0%
+	SSR	3.4%	|	6.6%	|	10.0%
+	SR+	40.0%	|	50.0%	|	90.0%
 */
 
 function printB(argument) {
@@ -200,12 +200,12 @@ function printB(argument) {
 		range[0]	=	eng.season.SSR[0];
 
 	}
-	else if (rand < 50) {
+	else if (rand < 100) {
 		//	Non-SEASON SSR
 		range[1]	=	eng.season.SSR[0];
 		range[0]	=	17001;
 	}
-	else if (rand < 450) {
+	else if (rand < 500) {
 		//	SEASON SR+
 		range[1]	=	eng.season['SR+'][1];
 		range[0]	=	eng.season['SR+'][0];
@@ -233,7 +233,7 @@ function print11() {
 /*
 	printm()	-	PREMIUM MILEAGE
 		SEASON	|	NOT		|	SUM
-	SSR	22.0%	|	11.0%	|	33.0%
+	SSR	11.0%	|	22.0%	|	33.0%
 	SR+	40.0%	|	27.0%	|	67.0%
 */
 
@@ -244,7 +244,7 @@ function printm() {
 					);
 	var	range	=	[0,0];
 
-	if (rand < 22) {
+	if (rand < 11) {
 		//	SEASON SSR
 		range[1]	=	eng.season.SSR[1];
 		range[0]	=	eng.season.SSR[0];
@@ -273,7 +273,7 @@ function printm() {
 /*
 	printM()	-	SSR PREMIUM MILEAGE
 		SEASON	|	NOT		|	SUM
-	SSR	66.6%	|	33.4%	|	100.0%
+	SSR	33.3%	|	66.7%	|	100.0%
 */
 
 function printM() {
@@ -283,7 +283,7 @@ function printM() {
 					);
 	var	range	=	[0,0];
 
-	if (rand < 666) {
+	if (rand < 333) {
 		//	SEASON SSR
 		range[1]	=	eng.season.SSR[1];
 		range[0]	=	eng.season.SSR[0];

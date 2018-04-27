@@ -1,0 +1,50 @@
+article {
+	width: 1280px;
+	height: 720px;
+	max-width: none;
+	position: relative;
+	background: url('villangt_scene.jpg');
+	background-size: cover;
+}
+
+#story_L {
+	position: absolute;
+	left: -60px;
+	bottom: -5px;
+}
+
+#story_M {
+	position: absolute;
+	left: 25%;
+	bottom: -5px;
+}
+
+#story_R {
+	position: absolute;
+	left: calc(50% + 40px);
+	bottom: -5px;
+}
+
+#story_dialog {
+	color: white;
+	width: 75%;
+	height: 21%;
+	position: absolute;
+	left: 12.5%;
+	bottom: 0;
+	background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,.6), rgba(0,0,0,.8), rgba(0,0,0,.8), rgba(0,0,0,.8), rgba(0,0,0,.8), rgba(0,0,0,.8), rgba(0,0,0,.8), rgba(0,0,0,.8), rgba(0,0,0,.8), rgba(0,0,0,.8), rgba(0,0,0,.6), rgba(0,0,0,0))
+}
+
+#dialog_name {
+	text-align: left;
+	width: 80%;
+	padding: 8px;
+	padding-left: 10%;
+}
+
+#dialog_context {
+	text-align: left;
+	padding: 8px;
+	padding-left: 10%;
+	padding-top: 0;
+}
