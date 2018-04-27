@@ -99,17 +99,24 @@
 		#kodex_illustrator {
 			overflow: auto;
 		}
-		#kodex_dialog {
+		#kodex_dialogBox {
 			position: absolute;
 			z-index: 1000;
-			width: calc(100% - 20px);
-			height: 177px;
-			padding: 10px;
+			width: calc(100% - 5px);
+			height: 189px;
 			bottom: 0;
 			left: 0;
+			padding-left: 0;
+		}
+		#kodex_dialog {
+			padding: 10px;
 			background: #BBC2D2;
 			text-align: left;
+			width: calc(100% - 18px) !important;
 			font-size: 20px;
+			height: calc(100% - 20px) !important;
+			padding-right: 25px;
+			margin-left: 2px;
 		}
 		.kodex_desc_detail {
 			width: 50%; height: 50%;
@@ -207,14 +214,14 @@
 		<div id="kodex_header">
 			<div class="kodex_head" style="background: #E10044;" id="kodex_rarity">
 				DB
-			</div><div class="kodex_head" style="background: #E10044;" id="kodex_name" onclick="menu_skill_click('kodex_dialog');">
+			</div><div class="kodex_head" style="background: #E10044;" id="kodex_name" onclick="menu_skill_click('kodex_dialogBox');">
 				QUTABASE
 			</div><div class="kodex_head" style="background: #FFEB3B; line-height: normal;" id="kodex_cst">
 				COST<br><span id="kodex_cost">QU</span>
 			</div>
 		</div>
 		<div id="kodex_header_m">
-			<div class="kodex_head" style="background: #E10044;" id="kodex_name_m" onclick="menu_skill_click('kodex_dialog');">
+			<div class="kodex_head" style="background: #E10044;" id="kodex_name_m" onclick="menu_skill_click('kodex_dialogBox');">
 				QUTABASE
 			</div><div class="kodex_head" style="background: #E10044;" id="kodex_rarity_m">
 				SSR
@@ -403,7 +410,7 @@
 				6965
 			</div>
 		</div>
-		<div id="kodex_dialog" style="display: none;"></div>
+		<div class="hideScrOut" id="kodex_dialogBox" style="display: none;"><div id="kodex_dialog" class="hideScrIn"></div></div>
 	</article>
 	<footer>
 		ⓒ 2017 - 2018 Sn Kinos All Rights Reserved ( except the images )

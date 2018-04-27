@@ -28,7 +28,7 @@ Jdex = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/m
 eng = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/enskill.json"))
 
 list_skill_flag = 0
-kodex_dialog_flag = 0
+kodex_dialogBox_flag = 0
 function menu_skill_click(argument) {
 	if (!eval(argument + '_flag')) {
 		document.getElementById(argument).setAttribute('style', 'display: block;');
