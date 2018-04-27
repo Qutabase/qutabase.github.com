@@ -93,7 +93,7 @@ role = {
 };
 function search(srch) {
 
-	if (srch in Object.keys(Jdex)) {
+	if (Object.keys(Jdex).indexOf(srch) != -1) {
 		;
 	}
 	else if (srch.substr(0,2) in eng.skill) {

@@ -93,7 +93,7 @@ function simSearch(srch) {
 	kodex_slot[zoneid]	=	srch;
 	dex = eval("Jdex['" + srch + "']");
 */
-	if (srch in Object.keys(Jdex)) {
+	if (Object.keys(Jdex).indexOf(srch) != -1) {
 		kodex_slot[zoneid]	=	srch;
 	}
 	else if (srch.substr(0,2) in eng.skill) {
