@@ -27,15 +27,16 @@ function getJson(url) {
 Jdex = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/qurare.json"))
 eng = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/enskill.json"))
 
-skill_flag = 0
+list_skill_flag = 0
+kodex_dialog_flag = 0
 function menu_skill_click(argument) {
-	if (!skill_flag) {
-		document.getElementById('list_skill').setAttribute('style', 'display: block;');
-		skill_flag = 1
+	if (!eval(argument + '_flag')) {
+		document.getElementById(argument).setAttribute('style', 'display: block;');
+		eval(argument + '_flag = 1');
 	}
 	else{
-		document.getElementById('list_skill').setAttribute('style', 'display: none;');
-		skill_flag = 0
+		document.getElementById(argument).setAttribute('style', 'display: none;');
+		eval(argument + '_flag = 0');
 	}
 }
 

@@ -11,8 +11,9 @@
 	<link rel="stylesheet" type="text/css" href="nanum.css">
 	<link rel="stylesheet" type="text/css" href="univ.css">
 	<style>
-	html {height: 100%;}
-	body {height: 100%;}
+		html {height: 100%;}
+		body {height: 100%;}
+		article {position: relative;}
 		div {
 			background: #e3e4ee;
 		}
@@ -52,6 +53,10 @@
 			color: white;
 			font-size: 32px;
 		}
+		#kodex_name:hover {
+			opacity: 0.7;
+			cursor: pointer;
+		}
 		#kodex_cst {
 			width: calc(11% + 2px);
 			padding: 13.5px 0px;
@@ -68,6 +73,10 @@
 			font-size: 32px;
 			margin-bottom: 2px;
 		}
+		#kodex_name_m:hover {
+			opacity: 0.7;
+			cursor: pointer;
+		}
 		#kodex_cst_m {
 			width: calc(50% - 20px);
 			padding-top: 22.5px; padding-bottom: 22.5px;
@@ -77,10 +86,10 @@
 			line-height: 81px;
 			font-size: 33px;
 			color: white;
-			cursor: pointer;
 		}
 		#kodex_skill:hover {
 			opacity: 0.7;
+			cursor: pointer;
 		}
 		#kodex_desc {
 			width: calc(67% - 6px); height: 90px;
@@ -89,6 +98,15 @@
 		}
 		#kodex_illustrator {
 			overflow: auto;
+		}
+		#kodex_dialog {
+			position: absolute;
+			z-index: 1000;
+			width: calc(100% - 20px);
+			height: 23.4%;
+			bottom: 0;
+			left: 0;
+			background: #BBC2D2;
 		}
 		.kodex_desc_detail {
 			width: 50%; height: 50%;
@@ -159,7 +177,7 @@
 	<nav id="menu">
 		<ul id="menu_list"><a href="?"><img src="logo.svg"></a>
 			<a href="https://qtb.kinos.co.kr/"><li>QUTABASE 현황</li></a>
-			<li id="menu_skill" onclick="menu_skill_click()">
+			<li id="menu_skill" onclick="menu_skill_click('list_skill')">
 				스킬
 				<ul id="list_skill" style="display: none;">
 					<a href="skill/atk.html"><li>공격</li></a>
@@ -186,14 +204,14 @@
 		<div id="kodex_header">
 			<div class="kodex_head" style="background: #E10044;" id="kodex_rarity">
 				DB
-			</div><div class="kodex_head" style="background: #E10044;" id="kodex_name">
+			</div><div class="kodex_head" style="background: #E10044;" id="kodex_name" onclick="menu_skill_click('kodex_dialog');">
 				QUTABASE
 			</div><div class="kodex_head" style="background: #FFEB3B; line-height: normal;" id="kodex_cst">
 				COST<br><span id="kodex_cost">QU</span>
 			</div>
 		</div>
 		<div id="kodex_header_m">
-			<div class="kodex_head" style="background: #E10044;" id="kodex_name_m">
+			<div class="kodex_head" style="background: #E10044;" id="kodex_name_m" onclick="menu_skill_click('kodex_dialog');">
 				QUTABASE
 			</div><div class="kodex_head" style="background: #E10044;" id="kodex_rarity_m">
 				SSR
@@ -382,6 +400,7 @@
 				6965
 			</div>
 		</div>
+		<div id="kodex_dialog" onclick="menu_skill_click(this.id);" style="display: none;"></div>
 	</article>
 	<footer>
 		ⓒ 2017 - 2018 Sn Kinos All Rights Reserved ( except the images )
