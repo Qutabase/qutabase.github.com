@@ -189,6 +189,7 @@ function search(srch) {
 		kinput('hp0');
 		kinput('atk0');
 		kinput('spr0');
+		kinput('dialog');
 		for (var i = 0; i < 7; i++) {
 			document.getElementById('kodex_HP_'+i).innerHTML	=	dex.HP[i];
 			document.getElementById('kodex_ATK_'+i).innerHTML	=	dex.ATK[i];
