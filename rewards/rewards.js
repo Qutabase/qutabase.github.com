@@ -5,7 +5,7 @@ function makeList(argument) {
 	infList = document.getElementById('rewards_inf_list_box');
 	infList.innerHTML = '';
 	for (var i = 1 + argument * 10; i <= argument * 10 + 10; i++) {
-		infList.innerHTML = infList.innerHTML
+		infList.innerHTML	=	infList.innerHTML
 								+	'<div class="rewards_inf_list_box_floor"><div class="box_floor_num">'
 								+	i				+	' 층</div><div class="box_floor_img"><img class="box_floor_img_src" title="'
 								+	inf[i].reward	+	'" alt="" src="item/'
@@ -23,14 +23,14 @@ floor_start.value = 1;
 eventList = document.getElementById('rewards_event_list_box');
 eventList.innerHTML = '';
 for (var i in eventP){
-	eventList.innerHTML = eventList.innerHTML
-								+	'<div class="rewards_event_list_box_point"><div class="box_point_num">'
-								+	i					+	'</div><div class="box_point_img"><img class="box_point_img_src" title="'
-								+	eventP[i].reward	+	'" alt="" src="item/'
-								+	eventP[i].img		+	'.png"></div><div class="box_point_reward">'
-								+	eventP[i].reward	+	'</div><div class="box_point_quan">'
-								+	eventP[i].quan		+	'</div></div>'
-								;
+	eventList.innerHTML	=	eventList.innerHTML
+							+	'<div class="rewards_event_list_box_point"><div class="box_point_num">'
+							+	i					+	'</div><div class="box_point_img"><img class="box_point_img_src" title="'
+							+	eventP[i].reward	+	'" alt="" src="item/'
+							+	eventP[i].img		+	'.png"></div><div class="box_point_reward">'
+							+	eventP[i].reward	+	'</div><div class="box_point_quan">'
+							+	eventP[i].quan		+	'</div></div>'
+							;
 }
 
 function change(argument) {
