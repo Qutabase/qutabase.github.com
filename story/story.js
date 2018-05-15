@@ -3,6 +3,6 @@ function dialogPrs(argument) {
 	console.log(mainDlg);
 }
 
-mainStory	=	JSON.parse(getJson("https://raw.githubusercontent.com/Qutabase/qutabase.github.com/master/story/mainStory.json"));
+mainStory	=	JSON.parse(getJson("https://raw.githubusercontent.com/Qutabase/qutabase.github.com/master/story/test.json"));
 
 dialogPrs(mainStory);
