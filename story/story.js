@@ -1,4 +1,5 @@
 mainStory	=	JSON.parse(getJson("https://raw.githubusercontent.com/Qutabase/qutabase.github.com/master/story/test.json"));
+cardInfo	= JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/CardInfoScript-dec.qt"));
 
 var dialogs;
 function dialogPrs(argument) {
@@ -63,9 +64,9 @@ function execute(argument) {
 		elem.src			=	argument[1]	+	'.png';
 		elem.style.display	=	'initial';
 		argument[1]	=	argument[1].replace(/[BC]/g, '');
-		for(kodex in Jdex) {
-			if (Jdex[kodex].id == argument[1]) {
-				document.getElementById('dialog_name').innerHTML	=	Jdex[kodex].name;
+		for(kodex in cardInfo) {
+			if (cardInfo[kodex].Number == argument[1]) {
+				document.getElementById('dialog_name').innerHTML	=	cardInfo[kodex].GivenName;
 			}
 		}
 		printContext(3, argument);

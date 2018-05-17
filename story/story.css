@@ -5,6 +5,7 @@ article {
 	position: relative;
 	background: url('villangt_scene.jpg');
 	background-size: cover;
+	user-select: none;
 }
 
 #story_L {
