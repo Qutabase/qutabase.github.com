@@ -48,7 +48,7 @@ function execute(argument) {
 		setTimeout(function() {
 			break;
 		}, argument[1]);
-
+		break;
 	case "na":
 		document.getElementById('dialog_name').innerHTML	=	argument[1]	+	'　';
 		printContext(2, argument);
@@ -110,22 +110,30 @@ function printContext(ind, context) {
 		cntxt	+=	','	+	context[i];
 	}
 
+	/*
 	var type	=	null;
-	// function typing() {
-	// 	var mainC	=	cntxt.split("");
-	// 	var i		=	0;
-	// 	document.getElementById('dialog_context').innerHTML	=	'';
-	// 	function show() {
-	// 		if (i < mainC.length) {
-	// 			document.getElementById('dialog_context').innerHTML	+=	mainC[i];
-	// 			i++;
-	// 		}
-	// 	};
-	// 	var type	=	setInterval(show, 50);
+	function typing() {
+		var mainC	=	cntxt.split("");
+		var i		=	0;
+		var dlgCnt	=	document.getElementById('dialog_context');	
+		dlgCnt.innerHTML	=	'';
+		function show() {
+			if (i < mainC.length) {
+				dlgCnt.innerHTML	+=	mainC[i];
+				i++;
+			}
+			else {
+				dlgCnt.innerHTML	=	dlgCnt.innerHTML.replace('&lt;', '<');
+				dlgCnt.innerHTML	=	dlgCnt.innerHTML.replace('&gt;', '>');
+			}
+		};
+		var type	=	setInterval(show, 50);
 
-	// }
-	// typing();
+	}
+	typing();
+	/*/
 	document.getElementById('dialog_context').innerHTML	=	cntxt;
+	//*/
 
 }
 dialogPrs(mainStory);
