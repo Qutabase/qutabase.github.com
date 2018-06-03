@@ -11,6 +11,7 @@ function dialogPrs(argument) {
 var line;
 var	nick;
 var type;
+var index;
 var count		=	0;
 var printFlag	=	false;
 var skipClick	=	{
@@ -25,9 +26,9 @@ var skipClick	=	{
 };
 
 function menu_select(argument) {
-	var	index	=	prompt("스토리 인덱스 번호를 입력해주세요.");
+	index	=	prompt("스토리 인덱스 번호를 입력해주세요.");
 	if (argument == 'main') {
-		dialogPrs(mainStory[parseInt(index)]['Dialog']);
+		dialogPrs(mainStory[parseInt(index)]);
 	}
 	else {
 		dialogPrs(eventStory);
@@ -42,7 +43,14 @@ function menu_select(argument) {
 }
 
 function prsLn(argument) {
-	line	=	argument[count].split(',');
+	try {
+		line	=	argument[count].split(',');
+	}
+	catch (exception) {
+		document.getElementById('sect_menu').style.display	=	'block';
+		document.getElementById('sect_story').style.display	=	'none';
+		count	=	0;
+	}
 	count++;
 	execute(line);
 	if (argument[count].split(',')[0] in skipClick) {
@@ -106,7 +114,7 @@ function execute(argument) {
 		}
 		break;
 	case "HIDE":
-		if (argument[1] == "ALL") {
+		if (argument[1] == "ALL" || argument[1] == "all") {
 			document.getElementById('story_L_img').style.display	=	'none';
 			document.getElementById('story_M_img').style.display	=	'none';
 			document.getElementById('story_R_img').style.display	=	'none';
@@ -163,7 +171,7 @@ function printContext(ind, context) {
 				delete	type;
 			}
 		};
-		type	=	setInterval(show, 20);
+		type	=	setInterval(show, 15);
 	}
 	typing();
 	/*/
