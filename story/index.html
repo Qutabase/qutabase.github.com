@@ -2,6 +2,7 @@
 <html>
 <head>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112275806-1"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="https://qutabase.github.io/gAn.js"></script>
 	<meta charset="utf-8">
 	<meta name="keywords" content="qurare, qutabase, kodex">
@@ -11,7 +12,21 @@
 	<link rel="stylesheet" type="text/css" href="../side.css">
 	<link rel="stylesheet" type="text/css" href="../nanum.css">
 	<link rel="stylesheet" type="text/css" href="../univ.css">
-	<link rel="stylesheet" type="text/css" href="story.css">
+	<link rel="stylesheet" type="text/css" href="sect_story.css">
+	<link rel="stylesheet" type="text/css" href="sect_menu.css">
+	<style>
+article {
+	width: 1280px;
+	height: 720px;
+	max-width: none;
+	position: relative;
+	background-size: cover;
+	user-select: none;
+}
+div {
+	padding: 0px;
+}
+	</style>
 </head>
 <body>
 	<nav id="menu">
@@ -38,21 +53,32 @@
 		<ul id="kodex_exmpl" style="display: none;">
 		</ul>
 	</header>
-	<article onclick="prsLn(dialogs)">
-		<div id="story_L">
-			<img id="story_L_img" src="" width="125%">
-		</div>
-		<div id="story_M">
-			<img id="story_M_img" src="" width="125%">
-		</div>
-		<div id="story_R">
-			<img id="story_R_img" src="" width="125%">
-		</div>
-		<div id="story_dialog">
-			<div id="dialog_name">닥터 쉬나벨</div>
-			<div id="dialog_context">서기장은 그대가 말한 대로 움직이고 있다.</div>
-		</div>
-		<audio loop id="story_BGM" src="bgm_adv_pianomedley.mp3"></audio>
+	<article>
+		<section id="sect_story" onclick="prsLn(dialogs)" style="display: none;">
+			<div id="story_L">
+				<img id="story_L_img" src="" width="125%">
+			</div>
+			<div id="story_M">
+				<img id="story_M_img" src="" width="125%">
+			</div>
+			<div id="story_R">
+				<img id="story_R_img" src="" width="125%">
+			</div>
+			<div id="story_dialog">
+				<div id="dialog_name">QUTABASE Story Reader</div>
+				<div id="dialog_context">You can watch the QURARE Main/Event Story on QUTABASE.<br>Comming Soon . . .</div>
+			</div>
+			<audio loop id="story_BGM" src="bgm_adv_pianomedley.mp3"></audio>
+		</section>
+		<section id="sect_menu">
+			<span id="menu_title">QURARE Story Cinema</span>
+			<a href="#"><div class="menu_storySel" id="menu_main" onclick="menu_select('main')">
+				메인 스토리
+			</div></a>
+			<a href="#"><div class="menu_storySel" id="menu_event" onclick="menu_select('event')">
+				이벤트 스토리
+			</div></a>
+		</section>
 	</article>
 	<footer>
 		ⓒ 2017 - 2018 Sn Kinos All Rights Reserved ( except the images )

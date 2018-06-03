@@ -1,13 +1,18 @@
-mainStory	=	JSON.parse(getJson("https://raw.githubusercontent.com/Qutabase/qutabase.github.com/master/story/test.json"));
-cardInfo	= JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/CardInfoScript-dec.qt"));
+eventStory	=	JSON.parse(getJson("https://raw.githubusercontent.com/Qutabase/qutabase.github.com/master/story/test.json"));
+cardInfo	=	JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/CardInfoScript-dec.qt"));
+mainStory	=	JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/mainStoryJ.qt"));
+
 
 var dialogs;
 function dialogPrs(argument) {
-	dialogs	=	argument['main'].split('#');
+	dialogs	=	argument['Dialog'].split('#');
 }
 
 var line;
-var count = 0;
+var	nick;
+var type;
+var count		=	0;
+var printFlag	=	false;
 var skipClick	=	{
 	'BACKGROUND':''
 ,	'BGM':''
@@ -18,6 +23,23 @@ var skipClick	=	{
 ,	'FX':''
 ,	'SHAKE':''
 };
+
+function menu_select(argument) {
+	var	index	=	prompt("스토리 인덱스 번호를 입력해주세요.");
+	if (argument == 'main') {
+		dialogPrs(mainStory[parseInt(index)]['Dialog']);
+	}
+	else {
+		dialogPrs(eventStory);
+		/*
+		nick	=	prompt("스토리에 표시될 이름을 입력해주세요.");
+		/*/
+		nick	=	"Kinos";
+		//*/
+	}
+	document.getElementById('sect_story').style.display	=	'block';
+	document.getElementById('sect_menu').style.display	=	'none';	
+}
 
 function prsLn(argument) {
 	line	=	argument[count].split(',');
@@ -32,7 +54,7 @@ function execute(argument) {
 	console.log(argument.toString());
 	switch(argument[0]) {
 	case "BACKGROUND":
-		document.getElementsByTagName('article')[0].style.backgroundImage	=	'url('	+	argument[1]	+	'.png)';
+		document.getElementById('sect_story').style.backgroundImage	=	'url('	+	argument[1]	+	'.png)';
 		break;
 	case "BGM": {
 		var bgm	=	document.getElementById('story_BGM');
@@ -92,17 +114,31 @@ function execute(argument) {
 		else {
 			document.getElementById('story_'	+	argument[1]	+	'_img').style.display	=	'none';
 		}
+		break;
+	case "FADEIN":
+		$('sect_story').fadeIn(argument[1]);
+		break;
+	case "FADEOUT":
+		$('sect_story').fadeOut(argument[1]);
+		break;
 	}
 }
 
 function printContext(ind, context) {
+	delete	type;
+	printFlag	=	true;
 	for (var i = 0; i < context.length; i++) {
 		var colors	=	/\[......\]/g;
 		colors		=	context[i].match(colors);
 		for(color in colors) {
+/*
 			context[i]	=	context[i].replace(colors[color], "<span style='color: #"	+	colors[color].substr(1, 6)	+	";'>");
-			context[i]	=	context[i].replace("{nickname}", nick);
 			context[i]	=	context[i].replace(/\[-\]/g, "</span>");
+/*/
+			context[i]	=	context[i].replace(colors[color], "");
+			context[i]	=	context[i].replace(/\[-\]/g, "");
+//*/
+			context[i]	=	context[i].replace("{nickname}", nick);
 		}
 	}
 	var cntxt	=	context[ind];
@@ -110,8 +146,7 @@ function printContext(ind, context) {
 		cntxt	+=	','	+	context[i];
 	}
 
-	/*
-	var type	=	null;
+	//*
 	function typing() {
 		var mainC	=	cntxt.split("");
 		var i		=	0;
@@ -122,13 +157,13 @@ function printContext(ind, context) {
 				dlgCnt.innerHTML	+=	mainC[i];
 				i++;
 			}
-			else {
-				dlgCnt.innerHTML	=	dlgCnt.innerHTML.replace('&lt;', '<');
-				dlgCnt.innerHTML	=	dlgCnt.innerHTML.replace('&gt;', '>');
+			else{
+				i		= 9999;
+				printFlag	= false;
+				delete	type;
 			}
 		};
-		var type	=	setInterval(show, 50);
-
+		type	=	setInterval(show, 20);
 	}
 	typing();
 	/*/
@@ -136,10 +171,3 @@ function printContext(ind, context) {
 	//*/
 
 }
-dialogPrs(mainStory);
-
-/*
-var	nick	=	prompt("스토리에 표시될 이름을 입력해주세요.");
-/*/
-var nick	=	"Kinos";
-//*/

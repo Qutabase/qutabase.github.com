@@ -1,0 +1,60 @@
+#sect_menu {
+	width: 1280px;
+	height: 720px;
+	background: url('entrance_scene.jpg');
+	background-size: cover;
+	position: relative;
+}
+
+#menu_title {
+	position: absolute;
+	display: block;
+	top: 5%;
+	width: 90%;
+	padding: 2% 5%;
+	text-align: left;
+	font-size: 30px;
+	background: rgba(0,0,0,0.5);
+	color: white;
+}
+
+
+#menu_main {
+	bottom: 20%;
+	left: 20%;
+}
+
+#menu_event {
+	bottom: 20%;
+	right: 20%;
+}
+
+.menu_storySel {
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	background: #FFEB3B;
+	position: absolute;
+}
+
+.menu_storySel:before {
+	content: "";
+	position: absolute;
+	top: -29px;
+	left: 0;
+	border-bottom: 29px solid #FFEB3B;
+	border-left: 29px solid transparent;
+	width: 171px;
+	height: 0;
+}
+
+.menu_storySel:after {
+	content: "";
+	position: absolute;
+	bottom: -29px;
+	left: 0;
+	border-top: 29px solid #FFEB3B;
+	border-right: 29px solid transparent;
+	width: 171px;
+	height: 0;
+}
