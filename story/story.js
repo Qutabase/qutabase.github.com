@@ -24,12 +24,15 @@ var skipClick	=	{
 ,	'FX':''
 ,	'SHAKE':''
 ,	'senario':''
+,	'FONTSIZE':''
+,	'SHAKEBG':''
 };
 
 function menu_select(argument) {
-	index	=	prompt("스토리 인덱스 번호를 입력해주세요.");
+	index	=	parseInt(prompt("챕터 번호를 입력해주세요."));
+
 	if (argument == 'main') {
-		dialogPrs(mainStory[parseInt(index)]);
+		dialogPrs(mainStory[eng['zone'][index]]['Dialog']);
 	}
 	else {
 		dialogPrs(eventStory);
@@ -48,6 +51,7 @@ function prsLn(argument) {
 		line	=	argument[count].split(',');
 	}
 	catch (exception) {
+		console.log(line + 'aaaaa');
 		document.getElementById('sect_menu').style.display	=	'block';
 		document.getElementById('sect_story').style.display	=	'none';
 		count	=	0;
@@ -141,12 +145,15 @@ function execute(argument) {
 		$('#sect_story').fadeTo(argument[1], 0.001);
 		break;
 	case "FONTSIZE":
-		$('#dialog_context').css('font-size', argument[1]);
+		$('#dialog_context').css('font-size', argument[1]	+	"px");
 		break;
 	}
 }
 
 function printContext(ind, context) {
+	if ($('#dialog_context').css('font-size') != "24px") {
+		$('#dialog_context').css('font-size', "24px");
+	}
 	delete	type;
 	printFlag	=	true;
 	for (var i = 0; i < context.length; i++) {
