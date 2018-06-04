@@ -19,10 +19,11 @@ var skipClick	=	{
 ,	'BGM':''
 ,	'FLIP':''
 ,	'HIDE':''
-,	'FADEOUT':''
-,	'FADEIN':''
+,	'FADEOUT':'1'
+,	'FADEIN':'1'
 ,	'FX':''
 ,	'SHAKE':''
+,	'senario':''
 };
 
 function menu_select(argument) {
@@ -50,6 +51,8 @@ function prsLn(argument) {
 		document.getElementById('sect_menu').style.display	=	'block';
 		document.getElementById('sect_story').style.display	=	'none';
 		count	=	0;
+		execute(['HIDE','all']);
+		return;
 	}
 	count++;
 	execute(line);
@@ -62,7 +65,7 @@ function execute(argument) {
 	console.log(argument.toString());
 	switch(argument[0]) {
 	case "BACKGROUND":
-		document.getElementById('sect_story').style.backgroundImage	=	'url('	+	argument[1]	+	'.png)';
+		document.getElementById('sect_story').style.backgroundImage	=	'url(bg/'	+	argument[1].toLowerCase()	+	'.jpg)';
 		break;
 	case "BGM": {
 		var bgm	=	document.getElementById('story_BGM');
@@ -70,10 +73,18 @@ function execute(argument) {
 			bgm.pause();
 		}
 		else {
-			bgm.src	=	argument[1]	+	'.mp3';
+			bgm.src	=	'bgm/'	+	argument[1]	+	'.mp3';
 			bgm.play();
 		}
 	}	break;
+	case 'senario':
+		document.getElementById('story_senario').src	=	(!argument[1])
+															?
+															'popup/'	+	argument[1]	+	'.png'
+															:
+															''
+															;
+		break;
 	case "WAIT":
 		setTimeout(function() {
 			break;
@@ -91,7 +102,7 @@ function execute(argument) {
 	case "M":
 	case "R": {
 		var	elem			=	document.getElementById('story_'	+	argument[0]	+	'_img');
-		elem.src			=	argument[1]	+	'.png';
+		elem.src			=	'portrait/'	+	argument[1]	+	'.png';
 		elem.style.display	=	'initial';
 		argument[1]	=	argument[1].replace(/[BC]/g, '');
 		for(kodex in cardInfo) {
@@ -124,10 +135,13 @@ function execute(argument) {
 		}
 		break;
 	case "FADEIN":
-		$('sect_story').fadeIn(argument[1]);
+		$('#sect_story').fadeTo(argument[1], 1);
 		break;
 	case "FADEOUT":
-		$('sect_story').fadeOut(argument[1]);
+		$('#sect_story').fadeTo(argument[1], 0.001);
+		break;
+	case "FONTSIZE":
+		$('#dialog_context').css('font-size', argument[1]);
 		break;
 	}
 }
