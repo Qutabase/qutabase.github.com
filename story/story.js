@@ -181,9 +181,6 @@ function execute(argument) {
 		break;
 
 	case "WAIT":
-		setTimeout(function() {
-			break;
-		}, argument[1]);
 		break;
 
 	case "na": case "NA": case "Na":
