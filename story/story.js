@@ -28,17 +28,18 @@ var skipClick	=	{
 ,	'HIDE':''
 ,	'FADEOUT':'1'
 ,	'FADEIN':'1'
-,	'fadeout':'1'
-,	'fadein':'1'
 ,	'FX':''
 ,	'SHAKE':''
-,	'senario':''
+,	'SENARIO':''
 ,	'FONTSIZE':''
 ,	'SHAKEBG':''
 ,	'SHADE':''
 ,	'shade':''
 ,	'voice':''
 ,	'SE':''
+,	'LL':''
+,	'LM':''
+,	'LR':''
 };
 
 function chapPlay(argument) {
@@ -111,8 +112,52 @@ function prsLn(argument) {
 	execute(line);
 
 	try {
-		if (argument[count].split(',')[0] in skipClick) {
-			prsLn(argument);
+		var	tmp	=	argument[count].split(',');
+		if (tmp[0] in skipClick) {
+			setTimeout( function() {
+				prsLn(argument);
+			}, 1);
+		}
+		else if ((tmp[0] == 'L' || tmp[0] == 'M' || tmp[0] == 'R') && (tmp[3] == undefined || tmp[3] == '' || tmp[3] == ' ')) {
+			setTimeout( function() {
+				prsLn(argument);
+			}, 1);
+		}
+		if (tmp[0] == 'L' || tmp[0] == 'M' || tmp[0] == 'R') {
+			var	fc	=	document.getElementById('story_buffer_face');
+			switch(tmp[1]) {
+			case '10001': case '10002': case '10003':
+				fc.src	=	'portrait/'	+	tmp[1]	+	'.png';
+				tmp[1]	=	'1001'	+	tmp[1][4]
+				break;
+			case '9004':
+				fc.src	=	'portrait/9004g.png';
+				break;
+			case '9006':
+				fc.src	=	'portrait/9006.png';
+				tmp[1]	=	'9005'
+				break;
+			case '0':
+				break;
+			default:
+				if (fc.src	=	'portrait/none.png') {
+					fc.src	=	'portrait/none.png';
+				}
+			}
+
+			document.getElementById('story_buffer_img').src	=	'portrait/'	+	tmp[1]	+	'.png';
+			tmp[2]	=	tmp[2].toUpperCase();
+			if (tmp[2] == 'EYEDOWN') {
+				if (fc.style.backgroundImage.substr(this.length - 4, 4) != '.gif') {
+					fc.style.backgroundImage	=	'url(portrait/'	+	tmp[1]	+	".gif)";
+				}
+			}
+			else if (tmp[2] == 'NONE') {
+				fc.style.backgroundImage	=	'none';
+			}
+			else {
+				fc.style.backgroundImage	=	'url(portrait/'	+	tmp[1]	+	tmp[2]	+	".png)";
+			}
 		}
 	}
 
@@ -129,21 +174,30 @@ function prsLn(argument) {
 
 function execute(argument) {
 	console.log(argument.toString());
+	for (var i = 0; (i < 3 && argument[i] != undefined); i++) {
+		argument[i]	=	argument[i].toUpperCase();
+	}
 	switch(argument[0]) {
 	case "BACKGROUNDGROUP":
 		break;
 
 	case "BACKGROUND":
 		if (delayT == 0) {
+			var	fadeDur	=	(argument[2] != undefined)
+							?
+							argument[2]
+							:
+							500
+							;
 			setTimeout( function() {
 				document.getElementById('sect_story').style.backgroundImage	=
 						'url(bg/'	+	argument[1].toLowerCase()	+	'.jpg)';
-				$('#story_BG').fadeOut(500);
+				$('#story_BG').fadeOut(fadeDur);
 				setTimeout( function() {
 					var	tmp				=	document.getElementById('story_BG');
 					tmp.src				=	'bg/'	+	argument[1].toLowerCase()	+	'.jpg';
 					tmp.style.display	=	'initial';
-				}, 510);
+				}, fadeDur + 10);
 				delayT	=	0;
 			}, delayT);
 		}
@@ -163,7 +217,10 @@ function execute(argument) {
 			bgm.src	=	'';
 		}
 		else if ('bgm/' + argument[1] + '.mp3' == bgm.getAttribute('src')) {
-			;
+			if (argument[3] == 'RESETPLAYBACK') {
+				bgm.load();
+				bgm.play();
+			}
 		}
 		else {
 			bgm.src	=	'bgm/'	+	argument[1]	+	'.mp3';
@@ -171,7 +228,7 @@ function execute(argument) {
 		}
 	}	break;
 
-	case 'senario': case 'SENARIO':
+	case 'SENARIO':
 		document.getElementById('story_senario').src	=	(argument[1])
 															?
 															'popup/'	+	argument[1]	+	'.png'
@@ -183,14 +240,16 @@ function execute(argument) {
 	case "WAIT":
 		break;
 
-	case "na": case "NA": case "Na":
+	case "NEXT":
+		break;
+
+	case "NA":
 		document.getElementById('dialog_name').innerHTML	=	argument[1]	+	'　';
 		printContext(2, argument);
 		break;
 
 	case "LL": case "LM": case "LR":
-	case "MM": case "MR":
-	case "RR":
+		break;
 
 	case "L":
 	case "M":
@@ -216,6 +275,13 @@ function execute(argument) {
 				,	'portrait/9004g.png'
 			);
 			break;
+		case '9006':
+			face.attr(
+					'src'
+				,	'portrait/9006.png'
+			);
+			argument[1]	=	'9005'
+			break;
 		case '0':
 			document.getElementById('story_'	+	argument[0]	+	'_img').src	=	'portrait/none.png';
 			printContext(3, argument);
@@ -229,18 +295,20 @@ function execute(argument) {
 		document.getElementById('story_'	+	argument[0]	+	'_img').src	=	'portrait/'	+	argument[1]	+	'.png';
 		var tmp	=	document.getElementById('story_'	+	argument[0]	+	'_face');
 		argument[1]	=	argument[1].replace(/[ABC]/g, '');
-		document.getElementById('dialog_name').innerHTML	=	'　';
-		for(var	kodex in cardInfo) {
-			if (cardInfo[kodex].Number == argument[1]) {
-				document.getElementById('dialog_name').innerHTML	=	cardInfo[kodex].GivenName;
+		if (argument[3] != '') {
+			document.getElementById('dialog_name').innerHTML	=	'　';
+			for(var	kodex in cardInfo) {
+				if (cardInfo[kodex].Number == argument[1]) {
+					document.getElementById('dialog_name').innerHTML	=	cardInfo[kodex].GivenName;
+				}
 			}
 		}
-		if (argument[2] == 'EyeDown') {
+		if (argument[2] == 'EYEDOWN') {
 			if (tmp.style.backgroundImage.substr(this.length - 4, 4) != '.gif') {
 				tmp.style.backgroundImage	=	'url(portrait/'	+	argument[1]	+	".gif)";
 			}
 		}
-		else if (argument[2] == 'none') {
+		else if (argument[2] == 'NONE') {
 			tmp.style.backgroundImage	=	'none';
 		}
 		else {
@@ -251,17 +319,20 @@ function execute(argument) {
 		printContext(3, argument);
 	}	break;
 
-	case "FLIP":
+	case "FLIP": {
 		var	elem	=	document.getElementById('story_'	+	argument[1]	+	'_img');
+		var	face	=	document.getElementById('story_'	+	argument[1]	+	'_face');
 		if (!elem.flip) {
 			elem.style.transform	=	"scale(-1, 1)";
+			face.style.transform	=	"scale(-1, 1)";
 			elem.flip	=	true;
 		}
 		else {
 			elem.style.transform	=	"scale(1, 1)";
+			face.style.transform	=	"scale(1, 1)";
 			elem.flip	=	false;
 		}
-		break;
+	}	break;
 
 	case "HIDE":
 		setTimeout(function() {
@@ -281,11 +352,11 @@ function execute(argument) {
 		}, delayT);
 		break;
 
-	case "FADEIN": case "fadein":
+	case "FADEIN":
 		$('#sect_story').fadeTo(parseInt(argument[1]), 1);
 		break;
 
-	case "FADEOUT": case "fadeout":
+	case "FADEOUT":
 		$('#sect_story').fadeTo(parseInt(argument[1]), 0.001);
 		delayT	=	parseInt(argument[1]);
 		break;
@@ -295,9 +366,20 @@ function execute(argument) {
 		break;
 
 	case 'SHAKE':
-		$('#story_'	+	argument[1]	+	'_img').effect('shake', {times: parseInt(argument[2]) / 4}, parseInt(argument[2]) / 30 * 500);
-		$('#story_'	+	argument[1]	+	'_face').effect('shake', {times: parseInt(argument[2]) / 4}, parseInt(argument[2]) / 30 * 500);
+		if (argument[1] == 'ALL') {
+			$('#story_L_img').effect('shake', {times: parseInt(argument[2]) / 4}, parseInt(argument[2]) / 30 * 500);
+			$('#story_L_face').effect('shake', {times: parseInt(argument[2]) / 4}, parseInt(argument[2]) / 30 * 500);
+			$('#story_M_img').effect('shake', {times: parseInt(argument[2]) / 4}, parseInt(argument[2]) / 30 * 500);
+			$('#story_M_face').effect('shake', {times: parseInt(argument[2]) / 4}, parseInt(argument[2]) / 30 * 500);
+			$('#story_R_img').effect('shake', {times: parseInt(argument[2]) / 4}, parseInt(argument[2]) / 30 * 500);
+			$('#story_R_face').effect('shake', {times: parseInt(argument[2]) / 4}, parseInt(argument[2]) / 30 * 500);
+		}
+		else {
+			$('#story_'	+	argument[1]	+	'_img').effect('shake', {times: parseInt(argument[2]) / 4}, parseInt(argument[2]) / 30 * 500);
+			$('#story_'	+	argument[1]	+	'_face').effect('shake', {times: parseInt(argument[2]) / 4}, parseInt(argument[2]) / 30 * 500);
+		}
 		break;
+
 	case 'SHAKEBG':
 		$('#story_BG').effect('shake', {times: parseInt(argument[1]) / 5}, parseInt(argument[1]) / 30 * 500);
 		break;
@@ -322,7 +404,7 @@ function printContext(ind, context) {
 			context[i]	=	context[i].replace(colors[color], "");
 			context[i]	=	context[i].replace(/\[-\]/g, "");
 //*/
-			context[i]	=	context[i].replace("{nickname}", nick);
+			context[i]	=	context[i].replace("{NICKNAME}", nick);
 		}
 	}
 	var cntxt	=	context[ind];
@@ -331,6 +413,7 @@ function printContext(ind, context) {
 	}
 
 	//*
+	var skpFlg = false;
 	function typing() {
 		var mainC;
 		try	{

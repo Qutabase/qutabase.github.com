@@ -79,3 +79,9 @@
 	background-size: 100%;
 	background-position: center;
 }
+
+.story_buffer {
+	z-index: -10;
+	width: 1px;
+	height: 1px;
+}

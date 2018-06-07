@@ -24,9 +24,19 @@
 	left: 20%;
 }
 
+#menu_main:hover {
+	bottom: 20.5%;
+	left: 19.5%;
+}
+
 #menu_event {
 	bottom: 20%;
 	right: 20%;
+}
+
+#menu_event:hover {
+	bottom: 20.5%;
+	right: 20.5%;
 }
 
 .menu_storySel {
