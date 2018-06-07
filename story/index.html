@@ -3,12 +3,13 @@
 <head>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112275806-1"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="jquery-ui.min.js"></script>
 	<script src="https://qutabase.github.io/gAn.js"></script>
 	<meta charset="utf-8">
 	<meta name="keywords" content="qurare, qutabase, kodex">
 	<meta property="og:image" content="../logo.png">
 
-	<title>QUTABASE - Print</title>
+	<title>QUTABASE - Cinema</title>
 	<link rel="stylesheet" type="text/css" href="../side.css">
 	<link rel="stylesheet" type="text/css" href="../nanum.css">
 	<link rel="stylesheet" type="text/css" href="../univ.css">
@@ -55,16 +56,15 @@ div {
 		</ul>
 	</header>
 	<article>
-		<section id="sect_story" onclick="prsLn(dialogs)" style="display: none;">
-			<div id="story_L">
-				<img id="story_L_img" src="" width="125%">
-			</div>
-			<div id="story_M">
-				<img id="story_M_img" src="" width="125%">
-			</div>
-			<div id="story_R">
-				<img id="story_R_img" src="" width="125%">
-			</div>
+		<section id="sect_story" onclick="prsLn(dialogs)" ontouchend="prsLn(dialogs)" style="display: none;">
+			<img id="story_BG" src="bg/none.jpg">
+			<span id="story_index"></span>
+			<img class="story_L" id="story_L_img" src="">
+			<img class="story_L story_img" id="story_L_face" src="portrait/none.png">
+			<img class="story_M" id="story_M_img" src="">
+			<img class="story_M story_img" id="story_M_face" src="portrait/none.png">
+			<img class="story_R" id="story_R_img" src="">
+			<img class="story_R story_img" id="story_R_face" src="portrait/none.png">
 			<div id="story_dialog">
 				<div id="dialog_name">QUTABASE Story Cinema</div>
 				<div id="dialog_context">You can watch the QURARE Main/Event Story on QUTABASE.<br>Comming Soon . . .</div>

@@ -4,29 +4,48 @@
 	background-size: cover;
 }
 
-#story_L {
+#sect_story img {
+	width: 50%;
+}
+
+#story_BG {
+	width: 100% !important;
+	height: 100%;
+}
+#story_index {
+	display: inline-block;
+	padding: 2px;
+	background: rgba(0, 0, 0, 0.5);
+	color: white;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.story_L {
 	position: absolute;
 	left: -60px;
 	bottom: -12px;
 }
 
-#story_M {
+.story_M {
 	position: absolute;
 	left: 25%;
 	bottom: -12px;
 }
 
-#story_R {
+.story_R {
 	position: absolute;
 	left: calc(50% + 40px);
 	bottom: -12px;
 }
 
 #story_senario {
+	width: initial !important;
 	left: 50%;
 	position: absolute;
 	transform: translate(-50%, -50%);
-	top: 50%;
+	top: 57%;
 }
 
 #story_dialog {
@@ -52,5 +71,11 @@
 	padding: 8px;
 	padding-left: 10%;
 	padding-top: 0;
-	padding-right: 13%;
+	padding-right: 12%;
+	white-space: pre-line;
+}
+
+.story_img {
+	background-size: 100%;
+	background-position: center;
 }
