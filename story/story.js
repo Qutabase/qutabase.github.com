@@ -10,6 +10,7 @@ function dialogPrs(argument) {
 			'Ch. '		+	chap	+	' / '
 		+	'Index. '	+	index
 	);
+	$('#sect_story').fadeTo(0, 1);
 }
 
 var line;
@@ -18,6 +19,7 @@ var type;
 var chap;
 var	index;
 var count;
+var	shkBgFlg;
 var	delayT		=	0;
 var printFlag	=	false;
 var	endOfDlg	=	false;
@@ -33,13 +35,14 @@ var skipClick	=	{
 ,	'SENARIO':''
 ,	'FONTSIZE':''
 ,	'SHAKEBG':''
+,	'SHAKEBGLOOP':''
 ,	'SHADE':''
-,	'shade':''
-,	'voice':''
+,	'VOICE':''
 ,	'SE':''
 ,	'LL':''
 ,	'LM':''
 ,	'LR':''
+,	'FLASH':''
 };
 
 function chapPlay(argument) {
@@ -54,6 +57,11 @@ function chapPlay(argument) {
 }
 
 function menu_select(argument) {
+	//*
+	nick	=	prompt("스토리에 표시될 이름을 입력해주세요.");
+	/*/
+	nick	=	"Kinos";
+	//*/
 	count	=	0;
 	var	start;
 	chap	=	prompt("챕터 번호를 입력해주세요. (i숫자로 입력 시 인덱스 번호)");
@@ -76,20 +84,29 @@ function menu_select(argument) {
 	}
 	else {
 		dialogPrs(eventStory);
-		//*
-		nick	=	prompt("스토리에 표시될 이름을 입력해주세요.");
-		/*/
-		nick	=	"Kinos";
-		//*/
 	}
 	document.getElementById('sect_story').style.display	=	'block';
 	document.getElementById('sect_menu').style.display	=	'none';
 }
 
+function flipReset() {
+	for ( var x in {"L":'', "M":"", "R":""}) {
+		var	elem	=	document.getElementById('story_'	+	x	+	'_img');
+		if (elem.flip) {
+			elem.style.transform	=	"scale(1, 1)";
+			document.getElementById('story_' + x + '_face').style.transform	=	"scale(1, 1)";
+			elem.flip	=	false;
+		}
+	}
+}
+
 function prsLn(argument) {
 	if (endOfDlg) {
 		execute(['HIDE','all']);
-		endOfDlg = false;
+		endOfDlg	=	false;
+		flipReset();
+		document.getElementById('dialog_name').innerHTML	=	'';
+		document.getElementById('dialog_context').innerHTML	=	'';
 	}
 
 	try {
@@ -113,10 +130,10 @@ function prsLn(argument) {
 
 	try {
 		var	tmp	=	argument[count].split(',');
-		if (tmp[0] in skipClick) {
+		if (tmp[0].toUpperCase() in skipClick) {
 			setTimeout( function() {
 				prsLn(argument);
-			}, 1);
+			}, (tmp[0] == 'BACKGROUND') ? 1 : delayT	+	1);
 		}
 		else if ((tmp[0] == 'L' || tmp[0] == 'M' || tmp[0] == 'R') && (tmp[3] == undefined || tmp[3] == '' || tmp[3] == ' ')) {
 			setTimeout( function() {
@@ -174,8 +191,11 @@ function prsLn(argument) {
 
 function execute(argument) {
 	console.log(argument.toString());
-	for (var i = 0; (i < 3 && argument[i] != undefined); i++) {
+	for (var i = 0; (i < 2 && argument[i] != undefined); i++) {
 		argument[i]	=	argument[i].toUpperCase();
+	}
+	if (argument[0] in {'L':'', 'M':'', 'R':''} && argument[2]) {
+		argument[2]	=	argument[2].toUpperCase();
 	}
 	switch(argument[0]) {
 	case "BACKGROUNDGROUP":
@@ -197,7 +217,7 @@ function execute(argument) {
 					var	tmp				=	document.getElementById('story_BG');
 					tmp.src				=	'bg/'	+	argument[1].toLowerCase()	+	'.jpg';
 					tmp.style.display	=	'initial';
-				}, fadeDur + 10);
+				}, fadeDur + 100);
 				delayT	=	0;
 			}, delayT);
 		}
@@ -208,6 +228,7 @@ function execute(argument) {
 				delayT	=	0;
 			}, delayT);
 		}
+		document.getElementById('story_BG').style.display	=	'initial';
 		break;
 
 	case "BGM": {
@@ -217,7 +238,7 @@ function execute(argument) {
 			bgm.src	=	'';
 		}
 		else if ('bgm/' + argument[1] + '.mp3' == bgm.getAttribute('src')) {
-			if (argument[3] == 'RESETPLAYBACK') {
+			if (argument[3] == 'RESETPLAYBACK' || argument[3] == 'ResetPlayback') {
 				bgm.load();
 				bgm.play();
 			}
@@ -227,6 +248,12 @@ function execute(argument) {
 			bgm.play();
 		}
 	}	break;
+
+	case 'SE':
+		// var se	=	document.getElementById('story_SE');
+		// se.src	=	'SE/'	+	argument[1].toLowerCase()	+	'.wav';
+		// se.play();
+		break;
 
 	case 'SENARIO':
 		document.getElementById('story_senario').src	=	(argument[1])
@@ -241,6 +268,10 @@ function execute(argument) {
 		break;
 
 	case "NEXT":
+		setTimeout(function() {
+			flipReset();
+		}, 10)
+		flipReset();
 		break;
 
 	case "NA":
@@ -253,7 +284,7 @@ function execute(argument) {
 
 	case "L":
 	case "M":
-	case "R": {
+	case "R": setTimeout(function(){
 		var	elem	=	$('#story_'	+	argument[0]	+	'_img');
 		var	face	=	$('#story_'	+	argument[0]	+	'_face');
 		if (argument[1] == 'on' || argument[1] == 'ON') {
@@ -292,6 +323,8 @@ function execute(argument) {
 			}
 		}
 
+		elem.css('display',	'initial');
+		face.css('display',	'initial');
 		document.getElementById('story_'	+	argument[0]	+	'_img').src	=	'portrait/'	+	argument[1]	+	'.png';
 		var tmp	=	document.getElementById('story_'	+	argument[0]	+	'_face');
 		argument[1]	=	argument[1].replace(/[ABC]/g, '');
@@ -314,10 +347,8 @@ function execute(argument) {
 		else {
 			tmp.style.backgroundImage	=	'url(portrait/'	+	argument[1]	+	argument[2]	+	".png)";
 		}
-		elem.css('display',	'initial');
-		face.css('display',	'initial');
 		printContext(3, argument);
-	}	break;
+	}, delayT);	break;
 
 	case "FLIP": {
 		var	elem	=	document.getElementById('story_'	+	argument[1]	+	'_img');
@@ -354,6 +385,10 @@ function execute(argument) {
 
 	case "FADEIN":
 		$('#sect_story').fadeTo(parseInt(argument[1]), 1);
+		delayT	=	parseInt(argument[1]);
+		setTimeout( function() {
+			delayT	=	0;
+		}, delayT);
 		break;
 
 	case "FADEOUT":
@@ -362,7 +397,7 @@ function execute(argument) {
 		break;
 
 	case "FONTSIZE":
-		$('#dialog_context').css('font-size', (parseInt(argument[1]) - 4)	+	"px");
+		$('#dialog_context').css('font-size', (parseInt(argument[1]) - 5)	+	"px");
 		break;
 
 	case 'SHAKE':
@@ -383,6 +418,32 @@ function execute(argument) {
 	case 'SHAKEBG':
 		$('#story_BG').effect('shake', {times: parseInt(argument[1]) / 5}, parseInt(argument[1]) / 30 * 500);
 		break;
+
+	case 'SHAKEBGLOOP':
+		if (argument[1] == 'ON') {
+			function shkLOOP() {
+				$('#story_BG').effect('shake', {times: parseInt(argument[2]) / 5}, parseInt(argument[2]) / 30 * 500);
+			}
+			shkBgFlg	=	setInterval(shkLOOP, parseInt(argument[2]) / 30 * 500);
+		}
+		else {
+			clearInterval(shkBgFlg);
+		}
+		break;
+
+	case 'FLASH': {
+		delayT	=	parseInt(argument[1]);
+		setTimeout( function () {
+			var	fx			=	document.getElementById('story_FX');
+			fx.src			=	'bg/none_2.jpg';
+			fx.style.width	=	'1280px';
+			fx.style.height	=	'720px';
+			$('#story_FX').fadeIn(parseInt(argument[1]) / 2);
+			$('#story_FX').fadeOut(parseInt(argument[1]) / 2);
+			delayT	=	0;
+		}, delayT);
+	}	break;
+
 	}
 
 }
@@ -403,8 +464,10 @@ function printContext(ind, context) {
 /*/
 			context[i]	=	context[i].replace(colors[color], "");
 			context[i]	=	context[i].replace(/\[-\]/g, "");
+			context[i]	=	context[i].replace(/\[-\]/g, "");
 //*/
 			context[i]	=	context[i].replace("{NICKNAME}", nick);
+			context[i]	=	context[i].replace("<username/>", nick);
 		}
 	}
 	var cntxt	=	context[ind];

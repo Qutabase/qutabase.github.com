@@ -85,3 +85,9 @@
 	width: 1px;
 	height: 1px;
 }
+
+#story_FX {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
