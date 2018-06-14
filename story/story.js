@@ -345,7 +345,7 @@ function execute(argument) {
 			tmp.style.backgroundImage	=	'none';
 		}
 		else {
-			tmp.style.backgroundImage	=	'url(portrait/'	+	argument[1]	+	argument[2]	+	".png)";
+			tmp.style.backgroundImage	=	'url(portrait/'	+	argument[1]	+	argument[2].toLowerCase()	+	".png)";
 		}
 		printContext(3, argument);
 	}, delayT);	break;
