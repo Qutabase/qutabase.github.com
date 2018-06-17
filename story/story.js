@@ -173,7 +173,7 @@ function prsLn(argument) {
 				fc.style.backgroundImage	=	'none';
 			}
 			else {
-				fc.style.backgroundImage	=	'url(portrait/'	+	tmp[1]	+	tmp[2]	+	".png)";
+				fc.style.backgroundImage	=	'url(portrait/'	+	tmp[1]	+	tmp[2].toLowerCase()	+	".png)";
 			}
 		}
 	}
