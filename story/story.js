@@ -237,7 +237,7 @@ function execute(argument) {
 			bgm.pause();
 			bgm.src	=	'';
 		}
-		else if ('bgm/' + argument[1] + '.mp3' == bgm.getAttribute('src')) {
+		else if ('bgm/' + argument[1].toLowerCase() + '.mp3' == bgm.getAttribute('src')) {
 			if (argument[3] == 'RESETPLAYBACK' || argument[3] == 'ResetPlayback') {
 				bgm.load();
 				bgm.play();
