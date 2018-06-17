@@ -244,7 +244,7 @@ function execute(argument) {
 			}
 		}
 		else {
-			bgm.src	=	'bgm/'	+	argument[1]	+	'.mp3';
+			bgm.src	=	'bgm/'	+	argument[1].toLowerCase()	+	'.mp3';
 			bgm.play();
 		}
 	}	break;
