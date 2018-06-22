@@ -5,6 +5,7 @@
 	background-image: url(bg.png);
 	color: #273869;
 	min-width: 372px;
+	user-select: none;
 }
 div {
 	display: inline-block;
