@@ -13,7 +13,7 @@ var	res		=	document.getElementById('print_result');
 
 //eng.season.SR[1]	-=	3;	//	EXCEPTING MONSTER KODEX
 
-//*	//	ADD / ON HEAD OF THIS LINE
+/*	//	ADD / ON HEAD OF THIS LINE
 eng.season.SSR[1]		-=	1;	//	EPISODE 1	//	18-04-26 UPDATE
 eng.season['SR+'][1]	-= 2;
 /*/
