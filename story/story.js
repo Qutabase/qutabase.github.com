@@ -1,4 +1,5 @@
-eventStory	=	JSON.parse(getJson("https://raw.githubusercontent.com/Qutabase/qutabase.github.com/master/story/test.json"));
+lastStory	=	JSON.parse(getJson("https://raw.githubusercontent.com/Qutabase/qutabase.github.com/master/story/test.json"));
+eventStory	=	JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/eventStoryJ.qt"));
 cardInfo	=	JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/CardInfoScript-dec.qt"));
 mainStory	=	JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/mainStoryJB.qt"));
 
@@ -20,6 +21,7 @@ var chap;
 var	index;
 var count;
 var	shkBgFlg;
+var story;
 var	delayT		=	0;
 var printFlag	=	false;
 var	endOfDlg	=	false;
@@ -46,14 +48,15 @@ var skipClick	=	{
 };
 
 function chapPlay(argument) {
-	chap	=	argument;
-	for (var kodex in mainStory) {
-		if (mainStory[kodex]['Zone'] == eng['zone'][chap][0]) {
-			index	=	parseInt(mainStory[kodex]['Index']);
+	chap		=	argument;
+	var stories	=	eval(story + 'Story');
+	for (var kodex in stories) {
+		if (stories[kodex]['Zone'] == eng[story	+	'Zone'][chap][0]) {
+			index	=	parseInt(stories[kodex]['Index']);
 			break;
 		}
 	}
-	dialogPrs(mainStory[index]);
+	dialogPrs(stories[index]);
 }
 
 function menu_select(argument) {
@@ -65,13 +68,13 @@ function menu_select(argument) {
 	count	=	0;
 	var	start;
 	chap	=	prompt("챕터 번호를 입력해주세요. (i숫자로 입력 시 인덱스 번호)");
-
+	story	=	argument;
 	if (argument == 'main') {
 		if (chap[0] == 'i') {
 			index	=	parseInt(chap.substr(1));
 			var	tmp	=	parseInt(mainStory[index]['Zone'])
-			for (var i = 0; i < eng['zone'].length; i++) {
-				if (parseInt(eng['zone'][i][0]) <= tmp && tmp <= parseInt(eng['zone'][i][0]) + parseInt(eng['zone'][i][1]) - 1) {
+			for (var i = 0; i < eng[argument	+	'Zone'].length; i++) {
+				if (parseInt(eng[argument	+	'Zone'][i][0]) <= tmp && tmp <= parseInt(eng[argument	+	'Zone'][i][0]) + parseInt(eng[argument	+	'Zone'][i][1]) - 1) {
 					chap	=	i;
 					dialogPrs(mainStory[index]);
 					break;
@@ -83,7 +86,21 @@ function menu_select(argument) {
 		}
 	}
 	else {
-		dialogPrs(eventStory);
+		if (chap[0] == 'i') {
+			index	=	parseInt(chap.substr(1));
+			var	tmp	=	parseInt(eventStory[index]['Zone'])
+			for (var i = 0; i < eng[argument	+	'Zone'].length; i++) {
+				if (parseInt(eng[argument	+	'Zone'][i][0]) <= tmp && tmp <= parseInt(eng[argument	+	'Zone'][i][0]) + parseInt(eng[argument	+	'Zone'][i][1]) - 1) {
+					chap	=	i;
+					dialogPrs(mainStory[index]);
+					break;
+				}
+			}
+		}
+		else {
+			chapPlay(parseInt(chap));
+		}
+		//dialogPrs(lastStory);
 	}
 	document.getElementById('sect_story').style.display	=	'block';
 	document.getElementById('sect_menu').style.display	=	'none';
@@ -180,7 +197,7 @@ function prsLn(argument) {
 
 	catch (exception) {
 		endOfDlg	=	true;
-		if (mainStory[index+1]['Zone'] <= eng['zone'][chap][0] + eng['zone'][chap][1] - 1) {
+		if (mainStory[index+1]['Zone'] <= eng[story	+	'Zone'][chap][0] + eng[story	+	'Zone'][chap][1] - 1) {
 			dialogPrs(mainStory[++index]);
 			console.log(index);
 			document.getElementById('story_senario').src	=	'';
