@@ -189,7 +189,8 @@ function search(srch) {
 		kinput('hp0');
 		kinput('atk0');
 		kinput('spr0');
-		document.getElementById('kodex_dialog').innerHTML = dex.dialog.replace(/\n/g, "<br>");
+		//2018-07-01 COPYRIGHT ISSUE
+		//document.getElementById('kodex_dialog').innerHTML = dex.dialog.replace(/\n/g, "<br>");
 		for (var i = 0; i < 7; i++) {
 			document.getElementById('kodex_HP_'+i).innerHTML	=	dex.HP[i];
 			document.getElementById('kodex_ATK_'+i).innerHTML	=	dex.ATK[i];
@@ -206,7 +207,7 @@ function search(srch) {
 	catch (exception){
 		;
 	}
-	document.getElementsByTagName('article')[0].setAttribute("style", "display: inline-block;")
+	document.getElementsByTagName('article')[0].setAttribute("style", "display: inline-block;");
 
 }
 
