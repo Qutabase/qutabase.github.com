@@ -109,7 +109,7 @@ function result(range) {
 					+	'";'
 		);
 		elem.innerHTML		=	'<div><img class="res_img" src="'
-								+	imgLink		+	'"></div><br>x'
+								+	imgLink		+	'" onerror="this.src=\'../raw.png\'"></div><br>x'
 								+	printCheck[pri_id]
 								;
 		list.appendChild(elem)

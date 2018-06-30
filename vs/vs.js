@@ -247,7 +247,7 @@ function vsSearch(srch) {
 					ul.innerHTML	=	ul.innerHTML
 										+	'<div class="list_kodex" onclick="zoneid = \'vsB_\'; listClick(\''
 										+	dex.name		+	'\');"><div><img src="'
-										+	imgLink			+'" class="list_img"></div><div class="list_rarity">'
+										+	imgLink			+'" class="list_img" onerror="this.src=\'../small.png\'"></div><div class="list_rarity">'
 										+	dex.rarity		+	'</div><div class="list_name">'
 										+	dex.name		+	'</div><div class="list_value" style="color: '
 										+	winLose.color	+	';">'
