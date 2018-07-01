@@ -50,17 +50,27 @@ var skipClick	=	{
 function chapPlay(argument) {
 	chap		=	argument;
 	var stories	=	eval(story + 'Story');
-	for (var kodex in stories) {
-		if (stories[kodex]['Zone'] == eng[story	+	'Zone'][chap][0]) {
-			index	=	parseInt(stories[kodex]['Index']);
-			break;
+	if (story == 'main') {
+		for (var kodex in stories) {
+			if (stories[kodex]['Zone'] == eng[story	+	'Zone'][chap][0]) {
+				index	=	parseInt(stories[kodex]['Index']);
+				break;
+			}
+		}
+	}
+	else if (story == 'event') {
+		for (var kodex in stories) {
+			if (parseInt(stories[kodex]['Zone'].toString().substr(2,2)) == argument) {
+				index	=	parseInt(stories[kodex]['Index']);
+				break;
+			}
 		}
 	}
 	dialogPrs(stories[index]);
 }
 
 function menu_select(argument) {
-	//*
+	/*
 	nick	=	prompt("스토리에 표시될 이름을 입력해주세요.");
 	/*/
 	nick	=	"Kinos";
@@ -88,14 +98,8 @@ function menu_select(argument) {
 	else {
 		if (chap[0] == 'i') {
 			index	=	parseInt(chap.substr(1));
-			var	tmp	=	parseInt(eventStory[index]['Zone'])
-			for (var i = 0; i < eng[argument	+	'Zone'].length; i++) {
-				if (parseInt(eng[argument	+	'Zone'][i][0]) <= tmp && tmp <= parseInt(eng[argument	+	'Zone'][i][0]) + parseInt(eng[argument	+	'Zone'][i][1]) - 1) {
-					chap	=	i;
-					dialogPrs(mainStory[index]);
-					break;
-				}
-			}
+			chap	=	parseInt(eventStory[index]['Zone'].toString().substr(2,2));
+			dialogPrs(eventStory[index]);
 		}
 		else {
 			chapPlay(parseInt(chap));
@@ -160,9 +164,13 @@ function prsLn(argument) {
 		if (tmp[0] == 'L' || tmp[0] == 'M' || tmp[0] == 'R') {
 			var	fc	=	document.getElementById('story_buffer_face');
 			switch(tmp[1]) {
+			case '9001': case '9002': case '9003':
+			 	tmp[1]	=	'1001'	+	tmp[1][3];
+				// fc.src	=	'portrait/'	+	tmp[1]	+	'.png';
+				break;
 			case '10001': case '10002': case '10003':
+				tmp[1]	=	'1001'	+	tmp[1][4];
 				fc.src	=	'portrait/'	+	tmp[1]	+	'.png';
-				tmp[1]	=	'1001'	+	tmp[1][4]
 				break;
 			case '9004':
 				fc.src	=	'portrait/9004g.png';
@@ -197,17 +205,27 @@ function prsLn(argument) {
 
 	catch (exception) {
 		endOfDlg	=	true;
-		if (mainStory[index+1]['Zone'] <= eng[story	+	'Zone'][chap][0] + eng[story	+	'Zone'][chap][1] - 1) {
-			dialogPrs(mainStory[++index]);
-			console.log(index);
-			document.getElementById('story_senario').src	=	'';
-			count	=	0;
+		if (story == 'main') {
+			if (mainStory[index+1]['Zone'] <= eng[story	+	'Zone'][chap][0] + eng[story	+	'Zone'][chap][1] - 1) {
+				dialogPrs(mainStory[++index]);
+				// console.log(index);
+				document.getElementById('story_senario').src	=	'';
+				count	=	0;
+			}
+		}
+		else {
+			if (eventStory[index]['Zone'] == eventStory[index+1]['Zone']) {
+				dialogPrs(eventStory[++index]);
+				// console.log(index);
+				document.getElementById('story_senario').src	=	'';
+				count	=	0;
+			}
 		}
 	}
 }
 
 function execute(argument) {
-	console.log(argument.toString());
+	// console.log(argument.toString());
 	for (var i = 0; (i < 2 && argument[i] != undefined); i++) {
 		argument[i]	=	argument[i].toUpperCase();
 	}
@@ -310,12 +328,15 @@ function execute(argument) {
 			return;
 		}
 		switch(argument[1]) {
+		case '9001': case '9002': case '9003':
+			argument[1]	=	'1001'	+	argument[1][3];
+			break;
 		case '10001': case '10002': case '10003':
+			argument[1]	=	'1001'	+	argument[1][4];
 			face.attr(
 					'src'
 				,	'portrait/'	+	argument[1]	+	'.png'
 			);
-			argument[1]	=	'1001'	+	argument[1][4]
 			break;
 		case '9004':
 			face.attr(
