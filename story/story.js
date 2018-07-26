@@ -25,6 +25,7 @@ var story;
 var	delayT		=	0;
 var printFlag	=	false;
 var	endOfDlg	=	false;
+var fullScrFlg	=	false;
 var skipClick	=	{
 	'BACKGROUND':''
 ,	'BGM':''
@@ -46,6 +47,52 @@ var skipClick	=	{
 ,	'LR':''
 ,	'FLASH':''
 };
+
+document.addEventListener('keydown', function() {
+	console.log('asdasd')
+	if (window.event.keyCode == 122) {
+		window.event.returnValue = false;
+		var elem = document.documentElement;
+		if (fullScrFlg) {
+			if (document.exitFullscreen) {
+				document.exitFullscreen();
+			} else if (document.mozCancelFullScreen) {
+				document.mozCancelFullScreen();
+			} else if (document.webkitExitFullscreen) {
+				document.webkitExitFullscreen();
+			} else if (document.msExitFullscreen) {
+				document.msExitFullscreen();
+			}
+		}
+		else {
+			if (elem.requestFullscreen) {
+				elem.requestFullscreen();
+			} else if (elem.mozRequestFullScreen) { /* Firefox */
+				elem.mozRequestFullScreen();
+			} else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+				elem.webkitRequestFullscreen();
+			} else if (elem.msRequestFullscreen) { /* IE/Edge */
+				elem.msRequestFullscreen();
+			}
+		}
+	}
+}, false);
+
+document.addEventListener('webkitfullscreenchange', function() {
+	console.log('asdasddd')
+		if (fullScrFlg) {
+			document.getElementsByTagName('article')[0].classList.remove('story_fullScr');
+			document.getElementById('dialog_name').style.fontSize 		=	'26px';
+			document.getElementById('dialog_context').style.fontSize	=	'24px';
+			fullScrFlg = false;
+		}
+		else {
+			document.getElementsByTagName('article')[0].classList.add('story_fullScr');
+			document.getElementById('dialog_name').style.fontSize 		=	'2vw';
+			document.getElementById('dialog_context').style.fontSize	=	'1.85vw';
+			fullScrFlg = true;
+		}
+});
 
 function chapPlay(argument) {
 	chap		=	argument;
@@ -135,7 +182,8 @@ function prsLn(argument) {
 		if (line == ['']) throw "EndOfChapter";
 	}
 	catch (exception) {
-		if (confirm('Ch. ' + (chap + 1) + '로 넘어가시겠습니까?')) {
+		// if (confirm('Ch. ' + (chap + 1) + '로 넘어가시겠습니까?')) {
+			if(true) {
 			chapPlay(++chap);
 		}
 		else {
@@ -164,10 +212,6 @@ function prsLn(argument) {
 		if (tmp[0] == 'L' || tmp[0] == 'M' || tmp[0] == 'R') {
 			var	fc	=	document.getElementById('story_buffer_face');
 			switch(tmp[1]) {
-			case '9001': case '9002': case '9003':
-			 	tmp[1]	=	'1001'	+	tmp[1][3];
-				// fc.src	=	'portrait/'	+	tmp[1]	+	'.png';
-				break;
 			case '10001': case '10002': case '10003':
 				tmp[1]	=	'1001'	+	tmp[1][4];
 				fc.src	=	'portrait/'	+	tmp[1]	+	'.png';
@@ -202,7 +246,6 @@ function prsLn(argument) {
 			}
 		}
 	}
-
 	catch (exception) {
 		endOfDlg	=	true;
 		if (story == 'main') {
@@ -214,9 +257,8 @@ function prsLn(argument) {
 			}
 		}
 		else {
-			if (eventStory[index]['Zone'] == eventStory[index+1]['Zone']) {
+			if (eventStory[index]['Zone'].toString().substr(2, 2) == eventStory[index+1]['Zone'].toString().substr(2, 2)) {
 				dialogPrs(eventStory[++index]);
-				// console.log(index);
 				document.getElementById('story_senario').src	=	'';
 				count	=	0;
 			}
@@ -225,7 +267,7 @@ function prsLn(argument) {
 }
 
 function execute(argument) {
-	// console.log(argument.toString());
+	console.log(argument.toString());
 	for (var i = 0; (i < 2 && argument[i] != undefined); i++) {
 		argument[i]	=	argument[i].toUpperCase();
 	}
@@ -332,11 +374,11 @@ function execute(argument) {
 			argument[1]	=	'1001'	+	argument[1][3];
 			break;
 		case '10001': case '10002': case '10003':
-			argument[1]	=	'1001'	+	argument[1][4];
 			face.attr(
 					'src'
 				,	'portrait/'	+	argument[1]	+	'.png'
 			);
+			argument[1]	=	'1001'	+	argument[1][4];
 			break;
 		case '9004':
 			face.attr(
@@ -435,7 +477,12 @@ function execute(argument) {
 		break;
 
 	case "FONTSIZE":
-		$('#dialog_context').css('font-size', (parseInt(argument[1]) - 5)	+	"px");
+		if (fullScrFlg) {
+			$('#dialog_context').css('font-size', 1.85 + (parseInt(argument[1]) - 5 - 24) * 0.1	+	"vw");
+		}
+		else {
+			$('#dialog_context').css('font-size', (parseInt(argument[1]) - 5)	+	"px");
+		}
 		break;
 
 	case 'SHAKE':
@@ -474,8 +521,8 @@ function execute(argument) {
 		setTimeout( function () {
 			var	fx			=	document.getElementById('story_FX');
 			fx.src			=	'bg/none_2.jpg';
-			fx.style.width	=	'1280px';
-			fx.style.height	=	'720px';
+			fx.style.width	=	'100%';
+			fx.style.height	=	'100%';
 			$('#story_FX').fadeIn(parseInt(argument[1]) / 2);
 			$('#story_FX').fadeOut(parseInt(argument[1]) / 2);
 			delayT	=	0;
@@ -487,8 +534,8 @@ function execute(argument) {
 }
 
 function printContext(ind, context) {
-	if ($('#dialog_context').css('font-size') != "24px") {
-		$('#dialog_context').css('font-size', "24px");
+	if ($('#dialog_context').css('font-size') != (fullScrFlg) ? "1.85vw" : "24px") {
+		$('#dialog_context').css('font-size', (fullScrFlg) ? "1.85vw" : "24px");
 	}
 	delete	type;
 	printFlag	=	true;

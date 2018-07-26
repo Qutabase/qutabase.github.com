@@ -24,11 +24,11 @@ function getJson(url) {
 	return httpReq.responseText;
 }
 
-Jdex = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/qurare.json"))
-eng = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/enskill.json"))
+Jdex = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/qurare.json"));
+eng = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/enskill.json"));
 
-list_skill_flag = 0
-kodex_dialogBox_flag = 0
+list_skill_flag = 0;
+kodex_dialogBox_flag = 0;
 function menu_skill_click(argument) {
 	if (!eval(argument + '_flag')) {
 		document.getElementById(argument).setAttribute('style', 'display: block;');
