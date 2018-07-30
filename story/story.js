@@ -48,8 +48,11 @@ var skipClick	=	{
 ,	'FLASH':''
 };
 
+document.getElementsByTagName('footer')[0].addEventListener('click', function() {
+	document.getElementsByTagName('article')[0].style.display = 'inline-block';
+});
+
 document.addEventListener('keydown', function() {
-	console.log('asdasd')
 	if (window.event.keyCode == 122) {
 		window.event.returnValue = false;
 		var elem = document.documentElement;
@@ -79,19 +82,18 @@ document.addEventListener('keydown', function() {
 }, false);
 
 document.addEventListener('webkitfullscreenchange', function() {
-	console.log('asdasddd')
-		if (fullScrFlg) {
-			document.getElementsByTagName('article')[0].classList.remove('story_fullScr');
-			document.getElementById('dialog_name').style.fontSize 		=	'26px';
-			document.getElementById('dialog_context').style.fontSize	=	'24px';
-			fullScrFlg = false;
-		}
-		else {
-			document.getElementsByTagName('article')[0].classList.add('story_fullScr');
-			document.getElementById('dialog_name').style.fontSize 		=	'2vw';
-			document.getElementById('dialog_context').style.fontSize	=	'1.85vw';
-			fullScrFlg = true;
-		}
+	if (fullScrFlg) {
+		document.getElementsByTagName('article')[0].classList.remove('story_fullScr');
+		document.getElementById('dialog_name').style.fontSize 		=	'26px';
+		document.getElementById('dialog_context').style.fontSize	=	'24px';
+		fullScrFlg = false;
+	}
+	else {
+		document.getElementsByTagName('article')[0].classList.add('story_fullScr');
+		document.getElementById('dialog_name').style.fontSize 		=	'2vw';
+		document.getElementById('dialog_context').style.fontSize	=	'1.85vw';
+		fullScrFlg = true;
+	}
 });
 
 function chapPlay(argument) {
@@ -182,8 +184,7 @@ function prsLn(argument) {
 		if (line == ['']) throw "EndOfChapter";
 	}
 	catch (exception) {
-		// if (confirm('Ch. ' + (chap + 1) + '로 넘어가시겠습니까?')) {
-			if(true) {
+		if (confirm('Ch. ' + (chap + 1) + '로 넘어가시겠습니까?')) {
 			chapPlay(++chap);
 		}
 		else {
@@ -212,6 +213,10 @@ function prsLn(argument) {
 		if (tmp[0] == 'L' || tmp[0] == 'M' || tmp[0] == 'R') {
 			var	fc	=	document.getElementById('story_buffer_face');
 			switch(tmp[1]) {
+			case '9001': case '9002': case '9003':
+				tmp[1]	=	'1001'	+	tmp[1][3];
+				fc.src	=	'portrait/'	+	tmp[1]	+	'.png';
+				break;
 			case '10001': case '10002': case '10003':
 				tmp[1]	=	'1001'	+	tmp[1][4];
 				fc.src	=	'portrait/'	+	tmp[1]	+	'.png';
