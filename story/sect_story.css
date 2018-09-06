@@ -74,6 +74,7 @@
 	padding-left: 10%;
 	padding-right: 12%;
 	white-space: pre-line;
+	word-break: keep-all;
 }
 
 .story_img {
