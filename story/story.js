@@ -81,7 +81,7 @@ document.addEventListener('keydown', function() {
 	}
 }, false);
 
-document.addEventListener('webkitfullscreenchange', function() {
+document.addEventListener('fullscreenchange', function() {
 	if (fullScrFlg) {
 		document.getElementsByTagName('article')[0].classList.remove('story_fullScr');
 		document.getElementById('dialog_name').style.fontSize 		=	'26px';
