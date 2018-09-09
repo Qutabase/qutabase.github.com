@@ -22,6 +22,37 @@
 	top: 0;
 }
 
+#story_ctrl {
+	position: absolute;
+	top: 31px;
+	left: 0;
+	background: rgba(0,0,0,.5);
+	display: none;
+	margin: 0;
+	color: white;
+	text-align: left;
+	width: 250px;
+	padding: 2px;
+	z-index: 99;
+}
+
+#story_ctrl span {
+	width: 70%;
+	display: inline-block;
+}
+
+#story_ctrl input {
+	width: 30%;
+	margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 23px;
+    font-family: 'NanumsquareB';
+    text-align: center;
+    background: #273869;
+    color: #CCF3FF;
+}
+
 .story_L {
 	position: absolute;
 	left: -45px;
@@ -84,8 +115,8 @@
 
 .story_buffer {
 	z-index: -10;
-	width: 1px;
-	height: 1px;
+	width: 0;
+	height: 0;
 }
 
 #story_FX {

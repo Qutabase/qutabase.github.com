@@ -67,15 +67,19 @@ div {
 		</ul>
 	</header>
 	<article>
+		<span id="story_index"></span>
+		<div id="story_ctrl">
+			<span>Ch. / Index 이동</span><input type="button" id="ctrl_index" value="하기"><br>
+			<span>Volume <qurare id="ctrl_volVal">25</qurare></span><input type="range" id="ctrl_vol" value="25">
+		</div>
 		<section id="sect_story" onclick="prsLn(dialogs)" style="display: none; background-size: 100% 100%;">
 			<img id="story_BG" src="bg/none.jpg">
-			<span id="story_index"></span>
 			<img class="story_L" id="story_L_img" src="">
 			<img class="story_L story_img" id="story_L_face" src="portrait/none.png">
-			<img class="story_M" id="story_M_img" src="">
-			<img class="story_M story_img" id="story_M_face" src="portrait/none.png">
 			<img class="story_R" id="story_R_img" src="">
 			<img class="story_R story_img" id="story_R_face" src="portrait/none.png">
+			<img class="story_M" id="story_M_img" src="">
+			<img class="story_M story_img" id="story_M_face" src="portrait/none.png">
 			<img id="story_senario" src="">
 			<div id="story_dialog">
 				<div id="dialog_name">QUTABASE Story Cinema</div>

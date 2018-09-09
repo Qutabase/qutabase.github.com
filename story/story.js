@@ -3,7 +3,6 @@ eventStory	=	JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Quta
 cardInfo	=	JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/CardInfoScript-dec.qt"));
 mainStory	=	JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/mainStoryJB.qt"));
 
-
 var dialogs;
 function dialogPrs(argument) {
 	dialogs	=	argument['Dialog'].split('#');
@@ -95,6 +94,28 @@ document.addEventListener('fullscreenchange', function() {
 		fullScrFlg = true;
 	}
 });
+
+story_ctrl_flag	=	0;
+document.getElementById('story_index').addEventListener('click', function() {
+	menu_skill_click('story_ctrl');
+});
+
+document.getElementById('ctrl_index').addEventListener('click', function() {
+	menu_select(story);
+	execute(['HIDE','all']);
+	endOfDlg	=	false;
+	flipReset();
+	document.getElementById('dialog_name').innerHTML	=	'이동 완료';
+	document.getElementById('dialog_context').innerHTML	=	'클릭하시면 다음으로 넘어갑니다.';
+})
+
+document.getElementById('ctrl_vol').addEventListener('change', function() {
+	var	vol	=	this.value / 100;
+	document.getElementById('story_BGM').volume		=	vol;
+	document.getElementById('ctrl_volVal').innerHTML=	Math.floor(vol * 100);
+
+});
+document.getElementById('story_BGM').volume = 0.25;
 
 function chapPlay(argument) {
 	chap		=	argument;
