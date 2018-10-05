@@ -190,7 +190,7 @@ function search(srch) {
 		kinput('atk0');
 		kinput('spr0');
 		//2018-07-01 COPYRIGHT ISSUE
-		//document.getElementById('kodex_dialog').innerHTML = dex.dialog.replace(/\n/g, "<br>");
+		document.getElementById('kodex_dialog').innerHTML = dex.dialog.replace(/\n/g, "<br>");
 		for (var i = 0; i < 7; i++) {
 			document.getElementById('kodex_HP_'+i).innerHTML	=	dex.HP[i];
 			document.getElementById('kodex_ATK_'+i).innerHTML	=	dex.ATK[i];
