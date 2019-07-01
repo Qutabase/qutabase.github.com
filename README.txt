@@ -1,4 +1,4 @@
-Á¦ GitHub ¸µÅ©
+ì œ GitHub ë§í¬
 
 
 https://github.com/Sn-Kinos
@@ -6,17 +6,7 @@ https://github.com/Sn-Kinos
 
 
 
-QUTABASE »çÀÌÆ®°¡ ´ã±ä GitHub ¸µÅ© (story ±â´ÉÀº ¾ÆÁ÷ ±¸Çö ´Ü°èÀÔ´Ï´Ù.)
+QUTABASE ì‚¬ì´íŠ¸ê°€ ë‹´ê¸´ GitHub ë§í¬ (story ê¸°ëŠ¥ì€ ì•„ì§ êµ¬í˜„ ë‹¨ê³„ì…ë‹ˆë‹¤.)
 
 
 https://github.com/Qutabase
-
-
-
-À¯Æ©ºê ÀÛ¾÷ ¿µ»ó ¸µÅ©
-
-
-https://www.youtube.com/watch?v=DVFOcvPfbHo
-
-
-
