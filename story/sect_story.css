@@ -1,136 +1,155 @@
 #sect_story {
-	width: 100%;
-	height: 100%;
-	background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
 }
 
 #sect_story img {
-	width: 50%;
+  width: 50%;
 }
 
 #story_BG {
-	width: 100% !important;
-	height: 100%;
+  width: 100% !important;
+  height: 100%;
 }
 #story_index {
-	display: inline-block;
-	padding: 2px;
-	background: rgba(0, 0, 0, 0.5);
-	color: white;
-	position: absolute;
-	left: 0;
-	top: 0;
+  display: inline-block;
+  padding: 2px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 #story_ctrl {
-	position: absolute;
-	top: 31px;
-	left: 0;
-	background: rgba(0,0,0,.5);
-	display: none;
-	margin: 0;
-	color: white;
-	text-align: left;
-	width: 250px;
-	padding: 2px;
-	z-index: 99;
+  position: absolute;
+  top: 31px;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  margin: 0;
+  color: white;
+  text-align: left;
+  width: 250px;
+  padding: 2px;
+  z-index: 99;
 }
 
 #story_ctrl span {
-	width: 70%;
-	display: inline-block;
+  width: 70%;
+  display: inline-block;
 }
 
 #story_ctrl input {
-	width: 30%;
-	margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 23px;
-    font-family: 'NanumsquareB';
-    text-align: center;
-    background: #273869;
-    color: #CCF3FF;
+  width: 30%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 23px;
+  font-family: 'NanumsquareB';
+  text-align: center;
+  background: #273869;
+  color: #ccf3ff;
 }
 
 .story_L {
-	position: absolute;
-	left: -45px;
-	bottom: 0;
+  position: absolute;
+  left: -45px;
+  bottom: 0;
 }
 
 .story_M {
-	position: absolute;
-	left: 25%;
-	bottom: -12px;
+  position: absolute;
+  left: 25%;
+  bottom: -12px;
 }
 
 .story_R {
-	position: absolute;
-	left: calc(50% + 40px);
-	bottom: -12px;
+  position: absolute;
+  left: calc(50% + 40px);
+  bottom: -12px;
 }
 
 #story_senario {
-	width: initial !important;
-	left: 50%;
-	position: absolute;
-	transform: translate(-50%, -50%);
-	top: 57%;
+  width: initial !important;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 57%;
 }
 
 #story_dialog {
-	color: white;
-	width: 75%;
-	height: 23%;
-	position: absolute;
-	left: 12.5%;
-	bottom: 0;
-	margin-bottom: 0;
-	background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,.6), rgba(0,0,0,.8), rgba(0,0,0,.8), rgba(0,0,0,.8), rgba(0,0,0,.8), rgba(0,0,0,.8), rgba(0,0,0,.8), rgba(0,0,0,.8), rgba(0,0,0,.8), rgba(0,0,0,.8), rgba(0,0,0,.8), rgba(0,0,0,.8), rgba(0,0,0,.8), rgba(0,0,0,.8), rgba(0,0,0,.6), rgba(0,0,0,0))
+  color: white;
+  width: 75%;
+  height: 23%;
+  position: absolute;
+  left: 12.5%;
+  bottom: 0;
+  margin-bottom: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0)
+  );
 }
 
 #dialog_name {
-	text-align: left;
-	width: 80%;
-	padding: 14px;
-	padding-bottom: 0;
-	font-size: 26px;
-	padding-left: 10%;
+  text-align: left;
+  width: 80%;
+  padding: 14px;
+  padding-bottom: 0;
+  font-size: 26px;
+  padding-left: 10%;
 }
 
 #dialog_context {
-	text-align: left;
-	padding: 8px;
-	padding-left: 10%;
-	padding-right: 12%;
-	white-space: pre-line;
-	word-break: keep-all;
+  text-align: left;
+  padding: 8px;
+  padding-left: 10%;
+  padding-right: 12%;
+  white-space: pre-line;
+  word-break: keep-all;
 }
 
 .story_img {
-	background-size: 100%;
-	background-position: center;
+  background-size: 100%;
+  background-position: center;
 }
 
 .story_buffer {
-	z-index: -10;
-	width: 0;
-	height: 0;
+  z-index: -10;
+  width: 0;
+  height: 0;
 }
 
 #story_FX {
-	position: absolute;
-	top: 0;
-	left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .story_fullScr {
-	z-index: 100;
-    top: 0;
-    left: 0;
-    position: absolute;
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  position: absolute;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
 }
