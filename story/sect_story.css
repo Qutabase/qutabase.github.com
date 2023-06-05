@@ -130,6 +130,7 @@
 .story_img {
   background-size: 100%;
   background-position: center;
+  filter: brightness(0.5);
 }
 
 .story_buffer {
