@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112275806-1"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -16,48 +17,66 @@
 	<link rel="stylesheet" type="text/css" href="sect_story.css">
 	<link rel="stylesheet" type="text/css" href="sect_menu.css">
 	<style>
-@font-face {
-	font-family: 'NanumSquareEB';
-	src: local(나눔스퀘어 ExtraBold), local(NanumSquareEB),
-	url(https://qutabase.github.io/fonts/NanumSquareEB.eot);
-	src: url(https://qutabase.github.io/fonts/NanumSquareEB.eot?#iefix) format('embedded-opentype'),
-	url(https://qutabase.github.io/fonts/NanumSquareEB.woff) format('woff'),
-	url(https://qutabase.github.io/fonts/NanumSquareEB.ttf) format('truetype');
-}
+		@font-face {
+			font-family: 'NanumSquareEB';
+			src: local(나눔스퀘어 ExtraBold), local(NanumSquareEB),
+				url(https://qutabase.github.io/fonts/NanumSquareEB.eot);
+			src: url(https://qutabase.github.io/fonts/NanumSquareEB.eot?#iefix) format('embedded-opentype'),
+				url(https://qutabase.github.io/fonts/NanumSquareEB.woff) format('woff'),
+				url(https://qutabase.github.io/fonts/NanumSquareEB.ttf) format('truetype');
+		}
 
-article {
-	width: 1280px;
-	height: 720px;
-	max-width: none;
-	max-height: none;
-	position: relative;
-	background: black;
-	background-size: cover;
-	user-select: none;
-	display: none;
-}
-div {
-	padding: 0px;
-}
+		article {
+			width: 1280px;
+			height: 720px;
+			max-width: none;
+			max-height: none;
+			position: relative;
+			background: black;
+			background-size: cover;
+			user-select: none;
+			display: none;
+		}
+
+		div {
+			padding: 0px;
+		}
 	</style>
 </head>
+
 <body>
 	<nav id="menu">
 		<ul id="menu_list"><a href="../index.html"><img src="../logo.svg"></a>
-			<a href="status/index.html"><li>QUTABASE 현황</li></a>
+			<a href="status/index.html">
+				<li>QUTABASE 현황</li>
+			</a>
 			<li id="menu_skill" onclick="menu_skill_click('list_skill')">
 				스킬
 				<ul id="list_skill" style="display: none;">
-					<a href="../skill/atk.html"><li>공격</li></a>
-					<a href="../skill/hp.html"><li>방어</li></a>
-					<a href="../skill/spr.html"><li>회복</li></a>
+					<a href="../skill/atk.html">
+						<li>공격</li>
+					</a>
+					<a href="../skill/hp.html">
+						<li>방어</li>
+					</a>
+					<a href="../skill/spr.html">
+						<li>회복</li>
+					</a>
 				</ul>
 			</li>
-			<a href="../vs/index.html"><li>마도서 비교</li></a>
-			<a href="../rewards/index.html"><li>무나 &amp; 이포 보상</li></a>
-			<a href="../simul/index.html"><li>덱 시뮬레이터</li></a>
-			<a href="../print/index.html"><li>연차 시뮬레이터</li></a>
-		<img id="menu_rotLogo" alt="QUTABASE Side Bar" src="../logo.svg">
+			<a href="../vs/index.html">
+				<li>마도서 비교</li>
+			</a>
+			<a href="../rewards/index.html">
+				<li>무나 &amp; 이포 보상</li>
+			</a>
+			<a href="../simul/index.html">
+				<li>덱 시뮬레이터</li>
+			</a>
+			<a href="../print/index.html">
+				<li>연차 시뮬레이터</li>
+			</a>
+			<img id="menu_rotLogo" alt="QUTABASE Side Bar" src="../logo.svg">
 		</ul>
 	</nav>
 	<header id="kodex_form">
@@ -93,12 +112,16 @@ div {
 		</section>
 		<section id="sect_menu">
 			<span id="menu_title">QURARE Story Cinema</span>
-			<a href="#"><div class="menu_storySel" id="menu_main" onclick="menu_select('main')">
-				메인 스토리
-			</div></a>
-			<a href="#"><div class="menu_storySel" id="menu_event" onclick="menu_select('event')">
-				이벤트 스토리
-			</div></a>
+			<a href="#">
+				<div class="menu_storySel" id="menu_main" onclick="menu_select('main')">
+					메인 스토리
+				</div>
+			</a>
+			<a href="#">
+				<div class="menu_storySel" id="menu_event" onclick="menu_select('event')">
+					이벤트 스토리
+				</div>
+			</a>
 		</section>
 	</article>
 	<footer>
@@ -107,4 +130,5 @@ div {
 </body>
 <script src="../QB_reactive.js"></script>
 <script src="story.js"></script>
+
 </html>
