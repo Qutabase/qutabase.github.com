@@ -163,9 +163,9 @@ function chapPlay(argument) {
 }
 
 function menu_select(argument) {
-  /*
-	nick	=	prompt("스토리에 표시될 이름을 입력해주세요.");
-	/*/
+  //*
+  nick = prompt('스토리에 표시될 이름을 입력해주세요.');
+  /*/
   nick = 'Kinos';
   //*/
   count = 0;
@@ -653,21 +653,18 @@ function printContext(ind, context) {
   if ($('#dialog_context').css('font-size') != fullScrFlg ? '1.85vw' : '24px') {
     $('#dialog_context').css('font-size', fullScrFlg ? '1.85vw' : '24px');
   }
-  delete type;
   printFlag = true;
-  for (var i = 0; i < context.length; i++) {
+  for (var i = ind; i < context.length; i++) {
     var colors = /\[......\]/g;
-    colors = context[i].match(colors);
-    for (color in colors) {
-      /*
-			context[i]	=	context[i].replace(colors[color], "<span style='color: #"	+	colors[color].substr(1, 6)	+	";'>");
-			context[i]	=	context[i].replace(/\[-\]/g, "</span>");
-/*/
-      context[i] = context[i].replace(colors[color], '');
-      context[i] = context[i].replace(/\[-\]/g, '');
-      context[i] = context[i].replace(/\[-\]/g, '');
-      //*/
+    colors = context[i].match(colors) ?? [];
+    for (color of colors) {
+      context[i] = context[i].replace(
+        color,
+        "<span style='color: #" + color.substr(1, 6) + ";'>"
+      );
+      context[i] = context[i].replace(/\[-\]/g, '</span>');
       context[i] = context[i].replace('{NICKNAME}', nick);
+      context[i] = context[i].replace('{nickname}', nick);
       context[i] = context[i].replace('<username/>', nick);
     }
   }
@@ -678,29 +675,34 @@ function printContext(ind, context) {
 
   //*
   var skpFlg = false;
-  function typing() {
-    var mainC;
-    try {
-      mainC = cntxt.split('');
-    } catch (exception) {
-      mainC = '';
+  var mainC;
+  try {
+    spanTagIndexes = [cntxt.indexOf('<span'), cntxt.indexOf('</span>')];
+    mainC = cntxt.split('');
+    if (spanTagIndexes[0] != -1 && spanTagIndexes[1] != -1) {
+      mainC.splice(
+        spanTagIndexes[0],
+        spanTagIndexes[1] - spanTagIndexes[0] + 7,
+        mainC.slice(spanTagIndexes[0], spanTagIndexes[1] + 7).join('')
+      );
     }
-    var i = 0;
-    var dlgCnt = document.getElementById('dialog_context');
-    dlgCnt.innerHTML = '';
-    function show() {
-      if (i < mainC.length) {
-        dlgCnt.innerHTML += mainC[i];
-        i++;
-      } else {
-        i = 9999;
-        printFlag = false;
-        delete type;
-      }
-    }
-    type = setInterval(show, 15);
+  } catch (exception) {
+    mainC = '';
   }
-  typing();
+  var i = 0;
+  var dlgCnt = document.getElementById('dialog_context');
+  dlgCnt.innerHTML = '';
+  function show() {
+    if (i < mainC.length) {
+      dlgCnt.innerHTML += mainC[i];
+      i++;
+    } else {
+      i = 9999;
+      printFlag = false;
+      clearInterval(type);
+    }
+  }
+  type = setInterval(show, 15);
   /*/
 	document.getElementById('dialog_context').innerHTML	=	cntxt;
 	//*/
