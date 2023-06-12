@@ -438,6 +438,8 @@ function execute(argument) {
         if (argument[1] == 'on' || argument[1] == 'ON') {
           elem.css('display', 'initial');
           face.css('display', 'initial');
+          elem.addClass('story_img_spotlight');
+          face.addClass('story_img_spotlight');
           return;
         }
         switch (argument[1]) {
@@ -652,7 +654,9 @@ function printContext(ind, context) {
   if (context[ind].length === 0) {
     return;
   }
-  filterReset();
+  if (context[0] != 'NA') {
+    filterReset();
+  }
   clearInterval(type);
   if ($('#dialog_context').css('font-size') != fullScrFlg ? '1.85vw' : '24px') {
     $('#dialog_context').css('font-size', fullScrFlg ? '1.85vw' : '24px');
