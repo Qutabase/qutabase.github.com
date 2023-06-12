@@ -297,6 +297,7 @@ function prsLn(argument) {
 
       document.getElementById('story_buffer_img').src =
         'portrait/' + tmp[1] + '.png';
+      tmp[2] = tmp[2] || 'none';
       tmp[2] = tmp[2].toUpperCase();
       if (tmp[2] == 'EYEDOWN') {
         if (fc.style.backgroundImage.substr(this.length - 4, 4) != '.gif') {
@@ -648,6 +649,9 @@ function execute(argument) {
 }
 
 function printContext(ind, context) {
+  if (context[ind].length === 0) {
+    return;
+  }
   filterReset();
   clearInterval(type);
   if ($('#dialog_context').css('font-size') != fullScrFlg ? '1.85vw' : '24px') {
