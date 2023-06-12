@@ -38,6 +38,7 @@ var delayT = 0;
 var printFlag = false;
 var endOfDlg = false;
 var fullScrFlg = false;
+var zIndex = 0;
 var skipClick = {
   BACKGROUND: '',
   BGM: '',
@@ -497,9 +498,14 @@ function execute(argument) {
           tmp.style.backgroundImage =
             'url(portrait/' + argument[1] + argument[2].toLowerCase() + '.png)';
         }
-        printContext(3, argument);
+        printed = printContext(3, argument);
         elem.addClass('story_img_spotlight');
         face.addClass('story_img_spotlight');
+        if (printed) {
+          zIndex++;
+          elem.css('z-index', zIndex);
+          face.css('z-index', zIndex);
+        }
       }, delayT);
       break;
 
@@ -652,7 +658,7 @@ function execute(argument) {
 
 function printContext(ind, context) {
   if (context[ind].length === 0) {
-    return;
+    return false;
   }
   if (context[0] != 'NA') {
     filterReset();
@@ -714,4 +720,5 @@ function printContext(ind, context) {
   /*/
 	document.getElementById('dialog_context').innerHTML	=	cntxt;
 	//*/
+  return true;
 }
