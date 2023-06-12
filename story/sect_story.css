@@ -133,6 +133,10 @@
   filter: brightness(0.5);
 }
 
+.story_img_spotlight {
+  filter: none;
+}
+
 .story_buffer {
   z-index: -10;
   width: 0;

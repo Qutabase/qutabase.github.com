@@ -218,6 +218,10 @@ function flipReset() {
   }
 }
 
+function filterReset() {
+  $('.story_img_spotlight').removeClass('story_img_spotlight');
+}
+
 function prsLn(argument) {
   if (endOfDlg) {
     execute(['HIDE', 'all']);
@@ -315,6 +319,7 @@ function prsLn(argument) {
         dialogPrs(mainStory[++index]);
         // console.log(index);
         document.getElementById('story_senario').src = '';
+        document.getElementById('story_senario').style.display = 'none';
         count = 0;
       }
     } else {
@@ -324,6 +329,7 @@ function prsLn(argument) {
       ) {
         dialogPrs(eventStory[++index]);
         document.getElementById('story_senario').src = '';
+        document.getElementById('story_senario').style.display = 'none';
         count = 0;
       }
     }
@@ -489,6 +495,8 @@ function execute(argument) {
             'url(portrait/' + argument[1] + argument[2].toLowerCase() + '.png)';
         }
         printContext(3, argument);
+        elem.addClass('story_img_spotlight');
+        face.addClass('story_img_spotlight');
       }, delayT);
       break;
 
@@ -640,6 +648,8 @@ function execute(argument) {
 }
 
 function printContext(ind, context) {
+  filterReset();
+  clearInterval(type);
   if ($('#dialog_context').css('font-size') != fullScrFlg ? '1.85vw' : '24px') {
     $('#dialog_context').css('font-size', fullScrFlg ? '1.85vw' : '24px');
   }
