@@ -80,6 +80,7 @@
   position: absolute;
   transform: translate(-50%, -50%);
   top: 57%;
+  z-index: 1431718628;
 }
 
 #story_dialog {
@@ -110,6 +111,7 @@
     rgba(0, 0, 0, 0.6),
     rgba(0, 0, 0, 0)
   );
+  z-index: 1431718628;
 }
 
 #dialog_name {
