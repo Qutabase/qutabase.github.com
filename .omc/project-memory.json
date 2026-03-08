@@ -1,0 +1,154 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1772926325742,
+  "projectRoot": "/Users/Kinos/Projects/qutabase.github.com",
+  "techStack": {
+    "languages": [],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [],
+    "gitBranches": {
+      "defaultBranch": "master",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "fonts": {
+      "path": "fonts",
+      "purpose": null,
+      "fileCount": 17,
+      "lastAccessed": 1772926325719,
+      "keyFiles": [
+        "EOTFAST-1.EXE",
+        "NanumSquareB.eot",
+        "NanumSquareB.ttf",
+        "NanumSquareB.woff",
+        "NanumSquareB.woff2"
+      ]
+    },
+    "print": {
+      "path": "print",
+      "purpose": null,
+      "fileCount": 7,
+      "lastAccessed": 1772926325720,
+      "keyFiles": [
+        "0.png",
+        "1.png",
+        "2.png",
+        "index.html",
+        "print.css"
+      ]
+    },
+    "rewards": {
+      "path": "rewards",
+      "purpose": null,
+      "fileCount": 4,
+      "lastAccessed": 1772926325721,
+      "keyFiles": [
+        "index.html",
+        "rewards.js",
+        "rewards_event.css",
+        "rewards_inf.css"
+      ]
+    },
+    "simul": {
+      "path": "simul",
+      "purpose": null,
+      "fileCount": 7,
+      "lastAccessed": 1772926325721,
+      "keyFiles": [
+        "atk.png",
+        "blank.png",
+        "hp.png",
+        "index.html",
+        "simul.css"
+      ]
+    },
+    "skill": {
+      "path": "skill",
+      "purpose": null,
+      "fileCount": 7,
+      "lastAccessed": 1772926325721,
+      "keyFiles": [
+        "atk.html",
+        "atk.js",
+        "hp.html",
+        "hp.js",
+        "skill.css"
+      ]
+    },
+    "status": {
+      "path": "status",
+      "purpose": null,
+      "fileCount": 8,
+      "lastAccessed": 1772926325722,
+      "keyFiles": [
+        "2018-03-23 (37).png",
+        "asdasdasd.png",
+        "bg (2).png",
+        "bg (3).png",
+        "bg.png"
+      ]
+    },
+    "story": {
+      "path": "story",
+      "purpose": null,
+      "fileCount": 8,
+      "lastAccessed": 1772926325723,
+      "keyFiles": [
+        "index.html",
+        "jquery-ui.min.js",
+        "sect_menu.css",
+        "sect_story.css",
+        "story.css"
+      ]
+    },
+    "vs": {
+      "path": "vs",
+      "purpose": null,
+      "fileCount": 6,
+      "lastAccessed": 1772926325724,
+      "keyFiles": [
+        "index.html",
+        "vs.css",
+        "vs.js",
+        "vs_info.css",
+        "vs_list.css"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "story/story.js",
+      "accessCount": 20,
+      "lastAccessed": 1772927810366,
+      "type": "directory"
+    },
+    {
+      "path": "story/index.html",
+      "accessCount": 1,
+      "lastAccessed": 1772927162531,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

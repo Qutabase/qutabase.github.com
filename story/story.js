@@ -36,6 +36,7 @@ var shkBgFlg;
 var story;
 var delayT = 0;
 var printFlag = false;
+var autoTimer = null;
 var endOfDlg = false;
 var fullScrFlg = false;
 var zIndex = 0;
@@ -223,7 +224,21 @@ function filterReset() {
   $('.story_img_spotlight').removeClass('story_img_spotlight');
 }
 
+function scheduleAuto() {
+  if (!document.getElementById('ctrl_auto').checked) return;
+  clearTimeout(autoTimer);
+  var delay = parseInt(document.getElementById('ctrl_auto_delay').value) || 500;
+  autoTimer = setTimeout(function autoStep() {
+    if (printFlag) {
+      autoTimer = setTimeout(autoStep, 100);
+    } else {
+      prsLn(dialogs);
+    }
+  }, delay);
+}
+
 function prsLn(argument) {
+  clearTimeout(autoTimer);
   if (endOfDlg) {
     execute(['HIDE', 'all']);
     endOfDlg = false;
@@ -251,7 +266,9 @@ function prsLn(argument) {
 
   try {
     var tmp = argument[count].split(',');
+    var willAutoAdvance = false;
     if (tmp[0].toUpperCase() in skipClick) {
+      willAutoAdvance = true;
       setTimeout(
         function () {
           prsLn(argument);
@@ -262,6 +279,7 @@ function prsLn(argument) {
       (tmp[0] == 'L' || tmp[0] == 'M' || tmp[0] == 'R') &&
       (tmp[3] == undefined || tmp[3] == '' || tmp[3] == ' ')
     ) {
+      willAutoAdvance = true;
       setTimeout(function () {
         prsLn(argument);
       }, 1);
@@ -311,7 +329,11 @@ function prsLn(argument) {
           'url(portrait/' + tmp[1] + tmp[2].toLowerCase() + '.png)';
       }
     }
+    if (!willAutoAdvance) {
+      scheduleAuto();
+    }
   } catch (exception) {
+    clearTimeout(autoTimer);
     endOfDlg = true;
     if (story == 'main') {
       if (
@@ -722,3 +744,12 @@ function printContext(ind, context) {
 	//*/
   return true;
 }
+
+document.getElementById('ctrl_auto').addEventListener('change', function() {
+  if (!this.checked) {
+    clearTimeout(autoTimer);
+    autoTimer = null;
+  } else {
+    scheduleAuto();
+  }
+});

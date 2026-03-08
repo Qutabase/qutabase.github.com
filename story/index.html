@@ -90,8 +90,10 @@
 	<article>
 		<span id="story_index"></span>
 		<div id="story_ctrl">
-			<span>Ch. / Index 이동</span><input type="button" id="ctrl_index" value="하기"><br>
+			<span>Ch. / Index 이동</span><button type="button" id="ctrl_index">하기</button><br>
 			<span>Volume <span id="ctrl_volVal">25</span></span><input type="range" id="ctrl_vol" value="25">
+			<span>Auto <input type="checkbox" id="ctrl_auto"></span><input type="text" placeholder="delay (ms)"
+				id="ctrl_auto_delay" value="500">
 		</div>
 		<section id="sect_story" onclick="prsLn(dialogs)" style="display: none; background-size: 100% 100%;">
 			<img id="story_BG" src="bg/none.jpg">

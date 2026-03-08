@@ -27,7 +27,7 @@
 
 #story_ctrl {
   position: absolute;
-  top: -89px;
+  top: -119px;
   left: 0;
   background: rgba(0, 0, 0, 0.5);
   display: none;
@@ -44,7 +44,7 @@
   display: inline-block;
 }
 
-#story_ctrl input {
+#story_ctrl button {
   width: 30%;
   margin: 0;
   padding: 0;
@@ -54,6 +54,14 @@
   text-align: center;
   background: #273869;
   color: #ccf3ff;
+}
+
+#story_ctrl > input {
+  width: 30%;
+  height: 23px;
+  padding: 0;
+  border: 0;
+  margin: 0;
 }
 
 .story_L {
